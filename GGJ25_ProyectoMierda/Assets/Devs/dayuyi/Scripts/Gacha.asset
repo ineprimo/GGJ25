@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b082421f62ee4b04893980102d5e336f, type: 3}
   m_Name: Gacha
   m_EditorClassIdentifier: 
+  gachaCD: 100
   _pool:
   - name: Arle
-    weight: 5
+    weight: 20
   - name: Qiqi
-    weight: 10
+    weight: 20
   - name: Thoma
     weight: 20
   - name: Furina
-    weight: 0
+    weight: 20
