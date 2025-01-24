@@ -18,7 +18,8 @@ public class CaquitaMovement : MonoBehaviour
     {
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
-        //transform.LookAt(target.transform);
-        transform.LookAt(target.transform, Vector3.left);
+        Vector3 v3 = target.transform.position - transform.position;
+        v3.y = -90.0f;
+        transform.rotation = Quaternion.LookRotation(v3);
     }
 }
