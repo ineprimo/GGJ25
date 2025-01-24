@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum Upgrades
+    {
+        BULLETS,
+        LIFE,
+        SPEED,
+        DAMAGE
+    }
+
     static private GameManager _instance;
 
     static public GameManager Instance
@@ -29,11 +37,85 @@ public class GameManager : MonoBehaviour
     public GameObject GetPlayer() {  return _player; }
 
     // UPGRADES
+    int bulletsUpgradeLvl = 0;
     int lifeUpgradeLvl = 0;
-    int velocityUpgradeLvl = 0;
-    int shootUpgradeLvl = 0;
-    int singedUpgradeLvl = 0;
+    int speedUpgradeLvl = 0;
+    int damageUpgradeLvl = 0;
 
+    public void upgradeBullets()
+    {
+        bulletsUpgradeLvl++;
+        if(bulletsUpgradeLvl == 1)
+        {
+            // Salen 2 burbujas
+        }
+        else if(bulletsUpgradeLvl == 2)
+        {
+            // salen 3 burbujas
+            // más distancia
+        }
+        else if (bulletsUpgradeLvl == 3) 
+        {
+            //????
+        }
+    }
+    public void upgradeLife()
+    {
+        lifeUpgradeLvl++;
+        if (lifeUpgradeLvl == 1)
+        {
+            // + vida 
+            // empujar enemigos hacia detras
+        }
+        else if (lifeUpgradeLvl == 2)
+        {
+            //  + vida
+            // empujar enemigos muy lejos
+        }
+        else if (lifeUpgradeLvl == 3)
+        {
+            // + vida
+            // congelar enemigos
+        }
+    }
+    public void upgradeSpeed()
+    {
+        speedUpgradeLvl++;
+        if (speedUpgradeLvl == 1)
+        {
+            // + speed 
+            // dejar rastro que relentiza
+        }
+        else if (speedUpgradeLvl == 2)
+        {
+            // + speed
+            // el rastro hace daño
+        }
+        else if (speedUpgradeLvl == 3)
+        {
+            // + speed
+            // + el rastro dura más tiempo
+        }
+    }
+    public void upgradeDamage()
+    {
+        damageUpgradeLvl++;
+        if (damageUpgradeLvl == 1)
+        {
+            // + daño
+            // la pompa rebota 1 vez si hay un enemigo a X distancia
+        }
+        else if (damageUpgradeLvl == 2)
+        {
+            // + daño
+            // la burbuja rebota 2 veces
+        }
+        else if (damageUpgradeLvl == 3)
+        {
+            // + daño
+            // la burbuja puede volver a rebotar
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
