@@ -21,5 +21,8 @@ public class MouseDown : MonoBehaviour
         else
             Debug.Log(up.name);
 
+
+        // llamar al gamemanager update ()
+
     }
 }
