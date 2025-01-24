@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         else if(bulletsUpgradeLvl == 2)
         {
             // salen 3 burbujas
-            // más distancia
+            // mï¿½s distancia
         }
         else if (bulletsUpgradeLvl == 3) 
         {
@@ -93,37 +93,37 @@ public class GameManager : MonoBehaviour
         speedUpgradeLvl++;
         if (speedUpgradeLvl == 1)
         {
-            // + speed 
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
         }
         else if (speedUpgradeLvl == 2)
         {
-            // + speed
-            // el rastro hace daño
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(2);     // Aumentar velocidad de movimiento
+            // el rastro hace daï¿½o
         }
         else if (speedUpgradeLvl == 3)
         {
-            // + speed
-            // + el rastro dura más tiempo
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
+            // + el rastro dura mï¿½s tiempo
         }
     }
-    // DAÑO Y REBOTES
+    // DAï¿½O Y REBOTES
     public void UpgradeDamage()
     {
         damageUpgradeLvl++;
         if (damageUpgradeLvl == 1)
         {
-            // + daño
+            // + daï¿½o
             // la pompa rebota 1 vez si hay un enemigo a X distancia
         }
         else if (damageUpgradeLvl == 2)
         {
-            // + daño
+            // + daï¿½o
             // la burbuja rebota 2 veces
         }
         else if (damageUpgradeLvl == 3)
         {
-            // + daño
+            // + daï¿½o
             // la burbuja puede volver a rebotar
         }
     }
