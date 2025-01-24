@@ -22,12 +22,15 @@ public class OnEnterGachapon : MonoBehaviour
     {
         if(canPull)
         {
+            Debug.Log("is on cd " + gachaOnCooldown + " cd " + _gacha.getCD() + " currenttime " + currentGachaTime);
+
             if (Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
                 // esto va cuando se quiera hacer un pull en el gachapon
                 Upgrade up = _gacha.pull();
 
                 gachaOnCooldown = true;
+
                 if (up == null)
                     Debug.Log("no upgrade avaliable");
                 else
@@ -40,16 +43,16 @@ public class OnEnterGachapon : MonoBehaviour
             if (gachaOnCooldown)
             {
 
-                Debug.Log("gacha on cd");
                 // cooldown
-                if (_gacha.getCD() >= currentGachaTime)
+                if (_gacha.getCD() <= currentGachaTime)
                 {
                     gachaOnCooldown=false;
                     currentGachaTime = 0;
                 }
-                currentGachaTime += Time.deltaTime;
+                else
+                    currentGachaTime += Time.deltaTime;
 
-                Debug.Log("gacha timer " + currentGachaTime);
+                //Debug.Log("gacha timer " + currentGachaTime);
             }
             
         }
