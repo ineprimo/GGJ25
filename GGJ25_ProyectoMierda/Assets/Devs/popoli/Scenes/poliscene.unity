@@ -673,6 +673,11 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9139251110534034528, guid: b1087d5d6f0318846a9bef64793f2e64,
+        type: 3}
+      propertyPath: closeCacaDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9187369549511936537, guid: b1087d5d6f0318846a9bef64793f2e64,
         type: 3}
       propertyPath: m_Name
