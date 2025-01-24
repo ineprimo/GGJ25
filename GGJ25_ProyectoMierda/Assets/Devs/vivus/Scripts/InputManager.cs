@@ -5,6 +5,8 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     PlayerMovement _playerMovement;
+    [SerializeField] private CameraMovement _cameraMovement;
+    [SerializeField] private GameObject _gunObject;
 
     void Start()
     {
@@ -17,6 +19,9 @@ public class InputManager : MonoBehaviour
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
         _playerMovement.Move(moveDirection);
+
+        // ROTACION CAMARA //
+        _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         // DISPARO //
 
