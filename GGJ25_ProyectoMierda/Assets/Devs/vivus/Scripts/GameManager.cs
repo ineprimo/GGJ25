@@ -86,17 +86,17 @@ public class GameManager : MonoBehaviour
         speedUpgradeLvl++;
         if (speedUpgradeLvl == 1)
         {
-            // + speed 
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
         }
         else if (speedUpgradeLvl == 2)
         {
-            // + speed
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(2);     // Aumentar velocidad de movimiento
             // el rastro hace daño
         }
         else if (speedUpgradeLvl == 3)
         {
-            // + speed
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
             // + el rastro dura más tiempo
         }
     }
@@ -119,17 +119,5 @@ public class GameManager : MonoBehaviour
             // + daño
             // la burbuja puede volver a rebotar
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
