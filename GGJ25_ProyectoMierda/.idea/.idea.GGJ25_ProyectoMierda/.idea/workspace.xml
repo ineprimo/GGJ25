@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e54af32e-8718-42bc-8dcd-b491e4c61fe9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Prefabs/EnemyThrower.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Prefabs/EnemyThrower.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/A.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/A.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CacaThrower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CacaThrower.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+</project>

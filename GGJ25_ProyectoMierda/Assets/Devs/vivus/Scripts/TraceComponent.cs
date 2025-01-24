@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TraceComponent : MonoBehaviour
 {
-    [SerializeField] private float _maxBubbleGenerationTime = 0.5f;
+    [SerializeField] private float _maxBubbleGenerationTime = 0.05f;
     float _currentBubbleGenerationTime = 0.0f;
 
     [SerializeField] private GameObject _bubblePrefab;
@@ -23,8 +23,16 @@ public class TraceComponent : MonoBehaviour
     {
         if(_maxBubbleGenerationTime <= _currentBubbleGenerationTime)
         {
-            Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
+            GameObject auxBubble = Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
+            Vector3 auxOffset = new Vector3(
+                Random.Range(-0.5f, 0.5f),
+                Random.Range(-0.5f, 0.5f), 
+                Random.Range(-0.5f, 0.5f));
+            auxBubble.transform.position += auxOffset;
+            Debug.Log("CREAR POMPA RASTRO");
             _currentBubbleGenerationTime = 0.0f;
         }
+        _currentBubbleGenerationTime += Time.deltaTime;
+        Debug.Log(_currentBubbleGenerationTime);
     }
 }
