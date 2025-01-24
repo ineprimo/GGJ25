@@ -6,11 +6,16 @@ public class CaquitaMovement : MonoBehaviour
 {
     private GameObject player;
     [SerializeField] public float speed;
+    [SerializeField] public float throwerDistance = 5.0f;
+
+    bool thrower;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameManager.Instance.GetPlayer();
+
+        thrower = GetComponent<CacaThrower>() != null;
     }
 
     // Update is called once per frame
@@ -18,7 +23,27 @@ public class CaquitaMovement : MonoBehaviour
     {
         // seguimiento
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+
+        Vector3 target = player.transform.position;
+
+        // si tiene el cacaThrower no llega hasta el player, mantiene distancia
+        if (thrower)
+        {
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distance > throwerDistance)
+            {
+                target = transform.position + direction * step;
+            }
+            else
+            {
+                target = transform.position;
+            }
+        }
+
+
+        transform.position = Vector3.MoveTowards(transform.position, target, step);
 
         // orientacion
         Vector3 v3 = player.transform.position - transform.position;
