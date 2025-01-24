@@ -25,27 +25,31 @@ public class CaquitaSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        actualDistance = (transform.position - player.transform.position).magnitude;
-
-        if (actualDistance < spawnDistance) onRange = false;
-        else onRange = true;
-
-        //Debug.Log(onRange);
-
-        if (Time.time >= timer && onRange)
+        if (!GameManager.Instance.getMaxEnemies())
         {
-            //Debug.Log("instancia caquita");
-            GameObject clone = Instantiate(enemy, transform.position, enemy.transform.rotation);
+            actualDistance = (transform.position - player.transform.position).magnitude;
 
-            // si esta a cierta distancia le doy el caca thrower
-            if (actualDistance > cacaThrowerDistance)
+            if (actualDistance < spawnDistance) onRange = false;
+            else onRange = true;
+
+            //Debug.Log(onRange);
+
+            if (Time.time >= timer && onRange)
             {
-                // random
-                int i = Random.Range(0, 2);
-                if(i == 0) clone.AddComponent<CacaThrower>();
-            }
+                //Debug.Log("instancia caquita");
+                GameObject clone = Instantiate(enemy, transform.position, enemy.transform.rotation);
+                GameManager.Instance.registerEnemy();
 
-            timer = Time.time + spawnTime;
+                // si esta a cierta distancia le doy el caca thrower
+                if (actualDistance > cacaThrowerDistance)
+                {
+                    // random
+                    int i = Random.Range(0, 2);
+                    if (i == 0) clone.AddComponent<CacaThrower>();
+                }
+
+                timer = Time.time + spawnTime;
+            }
         }
     }
 }

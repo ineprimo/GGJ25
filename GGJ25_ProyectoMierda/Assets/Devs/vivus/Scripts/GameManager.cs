@@ -36,6 +36,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
 
+    // ENEMIES
+    [SerializeField] private int maxEnemies = 100;
+    private int nEnemies;
+
+    // devuelve true cuando nEnemies sea >= maxEnemies
+    public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
+
     // UPGRADES
     int bulletsUpgradeLvl = 0;
     int lifeUpgradeLvl = 0;
@@ -120,6 +127,19 @@ public class GameManager : MonoBehaviour
             // la burbuja puede volver a rebotar
         }
     }
+
+    // GESTION DE ENEMIGOS
+    public void registerEnemy()
+    {
+        nEnemies++;
+        //Debug.Log(nEnemies);
+    }
+
+    public void deRegisterEnemy()
+    {
+        nEnemies--;
+    }
+
 
     // Start is called before the first frame update
     void Start()
