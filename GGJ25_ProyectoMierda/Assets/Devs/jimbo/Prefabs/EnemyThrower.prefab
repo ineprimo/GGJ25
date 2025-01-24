@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3375860087443007919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6748202732822104103}
+  m_Layer: 0
+  m_Name: CacaSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6748202732822104103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375860087443007919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 1.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 946897035781384711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9187369549511936537
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,8 +44,9 @@ GameObject:
   - component: {fileID: 184422666544119732}
   - component: {fileID: 9216178061499230437}
   - component: {fileID: 9139251110534034528}
+  - component: {fileID: 1390016990359123860}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyThrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,13 +60,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9187369549511936537}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 3.29, y: 1.42, z: -4.1}
   m_LocalScale: {x: 0.26044765, y: 0.26044765, z: 0.26044765}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 6748202732822104103}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!33 &3449441233693888998
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -124,3 +157,16 @@ MonoBehaviour:
   speed: 2
   throwerDistance: 5
   closeCacaDistance: 1
+--- !u!114 &1390016990359123860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187369549511936537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b50eaa5e245aa4f9e6f5322c2f32e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _caca: {fileID: 1903147794483264215, guid: 43f42b4dd5853924293dec7efc67333f, type: 3}
