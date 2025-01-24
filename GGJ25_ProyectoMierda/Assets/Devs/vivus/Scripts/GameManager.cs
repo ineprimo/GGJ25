@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     int damageUpgradeLvl = 0;
 
     // CANTIDAD DE BALAS
-    public void upgradeBullets()
+    public void UpgradeBullets()
     {
         bulletsUpgradeLvl++;
         if(bulletsUpgradeLvl == 1)
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
     }
     // VIDA
-    public void upgradeLife()
+    public void UpgradeLife()
     {
         lifeUpgradeLvl++;
         if (lifeUpgradeLvl == 1)
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         }
     }
     // VELOCIDAD Y RASTRO
-    public void upgradeSpeed()
+    public void UpgradeSpeed()
     {
         speedUpgradeLvl++;
         if (speedUpgradeLvl == 1)
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         }
     }
     // DAÑO Y REBOTES
-    public void upgradeDamage()
+    public void UpgradeDamage()
     {
         damageUpgradeLvl++;
         if (damageUpgradeLvl == 1)

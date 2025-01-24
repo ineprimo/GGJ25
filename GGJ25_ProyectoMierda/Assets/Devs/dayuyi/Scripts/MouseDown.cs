@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseDown : MonoBehaviour
 {
-    [SerializeField] private GachaponManager _gachaManager;
+    [SerializeField] private GachaponBase _gachaManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class MouseDown : MonoBehaviour
         if(up == null)
             Debug.Log("no upgrade avaliable");
         else
-            Debug.Log(up.name);
+            Debug.Log(up.getName());
 
 
         // llamar al gamemanager update ()
