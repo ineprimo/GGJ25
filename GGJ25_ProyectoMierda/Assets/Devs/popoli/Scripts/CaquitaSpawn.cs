@@ -40,8 +40,9 @@ public class CaquitaSpawn : MonoBehaviour
             // si esta a cierta distancia le doy el caca thrower
             if (actualDistance > cacaThrowerDistance)
             {
-                clone.AddComponent<CacaThrower>();
-                Debug.Log("creo caca thrower");
+                // random
+                int i = Random.Range(0, 2);
+                if(i == 0) clone.AddComponent<CacaThrower>();
             }
 
             timer = Time.time + spawnTime;
