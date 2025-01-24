@@ -36,6 +36,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
 
+    // ENEMIES
+    [SerializeField] private int maxEnemies = 100;
+    private int nEnemies;
+
+    // devuelve true cuando nEnemies sea >= maxEnemies
+    public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
+
     // UPGRADES
     int bulletsUpgradeLvl = 0;
     int lifeUpgradeLvl = 0;
@@ -53,7 +60,7 @@ public class GameManager : MonoBehaviour
         else if(bulletsUpgradeLvl == 2)
         {
             // salen 3 burbujas
-            // más distancia
+            // mï¿½s distancia
         }
         else if (bulletsUpgradeLvl == 3) 
         {
@@ -92,32 +99,57 @@ public class GameManager : MonoBehaviour
         else if (speedUpgradeLvl == 2)
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(2);     // Aumentar velocidad de movimiento
-            // el rastro hace daño
+            // el rastro hace daï¿½o
         }
         else if (speedUpgradeLvl == 3)
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
-            // + el rastro dura más tiempo
+            // + el rastro dura mï¿½s tiempo
         }
     }
-    // DAÑO Y REBOTES
+    // DAï¿½O Y REBOTES
     public void UpgradeDamage()
     {
         damageUpgradeLvl++;
         if (damageUpgradeLvl == 1)
         {
-            // + daño
+            // + daï¿½o
             // la pompa rebota 1 vez si hay un enemigo a X distancia
         }
         else if (damageUpgradeLvl == 2)
         {
-            // + daño
+            // + daï¿½o
             // la burbuja rebota 2 veces
         }
         else if (damageUpgradeLvl == 3)
         {
-            // + daño
+            // + daï¿½o
             // la burbuja puede volver a rebotar
         }
+    }
+
+    // GESTION DE ENEMIGOS
+    public void registerEnemy()
+    {
+        nEnemies++;
+        //Debug.Log(nEnemies);
+    }
+
+    public void deRegisterEnemy()
+    {
+        nEnemies--;
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }
