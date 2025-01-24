@@ -5,7 +5,7 @@ using UnityEngine;
 public class CaquitaSpawn : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
-    [SerializeField] GameObject player;
+    private GameObject player;
     [SerializeField] float spawnTime = 3.0f; //seconds
     [SerializeField] float distance = 2.0f;
 
@@ -16,6 +16,7 @@ public class CaquitaSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameManager.Instance.GetPlayer();
         timer = 0;
         onRange = false;
     }
