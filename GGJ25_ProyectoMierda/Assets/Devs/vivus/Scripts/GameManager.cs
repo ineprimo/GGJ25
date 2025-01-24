@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     int speedUpgradeLvl = 0;
     int damageUpgradeLvl = 0;
 
+    // CANTIDAD DE BALAS
     public void upgradeBullets()
     {
         bulletsUpgradeLvl++;
@@ -59,32 +60,34 @@ public class GameManager : MonoBehaviour
             //????
         }
     }
+    // VIDA
     public void upgradeLife()
     {
         lifeUpgradeLvl++;
         if (lifeUpgradeLvl == 1)
         {
             // + vida 
-            // empujar enemigos hacia detras
+            // burbuja enemigos en area (cada n segs)
         }
         else if (lifeUpgradeLvl == 2)
         {
             //  + vida
-            // empujar enemigos muy lejos
+            // reducir tiempo habilidad
         }
         else if (lifeUpgradeLvl == 3)
         {
             // + vida
-            // congelar enemigos
+            // reducir tiempo habilidad
         }
     }
+    // VELOCIDAD Y RASTRO
     public void upgradeSpeed()
     {
         speedUpgradeLvl++;
         if (speedUpgradeLvl == 1)
         {
             // + speed 
-            // dejar rastro que relentiza
+            _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
         }
         else if (speedUpgradeLvl == 2)
         {
@@ -97,6 +100,7 @@ public class GameManager : MonoBehaviour
             // + el rastro dura más tiempo
         }
     }
+    // DAÑO Y REBOTES
     public void upgradeDamage()
     {
         damageUpgradeLvl++;
