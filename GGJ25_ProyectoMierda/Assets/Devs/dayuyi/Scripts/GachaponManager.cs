@@ -54,6 +54,11 @@ public class GachaponManager : ScriptableObject
     }
     #endregion
 
+    /// <summary>
+    /// devuelve null si no hay upgrades disponibles y el upgrade resultante si va.
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="System.Exception"></exception>
     public Upgrade pull()
     {
         // Make sure it is initalized

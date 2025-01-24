@@ -13,7 +13,7 @@ public class MouseDown : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("A GACHAPONERAR");
+        // esto va cuando se quiera hacer un pull en el gachapon
         Upgrade up = _gachaManager.pull();
 
         if(up == null)
