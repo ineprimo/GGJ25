@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private float _currentLife = 50.0f;
     [SerializeField] private float _maxLife = 50.0f;
+    
+    [SerializeField] private LayerMask _caca;
+    
     Rigidbody _rigidBody;
 
     private void Start()
@@ -24,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
         _speed += incr;
     }
 
-    public void ReceiveDamage(float damage)
+    private void Hit(float damage)
     {
         _currentLife -= damage;
+        
         if (_currentLife <= 0)
         {
             PlayerDies();
@@ -50,5 +55,15 @@ public class PlayerMovement : MonoBehaviour
     void PlayerDies()
     {
         // JUGADOR MUERE
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        GameObject otherObject = other.gameObject;
+        
+        if (otherObject.layer == _caca)
+        {
+            Hit(otherObject.GetComponent<CacaComponent>().Damage);
+        }
     }
 }

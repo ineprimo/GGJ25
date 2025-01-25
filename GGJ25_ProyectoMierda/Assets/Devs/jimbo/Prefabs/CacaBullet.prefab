@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6479547452608670964}
   - component: {fileID: 5764016449787349984}
   - component: {fileID: 9164539407602583662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CacaBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,5 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdf26164237279409c3fbff8f9aab4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 10
   speed: 6.5
   verticalBoost: 2

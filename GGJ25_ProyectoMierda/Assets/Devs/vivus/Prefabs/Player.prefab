@@ -71,6 +71,9 @@ MonoBehaviour:
   _speed: 10
   _currentLife: 50
   _maxLife: 50
+  _caca:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!23 &2027829890481243439
 MeshRenderer:
   m_ObjectHideFlags: 0

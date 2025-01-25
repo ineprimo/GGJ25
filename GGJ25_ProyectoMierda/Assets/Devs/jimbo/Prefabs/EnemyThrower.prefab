@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 9216178061499230437}
   - component: {fileID: 9139251110534034528}
   - component: {fileID: 1390016990359123860}
+  - component: {fileID: -4603108031327698241}
   m_Layer: 0
   m_Name: EnemyThrower
   m_TagString: Untagged
@@ -170,3 +171,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _caca: {fileID: 1903147794483264215, guid: 43f42b4dd5853924293dec7efc67333f, type: 3}
+  _maxTime: 2
+--- !u!114 &-4603108031327698241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187369549511936537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4539fbaa73e00b543b0a475f12a90313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 0
+  _bulletLayer:
+    serializedVersion: 2
+    m_Bits: 64

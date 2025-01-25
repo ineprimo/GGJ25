@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeEnemy: {fileID: 9187369549511936537, guid: b1087d5d6f0318846a9bef64793f2e64,
     type: 3}
-  throwerEnemy: {fileID: 9187369549511936537, guid: 80db4c3e5cc89e9418ad0cb351118ae9,
+  throwerEnemy: {fileID: 9187369549511936537, guid: 00c2ad4791c009648996dfedf6b2aea8,
     type: 3}
   spawnTime: 3
   spawnDistance: 2

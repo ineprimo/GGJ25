@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CacaComponent : MonoBehaviour
 {
-
+    [SerializeField] private float _damage = 10.0f;
     [SerializeField] float speed = 5.0f;
     [SerializeField] float verticalBoost = 2.0f;
 
     Vector3 direction;
     GameObject player;
+    
+    public float Damage { get {return _damage; } }
 
     // cuando la caca toca el suelo se destruye
     private void OnCollisionEnter(Collision collision)
@@ -17,11 +19,6 @@ public class CacaComponent : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);
-        }
-
-        if(collision.gameObject.GetComponent<PlayerMovement>() != null)
-        {
-            GameManager.Instance.playerHit();
         }
     }
 
