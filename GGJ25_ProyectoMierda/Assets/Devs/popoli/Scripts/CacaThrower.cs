@@ -18,7 +18,8 @@ public class CacaThrower : MonoBehaviour
     {
         if(_time <= 0.0f)
         {
-            Instantiate(_caca, _cacaSpawn);
+            GameObject cacaBullet = Instantiate(_caca, _cacaSpawn);
+            //cacaBullet.GetComponent<CacaComponent>().setDirection(   ); // auqi?¿?
             _time = _maxTime;
         }
         else _time -= Time.deltaTime;

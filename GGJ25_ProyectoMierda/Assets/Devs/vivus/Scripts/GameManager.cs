@@ -144,6 +144,13 @@ public class GameManager : MonoBehaviour
         nEnemies--;
     }
 
+    // la caca lanzada toca al jugador:
+    public void playerHit()
+    {
+        Debug.Log("damage player");
+        // vida -- (poli: sigo mañana)
+    }
+
 
     // Start is called before the first frame update
     void Start()
