@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe183644f7b4b745b63946cf5a664b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 2
+  lifeTime: 1.25
   deceleration: 4.5
   shakeDuration: 5
   shakeAmount: 1000
