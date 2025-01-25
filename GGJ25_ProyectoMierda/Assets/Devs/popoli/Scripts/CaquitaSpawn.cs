@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CaquitaSpawn : MonoBehaviour
 {
@@ -25,7 +26,13 @@ public class CaquitaSpawn : MonoBehaviour
     // PROGRESION
     GameObject spawnedEnemy;
     float newThrowerSpeed = 2.0f; // default lvl 1: 2
-    float newMeleeSpeed = 2.0f; // default lvl 1: 2
+    float newMeleeSpeed = 2.0f;
+    float newMeleeHealth = 100.0f;
+    float newThrowerHealth = 80.0f;
+    float newMeleeDamage = 50.0f;
+    float newThrowerDamage = 30.0f;
+    float newMCoins = 5.0f;
+    float newTCoins = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +69,6 @@ public class CaquitaSpawn : MonoBehaviour
                     {
                         // thrower
                         spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
-                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
                     }
                     else
                     {
@@ -71,12 +77,10 @@ public class CaquitaSpawn : MonoBehaviour
                         if (i == 0)
                         {
                             spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
-                            spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                         }
                         else
                         {
                             spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
-                            spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                         }
                     }
                 }
@@ -86,17 +90,15 @@ public class CaquitaSpawn : MonoBehaviour
                     if (j == 0)
                     {
                         spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
-                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                     }
                     else
                     {
                         spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
-                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                     }
                 }
 
                 // setteamos enemigo segun level
-                //setEnemy(spawnedEnemy);
+                setEnemy(spawnedEnemy);
 
                 GameManager.Instance.registerEnemy(spawnedEnemy);
                 timer = Time.time + spawnTime;
@@ -104,11 +106,18 @@ public class CaquitaSpawn : MonoBehaviour
         }
     }
 
-    public void Upgrade(float meleeSp, float throwerSp)
+    public void Upgrade(float meleeSp, float throwerSp, float meleeHP, float throwerHP,
+        float meleeDmg, float throwerDmg, float meleeCoins, float throwerCoins)
     {
         newMeleeSpeed = meleeSp;
         newThrowerSpeed = throwerSp;
-        
+        newThrowerHealth = throwerHP;
+        newMeleeHealth = meleeHP;
+        newMeleeDamage = meleeDmg;
+        newThrowerDamage = throwerDmg;
+        newMCoins = meleeCoins;
+        newTCoins = throwerCoins;
+
     }
 
     private void setEnemy(GameObject o)
@@ -116,12 +125,14 @@ public class CaquitaSpawn : MonoBehaviour
         if(o.GetComponent<CacaThrower>() != null)
         {
             o.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
+            o.GetComponent<Enemy>().SetHealth(newThrowerHealth);
+            // to do: daño
         }
         else
         {
             o.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
+            o.GetComponent<Enemy>().SetHealth(newMeleeHealth);
+            // to do: daño
         }
-
-
     }
 }

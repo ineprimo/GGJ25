@@ -50,8 +50,6 @@ public class SpawnersManager : MonoBehaviour
     float[] throwerCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +61,12 @@ public class SpawnersManager : MonoBehaviour
     void Update()
     {
         _levelUpTime -= Time.deltaTime;
-        //Debug.Log(_levelUpTime);
 
         if (_levelUpTime < 0)
         {
-            //Debug.Log("levelup");
-
             if(_currentLvl != nLevels) _currentLvl++;
+            Debug.Log("Current Level: " + _currentLvl);
+
             UpgradeAllSpawners();
 
             _levelUpTime = initLevelUpTime;
@@ -81,7 +78,10 @@ public class SpawnersManager : MonoBehaviour
         for(int i = 0; i < _spawns.Length; ++i)
         {
             _spawns[i].gameObject.GetComponent<CaquitaSpawn>()
-                .Upgrade(meleeSpeeds[_currentLvl-1], throwerSpeeds[_currentLvl-1]);
+                .Upgrade(meleeSpeeds[_currentLvl-1], throwerSpeeds[_currentLvl-1],
+                        meleeHealth[_currentLvl-1], throwerHealth[_currentLvl - 1],
+                        meleeDamage[_currentLvl - 1], throwerDamage[_currentLvl - 1],
+                        meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1]);
         }
     }
 }
