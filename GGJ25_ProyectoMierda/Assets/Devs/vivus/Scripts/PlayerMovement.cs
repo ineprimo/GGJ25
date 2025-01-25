@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector3 dir)
     {
-        transform.position += dir * _speed * Time.deltaTime;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        dir.Normalize();
+        rb.velocity = dir * _speed;
     }
 
     public void ImproveSpeed(float incr)

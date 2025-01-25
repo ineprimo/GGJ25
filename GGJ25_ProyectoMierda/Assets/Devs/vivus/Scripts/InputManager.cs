@@ -9,6 +9,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject _gunObject;
     private Shoot _shootComponent;
 
+    [SerializeField] private float timeBetweenShots = 1f;
+    [SerializeField] private float lastShootTime = 0f;
+
     void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
@@ -26,9 +29,10 @@ public class InputManager : MonoBehaviour
         _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         // DISPARO //
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
             _shootComponent.shootWeapon();
+            lastShootTime = Time.time;
         }
         // Haztelo como arriba mas o menos
 

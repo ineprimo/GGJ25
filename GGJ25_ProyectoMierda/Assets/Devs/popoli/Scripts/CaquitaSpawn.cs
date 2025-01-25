@@ -39,9 +39,11 @@ public class CaquitaSpawn : MonoBehaviour
             else onRange = true;
 
             //Debug.Log(onRange);
-
+            
             if (Time.time >= timer && onRange)
             {
+                GameObject enemy; 
+                
                 // si esta a cierta distancia cabe la posibilidad de ser thrower
                 if (actualDistance > cacaThrowerDistance)
                 {
@@ -49,20 +51,20 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
-                        Instantiate(throwerEnemy, transform.position, throwerEnemy.transform.rotation);
+                        enemy = Instantiate(throwerEnemy, transform.position, throwerEnemy.transform.rotation);
                     }
                     else
                     {
-                        Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
                     }
                 }
                 else
                 {
-                    Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                    enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
 
                 }
 
-                GameManager.Instance.registerEnemy();
+                GameManager.Instance.registerEnemy(enemy);
                 timer = Time.time + spawnTime;
             }
         }
