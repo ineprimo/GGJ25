@@ -222,6 +222,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3085869615580526969, guid: 9433be7dde5edf54d8258948c91e6677,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7872191666098800820, guid: 9433be7dde5edf54d8258948c91e6677,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,6 +294,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thrower Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085869615580526969, guid: 554ea5a3dc9f1394bb0824e52aacf105,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7872191666098800820, guid: 554ea5a3dc9f1394bb0824e52aacf105,
         type: 3}
@@ -646,6 +656,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1514890092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270507365711461757, guid: 624092a4d3daf134da9613a79f10cea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 335940421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2133645921
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 335940422}
-  _gun: {fileID: 0}
+  _gun: {fileID: 1514890092}
   maxEnemies: 100
   _bulletsUpgradeLvl: 0
   _gunAmmo: 10
