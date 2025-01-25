@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
-    [SerializeField] private Sprite _washedSprite;
 
     private const int SCORE_MELEE = 29;
     private const int SCORE_DISTANCE = 39;
@@ -41,9 +40,7 @@ public class Enemy : MonoBehaviour
 
         if(_health <= 0)
         {
-            GetComponent<Animator>().enabled = false;
-            GetComponent<SpriteRenderer>().sprite = _washedSprite;
-            transform.localScale *= 0.25f;
+            GetComponent<Animator>().SetTrigger("death");
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
@@ -55,6 +52,8 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Death()
     {
+        transform.localScale *= 0.25f;
+        
         yield return new WaitForSeconds(3);
         
         float f = UnityEngine.Random.Range(0f, 1f);
