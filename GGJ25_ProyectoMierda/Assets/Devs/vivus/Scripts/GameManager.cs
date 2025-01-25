@@ -73,20 +73,19 @@ public class GameManager : MonoBehaviour
     public void UpgradeLife()
     {
         lifeUpgradeLvl++;
-        if (lifeUpgradeLvl == 1)
+        switch (lifeUpgradeLvl)
         {
-            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
-            // burbuja enemigos en area (cada n segs)
-        }
-        else if (lifeUpgradeLvl == 2)
-        {
-            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
-            // reducir tiempo habilidad
-        }
-        else if (lifeUpgradeLvl == 3)
-        {
-            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
-            // reducir tiempo habilidad
+            case 1:
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
+                break;
+            case 2:
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
+                _player.GetComponent<BubbleShield>().enabled = true;
+                break;
+            case 3:
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
+                _player.GetComponent<BubbleShield>().UpdateAbility(5.0f);
+                break;
         }
     }
     // VELOCIDAD Y RASTRO

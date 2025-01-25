@@ -45,6 +45,11 @@ public class BubbleShield : MonoBehaviour
             g.GetComponent<CaquitaMovement>().enabled = true;
         }
     }
+
+    public void UpdateAbility(float cdReduced)
+    {
+        _cooldown -= cdReduced;
+    }
     
     private void Update()
     {
