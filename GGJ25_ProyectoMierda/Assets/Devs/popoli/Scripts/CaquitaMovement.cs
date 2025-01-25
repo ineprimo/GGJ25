@@ -9,7 +9,7 @@ public class CaquitaMovement : MonoBehaviour
     //[SerializeField] public float throwerDistance = 5.0f;
     //[SerializeField] public float closeCacaDistance = 1.0f;
 
-    bool thrower;
+    //bool thrower;
 
     // Start is called before the first frame update
     void Start()
