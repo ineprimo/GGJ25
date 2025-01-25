@@ -48,22 +48,24 @@ public class Shoot : MonoBehaviour
             {
                 // Instancia la bala
                 if (bounces == 0)
-            {
-                // Instancia la bala
-                var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                {
+                    // Instancia la bala
+                    var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                    bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                }
+                else
+                {
+                    // Instancia la bala
+                    var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                    bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                    bullet.GetComponent<BounceBubble>().setBounces(bounces);
+                }
             }
-            else
-            {
-                // Instancia la bala
-                var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
-                bullet.GetComponent<BounceBubble>().setBounces(bounces);
-            }
+          
 
                 // Espera el tiempo entre disparos antes de instanciar la siguiente bala
                 yield return new WaitForSeconds(timeBetweenShots);
-            }
+            
         }
        
     }
@@ -81,6 +83,6 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(gunLevel);  
     }
 }

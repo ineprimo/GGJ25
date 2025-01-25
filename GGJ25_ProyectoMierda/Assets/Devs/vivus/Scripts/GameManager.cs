@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -37,6 +38,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
 
+    //WEAPON
+    [SerializeField] private GameObject _gun;
+
     // ENEMIES
     [SerializeField] private int maxEnemies = 100;
     private int nEnemies;
@@ -71,8 +75,10 @@ public class GameManager : MonoBehaviour
     // CANTIDAD DE BALAS
     public void UpgradeBullets()
     {
+        
         _bulletsUpgradeLvl++;
-        if(_bulletsUpgradeLvl == 1)
+        _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
+        if (_bulletsUpgradeLvl == 1)
         {
             // Salen 2 burbujas
         }

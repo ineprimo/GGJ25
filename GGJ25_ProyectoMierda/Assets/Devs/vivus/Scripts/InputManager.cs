@@ -49,6 +49,12 @@ public class InputManager : MonoBehaviour
         }
         // Haztelo como arriba mas o menos
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager.Instance.UpgradeBullets();
+            
+        }
+
     }
 
     private IEnumerator ContinuousShoot()
