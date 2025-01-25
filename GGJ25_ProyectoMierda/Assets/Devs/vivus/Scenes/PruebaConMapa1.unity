@@ -670,8 +670,8 @@ MonoBehaviour:
   _speedIncreaseLvl1: 3
   _speedIncreaseLvl2: 6
   _speedIncreaseLvl3: 10
-  _traceDamageLvl1: 0
-  _traceDamageLvl2: 1
+  _traceDamageLvl1: 1
+  _traceDamageLvl2: 2
   _traceBubbleLifeTimeLvl3: 5
   _damageUpgradeLvl: 0
 --- !u!4 &2133645923
