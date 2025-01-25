@@ -216,4 +216,30 @@ public class GameManager : MonoBehaviour
     {
         return _damageUpgradeLvl;
     }
+<<<<<<< Updated upstream
+=======
+
+    public void addCoins(int nCoins)
+    {
+        _player.GetComponent<PlayerMovement>().addCoins(nCoins);
+    }
+
+
+    public int GetCoins()
+    {
+        return _player.GetComponent<PlayerMovement>().GetCoins();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        _player.GetComponent<PlayerMovement>().setCoins(0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+>>>>>>> Stashed changes
 }
