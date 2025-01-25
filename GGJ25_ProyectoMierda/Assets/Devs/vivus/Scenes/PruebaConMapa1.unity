@@ -358,11 +358,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 942293809885220122, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 1148599099283291244, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,26 +407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5226392283967729161, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: debug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5226392283967729161, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _maxFov
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5226392283967729161, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _minFov
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5662745970304198773, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: currentAmmo
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -54,6 +54,11 @@ public class InputManager : MonoBehaviour
             GameManager.Instance.UpgradeBullets();
             
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameManager.Instance.UpgradeSpeed();
+
+        }
 
     }
 
