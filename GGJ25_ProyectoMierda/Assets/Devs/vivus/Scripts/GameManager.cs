@@ -80,21 +80,18 @@ public class GameManager : MonoBehaviour
         {
             _bulletsUpgradeLvl++;
             _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
-            _gun.GetComponent<Shoot>().currentAmmo = 10;
+
+            if(_gun.GetComponent<Shoot>().gunLevel == 4)
+            {
+                _gun.GetComponent<Shoot>().currentAmmo = 15;
+            }
+            else
+            {
+                _gun.GetComponent<Shoot>().currentAmmo = 10;
+            }
+           
         }
-        if (_bulletsUpgradeLvl == 1)
-        {
-            // Salen 2 burbujas
-        }
-        else if(_bulletsUpgradeLvl == 2)
-        {
-            // salen 3 burbujas
-            // m�s distancia
-        }
-        else if (_bulletsUpgradeLvl == 3) 
-        {
-            //????
-        }
+    
     }
     // VIDA
     public void UpgradeLife()
