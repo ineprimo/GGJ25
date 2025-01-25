@@ -110,11 +110,15 @@ public class GameManager : MonoBehaviour
     // DA�O Y REBOTES
     public void UpgradeDamage()
     {
+        // sumar un componente en la pistola para que las burbujas reboten
+
         damageUpgradeLvl++;
         if (damageUpgradeLvl == 1)
         {
             // + da�o
             // la pompa rebota 1 vez si hay un enemigo a X distancia
+            //_player.GetComponentInChildren<>
+
         }
         else if (damageUpgradeLvl == 2)
         {
