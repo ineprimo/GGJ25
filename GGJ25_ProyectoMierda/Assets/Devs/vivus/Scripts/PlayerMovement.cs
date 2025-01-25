@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxLife = 50.0f;
     [SerializeField] private int coins = 0;
     
+    [SerializeField] private HUDController _hud;
+    
+    public float Health { get { return _currentLife;} }
+    
     Rigidbody _rigidBody;
 
     private void Start()
@@ -31,6 +35,16 @@ public class PlayerMovement : MonoBehaviour
     private void Hit(float damage)
     {
         _currentLife -= damage;
+
+        if (_maxLife * 0.75f <= _currentLife && _currentLife > _maxLife * 0.5f)
+        {
+            _hud.UpateSplash();
+        }
+        else if (_maxLife * 0.5f <= _currentLife && _currentLife > _maxLife * 0.25)
+        {
+            _hud.UpateSplash();
+        }
+        //else if
         
         if (_currentLife <= 0)
         {
@@ -59,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void addCoins(int nCoins)
     {
-        Debug.Log("Añado " + nCoins + " moneda");
+        Debug.Log("Aï¿½ado " + nCoins + " moneda");
         coins += nCoins;
     }
 
