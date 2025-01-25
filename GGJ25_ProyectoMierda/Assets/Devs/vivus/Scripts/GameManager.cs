@@ -75,9 +75,12 @@ public class GameManager : MonoBehaviour
     // CANTIDAD DE BALAS
     public void UpgradeBullets()
     {
-        
-        _bulletsUpgradeLvl++;
-        _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
+
+        if (_bulletsUpgradeLvl < 3)
+        {
+            _bulletsUpgradeLvl++;
+            _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
+        }
         if (_bulletsUpgradeLvl == 1)
         {
             // Salen 2 burbujas

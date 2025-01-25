@@ -10,12 +10,15 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab2;
     [SerializeField] private GameObject bouncyBulletPrefab;
     [SerializeField] private GameObject bouncyBulletPrefab2;
+    [SerializeField] private GameObject ammo;
     [SerializeField] private float bulletSpeed = 5;
     public int gunLevel = 1;
 
     [SerializeField] private float timeBetweenShots = 0.3f;
 
     private int bounces = 0;
+    private int currentAmmo;
+    private int maxAmmo;
 
 
     public void shootWeapon()
@@ -60,11 +63,13 @@ public class Shoot : MonoBehaviour
                     bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
                     bullet.GetComponent<BounceBubble>().setBounces(bounces);
                 }
-            }
-          
+
 
                 // Espera el tiempo entre disparos antes de instanciar la siguiente bala
                 yield return new WaitForSeconds(timeBetweenShots);
+            }
+          
+
             
         }
        
@@ -77,12 +82,13 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        maxAmmo = 10 * gunLevel;
         Debug.Log(gunLevel);  
     }
 }

@@ -182,6 +182,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1444715936091032067, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: gunLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -196,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267766306}
+  - component: {fileID: 267766307}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -218,6 +224,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267766307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267766305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2dc24faac2b844fbc38d8f841212cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1008581619}
+  _gun: {fileID: 919856795}
+  maxEnemies: 100
+  _bulletsUpgradeLvl: 0
+  _healthUpgradeLvl: 0
+  _healthIncreaseLvl1: 15
+  _healthIncreaseLvl2: 30
+  _healthIncreaseLvl3: 50
+  _shieldCooldownReduction: 15
+  _speedUpgradeLvl: 0
+  _speedIncreaseLvl1: 3
+  _speedIncreaseLvl2: 6
+  _speedIncreaseLvl3: 10
+  _damageUpgradeLvl: 0
 --- !u!1 &804686782
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +358,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919856795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2908211180813639435, guid: 624092a4d3daf134da9613a79f10cea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 123835635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008581619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147847334644448105, guid: 624092a4d3daf134da9613a79f10cea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 123835635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1396708392
 GameObject:
   m_ObjectHideFlags: 0
