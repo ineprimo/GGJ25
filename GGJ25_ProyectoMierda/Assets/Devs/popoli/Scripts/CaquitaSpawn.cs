@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CaquitaSpawn : MonoBehaviour
 {
+
+
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject throwerEnemy;
     private GameObject player;
@@ -59,6 +61,7 @@ public class CaquitaSpawn : MonoBehaviour
                     {
                         
                         enemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
+                        //auxEnemy.life;
                     }
                     else
                     {
@@ -75,5 +78,10 @@ public class CaquitaSpawn : MonoBehaviour
                 timer = Time.time + spawnTime;
             }
         }
+    }
+
+    public void Upgrade()
+    {
+
     }
 }
