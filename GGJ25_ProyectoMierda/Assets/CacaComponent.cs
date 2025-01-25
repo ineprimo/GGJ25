@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CacaComponent : MonoBehaviour
 {
-    [SerializeField] private float _damage = 10.0f;
     [SerializeField] float speed = 5.0f;
     [SerializeField] float verticalBoost = 2.0f;
 
@@ -15,7 +14,7 @@ public class CacaComponent : MonoBehaviour
     bool deshacer;
     [SerializeField] float deshacerTime = 3.0f;
     
-    public float Damage { get {return _damage; } }
+    public float Damage { get; set; }
 
     // cuando la caca toca el suelo se destruye
     private void OnCollisionEnter(Collision collision)

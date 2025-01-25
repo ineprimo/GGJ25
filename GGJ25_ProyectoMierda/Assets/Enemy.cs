@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float _damage = 10.0f;
     [SerializeField] private float _health;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
