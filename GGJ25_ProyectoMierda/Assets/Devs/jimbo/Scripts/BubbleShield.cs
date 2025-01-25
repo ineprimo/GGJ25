@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BubbleShield : MonoBehaviour
@@ -21,7 +17,7 @@ public class BubbleShield : MonoBehaviour
     {
         _enemy = collision.gameObject;
 
-        if (!(_cd <= 0.0f) || !_enemy.TryGetComponent<CaquitaMovement>(out CaquitaMovement c)) return;
+        if (!(_cd <= 0.0f) || !_enemy.TryGetComponent(out CaquitaMovement _)) return;
         
         Freeze();
         _cd = _cooldown;
