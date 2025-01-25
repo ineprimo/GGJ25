@@ -69,10 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6e305acc6b53d43bc582bb580d053d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8
+  _speed: 84
   _currentLife: 50
-  _maxLife: 50
-  coins: 0
+  _maxLife: 240
+  coins: 5
 --- !u!23 &2027829890481243439
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147847334644448105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44faeb459e07fc740aae07db31785d0e, type: 3}
   m_Name: 
@@ -190,7 +190,7 @@ MonoBehaviour:
   _bubble: {fileID: 505690472321750569, guid: 1f6129523b3b738498b7c7508111a31d, type: 3}
   _distanceArea: 5
   _freezeTime: 3
-  _cooldown: 30
+  _cooldown: -30
 --- !u!114 &-2401738644975736322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gunLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089790651242913581, guid: 91effcf7f16351e40ba7f580b4b99bed,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

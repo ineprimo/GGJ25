@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // UI
+    [SerializeField] private GameObject UI;
     // PLAYER
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
@@ -97,6 +99,8 @@ public class GameManager : MonoBehaviour
             }
            
         }
+        UI.GetComponent<HUDController>().UpdateUI();
+
     
     }
     // VIDA
@@ -118,6 +122,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
+        UI.GetComponent<HUDController>().UpdateUI();
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
@@ -141,6 +146,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
+        UI.GetComponent<HUDController>().UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -178,6 +184,8 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
+        UI.GetComponent<HUDController>().UpdateUI();
+        
     }
 
     // GESTION DE ENEMIGOS
@@ -220,6 +228,7 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().addCoins(nCoins);
+        UI.GetComponent<HUDController>().UpdateUI();
     }
 
 
