@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e54af32e-8718-42bc-8dcd-b491e4c61fe9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/berto31290/Assets/3D/MAPA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/berto31290/Assets/3D/MAPA.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/danzo/Scenes/FinalMapTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/danzo/Scenes/FinalMapTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jogo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jogo.unity" afterDir="false" />
-    </list>
+    <list default="true" id="e54af32e-8718-42bc-8dcd-b491e4c61fe9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
