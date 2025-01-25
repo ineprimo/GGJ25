@@ -50,8 +50,6 @@ public class CaquitaSpawn : MonoBehaviour
 
             if (actualDistance < spawnDistance) onRange = false;
             else onRange = true;
-
-            //Debug.Log(onRange);
             
             if (Time.time >= timer && onRange)
             {
@@ -62,37 +60,40 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
+                        // thrower
                         spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
                     {
-                        int i1 = Random.Range(0, 2);
-                        if (i1 == 0)
+                        // melees
+                        i = Random.Range(0, 2);
+                        if (i == 0)
                         {
-                            spawnedEnemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                         }
                         else
                         {
-                            spawnedEnemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                         }
                     }
                 }
                 else
                 {
-                    int i1 = Random.Range(0, 2);
-                    if (i1 == 0)
+                    int j = Random.Range(0, 2);
+                    if (j == 0)
                     {
-                        spawnedEnemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                     }
                     else
                     {
-                        spawnedEnemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                     }
                 }
 
                 // setteamos enemigo segun level
-                setEnemy(spawnedEnemy);
+                //setEnemy(spawnedEnemy);
 
+                GameManager.Instance.registerEnemy(spawnedEnemy);
                 timer = Time.time + spawnTime;
             }
         }
@@ -105,7 +106,7 @@ public class CaquitaSpawn : MonoBehaviour
         
     }
 
-    public void setEnemy(GameObject o)
+    private void setEnemy(GameObject o)
     {
         if(o.GetComponent<CacaThrower>() != null)
         {
@@ -116,6 +117,6 @@ public class CaquitaSpawn : MonoBehaviour
             o.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
         }
 
-        GameManager.Instance.registerEnemy(o);
+
     }
 }
