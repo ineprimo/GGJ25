@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraMovement: {fileID: 4078147697702221744}
-  _gunObject: {fileID: 0}
+  _gunObject: {fileID: 2908211180813639435}
 --- !u!114 &2395954038161118616
 MonoBehaviour:
   m_ObjectHideFlags: 0
