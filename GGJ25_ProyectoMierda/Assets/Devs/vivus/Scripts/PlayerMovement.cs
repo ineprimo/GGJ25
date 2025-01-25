@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 2.0f;
-    [SerializeField] private float _life = 50.0f;
+    [SerializeField] private float _currentLife = 50.0f;
+    [SerializeField] private float _maxLife = 50.0f;
 
     public void Move(Vector3 dir)
     {
@@ -19,16 +20,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void ReceiveDamage(float damage)
     {
-        _life -= damage;
-        if (_life <= 0)
+        _currentLife -= damage;
+        if (_currentLife <= 0)
         {
-            // JUGADOR MUERE
             PlayerDies();
         }
     }
 
+    public void Heal(float incr)
+    {
+        if(_currentLife + incr >= _maxLife)
+        {
+            _currentLife = _maxLife;
+        }
+        _currentLife += incr;
+    }
+
+    public void ImproveMaxLife(float incr)
+    {
+        _maxLife += incr;
+    }
+
     void PlayerDies()
     {
-
+        // JUGADOR MUERE
     }
 }

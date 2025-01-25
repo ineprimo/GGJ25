@@ -21,7 +21,7 @@ public class TraceComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_maxBubbleGenerationTime <= _currentBubbleGenerationTime)
+        if(_canSinged && _maxBubbleGenerationTime <= _currentBubbleGenerationTime)
         {
             GameObject auxBubble = Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
             Vector3 auxOffset = new Vector3(
@@ -29,7 +29,6 @@ public class TraceComponent : MonoBehaviour
                 Random.Range(-0.5f, 0.5f), 
                 Random.Range(-0.5f, 0.5f));
             auxBubble.transform.position += auxOffset;
-            Debug.Log("CREAR POMPA RASTRO");
             _currentBubbleGenerationTime = 0.0f;
         }
         _currentBubbleGenerationTime += Time.deltaTime;

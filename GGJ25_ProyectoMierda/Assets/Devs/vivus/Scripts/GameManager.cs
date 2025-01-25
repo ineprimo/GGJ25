@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         lifeUpgradeLvl++;
         if (lifeUpgradeLvl == 1)
         {
-            // + vida 
+            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
             // burbuja enemigos en area (cada n segs)
         }
         else if (lifeUpgradeLvl == 2)
