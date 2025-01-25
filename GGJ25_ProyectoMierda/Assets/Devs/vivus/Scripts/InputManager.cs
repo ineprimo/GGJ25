@@ -9,10 +9,11 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject _gunObject;
     private Shoot _shootComponent;
 
-    [SerializeField] private float timeBetweenShots = 2f;
-    [SerializeField] private float timeBetweenShotsAnim = 2.5f;
+    [SerializeField] private float timeBetweenShots = 2.0f;
+   // [SerializeField] private float timeBetweenShotsAnim = 2.5f;
     [SerializeField] private float timeBetweenShotsM = 0.2f; //Metralleta
     [SerializeField] private float lastShootTime = 0f;
+    [SerializeField] private float delayBeforeShot = 0.5f;
     private bool isShooting = false;
 
     private bool shootInput = false;
@@ -38,37 +39,15 @@ public class InputManager : MonoBehaviour
         _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
 
-        if (Input.GetMouseButtonDown(0))
-            shootInput = true;  
+        
 
-            // DISPARO //
-        if (shootInput)
+        // DISPARO //
+        if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
-            // si puede disparar
-             if(Time.time - lastShootTime >= timeBetweenShots)
-            {
+            GameManager.Instance.GetAnimationManager().attackAnim(true);
 
-                GameManager.Instance.GetAnimationManager().attackAnim(true);
-
-                // si la animacion ha llegado
-                if (Time.time - lastShootTime >= timeBetweenShotsAnim)
-                {
-                    shootCurrentTime = 0;
-                    shootInput = false;
-                    // esperar
-                    _shootComponent.shootWeapon();
-                    lastShootTime = Time.time;
-                    isShooting = true;
-                    if (_shootComponent.gunLevel == 4)
-                    {
-                        StartCoroutine(ContinuousShoot());
-                    }
-                }
-               
-            }
-
-           
-
+            isShooting = true;
+            StartCoroutine(ContinuousShoot());
 
         }
 
@@ -98,13 +77,34 @@ public class InputManager : MonoBehaviour
 
     private IEnumerator ContinuousShoot()
     {
+
+
+        yield return new WaitForSeconds(delayBeforeShot);
+
+        Debug.Log("awanabanbanban");
         while (isShooting)
         {
-            if (Time.time - lastShootTime >= timeBetweenShotsM)
+           
+
+            if (_shootComponent.gunLevel == 4)
             {
-                _shootComponent.shootWeapon();
-                lastShootTime = Time.time;
+                if (Time.time - lastShootTime >= timeBetweenShotsM)
+                {
+                    _shootComponent.shootWeapon();
+                    lastShootTime = Time.time;
+                }
             }
+            else
+            {
+                if (Time.time - lastShootTime >= timeBetweenShots)
+                {
+                    _shootComponent.shootWeapon();
+                    lastShootTime = Time.time;
+                }
+            }
+
+
+           
             yield return new WaitForSeconds(timeBetweenShotsM);
         }
     }
@@ -115,4 +115,6 @@ public class InputManager : MonoBehaviour
 
         yield return new WaitForSeconds(time);
     }
+
+
 }
