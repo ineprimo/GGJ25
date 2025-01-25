@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxLife = 50.0f;
     [SerializeField] private int coins = 0;
     
-    [SerializeField] private LayerMask _caca;
-    
     Rigidbody _rigidBody;
 
     private void Start()
@@ -86,9 +84,10 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject otherObject = other.gameObject;
         
-        if (otherObject.layer == _caca)
+        if (otherObject.layer == 7)
         {
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
+            Destroy(otherObject);
         }
     }
 }

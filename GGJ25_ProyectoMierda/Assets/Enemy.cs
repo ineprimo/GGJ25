@@ -7,7 +7,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
-    [SerializeField] private LayerMask _bulletLayer;
 
     public bool Frozen { get; private set; } = false;
 
@@ -33,10 +32,10 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == _bulletLayer)
+        if (other.gameObject.layer == 6)
         {
-            //Hit(other.gameObject.GetComponent<Bullet>().Damage);
-            // Comento lo de arriba porque peta
+            Hit(other.gameObject.GetComponent<Bullet>().Damage);
+            Destroy(other.gameObject);
         }
     }
 }

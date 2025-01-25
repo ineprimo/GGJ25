@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private float _mouseSensitivity = 2f;
     private float _cameraVerticalRotation = 0f;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     public void LockMouse()
     {
