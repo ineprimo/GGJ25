@@ -38,8 +38,6 @@ public class Enemy : MonoBehaviour
     {
         _health -= damage;
 
-        //Debug.Log(_health);
-
         if(_health <= 0)
         {
             float f = UnityEngine.Random.Range(0f, 1f);
