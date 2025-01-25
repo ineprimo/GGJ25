@@ -23,7 +23,7 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _agent.destination = _playerTransform.position;
+        //_agent.destination = _playerTransform.position;
         //Debug.Log("Ir");
     }
 }

@@ -36,17 +36,23 @@ public class PlayerMovement : MonoBehaviour
     {
         _currentLife -= damage;
 
-        if (_maxLife * 0.75f <= _currentLife && _currentLife > _maxLife * 0.5f)
+        if (_maxLife * 0.75f >= _currentLife)
         {
-            _hud.UpateSplash();
+            _hud.UpateSplash(1);
         }
-        else if (_maxLife * 0.5f <= _currentLife && _currentLife > _maxLife * 0.25)
+        else if (_maxLife * 0.5f >= _currentLife)
         {
-            _hud.UpateSplash();
+            _hud.UpateSplash(2);
         }
-        //else if
-        
-        if (_currentLife <= 0)
+        else if (_maxLife * 0.25f >= _currentLife)
+        {
+            _hud.UpateSplash(3);
+        }
+        else if (_maxLife * 0.1f >= _currentLife)
+        {
+            _hud.UpateSplash(4);
+        }
+        else if (_currentLife <= 0)
         {
             PlayerDies();
         }
