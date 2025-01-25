@@ -6,7 +6,6 @@ public class CacaThrower : MonoBehaviour
 {
     [SerializeField] private GameObject _caca;
     
-    private CaquitaMovement _move;
     private Transform _tr;
     private Transform _playerTr;
     
@@ -26,7 +25,6 @@ public class CacaThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _move = GetComponent<CaquitaMovement>();
         _tr = transform;
         _playerTr = GameManager.Instance.GetPlayer().transform;
     }
