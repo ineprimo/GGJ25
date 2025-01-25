@@ -7,6 +7,7 @@ public class CaquitaSpawn : MonoBehaviour
 
 
     [SerializeField] GameObject meleeEnemy;
+    [SerializeField] GameObject meleeEnemy2;
     [SerializeField] GameObject throwerEnemy;
     private GameObject player;
     [SerializeField] float spawnTime = 3.0f; //seconds
@@ -65,13 +66,28 @@ public class CaquitaSpawn : MonoBehaviour
                     }
                     else
                     {
-                        enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
+                        int i1 = Random.Range(0, 2);
+                        if (i1 == 0)
+                        {
+                            enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        }
+                        else
+                        {
+                            enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                        }
                     }
                 }
                 else
                 {
-                    enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
-
+                    int i1 = Random.Range(0, 2);
+                    if (i1 == 0)
+                    {
+                        enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                    }
+                    else
+                    {
+                        enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                    }
                 }
 
                 GameManager.Instance.registerEnemy(enemy);
