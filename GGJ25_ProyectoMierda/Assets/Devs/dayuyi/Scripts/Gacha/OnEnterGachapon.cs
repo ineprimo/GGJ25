@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OnEnterGachapon : MonoBehaviour
@@ -10,6 +7,8 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private GachaponBase _gacha;
 
     [SerializeField] private float currentGachaTime = 0;
+    
+    [SerializeField] private Transform _possiblePositions;
 
     private void Start()
     {
@@ -36,6 +35,8 @@ public class OnEnterGachapon : MonoBehaviour
                     Debug.Log(up.getName());
 
                 updateUpgrades(up.getName());
+                
+                transform.position = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount + 1)).position;
             }
 
             if (gachaOnCooldown)
