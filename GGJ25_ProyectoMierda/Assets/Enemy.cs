@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _health;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
+    [SerializeField] private Sprite _washedSprite;
 
     private const int SCORE_MELEE = 29;
     private const int SCORE_DISTANCE = 39;
@@ -38,20 +39,33 @@ public class Enemy : MonoBehaviour
     {
         _health -= damage;
 
-        //Debug.Log(_health);
-
         if(_health <= 0)
         {
-            float f = UnityEngine.Random.Range(0f, 1f);
-            if(f < threshold)
-               Instantiate(coin, transform.position, transform.rotation);
-            Destroy(gameObject);
-            if(gameObject.GetComponent<CacaThrower>() != null)
-                GameManager.Instance.increaseScore(SCORE_DISTANCE);
-            else
-                GameManager.Instance.increaseScore(SCORE_MELEE);
-
+            GetComponent<Animator>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = _washedSprite;
+            transform.localScale *= 0.25f;
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+            
+            StartCoroutine(Death());
         }
+    }
+
+    private IEnumerator Death()
+    {
+        yield return new WaitForSeconds(3);
+        
+        float f = UnityEngine.Random.Range(0f, 1f);
+        if(f < threshold)
+            Instantiate(coin, transform.position, transform.rotation);
+        Destroy(gameObject);
+        if(gameObject.GetComponent<CacaThrower>() != null)
+            GameManager.Instance.increaseScore(SCORE_DISTANCE);
+        else
+            GameManager.Instance.increaseScore(SCORE_MELEE);
+        
     }
     
     private void OnCollisionEnter(Collision other)
