@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        // Deja de disparar si suelta el botón del ratón
+        // Deja de disparar si suelta el botï¿½n del ratï¿½n
         if (Input.GetMouseButtonUp(0))
         {
             isShooting = false;

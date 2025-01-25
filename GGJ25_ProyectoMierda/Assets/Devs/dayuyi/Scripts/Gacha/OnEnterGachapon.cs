@@ -36,7 +36,7 @@ public class OnEnterGachapon : MonoBehaviour
 
                 updateUpgrades(up.getName());
                 
-                transform.position = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount + 1)).position;
+                transform.parent.position = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount + 1)).position;
             }
 
             if (gachaOnCooldown)

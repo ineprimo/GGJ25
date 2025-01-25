@@ -10,12 +10,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float _mouseSensitivity = 2f;
     private float _cameraVerticalRotation = 0f;
 
-    // Start is called before the first frame update
-    void Start()
+    public void LockMouse()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    
     public void RotateCamera(float myX, float myY)
     {
         float auxX = myX * _mouseSensitivity;
