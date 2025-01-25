@@ -241,6 +241,7 @@ MonoBehaviour:
   _spawns:
   - {fileID: 1807115532}
   - {fileID: 333311206}
+  _currentLvl: 0
 --- !u!4 &127321470
 Transform:
   m_ObjectHideFlags: 0
@@ -256,6 +257,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &325728941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270507365711461757, guid: 624092a4d3daf134da9613a79f10cea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 335940421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &333311205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 335940422}
-  _gun: {fileID: 0}
+  _gun: {fileID: 325728941}
   maxEnemies: 100
   _bulletsUpgradeLvl: 0
   _gunAmmo: 10
