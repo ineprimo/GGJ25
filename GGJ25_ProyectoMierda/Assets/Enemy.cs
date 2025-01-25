@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
 
+    public void SetHealth(float h)
+    {
+        _health = h;
+    }
+
     public bool Frozen { get; private set; } = false;
 
     public void Freeze()

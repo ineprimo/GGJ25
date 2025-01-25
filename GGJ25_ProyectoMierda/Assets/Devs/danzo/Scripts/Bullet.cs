@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log("checking collision");
+        //Debug.Log("checking collision");
        // Destroy(collision.gameObject);
        if(GetComponent<BounceBubble>() != null && GetComponent<BounceBubble>().getBounces() > 0 && !isOnCD)
        {
