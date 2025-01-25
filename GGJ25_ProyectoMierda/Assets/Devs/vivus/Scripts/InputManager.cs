@@ -57,19 +57,19 @@ public class InputManager : MonoBehaviour
                     GameManager.Instance.GetAnimationManager().attackAnim(true);
 
                     // si la animacion ha llegado
-                    if (Time.time - lastShootTime >= timeBetweenShotsAnim)
-                    {
-                        shootCurrentTime = 0;
-                        shootInput = false;
-                        // esperar
-                        _shootComponent.shootWeapon();
-                        lastShootTime = Time.time;
-                        isShooting = true;
-                        if (_shootComponent.gunLevel == 4)
-                        {
-                            StartCoroutine(ContinuousShoot());
-                        }
-                    }
+                    //if (Time.time - lastShootTime >= timeBetweenShotsAnim)
+                    //{
+                    //    shootCurrentTime = 0;
+                    //    shootInput = false;
+                    //    // esperar
+                    //    _shootComponent.shootWeapon();
+                    //    lastShootTime = Time.time;
+                    //    isShooting = true;
+                    //    if (_shootComponent.gunLevel == 4)
+                    //    {
+                    //        StartCoroutine(ContinuousShoot());
+                    //    }
+                    //}
                 }
             }
             // Deja de disparar si suelta el bot�n del rat�n
