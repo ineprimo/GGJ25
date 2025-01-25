@@ -49,6 +49,8 @@ public class CaquitaMovement : MonoBehaviour
         // orientacion
         //Vector3 v3 = player.transform.position - transform.position;
         //v3.y = -90.0f; // para que se mantenga vertical
-        //transform.rotation = Quaternion.LookRotation(v3);
+        //transform.rotation = Quaternion.(v3);
+
+        transform.LookAt(player.transform.position);
     }
 }
