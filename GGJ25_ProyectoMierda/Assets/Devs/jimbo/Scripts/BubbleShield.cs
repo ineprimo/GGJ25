@@ -9,7 +9,7 @@ public class BubbleShield : MonoBehaviour
     [SerializeField] private float _freezeTime = 3.0f;
     [SerializeField] private float _cooldown = 30.0f;
     private float _cd;
-    private bool _froze;
+    private bool _active;
 
     private GameObject _enemy;
 
@@ -30,20 +30,21 @@ public class BubbleShield : MonoBehaviour
                      g => (g.transform.position - gameObject.transform.position).magnitude < _distanceArea
                      ))
         {
-            g.GetComponent<CaquitaMovement>().enabled = false;
+            g.GetComponent<Enemy>().Freeze();
             Instantiate(_bubble, g.transform).transform.localScale =
                 new Vector3(3, 3, 3);
-            _froze = true;
+            _active = true;
         }
     }
 
     private void UnFreeze()
     {
         foreach (GameObject g in GameManager.Instance.SceneEnemies.Where(
-                     g => !g.GetComponent<CaquitaMovement>().enabled
+                     g => g.GetComponent<Enemy>().Frozen
                  ))
         {
-            g.GetComponent<CaquitaMovement>().enabled = true;
+            g.GetComponent<Enemy>().Unfreeze();
+            _active = false;
         }
     }
 
@@ -55,7 +56,7 @@ public class BubbleShield : MonoBehaviour
     private void Update()
     {
         _cd -= Time.deltaTime;
-        if (_froze) _freezeTime -= Time.deltaTime;
+        if (_active) _freezeTime -= Time.deltaTime;
 
         if (!(_freezeTime <= 0.0f)) return;
         UnFreeze();

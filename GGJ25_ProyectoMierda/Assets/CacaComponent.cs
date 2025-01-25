@@ -37,6 +37,6 @@ public class CacaComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction.normalized * speed * Time.deltaTime;
+        transform.position += direction.normalized * (speed * Time.deltaTime);
     }
 }

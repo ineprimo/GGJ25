@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] public float _damage = 10.0f;
     [SerializeField] private float lifeTime = 1.0f;
     [SerializeField] private float deceleration = 4.5f;
 
     private Rigidbody rb;
 
-
+    public float Damage { get; private set; }
+    
     void Awake() 
     {
         rb = GetComponent<Rigidbody>();
