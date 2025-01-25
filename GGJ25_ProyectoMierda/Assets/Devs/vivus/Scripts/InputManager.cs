@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public bool _inputActive = false;
+    public void CanInput() {  _inputActive = true; }
+
     PlayerMovement _playerMovement;
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private GameObject _gunObject;
@@ -29,71 +32,62 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        // MOVIMIENTO //
-        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        moveDirection = transform.TransformDirection(moveDirection);
-        _playerMovement.Move(moveDirection);
+        if (_inputActive)
+        {
+            // MOVIMIENTO //
+            Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            _playerMovement.Move(moveDirection);
 
-        // ROTACION CAMARA //
-        _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            // ROTACION CAMARA //
+            _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
 
-        if (Input.GetMouseButtonDown(0))
-            shootInput = true;  
+            if (Input.GetMouseButtonDown(0))
+                shootInput = true;
 
             // DISPARO //
-        if (shootInput)
-        {
-            // si puede disparar
-             if(Time.time - lastShootTime >= timeBetweenShots)
+            if (shootInput)
             {
-
-                GameManager.Instance.GetAnimationManager().attackAnim(true);
-
-                // si la animacion ha llegado
-                if (Time.time - lastShootTime >= timeBetweenShotsAnim)
+                // si puede disparar
+                if (Time.time - lastShootTime >= timeBetweenShots)
                 {
-                    shootCurrentTime = 0;
-                    shootInput = false;
-                    // esperar
-                    _shootComponent.shootWeapon();
-                    lastShootTime = Time.time;
-                    isShooting = true;
-                    if (_shootComponent.gunLevel == 4)
+
+                    GameManager.Instance.GetAnimationManager().attackAnim(true);
+
+                    // si la animacion ha llegado
+                    if (Time.time - lastShootTime >= timeBetweenShotsAnim)
                     {
-                        StartCoroutine(ContinuousShoot());
+                        shootCurrentTime = 0;
+                        shootInput = false;
+                        // esperar
+                        _shootComponent.shootWeapon();
+                        lastShootTime = Time.time;
+                        isShooting = true;
+                        if (_shootComponent.gunLevel == 4)
+                        {
+                            StartCoroutine(ContinuousShoot());
+                        }
                     }
                 }
-               
             }
+            // Deja de disparar si suelta el bot�n del rat�n
+            if (Input.GetMouseButtonUp(0))
+            {
+                isShooting = false;
+                // animation
+                GameManager.Instance.GetAnimationManager().attackAnim(false);
 
-           
-
-
-        }
-
-        // Deja de disparar si suelta el bot�n del rat�n
-        if (Input.GetMouseButtonUp(0))
-        {
-            isShooting = false;
-
-            // animation
-            GameManager.Instance.GetAnimationManager().attackAnim(false);
-
-        }
-        // Haztelo como arriba mas o menos
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.Instance.UpgradeBullets();
-            
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GameManager.Instance.UpgradeSpeed();
-
-        }
-
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameManager.Instance.UpgradeBullets();
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                GameManager.Instance.UpgradeSpeed();
+            }
+        }      
     }
 
     private IEnumerator ContinuousShoot()
