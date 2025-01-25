@@ -61,7 +61,7 @@ public class MenuSelector : MonoBehaviour
     }
     private void Opciones()
     {
-        Debug.Log("Abriendo el menú de opciones...");
+        Debug.Log("Abriendo el menï¿½ de opciones...");
     }
 
     private void Salir()

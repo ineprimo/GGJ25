@@ -210,16 +210,4 @@ public class GameManager : MonoBehaviour
     {
         return _damageUpgradeLvl;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Invoke("UpgradeSpeed", 3f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
