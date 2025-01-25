@@ -15,7 +15,10 @@ public class IntroEpica : MonoBehaviour
 
     private IEnumerator IntroGame()
     {
-        _player.GetComponent<Rigidbody>().Move(_destination.position, Quaternion.identity);
+        while(_player.transform.position.z >= _destination.transform.position.z)
+        {
+            _player.GetComponent<Rigidbody>().Move(_destination.position, Quaternion.identity);
+        }
         yield return new WaitForSeconds(1);
         // FINAL ANIMACION
         _player.GetComponent<InputManager>().CanInput();   // Reactivamos el INPUT

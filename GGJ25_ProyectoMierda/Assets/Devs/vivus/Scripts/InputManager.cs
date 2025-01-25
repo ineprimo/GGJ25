@@ -107,7 +107,7 @@ public class InputManager : MonoBehaviour
             isShooting = false;
 
             // animation
-            GameManager.Instance.GetAnimationManager().attackAnim(false);
+            //GameManager.Instance.GetAnimationManager().attackAnim(false);
 
         }
         // Haztelo como arriba mas o menos
