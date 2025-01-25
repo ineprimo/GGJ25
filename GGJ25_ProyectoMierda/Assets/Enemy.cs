@@ -8,6 +8,11 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
 
+    public void SetHealth(float h)
+    {
+        _health = h;
+    }
+
     public bool Frozen { get; private set; } = false;
 
     public void Freeze()
