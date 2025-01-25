@@ -19,7 +19,28 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
        // Destroy(collision.gameObject);
-        Destroy(gameObject);
+       if(GetComponent<BounceBubble>() != null && GetComponent<BounceBubble>().getBounces() > 0)
+       {
+            // le resta un rebote
+            GetComponent<BounceBubble>().setBounces(GetComponent<BounceBubble>().getBounces() - 1);
+
+             
+
+
+       }
+       else
+            Destroy(gameObject);
+    }
+
+    private void changeDirection()
+    {
+        Vector3 dir = GetComponent<Rigidbody>().velocity;
+        Vector3 left = Vector3.Cross(dir, Vector3.up).normalized;
+
+        //Vector3 right = -left;
+        //Vector3 right = Vector3.Cross(Vector3.up, dir).normalized;
+        //Vector3 right = Vector3.Cross(-dir, Vector3.up).normalized;
+        //Vector3 right = Vector3.Cross(dir, -Vector3.up).normalized;
     }
 
     private void Update()

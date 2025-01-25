@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gachaCD: 5
   _pool:
-  - name: arle
-    weight: 10
+  - name: BULLETS
+    weight: 20
     initialWeight: 20
-  - name: fufu
-    weight: 5
+  - name: LIFE
+    weight: 15
+    initialWeight: 20
+  - name: SPEED
+    weight: 20
+    initialWeight: 20
+  - name: DAMAGE
+    weight: 15
     initialWeight: 20

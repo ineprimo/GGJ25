@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
 
     // UPGRADES
-    int bulletsUpgradeLvl = 0;
-    int lifeUpgradeLvl = 0;
-    int speedUpgradeLvl = 0;
-    int damageUpgradeLvl = 0;
+    [SerializeField] int bulletsUpgradeLvl = 0;
+    [SerializeField] int lifeUpgradeLvl = 0;
+    [SerializeField] int speedUpgradeLvl = 0;
+    [SerializeField] int damageUpgradeLvl = 0;
 
     // CANTIDAD DE BALAS
     public void UpgradeBullets()
@@ -118,9 +118,12 @@ public class GameManager : MonoBehaviour
         if (damageUpgradeLvl == 1)
         {
             // + da�o
-            // la pompa rebota 1 vez si hay un enemigo a X distancia
-            //_player.GetComponentInChildren<>
 
+            Debug.Log("1 bounce");
+
+            // la pompa rebota 1 vez si hay un enemigo a X distancia
+            Shoot pistola = _player.GetComponentInChildren<Shoot>();
+            pistola.MakeBouncyBubbles(1);
         }
         else if (damageUpgradeLvl == 2)
         {
