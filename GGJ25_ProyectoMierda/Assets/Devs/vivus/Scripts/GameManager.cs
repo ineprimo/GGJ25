@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class GameManager : MonoBehaviour
         DAMAGE
     }
 
-    static private GameManager _instance;
+    private static GameManager _instance;
 
-    static public GameManager Instance
+    public static GameManager Instance
     {
         get { return _instance; }
     }
@@ -46,25 +47,36 @@ public class GameManager : MonoBehaviour
     public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
 
     // UPGRADES
-    [SerializeField] int bulletsUpgradeLvl = 0;
-    [SerializeField] int lifeUpgradeLvl = 0;
-    [SerializeField] int speedUpgradeLvl = 0;
-    [SerializeField] int damageUpgradeLvl = 0;
+    [Header("UPGRADES")]
+    [SerializeField] private int _bulletsUpgradeLvl = 0;
+    
+    [Space]
+    [SerializeField] private int _lifeUpgradeLvl = 0;    
+    [SerializeField] private float _healthIncrease = 15.0f;
+    [SerializeField] private float _shieldCooldownReduction = 15.0f;
+    
+    [Space]
+    [SerializeField] private int _speedUpgradeLvl = 0;
+    [SerializeField] private float _speedIncrease = 3.0f;
+    
+    [Space]
+    [SerializeField] private int _damageUpgradeLvl = 0;
+    
 
     // CANTIDAD DE BALAS
     public void UpgradeBullets()
     {
-        bulletsUpgradeLvl++;
-        if(bulletsUpgradeLvl == 1)
+        _bulletsUpgradeLvl++;
+        if(_bulletsUpgradeLvl == 1)
         {
             // Salen 2 burbujas
         }
-        else if(bulletsUpgradeLvl == 2)
+        else if(_bulletsUpgradeLvl == 2)
         {
             // salen 3 burbujas
             // m�s distancia
         }
-        else if (bulletsUpgradeLvl == 3) 
+        else if (_bulletsUpgradeLvl == 3) 
         {
             //????
         }
@@ -72,39 +84,39 @@ public class GameManager : MonoBehaviour
     // VIDA
     public void UpgradeLife()
     {
-        lifeUpgradeLvl++;
-        switch (lifeUpgradeLvl)
+        _lifeUpgradeLvl++;
+        switch (_lifeUpgradeLvl)
         {
             case 1:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
                 break;
             case 2:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
                 _player.GetComponent<BubbleShield>().enabled = true;
                 break;
             case 3:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
-                _player.GetComponent<BubbleShield>().UpdateAbility(5.0f);
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
+                _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
     {
-        speedUpgradeLvl++;
-        if (speedUpgradeLvl == 1)
+        _speedUpgradeLvl++;
+        if (_speedUpgradeLvl == 1)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
         }
-        else if (speedUpgradeLvl == 2)
+        else if (_speedUpgradeLvl == 2)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(2);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
             // el rastro hace da�o
         }
-        else if (speedUpgradeLvl == 3)
+        else if (_speedUpgradeLvl == 3)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(3);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
             // + el rastro dura m�s tiempo
         }
     }
@@ -113,8 +125,8 @@ public class GameManager : MonoBehaviour
     {
         // sumar un componente en la pistola para que las burbujas reboten
 
-        damageUpgradeLvl++;
-        if (damageUpgradeLvl == 1)
+        _damageUpgradeLvl++;
+        if (_damageUpgradeLvl == 1)
         {
             // + da�o
 
@@ -124,7 +136,7 @@ public class GameManager : MonoBehaviour
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
             pistola.MakeBouncyBubbles(1);
         }
-        else if (damageUpgradeLvl == 2)
+        else if (_damageUpgradeLvl == 2)
         {
             // + da�o
             // la burbuja rebota 2 veces
@@ -134,7 +146,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        else if (damageUpgradeLvl == 3)
+        else if (_damageUpgradeLvl == 3)
         {
             // + da�o
             // la burbuja puede volver a rebotar

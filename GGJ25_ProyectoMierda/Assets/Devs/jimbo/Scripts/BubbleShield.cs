@@ -15,10 +15,11 @@ public class BubbleShield : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(!enabled) return;
+        
         _enemy = collision.gameObject;
 
         if (!(_cd <= 0.0f) || !_enemy.TryGetComponent(out CaquitaMovement _)) return;
-        
         Freeze();
         _cd = _cooldown;
     }
@@ -30,7 +31,7 @@ public class BubbleShield : MonoBehaviour
                      ))
         {
             g.GetComponent<CaquitaMovement>().enabled = false;
-            Instantiate(_bubble, g.transform.position, Quaternion.identity).transform.localScale =
+            Instantiate(_bubble, g.transform).transform.localScale =
                 new Vector3(3, 3, 3);
             _froze = true;
         }
