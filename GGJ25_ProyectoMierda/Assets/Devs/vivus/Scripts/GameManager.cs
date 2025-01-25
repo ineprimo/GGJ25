@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     // devuelve true cuando nEnemies sea >= maxEnemies
     public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
 
+    public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
+
     // UPGRADES
     int bulletsUpgradeLvl = 0;
     int lifeUpgradeLvl = 0;
@@ -133,9 +135,10 @@ public class GameManager : MonoBehaviour
     }
 
     // GESTION DE ENEMIGOS
-    public void registerEnemy()
+    public void registerEnemy(GameObject e)
     {
         nEnemies++;
+        SceneEnemies.Add(e);
         //Debug.Log(nEnemies);
     }
 

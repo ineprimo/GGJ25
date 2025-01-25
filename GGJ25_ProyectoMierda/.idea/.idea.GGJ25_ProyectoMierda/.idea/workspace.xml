@@ -24,6 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Devs/jimbo/Scripts/BubbleShield.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "main",
