@@ -20,9 +20,6 @@ public class Shoot : MonoBehaviour
     public int currentAmmo = 10;
     private bool isReloading = false;
 
-
-
-
     public void shootWeapon()
     {
         Debug.Log("Municion:" + currentAmmo); 

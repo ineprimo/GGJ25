@@ -54,7 +54,9 @@ public class GameManager : MonoBehaviour
     [Header("UPGRADES")]
     [Header("Weapon")]
     [SerializeField] private int _bulletsUpgradeLvl = 0;
-    
+    [SerializeField] private int _gunAmmo = 10;
+    [SerializeField] private int _ARAmmo = 15;
+
     [Header("Health")]
     [SerializeField] private int _healthUpgradeLvl = 0;  
     [SerializeField] private float _healthIncreaseLvl1 = 15.0f;
@@ -83,11 +85,11 @@ public class GameManager : MonoBehaviour
 
             if(_gun.GetComponent<Shoot>().gunLevel == 4)
             {
-                _gun.GetComponent<Shoot>().currentAmmo = 15;
+                _gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
             }
             else
             {
-                _gun.GetComponent<Shoot>().currentAmmo = 10;
+                _gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
             }
            
         }
