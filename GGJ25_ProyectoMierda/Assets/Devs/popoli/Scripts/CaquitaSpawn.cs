@@ -66,7 +66,6 @@ public class CaquitaSpawn : MonoBehaviour
                     }
                     else
                     {
-                        enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
                         int i1 = Random.Range(0, 2);
                         if (i1 == 0)
                         {
@@ -80,8 +79,6 @@ public class CaquitaSpawn : MonoBehaviour
                 }
                 else
                 {
-                    enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
-
                     int i1 = Random.Range(0, 2);
                     if (i1 == 0)
                     {
