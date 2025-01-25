@@ -44,7 +44,9 @@ public class Shoot : MonoBehaviour
     {
         currentAmmo--;
 
-        if (gunLevel == 4)
+        Vector3 playerVelocity = GameManager.Instance.GetPlayer().GetComponent<Rigidbody>().velocity;
+
+        if(gunLevel == 4)
         {
             if (bounces == 0)
             {
@@ -52,7 +54,7 @@ public class Shoot : MonoBehaviour
 
                 // Instancia la bala
                 var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().velocity =  playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
             }  
             else
             {
@@ -61,7 +63,7 @@ public class Shoot : MonoBehaviour
 
                 // Instancia la bala
                 var bullet = Instantiate(bouncyBulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
                 bullet.GetComponent<BounceBubble>().setBounces(bounces);
             }
 
@@ -79,7 +81,7 @@ public class Shoot : MonoBehaviour
 
                     // Instancia la bala
                     var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                    bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
                 }
                 else
                 {
@@ -88,19 +90,15 @@ public class Shoot : MonoBehaviour
 
                     // Instancia la bala
                     var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                    bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
                     bullet.GetComponent<BounceBubble>().setBounces(bounces);
                 }
 
 
                 // Espera el tiempo entre disparos antes de instanciar la siguiente bala
                 yield return new WaitForSeconds(timeBetweenShots);
-            }
-          
-
-            
+            }       
         }
-       
     }
 
     public void MakeBouncyBubbles(int nbounces)
