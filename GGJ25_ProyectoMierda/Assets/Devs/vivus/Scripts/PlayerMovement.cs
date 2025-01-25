@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        coins = 0;
     }
     public void Move(Vector3 dir)
     {
@@ -57,6 +58,29 @@ public class PlayerMovement : MonoBehaviour
     {
         // JUGADOR MUERE
     }
+
+    public void addCoins(int nCoins)
+    {
+        Debug.Log("Añado " + nCoins + " moneda");
+        coins += nCoins;
+    }
+
+    public void setCoins(int nCoins)
+    {
+        coins = nCoins;
+    }
+
+    public void subCoins(int nCoins)
+    {
+        coins -= nCoins;
+    }
+
+    public int GetCoins()
+    {
+        return coins;
+    }
+
+
 
     private void OnCollisionEnter(Collision other)
     {

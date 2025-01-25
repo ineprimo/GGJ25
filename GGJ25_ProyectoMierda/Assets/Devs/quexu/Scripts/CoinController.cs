@@ -5,12 +5,13 @@ using UnityEngine;
 public class CoinController : MonoBehaviour
 {
 
-
+    [SerializeField] private int value = 1;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<PlayerMovement>() != null)
         {
-            Debug.Log("COjo");
+            GameManager.Instance.addCoins(value);
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

@@ -395,6 +395,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   speedText: {fileID: 0}
   damageText: {fileID: 0}
+  coinsText: {fileID: 0}
 --- !u!64 &469737456
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -552,6 +553,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f5da5adc714f14480a8376c41ef170, type: 3}
+--- !u!114 &1061028452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8971041085991473837, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3951065662256797272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1924316221
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3f97c60a1d19e42a7466596c2128fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 5
 --- !u!1001 &2077435605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,6 +721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 147847334644448105, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1148599099283291244, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
@@ -771,6 +790,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2626411409753809599, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864662824083777891, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: coinsText
+      value: 
+      objectReference: {fileID: 1061028452}
     - target: {fileID: 3602967643692495477, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -875,6 +904,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449114289332145251, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984298151431404456, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971041085991473837, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 849.01227
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
