@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraMovement: {fileID: 4078147697702221744}
-  _gunObject: {fileID: 0}
+  _gunObject: {fileID: 8270507365711461757}
   timeBetweenShots: 1
   timeBetweenShotsM: 0.2
   lastShootTime: 0
@@ -171,10 +171,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2416969904299803464
 MonoBehaviour:
@@ -436,6 +436,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089790651242913581, guid: 91effcf7f16351e40ba7f580b4b99bed,
+        type: 3}
+      propertyPath: gunLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -444,6 +449,12 @@ PrefabInstance:
 --- !u!4 &5996523047789386724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7918811633620643004, guid: 91effcf7f16351e40ba7f580b4b99bed,
+    type: 3}
+  m_PrefabInstance: {fileID: 4526866157908375384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8270507365711461757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5482031282527799845, guid: 91effcf7f16351e40ba7f580b4b99bed,
     type: 3}
   m_PrefabInstance: {fileID: 4526866157908375384}
   m_PrefabAsset: {fileID: 0}
