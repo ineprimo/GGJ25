@@ -8,10 +8,15 @@ public class TraceComponent : MonoBehaviour
     [SerializeField] private float _maxBubbleGenerationTime = 0.05f;
     float _currentBubbleGenerationTime = 0.0f;
 
+    private float _currentBubbleDamage = 0.0f;
+    private float _currentBubbleLifeTime = 3.0f;
+
     [SerializeField] private GameObject _bubblePrefab;
 
     bool _canSinged = false;
     public void ActivateSigned() { _canSinged = true; }
+    public void SetCurrentBubbleDamage(float dm) { _currentBubbleDamage = dm; }
+    public void SetCurrentBubbleLifeTime(float tm) { _currentBubbleLifeTime = tm; }
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,10 @@ public class TraceComponent : MonoBehaviour
                 Random.Range(-0.5f, 0.5f), 
                 Random.Range(-0.5f, 0.5f));
             auxBubble.transform.position += auxOffset;
+
+            auxBubble.GetComponent<BubbleSignedComponent>().SetDamage(_currentBubbleDamage);
+            auxBubble.GetComponent<LifeTimeComponent>().SetMaxDeleteTime(_currentBubbleLifeTime);
+
             _currentBubbleGenerationTime = 0.0f;
         }
         _currentBubbleGenerationTime += Time.deltaTime;

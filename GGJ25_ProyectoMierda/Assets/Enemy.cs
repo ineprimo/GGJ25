@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
         GetComponent<CaquitaMovement>().enabled = true;
     }
     
-    private void Hit(float damage)
+    public void Hit(float damage)
     {
         _health -= damage;
         
@@ -35,7 +35,8 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.layer == _bulletLayer)
         {
-            Hit(other.gameObject.GetComponent<Bullet>().Damage);
+            //Hit(other.gameObject.GetComponent<Bullet>().Damage);
+            // Comento lo de arriba porque peta
         }
     }
 }

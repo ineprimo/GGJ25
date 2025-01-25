@@ -69,7 +69,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _speedIncreaseLvl1 = 3.0f;
     [SerializeField] private float _speedIncreaseLvl2 = 6.0f;
     [SerializeField] private float _speedIncreaseLvl3 = 10.0f;
-    
+
+    [SerializeField] private float _traceDamageLvl1 = 1.0f;
+    [SerializeField] private float _traceDamageLvl2 = 3.0f;
+    [SerializeField] private float _traceBubbleLifeTimeLvl3 = 5.0f;
+
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
     
@@ -118,22 +122,24 @@ public class GameManager : MonoBehaviour
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
     {
-        Debug.Log("ENtroooo");
         _speedUpgradeLvl++;
         if (_speedUpgradeLvl == 1)
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
+            _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl1);   // Setear daño de las burbujas
         }
         else if (_speedUpgradeLvl == 2)
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl2);     // Aumentar velocidad de movimiento
-            // el rastro hace da�o
+            _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl2);   // Setear daño de las burbujas
+
         }
         else if (_speedUpgradeLvl == 3)
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
-            // + el rastro dura m�s tiempo
+            _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
+
         }
     }
     // DA�O Y REBOTES

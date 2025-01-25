@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 5888667314723616495}
   - component: {fileID: 8727802104430018256}
   - component: {fileID: -1513620714092397712}
+  - component: {fileID: -3477587289034767996}
   m_Layer: 0
-  m_Name: Pompa
+  m_Name: PompaSigned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxDeleteTime: 3
   _currentDeleteTime: 0
+--- !u!114 &-3477587289034767996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505690472321750569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628861b2d29b0044795ef3c341c19d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubbleSignedDamage: 1

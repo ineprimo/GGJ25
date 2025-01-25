@@ -12,7 +12,7 @@ public class LifeTimeComponent : MonoBehaviour
     {
         
     }
-
+    public void SetMaxDeleteTime(float tm) { _maxDeleteTime = tm; }
     // Update is called once per frame
     void Update()
     {
