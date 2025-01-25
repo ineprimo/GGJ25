@@ -57,6 +57,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _gunAmmo = 10;
     [SerializeField] private int _ARAmmo = 15;
 
+    public int getARAmmo() { return _ARAmmo; }
+    public int getGunAmmo() { return _gunAmmo; }
+
     [Header("Health")]
     [SerializeField] private int _healthUpgradeLvl = 0;  
     [SerializeField] private float _healthIncreaseLvl1 = 15.0f;
