@@ -216,8 +216,6 @@ public class GameManager : MonoBehaviour
     {
         return _damageUpgradeLvl;
     }
-<<<<<<< Updated upstream
-=======
 
     public void addCoins(int nCoins)
     {
@@ -241,5 +239,4 @@ public class GameManager : MonoBehaviour
     {
 
     }
->>>>>>> Stashed changes
 }

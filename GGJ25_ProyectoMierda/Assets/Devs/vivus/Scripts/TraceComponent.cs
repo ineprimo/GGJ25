@@ -44,9 +44,6 @@ public class TraceComponent : MonoBehaviour
             _currentBubbleGenerationTime = 0.0f;
         }
         _currentBubbleGenerationTime += Time.deltaTime;
-<<<<<<< Updated upstream
-=======
         //Debug.Log(_currentBubbleGenerationTime);
->>>>>>> Stashed changes
     }
 }
