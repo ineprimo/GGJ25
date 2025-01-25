@@ -10,7 +10,14 @@ public class AIMovement : MonoBehaviour
 
     public void SetSpeed(float sp)
     {
-        _agent.speed = sp;
+        if (_agent != null)
+        {
+            _agent.speed = sp; // Cambia la velocidad de movimiento
+        }
+        else
+        {
+            Debug.LogWarning("NavMeshAgent no está asignado o encontrado.");
+        }
     }
 
     // Start is called before the first frame update
