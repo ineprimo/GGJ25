@@ -8,7 +8,7 @@ public class TraceComponent : MonoBehaviour
     [SerializeField] private float _maxBubbleGenerationTime = 0.05f;
     float _currentBubbleGenerationTime = 0.0f;
 
-    private float _currentBubbleDamage = 0.0f;
+    public float _currentBubbleDamage;
     private float _currentBubbleLifeTime = 3.0f;
 
     [SerializeField] private GameObject _bubblePrefab;
