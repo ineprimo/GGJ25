@@ -149,10 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe183644f7b4b745b63946cf5a664b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1.25
+  lifeTime: 1.5
   deceleration: 4.5
-  shakeDuration: 5
-  shakeAmount: 1000
 --- !u!114 &-3678982873968366458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,5 +164,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoAntesDeJuggle: 0.5
-  amplitudMovimiento: 0.003
+  amplitudMovimiento: 0.004
   velocidadMovimiento: 0.75

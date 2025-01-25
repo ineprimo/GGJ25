@@ -383,6 +383,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2349041191489887930, guid: 63a7c8fdf5be029489e670fb7a3f0d86,
     type: 3}
   bulletSpeed: 5
+  gunLevel: 2
+  timeBetweenShots: 0.3
 --- !u!136 &896330253
 CapsuleCollider:
   m_ObjectHideFlags: 0
