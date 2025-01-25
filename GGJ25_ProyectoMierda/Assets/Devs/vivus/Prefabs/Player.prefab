@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraMovement: {fileID: 4078147697702221744}
   _gunObject: {fileID: 2908211180813639435}
+  timeBetweenShots: 1
+  lastShootTime: 0
 --- !u!114 &2395954038161118616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6e305acc6b53d43bc582bb580d053d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 10
   _currentLife: 50
   _maxLife: 50
 --- !u!54 &8366533176975867363
@@ -105,6 +107,7 @@ GameObject:
   - component: {fileID: 4581460928691702822}
   - component: {fileID: 8582446501796774075}
   - component: {fileID: 4078147697702221744}
+  - component: {fileID: 5226392283967729161}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -159,7 +162,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -245,6 +248,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1148599099283291244}
   _mouseSensitivity: 2
+--- !u!114 &5226392283967729161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2255862342810177317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbd15e009edb9d448e4e54461001c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 147847334644448105}
 --- !u!1 &2294255968284438162
 GameObject:
   m_ObjectHideFlags: 0

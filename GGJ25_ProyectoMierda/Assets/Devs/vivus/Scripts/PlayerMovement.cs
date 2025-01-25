@@ -7,12 +7,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private float _currentLife = 50.0f;
     [SerializeField] private float _maxLife = 50.0f;
+    Rigidbody _rigidBody;
 
+    private void Start()
+    {
+        _rigidBody = GetComponent<Rigidbody>();
+    }
     public void Move(Vector3 dir)
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
         dir.Normalize();
-        rb.velocity = dir * _speed;
+        _rigidBody.velocity = dir * _speed;
     }
 
     public void ImproveSpeed(float incr)
