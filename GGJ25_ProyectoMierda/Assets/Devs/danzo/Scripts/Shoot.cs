@@ -18,7 +18,9 @@ public class Shoot : MonoBehaviour
 
     private int bounces = 0;
     public int currentAmmo = 10;
-   
+    private bool isReloading = false;
+
+
 
 
     public void shootWeapon()
@@ -29,7 +31,15 @@ public class Shoot : MonoBehaviour
             StartCoroutine(ShootWithDelay());
 
         }
-      
+        else
+        {
+            if (!isReloading)
+            {
+                StartCoroutine(ReloadWeapon());
+            }
+        }
+
+
 
     }
 
@@ -102,6 +112,20 @@ public class Shoot : MonoBehaviour
         bounces = nbounces;
         Debug.Log("bounces " + bounces);
     }
+
+    private IEnumerator ReloadWeapon()
+    {
+        isReloading = true;
+
+        yield return new WaitForSeconds(3f); 
+        if(gunLevel == 4)
+            currentAmmo = 15;
+        else
+            currentAmmo = 10;
+        
+        isReloading = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
