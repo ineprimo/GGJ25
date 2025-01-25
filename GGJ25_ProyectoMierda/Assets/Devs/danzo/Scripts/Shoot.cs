@@ -16,22 +16,29 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] private float timeBetweenShots = 0.3f;
 
-    private int currentAmmo;
+    private int bounces = 0;
+    public int currentAmmo = 10;
     private int maxAmmo;
-    public int bounces;
+   
 
 
     public void shootWeapon()
     {
+        Debug.Log(currentAmmo);
         if (currentAmmo > 0)
         {
-            StartCoroutine(ShootWithDelay());
+            Debug.Log("entra");
+           
         }
+        StartCoroutine(ShootWithDelay());
+
     }
 
     private IEnumerator ShootWithDelay()
     {
-        if(gunLevel == 4)
+        currentAmmo--;
+
+        if (gunLevel == 4)
         {
             if (bounces == 0)
             {

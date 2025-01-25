@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         {
             _bulletsUpgradeLvl++;
             _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
+            _gun.GetComponent<Shoot>().currentAmmo = 10;
         }
         if (_bulletsUpgradeLvl == 1)
         {
