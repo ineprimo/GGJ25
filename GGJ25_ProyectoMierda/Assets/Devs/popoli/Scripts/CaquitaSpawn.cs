@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CaquitaSpawn : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject meleeEnemy;
+    [SerializeField] GameObject throwerEnemy;
     private GameObject player;
     [SerializeField] float spawnTime = 3.0f; //seconds
     [SerializeField] float spawnDistance = 2.0f; // distancia para spawnear
@@ -41,18 +42,27 @@ public class CaquitaSpawn : MonoBehaviour
 
             if (Time.time >= timer && onRange)
             {
-                //Debug.Log("instancia caquita");
-                GameObject clone = Instantiate(enemy, transform.position, enemy.transform.rotation);
-                GameManager.Instance.registerEnemy();
-
-                // si esta a cierta distancia le doy el caca thrower
+                // si esta a cierta distancia cabe la posibilidad de ser thrower
                 if (actualDistance > cacaThrowerDistance)
                 {
                     // random
                     int i = Random.Range(0, 2);
-                    if (i == 0) clone.AddComponent<CacaThrower>();
+                    if (i == 0)
+                    {
+                        Instantiate(throwerEnemy, transform.position, throwerEnemy.transform.rotation);
+                    }
+                    else
+                    {
+                        Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                    }
+                }
+                else
+                {
+                    Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+
                 }
 
+                GameManager.Instance.registerEnemy();
                 timer = Time.time + spawnTime;
             }
         }

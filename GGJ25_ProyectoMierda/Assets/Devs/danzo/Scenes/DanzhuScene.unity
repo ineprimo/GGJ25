@@ -213,13 +213,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2908211180813639435, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: _gunObject
       value: 
       objectReference: {fileID: 896330251}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2908211180813639435, guid: 624092a4d3daf134da9613a79f10cea6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2818011832915538301, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
@@ -462,7 +468,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.43, y: -0.27999997, z: 0.43}
-  m_LocalScale: {x: 0.33456883, y: 0.33456877, z: 0.33456877}
+  m_LocalScale: {x: 0.33457, y: 0.33456993, z: 0.33456993}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 121111226}

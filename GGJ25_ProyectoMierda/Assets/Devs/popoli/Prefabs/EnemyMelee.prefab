@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2682004201227587358
+--- !u!1 &9187369549511936537
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2556211052286006561}
-  - component: {fileID: 8689096196589588615}
-  - component: {fileID: 5771699161308831921}
-  - component: {fileID: 7102082861926474178}
-  - component: {fileID: 1362234100732080703}
+  - component: {fileID: 946897035781384711}
+  - component: {fileID: 3449441233693888998}
+  - component: {fileID: 184422666544119732}
+  - component: {fileID: 9216178061499230437}
+  - component: {fileID: 9139251110534034528}
   m_Layer: 0
-  m_Name: Vater
+  m_Name: EnemyMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2556211052286006561
+--- !u!4 &946897035781384711
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682004201227587358}
+  m_GameObject: {fileID: 9187369549511936537}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.37, y: 0.34, z: 1.5057703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 3.29, y: 1.42, z: -4.1}
+  m_LocalScale: {x: 0.26044765, y: 0.26044765, z: 0.26044765}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8689096196589588615
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &3449441233693888998
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682004201227587358}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5771699161308831921
+  m_GameObject: {fileID: 9187369549511936537}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &184422666544119732
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682004201227587358}
+  m_GameObject: {fileID: 9187369549511936537}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,13 +87,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7102082861926474178
-BoxCollider:
+--- !u!64 &9216178061499230437
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682004201227587358}
+  m_GameObject: {fileID: 9187369549511936537}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -105,26 +105,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1362234100732080703
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &9139251110534034528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682004201227587358}
+  m_GameObject: {fileID: 9187369549511936537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d18d1f16c1b004e899be9eed77a600, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a47699647774cd40b6102d2146deb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemy: {fileID: 9187369549511936537, guid: b1087d5d6f0318846a9bef64793f2e64,
-    type: 3}
-  throwerEnemy: {fileID: 9187369549511936537, guid: 80db4c3e5cc89e9418ad0cb351118ae9,
-    type: 3}
-  spawnTime: 3
-  spawnDistance: 2
-  cacaThrowerDistance: 7
-  startTime: 10
+  speed: 2
+  throwerDistance: 5
+  closeCacaDistance: 1
