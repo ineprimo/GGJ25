@@ -23,7 +23,10 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon()
     {
-        StartCoroutine(ShootWithDelay());
+        if (currentAmmo > 0)
+        {
+            StartCoroutine(ShootWithDelay());
+        }
     }
 
     private IEnumerator ShootWithDelay()
