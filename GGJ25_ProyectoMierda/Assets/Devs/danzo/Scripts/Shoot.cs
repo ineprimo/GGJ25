@@ -111,8 +111,14 @@ public class Shoot : MonoBehaviour
     private IEnumerator ReloadWeapon()
     {
         isReloading = true;
+        GameManager.Instance.GetAnimationManager().rechargeAnim(true);
+
 
         yield return new WaitForSeconds(3f);
+
+        GameManager.Instance.GetAnimationManager().rechargeAnim(false);
+
+
         if (gunLevel == 4)
             currentAmmo = GameManager.Instance.getARAmmo();
         else
