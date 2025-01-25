@@ -48,17 +48,27 @@ public class GameManager : MonoBehaviour
 
     // UPGRADES
     [Header("UPGRADES")]
+    [Space(2)]
+    [Header("Weapon")]
+    [Space]
     [SerializeField] private int _bulletsUpgradeLvl = 0;
     
+    [Header("Vida")]
     [Space]
-    [SerializeField] private int _lifeUpgradeLvl = 0;    
-    [SerializeField] private float _healthIncrease = 15.0f;
+    [SerializeField] private int _lifeUpgradeLvl = 0;  
+    [SerializeField] private float _healthIncreaseLvl1 = 15.0f;
+    [SerializeField] private float _healthIncreaseLvl2 = 30.0f;
+    [SerializeField] private float _healthIncreaseLvl3 = 50.0f;
     [SerializeField] private float _shieldCooldownReduction = 15.0f;
     
+    [Header("Speed")]
     [Space]
     [SerializeField] private int _speedUpgradeLvl = 0;
-    [SerializeField] private float _speedIncrease = 3.0f;
+    [SerializeField] private float _speedIncreaseLvl1 = 3.0f;
+    [SerializeField] private float _speedIncreaseLvl2 = 6.0f;
+    [SerializeField] private float _speedIncreaseLvl3 = 10.0f;
     
+    [Header("Damage")]
     [Space]
     [SerializeField] private int _damageUpgradeLvl = 0;
     
@@ -88,14 +98,15 @@ public class GameManager : MonoBehaviour
         switch (_lifeUpgradeLvl)
         {
             case 1:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
-                break;
-            case 2:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncreaseLvl1);
                 _player.GetComponent<BubbleShield>().enabled = true;
                 break;
+            case 2:
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncreaseLvl2);
+                _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
+                break;
             case 3:
-                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncrease);
+                _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncreaseLvl3);
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
@@ -106,17 +117,17 @@ public class GameManager : MonoBehaviour
         _speedUpgradeLvl++;
         if (_speedUpgradeLvl == 1)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
         }
         else if (_speedUpgradeLvl == 2)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl2);     // Aumentar velocidad de movimiento
             // el rastro hace da�o
         }
         else if (_speedUpgradeLvl == 3)
         {
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncrease);     // Aumentar velocidad de movimiento
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
             // + el rastro dura m�s tiempo
         }
     }
