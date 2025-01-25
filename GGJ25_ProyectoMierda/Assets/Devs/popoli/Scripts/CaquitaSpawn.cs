@@ -62,6 +62,7 @@ public class CaquitaSpawn : MonoBehaviour
                     {
                         // thrower
                         spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
+                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
                     }
                     else
                     {
@@ -70,10 +71,12 @@ public class CaquitaSpawn : MonoBehaviour
                         if (i == 0)
                         {
                             spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
+                            spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                         }
                         else
                         {
                             spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
+                            spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                         }
                     }
                 }
@@ -83,10 +86,12 @@ public class CaquitaSpawn : MonoBehaviour
                     if (j == 0)
                     {
                         spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
+                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                     }
                     else
                     {
                         spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
+                        spawnedEnemy.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
                     }
                 }
 
