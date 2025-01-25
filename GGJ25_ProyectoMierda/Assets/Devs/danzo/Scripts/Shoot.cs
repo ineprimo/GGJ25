@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab2;
     [SerializeField] private GameObject bouncyBulletPrefab;
     [SerializeField] private GameObject bouncyBulletPrefab2;
-    [SerializeField] private GameObject ammo;
+
     [SerializeField] private float bulletSpeed = 5;
     public int gunLevel = 1;
 
@@ -18,19 +18,28 @@ public class Shoot : MonoBehaviour
 
     private int bounces = 0;
     public int currentAmmo = 10;
-    private int maxAmmo;
-   
+    private bool isReloading = false;
+
+
 
 
     public void shootWeapon()
     {
-        Debug.Log(currentAmmo);
+        Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
-            Debug.Log("entra");
-           
+            StartCoroutine(ShootWithDelay());
+
         }
-        StartCoroutine(ShootWithDelay());
+        else
+        {
+            if (!isReloading)
+            {
+                StartCoroutine(ReloadWeapon());
+            }
+        }
+
+
 
     }
 
@@ -42,7 +51,7 @@ public class Shoot : MonoBehaviour
         {
             if (bounces == 0)
             {
-                Debug.Log("just normal bubble...");
+                //Debug.Log("just normal bubble...");
 
                 // Instancia la bala
                 var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
@@ -51,7 +60,7 @@ public class Shoot : MonoBehaviour
             else
             {
 
-                Debug.Log("MAKING BOUNCY BUBBLE");
+                //Debug.Log("MAKING BOUNCY BUBBLE");
 
                 // Instancia la bala
                 var bullet = Instantiate(bouncyBulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
@@ -69,7 +78,7 @@ public class Shoot : MonoBehaviour
                 // Instancia la bala
                 if (bounces == 0)
                 {
-                    Debug.Log("just normal bubble...");
+                    //Debug.Log("just normal bubble...");
 
                     // Instancia la bala
                     var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
@@ -78,7 +87,7 @@ public class Shoot : MonoBehaviour
                 else
                 {
 
-                    Debug.Log("MAKING BOUNCY BUBBLE");
+                   // Debug.Log("MAKING BOUNCY BUBBLE");
 
                     // Instancia la bala
                     var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
@@ -103,6 +112,20 @@ public class Shoot : MonoBehaviour
         bounces = nbounces;
         Debug.Log("bounces " + bounces);
     }
+
+    private IEnumerator ReloadWeapon()
+    {
+        isReloading = true;
+
+        yield return new WaitForSeconds(3f); 
+        if(gunLevel == 4)
+            currentAmmo = 15;
+        else
+            currentAmmo = 10;
+        
+        isReloading = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,7 +135,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        maxAmmo = 10 * gunLevel;
-        Debug.Log(gunLevel);  
+        
+        
     }
 }
