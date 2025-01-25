@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         float auxPlayerSpeed = _rigidBody.velocity.magnitude;
         float auxPlayerNormalizedSpeed = math.clamp(auxPlayerSpeed / _maxPlayerVel, 0f, 1f);
 
-        Debug.Log(auxPlayerNormalizedSpeed);
+        //Debug.Log(auxPlayerNormalizedSpeed);
 
         float targetFOV = math.lerp(_minFov, _maxFov, auxPlayerNormalizedSpeed);
         _cameraComponent.fieldOfView = Mathf.Lerp(_cameraComponent.fieldOfView, targetFOV, Time.deltaTime * _lerpSpeed);        

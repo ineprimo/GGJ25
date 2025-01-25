@@ -24,7 +24,8 @@ public class Bullet : MonoBehaviour
             // le resta un rebote
             GetComponent<BounceBubble>().setBounces(GetComponent<BounceBubble>().getBounces() - 1);
 
-             
+            changeDirection();
+
 
 
        }
@@ -34,13 +35,20 @@ public class Bullet : MonoBehaviour
 
     private void changeDirection()
     {
+
+        Debug.Log("hola????");
         Vector3 dir = GetComponent<Rigidbody>().velocity;
+
         Vector3 left = Vector3.Cross(dir, Vector3.up).normalized;
 
-        //Vector3 right = -left;
+        Vector3 right = -left;
         //Vector3 right = Vector3.Cross(Vector3.up, dir).normalized;
         //Vector3 right = Vector3.Cross(-dir, Vector3.up).normalized;
         //Vector3 right = Vector3.Cross(dir, -Vector3.up).normalized;
+
+        //GetComponent<Rigidbody>().velocity = left; // esto no es lmaooooo
+        GetComponent<Rigidbody>().AddForce(left); // esto no es lmaooooo
+
     }
 
     private void Update()

@@ -129,11 +129,21 @@ public class GameManager : MonoBehaviour
         {
             // + da�o
             // la burbuja rebota 2 veces
+            Shoot pistola = _player.GetComponentInChildren<Shoot>();
+            pistola.MakeBouncyBubbles(2);
+
+            // la pompa rebota 1 vez si hay un enemigo a X distancia
+
         }
         else if (damageUpgradeLvl == 3)
         {
             // + da�o
             // la burbuja puede volver a rebotar
+            Shoot pistola = _player.GetComponentInChildren<Shoot>();
+            pistola.MakeBouncyBubbles(3);
+
+            // la pompa rebota 1 vez si hay un enemigo a X distancia
+
         }
     }
 
