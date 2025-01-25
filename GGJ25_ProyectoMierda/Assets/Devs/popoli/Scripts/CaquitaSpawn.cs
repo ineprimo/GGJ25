@@ -10,6 +10,8 @@ public class CaquitaSpawn : MonoBehaviour
     [SerializeField] float spawnDistance = 2.0f; // distancia para spawnear
     [SerializeField] float cacaThrowerDistance = 7.0f; // distancia para spawnear un caca thrower
 
+    [SerializeField] float startTime = 5.0f; // tiempo para que empiece a spawnear
+
     float timer;
     float actualDistance;
     bool onRange;
@@ -25,7 +27,10 @@ public class CaquitaSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.Instance.getMaxEnemies())
+        startTime -= Time.deltaTime;
+        Debug.Log(startTime);
+
+        if (!GameManager.Instance.getMaxEnemies() && startTime <= 0) 
         {
             actualDistance = (transform.position - player.transform.position).magnitude;
 
