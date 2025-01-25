@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDies()
     {
-        // JUGADOR MUERE
+        GameManager.Instance.EndGame();
     }
 
     public void addCoins(int nCoins)

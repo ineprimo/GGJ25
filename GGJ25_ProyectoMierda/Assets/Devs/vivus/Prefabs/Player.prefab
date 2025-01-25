@@ -56,6 +56,7 @@ MonoBehaviour:
   _cameraMovement: {fileID: 4078147697702221744}
   _gunObject: {fileID: 8270507365711461757}
   timeBetweenShots: 1
+  timeBetweenShotsAnim: 2.5
   timeBetweenShotsM: 0.2
   lastShootTime: 0
 --- !u!114 &2395954038161118616
@@ -82,7 +83,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147847334644448105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

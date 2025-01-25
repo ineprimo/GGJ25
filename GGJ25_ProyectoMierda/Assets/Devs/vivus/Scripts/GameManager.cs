@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     }
 
     // UI
-    [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject UIManager;
     private int score=0;
     // PLAYER
     [SerializeField] private GameObject _player;
@@ -112,9 +112,7 @@ public class GameManager : MonoBehaviour
             }
            
         }
-        UI.GetComponent<HUDController>().UpdateUI();
-
-    
+        UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
     }
     // VIDA
     public void UpgradeLife()
@@ -135,7 +133,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
-        UI.GetComponent<HUDController>().UpdateUI();
+        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
@@ -162,7 +160,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        UI.GetComponent<HUDController>().UpdateUI();
+        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -200,8 +198,8 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        UI.GetComponent<HUDController>().UpdateUI();
-        
+        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+
     }
 
     // GESTION DE ENEMIGOS
@@ -237,7 +235,7 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().addCoins(nCoins);
-        UI.GetComponent<HUDController>().UpdateUI();
+        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
     }
 
     public void increaseScore(int nScore)
@@ -246,6 +244,11 @@ public class GameManager : MonoBehaviour
         Debug.Log(score);
     }
 
+    public void EndGame()
+    {
+        UIManager.GetComponent<UIManager>().DesactivarHUD();
+        UIManager.GetComponent<UIManager>().ActivarScoreboard();
+    }
     public int GetCoins()
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();
