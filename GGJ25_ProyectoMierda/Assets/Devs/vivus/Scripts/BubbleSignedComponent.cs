@@ -16,9 +16,9 @@ public class BubbleSignedComponent : MonoBehaviour
         if (other.gameObject.GetComponent<Enemy>() != null)
         {
             other.gameObject.GetComponent<Enemy>().Hit(_bubbleSignedDamage);
-            Debug.Log("PompaSignedColision");
+            //Debug.Log("PompaSignedColision");
             Destroy(gameObject);
         }
-        Debug.Log("colilsion");
+        //Debug.Log("colilsion");
     }
 }

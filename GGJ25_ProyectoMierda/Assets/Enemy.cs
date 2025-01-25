@@ -7,6 +7,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
+    [SerializeField] private GameObject coin;
+    [SerializeField] private float threshold = 0.5f;
+
+    public void SetHealth(float h)
+    {
+        _health = h;
+    }
 
     public bool Frozen { get; private set; } = false;
 
@@ -26,9 +33,16 @@ public class Enemy : MonoBehaviour
     public void Hit(float damage)
     {
         _health -= damage;
-        
+
+        //Debug.Log(_health);
+
         if(_health <= 0)
+        {
+            float f = UnityEngine.Random.Range(0f, 1f);
+            if(f < threshold)
+               Instantiate(coin, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
     }
     
     private void OnCollisionEnter(Collision other)

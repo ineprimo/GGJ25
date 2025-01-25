@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CaquitaSpawn : MonoBehaviour
 {
-
-
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject meleeEnemy2;
     [SerializeField] GameObject throwerEnemy;
+
     private GameObject player;
     [SerializeField] float spawnTime = 3.0f; //seconds
     [SerializeField] float spawnDistance = 2.0f; // distancia para spawnear
@@ -22,6 +21,11 @@ public class CaquitaSpawn : MonoBehaviour
     float timer;
     float actualDistance;
     bool onRange;
+
+    // PROGRESION
+    GameObject spawnedEnemy;
+    float newThrowerSpeed = 2.0f; // default lvl 1: 2
+    float newMeleeSpeed = 2.0f; // default lvl 1: 2
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +50,9 @@ public class CaquitaSpawn : MonoBehaviour
 
             if (actualDistance < spawnDistance) onRange = false;
             else onRange = true;
-
-            //Debug.Log(onRange);
             
             if (Time.time >= timer && onRange)
             {
-                GameObject enemy; 
-                
                 // si esta a cierta distancia cabe la posibilidad de ser thrower
                 if (actualDistance > cacaThrowerDistance)
                 {
@@ -60,44 +60,63 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
-                        
-                        enemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
-                        //auxEnemy.life;
+                        // thrower
+                        spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
                     {
-                        int i1 = Random.Range(0, 2);
-                        if (i1 == 0)
+                        // melees
+                        i = Random.Range(0, 2);
+                        if (i == 0)
                         {
-                            enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                         }
                         else
                         {
-                            enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                         }
                     }
                 }
                 else
                 {
-                    int i1 = Random.Range(0, 2);
-                    if (i1 == 0)
+                    int j = Random.Range(0, 2);
+                    if (j == 0)
                     {
-                        enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                     }
                     else
                     {
-                        enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                     }
                 }
 
-                GameManager.Instance.registerEnemy(enemy);
+                // setteamos enemigo segun level
+                //setEnemy(spawnedEnemy);
+
+                GameManager.Instance.registerEnemy(spawnedEnemy);
                 timer = Time.time + spawnTime;
             }
         }
     }
 
-    public void Upgrade()
+    public void Upgrade(float meleeSp, float throwerSp)
     {
+        newMeleeSpeed = meleeSp;
+        newThrowerSpeed = throwerSp;
+        
+    }
+
+    private void setEnemy(GameObject o)
+    {
+        if(o.GetComponent<CacaThrower>() != null)
+        {
+            o.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
+        }
+        else
+        {
+            o.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
+        }
+
 
     }
 }

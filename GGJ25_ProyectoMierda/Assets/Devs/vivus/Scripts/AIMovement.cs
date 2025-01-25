@@ -8,6 +8,11 @@ public class AIMovement : MonoBehaviour
     private Transform _playerTransform;
     private NavMeshAgent _agent;
 
+    public void SetSpeed(float sp)
+    {
+        _agent.speed = sp;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +23,7 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _agent.destination = _playerTransform.position;
+        //_agent.destination = _playerTransform.position;
         //Debug.Log("Ir");
     }
 }
