@@ -18,13 +18,13 @@ public class Bullet : MonoBehaviour
     void Awake() 
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, lifeTime);
+       // Destroy(gameObject, lifeTime);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log("checking collision");
+        //Debug.Log("checking collision");
        // Destroy(collision.gameObject);
        if(GetComponent<BounceBubble>() != null && GetComponent<BounceBubble>().getBounces() > 0 && !isOnCD)
        {
@@ -40,8 +40,8 @@ public class Bullet : MonoBehaviour
        }
         else
         {
+            GetComponent<PlaySoundWithVariation>().Reproduce();
             Destroy(gameObject);
-
         }
     }
 
@@ -89,11 +89,18 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {  
+
         if (rb.velocity.magnitude > 0)
         {
           //  Debug.Log("sfnsfn33333");
             rb.velocity -= rb.velocity.normalized * deceleration * Time.deltaTime;
 
+        }
+        currentTime += Time.deltaTime;
+        if(currentTime >= lifeTime)
+        {
+            GetComponent<PlaySoundWithVariation>().Reproduce();
+            Destroy(gameObject);
         }
    
         bounceCD();

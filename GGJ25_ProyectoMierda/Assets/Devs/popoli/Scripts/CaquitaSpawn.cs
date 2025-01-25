@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CaquitaSpawn : MonoBehaviour
 {
-
-
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject meleeEnemy2;
     [SerializeField] GameObject throwerEnemy;
+
     private GameObject player;
     [SerializeField] float spawnTime = 3.0f; //seconds
     [SerializeField] float spawnDistance = 2.0f; // distancia para spawnear
@@ -22,6 +22,17 @@ public class CaquitaSpawn : MonoBehaviour
     float timer;
     float actualDistance;
     bool onRange;
+
+    // PROGRESION
+    GameObject spawnedEnemy;
+    float newThrowerSpeed = 2.0f; // default lvl 1: 2
+    float newMeleeSpeed = 2.0f;
+    float newMeleeHealth = 100.0f;
+    float newThrowerHealth = 80.0f;
+    float newMeleeDamage = 50.0f;
+    float newThrowerDamage = 30.0f;
+    float newMCoins = 5.0f;
+    float newTCoins = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +57,9 @@ public class CaquitaSpawn : MonoBehaviour
 
             if (actualDistance < spawnDistance) onRange = false;
             else onRange = true;
-
-            //Debug.Log(onRange);
             
             if (Time.time >= timer && onRange)
             {
-                GameObject enemy; 
-                
                 // si esta a cierta distancia cabe la posibilidad de ser thrower
                 if (actualDistance > cacaThrowerDistance)
                 {
@@ -60,44 +67,72 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
-                        
-                        enemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
-                        //auxEnemy.life;
+                        // thrower
+                        spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
                     {
-                        int i1 = Random.Range(0, 2);
-                        if (i1 == 0)
+                        // melees
+                        i = Random.Range(0, 2);
+                        if (i == 0)
                         {
-                            enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                         }
                         else
                         {
-                            enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                            spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                         }
                     }
                 }
                 else
                 {
-                    int i1 = Random.Range(0, 2);
-                    if (i1 == 0)
+                    int j = Random.Range(0, 2);
+                    if (j == 0)
                     {
-                        enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                     }
                     else
                     {
-                        enemy = Instantiate(meleeEnemy2, transform.position, throwerEnemy.transform.rotation);
+                        spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                     }
                 }
 
-                GameManager.Instance.registerEnemy(enemy);
+                // setteamos enemigo segun level
+                setEnemy(spawnedEnemy);
+
+                GameManager.Instance.registerEnemy(spawnedEnemy);
                 timer = Time.time + spawnTime;
             }
         }
     }
 
-    public void Upgrade()
+    public void Upgrade(float meleeSp, float throwerSp, float meleeHP, float throwerHP,
+        float meleeDmg, float throwerDmg, float meleeCoins, float throwerCoins)
     {
+        newMeleeSpeed = meleeSp;
+        newThrowerSpeed = throwerSp;
+        newThrowerHealth = throwerHP;
+        newMeleeHealth = meleeHP;
+        newMeleeDamage = meleeDmg;
+        newThrowerDamage = throwerDmg;
+        newMCoins = meleeCoins;
+        newTCoins = throwerCoins;
 
+    }
+
+    private void setEnemy(GameObject o)
+    {
+        if(o.GetComponent<CacaThrower>() != null)
+        {
+            o.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
+            o.GetComponent<Enemy>().SetHealth(newThrowerHealth);
+            o.GetComponent<Enemy>()._damage = newThrowerDamage;
+        }
+        else
+        {
+            o.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
+            o.GetComponent<Enemy>().SetHealth(newMeleeHealth);
+            o.GetComponent<Enemy>()._damage = newMeleeDamage;
+        }
     }
 }

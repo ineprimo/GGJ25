@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8874445218141821301}
   - component: {fileID: 1611326249392774916}
   - component: {fileID: -3678982873968366458}
+  - component: {fileID: 2724782533915174760}
   m_Layer: 6
   m_Name: Bullet 2
   m_TagString: Untagged
@@ -167,3 +168,17 @@ MonoBehaviour:
   tiempoAntesDeJuggle: 0.5
   amplitudMovimiento: 0.004
   velocidadMovimiento: 0.75
+--- !u!114 &2724782533915174760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349041191489887930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5993bca8717abb14e8534a712e2018ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 4ea828cfc1db48942a3620edd3a8bd32, type: 3}
+  _pitchVariationRange: 0.2

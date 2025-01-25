@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &127321469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +241,8 @@ MonoBehaviour:
   _spawns:
   - {fileID: 1807115532}
   - {fileID: 333311206}
+  _currentLvl: 0
+  _levelUpTime: 10
 --- !u!4 &127321470
 Transform:
   m_ObjectHideFlags: 0
@@ -256,6 +258,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &325728941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8270507365711461757, guid: 624092a4d3daf134da9613a79f10cea6,
+    type: 3}
+  m_PrefabInstance: {fileID: 335940421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &333311205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,6 +326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vater (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -680,6 +693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vater
       objectReference: {fileID: 0}
+    - target: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -714,8 +732,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2dc24faac2b844fbc38d8f841212cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationManager: {fileID: 0}
+  UI: {fileID: 0}
   _player: {fileID: 335940422}
-  _gun: {fileID: 0}
+  _gun: {fileID: 325728941}
   maxEnemies: 100
   _bulletsUpgradeLvl: 0
   _gunAmmo: 10

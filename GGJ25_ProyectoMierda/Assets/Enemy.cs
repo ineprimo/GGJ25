@@ -6,7 +6,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float _damage = 10.0f;
     [SerializeField] private float _health;
+    [SerializeField] private GameObject coin;
+    [SerializeField] private float threshold = 0.5f;
+
+    private const int SCORE_MELEE = 29;
+    private const int SCORE_DISTANCE = 39;
+
+    public void SetHealth(float h)
+    {
+        _health = h;
+    }
 
     public bool Frozen { get; private set; } = false;
 
@@ -26,9 +37,19 @@ public class Enemy : MonoBehaviour
     public void Hit(float damage)
     {
         _health -= damage;
-        
+
         if(_health <= 0)
+        {
+            float f = UnityEngine.Random.Range(0f, 1f);
+            if(f < threshold)
+               Instantiate(coin, transform.position, transform.rotation);
             Destroy(gameObject);
+            if(gameObject.GetComponent<CacaThrower>() != null)
+                GameManager.Instance.increaseScore(SCORE_DISTANCE);
+            else
+                GameManager.Instance.increaseScore(SCORE_MELEE);
+
+        }
     }
     
     private void OnCollisionEnter(Collision other)

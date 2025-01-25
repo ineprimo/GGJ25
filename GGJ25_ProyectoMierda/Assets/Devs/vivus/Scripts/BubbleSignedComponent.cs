@@ -11,12 +11,14 @@ public class BubbleSignedComponent : MonoBehaviour
         _bubbleSignedDamage = dm;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.GetComponent<Enemy>() != null)
+        if (other.gameObject.GetComponent<Enemy>() != null)
         {
-            collision.gameObject.GetComponent<Enemy>().Hit(_bubbleSignedDamage);
+            other.gameObject.GetComponent<Enemy>().Hit(_bubbleSignedDamage);
+            //Debug.Log("PompaSignedColision");
             Destroy(gameObject);
         }
+        //Debug.Log("colilsion");
     }
 }
