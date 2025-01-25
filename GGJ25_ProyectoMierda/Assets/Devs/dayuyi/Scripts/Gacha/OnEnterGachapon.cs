@@ -21,7 +21,6 @@ public class OnEnterGachapon : MonoBehaviour
     {
         if(canPull)
         {
-
             if (Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
                 // esto va cuando se quiera hacer un pull en el gachapon
