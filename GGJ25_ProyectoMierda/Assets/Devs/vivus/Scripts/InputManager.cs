@@ -10,7 +10,9 @@ public class InputManager : MonoBehaviour
     private Shoot _shootComponent;
 
     [SerializeField] private float timeBetweenShots = 1f;
+    [SerializeField] private float timeBetweenShotsM = 0.2f; //Metralleta
     [SerializeField] private float lastShootTime = 0f;
+    private bool isShooting = false;
 
     void Start()
     {
@@ -29,12 +31,36 @@ public class InputManager : MonoBehaviour
         _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         // DISPARO //
-        if(Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
+        if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
             _shootComponent.shootWeapon();
             lastShootTime = Time.time;
+            isShooting = true; 
+            if (_shootComponent.gunLevel == 4)
+            {
+                StartCoroutine(ContinuousShoot());
+            }
+        }
+
+        // Deja de disparar si suelta el botón del ratón
+        if (Input.GetMouseButtonUp(0))
+        {
+            isShooting = false;
         }
         // Haztelo como arriba mas o menos
 
+    }
+
+    private IEnumerator ContinuousShoot()
+    {
+        while (isShooting)
+        {
+            if (Time.time - lastShootTime >= timeBetweenShotsM)
+            {
+                _shootComponent.shootWeapon();
+                lastShootTime = Time.time;
+            }
+            yield return new WaitForSeconds(timeBetweenShotsM);
+        }
     }
 }
