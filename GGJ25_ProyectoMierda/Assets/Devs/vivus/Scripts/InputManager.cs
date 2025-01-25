@@ -7,10 +7,12 @@ public class InputManager : MonoBehaviour
     PlayerMovement _playerMovement;
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private GameObject _gunObject;
+    private Shoot _shootComponent;
 
     void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
+        _shootComponent = _gunObject.GetComponent<Shoot>();
     }
 
     void Update()
@@ -24,7 +26,10 @@ public class InputManager : MonoBehaviour
         _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         // DISPARO //
-
+        if(Input.GetMouseButtonDown(0))
+        {
+            _shootComponent.shootWeapon();
+        }
         // Haztelo como arriba mas o menos
 
     }
