@@ -13,6 +13,9 @@ public class CaquitaSpawn : MonoBehaviour
 
     [SerializeField] float startTime = 5.0f; // tiempo para que empiece a spawnear
 
+    Vector3 spawnPosition;
+    [SerializeField] float spawnYOffset = 10.0f;
+
     float timer;
     float actualDistance;
     bool onRange;
@@ -23,6 +26,9 @@ public class CaquitaSpawn : MonoBehaviour
         player = GameManager.Instance.GetPlayer();
         timer = 0;
         onRange = false;
+
+        spawnPosition = new Vector3(transform.position.x, transform.position.y + spawnYOffset, transform.position.z);
+
     }
 
     // Update is called once per frame
@@ -51,16 +57,17 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
-                        enemy = Instantiate(throwerEnemy, transform.position, throwerEnemy.transform.rotation);
+                        
+                        enemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
                     {
-                        enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                        enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
                     }
                 }
                 else
                 {
-                    enemy = Instantiate(meleeEnemy, transform.position, throwerEnemy.transform.rotation);
+                    enemy = Instantiate(meleeEnemy, spawnPosition, meleeEnemy.transform.rotation);
 
                 }
 

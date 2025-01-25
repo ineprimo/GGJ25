@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon()
     {
-        Debug.Log("Municion:" + currentAmmo); 
+        //Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
             StartCoroutine(ShootWithDelay());
