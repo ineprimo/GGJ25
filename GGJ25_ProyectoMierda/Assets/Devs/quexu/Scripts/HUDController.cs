@@ -23,6 +23,14 @@ public class HUDController : MonoBehaviour
     [SerializeField] Image imagenDamage;
     [SerializeField] Sprite damageSprite2;
     [SerializeField] Sprite damageSprite3;
+
+    [SerializeField] private List<GameObject> _firstSplash;
+    [SerializeField] private List<GameObject> _secondSplash;
+    [SerializeField] private List<GameObject> _thirdSplash;
+    [SerializeField] private List<GameObject> _fourthSplash;
+    
+    private int _splashes = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +41,36 @@ public class HUDController : MonoBehaviour
         imagenDamage.enabled = false;
     }
 
- 
-    void Update()
+    public void UpateSplash()
     {
+        _splashes++;
+        switch (_splashes)
+        {
+            case 1:
+                foreach (GameObject splash in _firstSplash)
+                {
+                    splash.SetActive(true);
+                }
+                break;
+            case 2:
+                foreach (GameObject splash in _secondSplash)
+                {
+                    splash.SetActive(true);
+                }
+                break;
+            case 3:
+                foreach (GameObject splash in _thirdSplash)
+                {
+                    splash.SetActive(true);
+                }
+                break;
+            case 4:
+                foreach (GameObject splash in _fourthSplash)
+                {
+                    splash.SetActive(true);
+                }
+                break;
+        }
     }
 
     public void UpdateUI()
@@ -60,6 +95,7 @@ public class HUDController : MonoBehaviour
             else if (GameManager.Instance.GetDamageLvl() == 3) imagenDamage.sprite = damageSprite3;
             
             coinsText.text = GameManager.Instance.GetCoins().ToString();
+            
             
         }
     }
