@@ -78,12 +78,12 @@ public class GameManager : MonoBehaviour
         }
         else if (lifeUpgradeLvl == 2)
         {
-            //  + vida
+            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
             // reducir tiempo habilidad
         }
         else if (lifeUpgradeLvl == 3)
         {
-            // + vida
+            _player.GetComponent<PlayerMovement>().ImproveMaxLife(15);
             // reducir tiempo habilidad
         }
     }
