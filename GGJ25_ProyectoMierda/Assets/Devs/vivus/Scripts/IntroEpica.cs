@@ -6,11 +6,11 @@ public class IntroEpica : MonoBehaviour
 {
     [SerializeField] private Transform _destination;
     private GameObject _player;
-
+    [SerializeField] private GameObject _door;
     void Start()
     {
         _player = GameManager.Instance.GetPlayer();
-        IntroGame();
+        StartCoroutine(IntroGame());
     }
 
     private IEnumerator IntroGame()
@@ -18,8 +18,11 @@ public class IntroEpica : MonoBehaviour
         Rigidbody playerRigidbody = _player.GetComponent<Rigidbody>();
         Vector3 startPosition = _player.transform.position;
         Vector3 destinationPosition = _destination.position;
-        float journeyTime = 2f; // Duración del movimiento
+        float journeyTime = 5f;
         float elapsedTime = 0f;
+
+        Debug.Log("Empieza Anim");
+        _door.GetComponent<DoorController>().ToggleDoor();
 
         while (elapsedTime < journeyTime)
         {
@@ -31,9 +34,12 @@ public class IntroEpica : MonoBehaviour
         }
 
         playerRigidbody.MovePosition(destinationPosition);
+        _door.GetComponent<DoorController>().ToggleDoor();
+
+        Debug.Log("Casi Fin Anim");
         yield return new WaitForSeconds(1);
 
-        _player.GetComponent<InputManager>().CanInput(); // Reactivamos el INPUT
+        _player.GetComponent<InputManager>().CanInput();
+        // COSAS DEL JUEGO SI QUEREIS PONERLAS
     }
-
 }

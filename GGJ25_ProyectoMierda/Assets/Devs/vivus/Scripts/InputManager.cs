@@ -35,6 +35,7 @@ public class InputManager : MonoBehaviour
     {
         if (_inputActive)
         {
+            Debug.Log("InputActivo");
             // MOVIMIENTO //
             Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
