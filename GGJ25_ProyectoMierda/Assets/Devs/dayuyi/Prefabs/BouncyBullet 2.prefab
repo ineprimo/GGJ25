@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1611326249392774916}
   - component: {fileID: -3678982873968366458}
   - component: {fileID: 239937508593390638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BouncyBullet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe183644f7b4b745b63946cf5a664b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
   lifeTime: 2
   deceleration: 4.5
 --- !u!114 &-3678982873968366458
