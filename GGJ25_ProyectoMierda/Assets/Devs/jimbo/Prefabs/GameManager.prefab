@@ -45,4 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 147847334644448105, guid: 624092a4d3daf134da9613a79f10cea6, type: 3}
+  _gun: {fileID: 5482031282527799845, guid: 91effcf7f16351e40ba7f580b4b99bed, type: 3}
   maxEnemies: 100
+  _bulletsUpgradeLvl: 0
+  _healthUpgradeLvl: 0
+  _healthIncreaseLvl1: 15
+  _healthIncreaseLvl2: 30
+  _healthIncreaseLvl3: 50
+  _shieldCooldownReduction: 15
+  _speedUpgradeLvl: 0
+  _speedIncreaseLvl1: 3
+  _speedIncreaseLvl2: 6
+  _speedIncreaseLvl3: 10
+  _damageUpgradeLvl: 0
