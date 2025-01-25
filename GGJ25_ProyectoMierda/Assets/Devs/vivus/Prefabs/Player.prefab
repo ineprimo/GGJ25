@@ -69,9 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6e305acc6b53d43bc582bb580d053d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 8
   _currentLife: 50
   _maxLife: 50
+  coins: 0
   _caca:
     serializedVersion: 2
     m_Bits: 128
@@ -375,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 147847334644448105}
-  _maxFov: 100
+  _maxFov: 80
   _minFov: 60
   _lerpSpeed: 5
   _maxPlayerVel: 10
