@@ -9,10 +9,17 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject _gunObject;
     private Shoot _shootComponent;
 
-    [SerializeField] private float timeBetweenShots = 1f;
+    [SerializeField] private float timeBetweenShots = 2f;
+    [SerializeField] private float timeBetweenShotsAnim = 2.5f;
     [SerializeField] private float timeBetweenShotsM = 0.2f; //Metralleta
     [SerializeField] private float lastShootTime = 0f;
     private bool isShooting = false;
+
+    private bool shootInput = false;
+
+
+    private float shootCurrentTime = 0f;
+    private float shootCd = 1f;
 
     void Start()
     {
@@ -30,20 +37,39 @@ public class InputManager : MonoBehaviour
         // ROTACION CAMARA //
         _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        // DISPARO //
-        if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
-        {
-            GameManager.Instance.GetAnimationManager().attackAnim(true);
-            waitfor(1.0f);
 
-            // esperar
-            _shootComponent.shootWeapon();
-            lastShootTime = Time.time;
-            isShooting = true;
-            if (_shootComponent.gunLevel == 4)
+        if (Input.GetMouseButtonDown(0))
+            shootInput = true;  
+
+            // DISPARO //
+        if (shootInput)
+        {
+            // si puede disparar
+             if(Time.time - lastShootTime >= timeBetweenShots)
             {
-                StartCoroutine(ContinuousShoot());
+
+                GameManager.Instance.GetAnimationManager().attackAnim(true);
+
+                // si la animacion ha llegado
+                if (Time.time - lastShootTime >= timeBetweenShotsAnim)
+                {
+                    shootCurrentTime = 0;
+                    shootInput = false;
+                    // esperar
+                    _shootComponent.shootWeapon();
+                    lastShootTime = Time.time;
+                    isShooting = true;
+                    if (_shootComponent.gunLevel == 4)
+                    {
+                        StartCoroutine(ContinuousShoot());
+                    }
+                }
+               
             }
+
+           
+
+
         }
 
         // Deja de disparar si suelta el bot�n del rat�n

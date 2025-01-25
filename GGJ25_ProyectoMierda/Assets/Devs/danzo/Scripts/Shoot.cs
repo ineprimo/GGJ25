@@ -114,7 +114,7 @@ public class Shoot : MonoBehaviour
         GameManager.Instance.GetAnimationManager().rechargeAnim(true);
 
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         GameManager.Instance.GetAnimationManager().rechargeAnim(false);
 
