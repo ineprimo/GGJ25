@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
     {
+        Debug.Log("ENtroooo");
         _speedUpgradeLvl++;
         if (_speedUpgradeLvl == 1)
         {
@@ -193,11 +194,27 @@ public class GameManager : MonoBehaviour
         // vida -- (poli: sigo mañana)
     }
 
+    public int GetBulletsLvl()
+    {
+        return _bulletsUpgradeLvl;
+    }
+    public int GetHealthLvl()
+    {
+        return _healthUpgradeLvl;
+    }
+    public int GetSpeedLvl()
+    {
+        return _speedUpgradeLvl;
+    }
+    public int GetDamageLvl()
+    {
+        return _damageUpgradeLvl;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Invoke("UpgradeSpeed", 3f);
     }
 
     // Update is called once per frame
