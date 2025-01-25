@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     // UI
     [SerializeField] private GameObject UI;
+    private int score=0;
     // PLAYER
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
@@ -230,6 +231,11 @@ public class GameManager : MonoBehaviour
         UI.GetComponent<HUDController>().UpdateUI();
     }
 
+    public void increaseScore(int nScore)
+    {
+        score += nScore;
+        Debug.Log(score);
+    }
 
     public int GetCoins()
     {

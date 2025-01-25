@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
 
+    private const int SCORE_MELEE = 29;
+    private const int SCORE_DISTANCE = 39;
+
     public void SetHealth(float h)
     {
         _health = h;
@@ -42,6 +45,11 @@ public class Enemy : MonoBehaviour
             if(f < threshold)
                Instantiate(coin, transform.position, transform.rotation);
             Destroy(gameObject);
+            if(gameObject.GetComponent<CacaThrower>() != null)
+                GameManager.Instance.increaseScore(SCORE_DISTANCE);
+            else
+                GameManager.Instance.increaseScore(SCORE_MELEE);
+
         }
     }
     
