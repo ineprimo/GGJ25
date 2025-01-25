@@ -23,7 +23,14 @@ public class CaquitaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // seguimiento
+        // orientacion
+        Vector3 v3 = player.transform.position - transform.position;
+        v3.y = 0.0f; // para que se mantenga vertical
+        transform.rotation = Quaternion.LookRotation(v3);
+
+
+        /// *** seguimiento (antiguo) -> ahora lo hacemos en el IA Movement ***
+
         //float step = speed * Time.deltaTime;
 
         //Vector3 target = player.transform.position;
@@ -46,11 +53,5 @@ public class CaquitaMovement : MonoBehaviour
 
         //transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-        // orientacion
-        //Vector3 v3 = player.transform.position - transform.position;
-        //v3.y = -90.0f; // para que se mantenga vertical
-        //transform.rotation = Quaternion.(v3);
-
-        transform.LookAt(player.transform.position);
     }
 }
