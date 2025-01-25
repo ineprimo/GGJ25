@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TraceComponent : MonoBehaviour
 {
+    private Rigidbody _rigidBody;
     [SerializeField] private float _maxBubbleGenerationTime = 0.05f;
     float _currentBubbleGenerationTime = 0.0f;
 
@@ -15,13 +16,15 @@ public class TraceComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_canSinged && _maxBubbleGenerationTime <= _currentBubbleGenerationTime)
+        if(_canSinged && 
+            _maxBubbleGenerationTime <= _currentBubbleGenerationTime &&
+            _rigidBody.velocity != Vector3.zero)
         {
             GameObject auxBubble = Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
             Vector3 auxOffset = new Vector3(
@@ -32,6 +35,5 @@ public class TraceComponent : MonoBehaviour
             _currentBubbleGenerationTime = 0.0f;
         }
         _currentBubbleGenerationTime += Time.deltaTime;
-        Debug.Log(_currentBubbleGenerationTime);
     }
 }
