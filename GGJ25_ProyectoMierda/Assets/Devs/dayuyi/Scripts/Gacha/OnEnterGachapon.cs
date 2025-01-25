@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OnEnterGachapon : MonoBehaviour
 {
+    [SerializeField] private int _gachaPrice = 50;
     [SerializeField] private bool canPull;
     [SerializeField] private bool gachaOnCooldown;
     [SerializeField] private GachaponBase _gacha;
@@ -21,7 +22,7 @@ public class OnEnterGachapon : MonoBehaviour
     {
         if(canPull)
         {
-            if (Input.GetKey(KeyCode.E) && !gachaOnCooldown)
+            if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
                 // esto va cuando se quiera hacer un pull en el gachapon
                 Upgrade up = _gacha.pull();

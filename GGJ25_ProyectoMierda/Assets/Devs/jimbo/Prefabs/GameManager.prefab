@@ -44,10 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2dc24faac2b844fbc38d8f841212cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationManager: {fileID: 0}
+  UI: {fileID: 0}
+  UIManager: {fileID: 4449114289332145251, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+    type: 3}
   _player: {fileID: 147847334644448105, guid: 624092a4d3daf134da9613a79f10cea6, type: 3}
   _gun: {fileID: 5482031282527799845, guid: 91effcf7f16351e40ba7f580b4b99bed, type: 3}
   maxEnemies: 100
   _bulletsUpgradeLvl: 0
+  _gunAmmo: 10
+  _ARAmmo: 15
   _healthUpgradeLvl: 0
   _healthIncreaseLvl1: 15
   _healthIncreaseLvl2: 30
@@ -57,4 +63,7 @@ MonoBehaviour:
   _speedIncreaseLvl1: 3
   _speedIncreaseLvl2: 6
   _speedIncreaseLvl3: 10
+  _traceDamageLvl1: 1
+  _traceDamageLvl2: 3
+  _traceBubbleLifeTimeLvl3: 5
   _damageUpgradeLvl: 0
