@@ -56,6 +56,7 @@ MonoBehaviour:
   _cameraMovement: {fileID: 4078147697702221744}
   _gunObject: {fileID: 8270507365711461757}
   timeBetweenShots: 1
+  timeBetweenShotsAnim: 2.5
   timeBetweenShotsM: 0.2
   lastShootTime: 0
 --- !u!114 &2395954038161118616
@@ -486,6 +487,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2818011832915538301}
     m_Modifications:
+    - target: {fileID: 1956946309388236355, guid: 91effcf7f16351e40ba7f580b4b99bed,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029932164689447881, guid: 91effcf7f16351e40ba7f580b4b99bed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5482031282527799845, guid: 91effcf7f16351e40ba7f580b4b99bed,
         type: 3}
       propertyPath: m_Name
