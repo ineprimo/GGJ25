@@ -40,8 +40,8 @@ public class Bullet : MonoBehaviour
        }
         else
         {
+            GetComponent<PlaySoundWithVariation>().Reproduce();
             Destroy(gameObject);
-
         }
     }
 
@@ -100,8 +100,7 @@ public class Bullet : MonoBehaviour
         if(currentTime >= lifeTime)
         {
             GetComponent<PlaySoundWithVariation>().Reproduce();
-            Debug.Log("MALMAL");
-            Destroy(gameObject );
+            Destroy(gameObject);
         }
    
         bounceCD();
