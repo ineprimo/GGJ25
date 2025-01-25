@@ -6,6 +6,10 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
+
+    // ANIMATION
+    [SerializeField] AnimationManager _animationManager;
+
     public enum Upgrades
     {
         BULLETS,
@@ -79,7 +83,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
-    
+
+
+
+    public AnimationManager GetAnimationManager() { return _animationManager; }
+
+
 
     // CANTIDAD DE BALAS
     public void UpgradeBullets()

@@ -40,16 +40,23 @@ public class InputManager : MonoBehaviour
             {
                 StartCoroutine(ContinuousShoot());
             }
+
+            // animation
+            GameManager.Instance.GetAnimationManager().attackAnim(true);
         }
 
         // Deja de disparar si suelta el bot�n del rat�n
         if (Input.GetMouseButtonUp(0))
         {
             isShooting = false;
+
+            // animation
+            GameManager.Instance.GetAnimationManager().attackAnim(false);
+
         }
         // Haztelo como arriba mas o menos
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.Instance.UpgradeBullets();
             
