@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlaySoundWithVariation : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
+    private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private float _pitchVariationRange = 0.2f;
 
+    private void Start()
+    {
+        _audioSource = GameManager.Instance.GetPlayer().GetComponent<AudioSource>();
+    }
     public void Reproduce()
     {
         if (_audioSource != null && _audioClip != null)
