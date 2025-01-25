@@ -19,10 +19,13 @@ public class AnimationManager : MonoBehaviour
         
     }
 
+    public Animator GetAnimator() { return _animator; }
 
     public void attackAnim(bool a)
     {
         _animator.SetBool("attack", a);
+
+
     }
 
     public void idleAnim(bool a)

@@ -33,16 +33,17 @@ public class InputManager : MonoBehaviour
         // DISPARO //
         if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
+            GameManager.Instance.GetAnimationManager().attackAnim(true);
+            waitfor(1.0f);
+
+            // esperar
             _shootComponent.shootWeapon();
             lastShootTime = Time.time;
-            isShooting = true; 
+            isShooting = true;
             if (_shootComponent.gunLevel == 4)
             {
                 StartCoroutine(ContinuousShoot());
             }
-
-            // animation
-            GameManager.Instance.GetAnimationManager().attackAnim(true);
         }
 
         // Deja de disparar si suelta el bot�n del rat�n
@@ -80,5 +81,12 @@ public class InputManager : MonoBehaviour
             }
             yield return new WaitForSeconds(timeBetweenShotsM);
         }
+    }
+
+    private IEnumerator waitfor(float time)
+    {
+
+
+        yield return new WaitForSeconds(time);
     }
 }
