@@ -15,12 +15,25 @@ public class IntroEpica : MonoBehaviour
 
     private IEnumerator IntroGame()
     {
-        while(_player.transform.position.z >= _destination.transform.position.z)
+        Rigidbody playerRigidbody = _player.GetComponent<Rigidbody>();
+        Vector3 startPosition = _player.transform.position;
+        Vector3 destinationPosition = _destination.position;
+        float journeyTime = 2f; // Duración del movimiento
+        float elapsedTime = 0f;
+
+        while (elapsedTime < journeyTime)
         {
-            _player.GetComponent<Rigidbody>().Move(_destination.position, Quaternion.identity);
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / journeyTime;
+            Vector3 newPosition = Vector3.Lerp(startPosition, destinationPosition, t);
+            playerRigidbody.MovePosition(newPosition);
+            yield return null;
         }
+
+        playerRigidbody.MovePosition(destinationPosition);
         yield return new WaitForSeconds(1);
-        // FINAL ANIMACION
-        _player.GetComponent<InputManager>().CanInput();   // Reactivamos el INPUT
+
+        _player.GetComponent<InputManager>().CanInput(); // Reactivamos el INPUT
     }
+
 }

@@ -94,7 +94,7 @@ public class InputManager : MonoBehaviour
         // DISPARO //
         if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
-            GameManager.Instance.GetAnimationManager().attackAnim(true);
+            //GameManager.Instance.GetAnimationManager().attackAnim(true);
 
             isShooting = true;
             StartCoroutine(ContinuousShoot());
