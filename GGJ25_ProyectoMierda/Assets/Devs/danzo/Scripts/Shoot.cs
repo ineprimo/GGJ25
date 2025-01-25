@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon()
     {
-        Debug.Log("Municion:" + currentAmmo); 
+        //Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
             StartCoroutine(ShootWithDelay());
@@ -112,11 +112,11 @@ public class Shoot : MonoBehaviour
     {
         isReloading = true;
 
-        yield return new WaitForSeconds(3f); 
-        if(gunLevel == 4)
-            currentAmmo = 15;
+        yield return new WaitForSeconds(3f);
+        if (gunLevel == 4)
+            currentAmmo = GameManager.Instance.getARAmmo();
         else
-            currentAmmo = 10;
+            currentAmmo = GameManager.Instance.getGunAmmo(); 
         
         isReloading = false;
     }

@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e54af32e-8718-42bc-8dcd-b491e4c61fe9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Thrower Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Thrower Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/CameraMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/CameraMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jogo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jogo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CaquitaSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CaquitaSpawn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,27 +18,27 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Devs/jimbo/Scripts/BubbleShield.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2s7r1EOO2MAK9qWcm9cAMmQvSv8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2023.2.20f1\Editor\Unity.exe" />
@@ -96,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737817239574</updated>
-      <workItem from="1737817239635" duration="1662000" />
+      <workItem from="1737817239635" duration="5912000" />
     </task>
     <servers />
   </component>

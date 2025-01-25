@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
         GetComponent<CaquitaMovement>().enabled = true;
     }
     
+    // cuando la bala burbuja hittee al enemy 
     public void Hit(float damage)
     {
         _health -= damage;

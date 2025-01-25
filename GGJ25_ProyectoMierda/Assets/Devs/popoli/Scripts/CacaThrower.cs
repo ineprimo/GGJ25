@@ -5,8 +5,7 @@ using UnityEngine;
 public class CacaThrower : MonoBehaviour
 {
     [SerializeField] private GameObject _caca;
-    
-    private Transform _tr;
+
     private Transform _playerTr;
     
     [SerializeField] private float _maxTime = 2.0f;
@@ -16,7 +15,7 @@ public class CacaThrower : MonoBehaviour
     {
         if(_time <= 0.0f)
         {
-            GameObject cacaBullet = Instantiate(_caca, _tr);
+            GameObject cacaBullet = Instantiate(_caca, transform);
             _time = _maxTime;
         }
         else _time -= Time.deltaTime;
@@ -25,14 +24,13 @@ public class CacaThrower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _tr = transform;
         _playerTr = GameManager.Instance.GetPlayer().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((_playerTr.position - _tr.position).magnitude <= 5.0f)
+        if ((_playerTr.position - transform.position).magnitude <= 5.0f)
         {
             TryThrowShit();
         }
