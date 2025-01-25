@@ -22,7 +22,6 @@ public class OnEnterGachapon : MonoBehaviour
     {
         if(canPull)
         {
-            Debug.Log("is on cd " + gachaOnCooldown + " cd " + _gacha.getCD() + " currenttime " + currentGachaTime);
 
             if (Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
@@ -36,8 +35,7 @@ public class OnEnterGachapon : MonoBehaviour
                 else
                     Debug.Log(up.getName());
 
-                //
-
+                updateUpgrades(up.getName());
             }
 
             if (gachaOnCooldown)
@@ -51,20 +49,34 @@ public class OnEnterGachapon : MonoBehaviour
                 }
                 else
                     currentGachaTime += Time.deltaTime;
-
-                //Debug.Log("gacha timer " + currentGachaTime);
             }
-            
         }
-
     }
 
+    // BULLETS, LIFE, SPEED, DAMAGE
+    private void updateUpgrades(string up)
+    {
+        switch (up)
+        {
+            case "BULLETS":
+                GameManager.Instance.UpgradeBullets();
+                break;
+            case "LIFE":
+                GameManager.Instance.UpgradeLife();
+                break;
+            case "SPEED":
+                GameManager.Instance.UpgradeSpeed();
+                break;
+            case "DAMAGE":
+                GameManager.Instance.UpgradeDamage();
+                break;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         // si es el player
         if (other.gameObject.GetComponentInParent<PlayerMovement>() != null)
         {
-            Debug.Log("entro y soy el player");
             // le permite tirar en el gachapon
             canPull = true; 
         }
