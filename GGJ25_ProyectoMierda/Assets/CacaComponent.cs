@@ -13,7 +13,7 @@ public class CacaComponent : MonoBehaviour
 
     // cuando toque el suelo la caca se deshace
     bool deshacer;
-    [SerializeField] float deshacerTime;
+    [SerializeField] float deshacerTime = 3.0f;
     
     public float Damage { get {return _damage; } }
 
@@ -40,18 +40,21 @@ public class CacaComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction.normalized * (speed * Time.deltaTime);
-
         if (deshacer)
         {
-            // falta disablear el collider ara q non haga daño al plauer
+            gameObject.transform.position = transform.position;
 
-            deshacerTime -= Time.time;
-
+            deshacerTime -= Time.deltaTime;
             if (deshacerTime < 0)
             {
                 Destroy(gameObject);
             }
+
+            transform.position = transform.position; // que se mantenga quieta en el suelo
+        }
+        else
+        {
+            transform.position += direction.normalized * (speed * Time.deltaTime);
         }
     }
 }

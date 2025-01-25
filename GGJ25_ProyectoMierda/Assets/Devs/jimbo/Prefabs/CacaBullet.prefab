@@ -151,3 +151,4 @@ MonoBehaviour:
   _damage: 10
   speed: 6.5
   verticalBoost: 2
+  deshacerTime: 2

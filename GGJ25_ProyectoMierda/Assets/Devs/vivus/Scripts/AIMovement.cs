@@ -19,6 +19,6 @@ public class AIMovement : MonoBehaviour
     void Update()
     {
         _agent.destination = _playerTransform.position;
-        Debug.Log("Ir");
+        //Debug.Log("Ir");
     }
 }
