@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float timeBetweenShots = 0.3f;
 
     [SerializeField] AudioClip soplidoSound;
+    [SerializeField] AudioClip ayayay;
+
     private AudioSource audioSource;
 
     private int bounces = 0;
@@ -55,11 +57,23 @@ public class Shoot : MonoBehaviour
     private IEnumerator ShootWithDelay(bool a)
     {
         currentAmmo--;
-        audioSource.PlayOneShot(soplidoSound);
+        
 
-      
+        if (GameManager.Instance.GetBulletsLvl()>=3 )
+        {
+
+            // Reproduce "ayayay" solo si no está ya sonando
+            if (!audioSource.isPlaying || audioSource.clip != ayayay)
+            {
+                audioSource.clip = ayayay;
+                audioSource.Play();
+            }
+        }
+        else
+            audioSource.PlayOneShot(soplidoSound);
+
         Vector3 cameraForward = Camera.main.transform.forward;
-        cameraForward.y = 0; 
+        cameraForward.y = 0;
 
         cameraForward.Normalize();
 
@@ -71,30 +85,25 @@ public class Shoot : MonoBehaviour
         {
             shootDirection = cameraForward * (bulletSpeed + 3);
         }
-            
         else
-             shootDirection = cameraForward * bulletSpeed + Vector3.Project(playerVelocity, cameraForward);
+            shootDirection = cameraForward * bulletSpeed + Vector3.Project(playerVelocity, cameraForward);
 
         if (gunLevel == 4)
         {
-                //Debug.Log("just normal bubble...");
-
-                // Instancia la bala
-                var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-
+            // Instancia la bala
+            var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = shootDirection;
         }
         else
         {
             for (int i = 0; i < gunLevel; i++)
             {
-                    var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-
+                var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = shootDirection;
 
                 // Espera el tiempo entre disparos antes de instanciar la siguiente bala
                 yield return new WaitForSeconds(timeBetweenShots);
-            }       
+            }
         }
     }
 
