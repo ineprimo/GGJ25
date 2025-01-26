@@ -101,12 +101,12 @@ public class GameManager : MonoBehaviour
     public void UpgradeBullets()
     {
 
-        if (_bulletsUpgradeLvl <= 3)
+        if (_bulletsUpgradeLvl <4 )
         {
             _bulletsUpgradeLvl++;
             _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
 
-            if(_gun.GetComponent<Shoot>().gunLevel == 3)
+            if(_gun.GetComponent<Shoot>().gunLevel == 4)
             {
                 _gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
 

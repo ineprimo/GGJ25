@@ -2549,11 +2549,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 942293809885220122, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1148599099283291244, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2609,36 +2604,6 @@ PrefabInstance:
       propertyPath: _hud
       value: 
       objectReference: {fileID: 1271182840}
-    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _currentLife
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7926576299569444810, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.304
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582446501796774075, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_Antialiasing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582446501796774075, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_RendererIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582446501796774075, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: _inputActive
@@ -11233,7 +11198,7 @@ PrefabInstance:
     - target: {fileID: 3068206048922963770, guid: 83c25faccc3ddd443b95e74b05788ded,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3150545404103302912, guid: 83c25faccc3ddd443b95e74b05788ded,
         type: 3}
@@ -13119,11 +13084,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 331941326}
   - {fileID: 1476140810}
-  - {fileID: 713913204}
   - {fileID: 1552234481}
   - {fileID: 591484415}
   - {fileID: 1921320558}
   - {fileID: 1258667173}
+  - {fileID: 713913204}
   - {fileID: 1986604271}
   - {fileID: 1192738317}
   - {fileID: 297853545}
