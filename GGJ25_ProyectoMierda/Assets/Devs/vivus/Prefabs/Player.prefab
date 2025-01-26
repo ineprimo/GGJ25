@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
-  _speed: 528
+  _speed: 584
   _currentLife: 50
   _maxLife: 240
   coins: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147847334644448105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: def8dda18561d444396a79b3024c5c30, type: 3}
   m_Name: 
@@ -333,7 +333,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 63241c28d87411245aeda40572c3448a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 0.9405003
+  m_Pitch: 1.081679
   Loop: 0
   Mute: 0
   Spatialize: 0

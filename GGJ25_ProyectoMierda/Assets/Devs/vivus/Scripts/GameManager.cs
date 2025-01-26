@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Speed Lvl 1");
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
-            _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
+            _player.GetComponent<TraceComponent>().enabled = true;   // Se empieza a crear el rastro de burbujas
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl1);   // Setear daño de las burbujas
         }
         else if (_speedUpgradeLvl == 2)
@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        _hud.UpdateUI();
+        //_hud.UpdateUI();
 
     }
 
