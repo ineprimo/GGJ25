@@ -40,7 +40,8 @@ public class Bullet : MonoBehaviour
        }
         else
         {
-            GetComponent<PlaySoundWithVariation>().Reproduce();
+            if(collision.gameObject.GetComponent<Enemy>() != null)
+                GetComponent<PlaySoundWithVariation>().Reproduce();
             Destroy(gameObject);
         }
     }
