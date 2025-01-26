@@ -13,6 +13,8 @@ public class CacaComponent : MonoBehaviour
     // cuando toque el suelo la caca se deshace
     bool deshacer;
     [SerializeField] float deshacerTime = 3.0f;
+
+    [SerializeField] float limitTime;
     
     public float Damage { get; set; }
 
@@ -34,11 +36,18 @@ public class CacaComponent : MonoBehaviour
         direction.y += verticalBoost;
 
         deshacer = false;
+        limitTime = 1.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        limitTime -= Time.deltaTime;
+        if(limitTime < 0)
+        {
+            deshacer = true;
+        }
+
         if (deshacer)
         {
             gameObject.transform.position = transform.position;
