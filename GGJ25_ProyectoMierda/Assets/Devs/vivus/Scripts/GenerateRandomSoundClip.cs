@@ -11,7 +11,7 @@ public class GenerateRandomSoundClip : MonoBehaviour
     private float _currentTime = 0f;
     private void Start()
     {
-        _maxReplayTime += Random.RandomRange(-2.0f, 2.0f);
+        _maxReplayTime += Random.Range(-2.0f, 2.0f);
     }
     private void Update()
     {
@@ -20,7 +20,7 @@ public class GenerateRandomSoundClip : MonoBehaviour
         if (_currentTime >= _maxReplayTime)
         {
             _currentTime = 0f;
-            _maxReplayTime += Random.RandomRange(-2.0f, 2.0f);
+            _maxReplayTime += Random.Range(-2.0f, 2.0f);
 
             if (_clips.Length > 0)
             {

@@ -16,7 +16,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] private float timeBetweenShotsM = 0.2f; //Metralleta
     [SerializeField] private float lastShootTime = 0f;
     [SerializeField] private float delayBeforeShot = 0.5f;
-    private bool isShooting = false;
+    [SerializeField] private bool isShooting = false;
+    [SerializeField] private bool animended = true;
 
 
     void Start()
@@ -37,22 +38,21 @@ public class InputManager : MonoBehaviour
             _cameraMovement.RotateCamera(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
 
-        
-
             // DISPARO //
             if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
             {
                 GameManager.Instance.GetAnimationManager().attackAnim(true);
+                animended = false;
                 isShooting = true;
                 StartCoroutine(ContinuousShoot());
 
             }
             // Deja de disparar si suelta el bot�n del rat�n
             if (Input.GetMouseButtonUp(0))
-            {
+            {   
+                // si ha acabado
                 isShooting = false;
-                // animation
-                GameManager.Instance.GetAnimationManager().attackAnim(false);
+
 
             }
             if (Input.GetKeyDown(KeyCode.O))
@@ -73,6 +73,19 @@ public class InputManager : MonoBehaviour
         }
 
 
+        Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
+
+        if (!isShooting)
+        {
+            if (GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+            {
+                // animation
+                GameManager.Instance.GetAnimationManager().attackAnim(false);
+                animended = true;
+            }
+
+        }
+
 
     }
 
@@ -82,10 +95,10 @@ public class InputManager : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeShot);
 
       
-        while (isShooting)
+        while (!animended)
         {
-    
 
+            Debug.Log("is shootin delay");
             if (_shootComponent.gunLevel == 4)
             {
                 if (Time.time - lastShootTime >= timeBetweenShotsM)
