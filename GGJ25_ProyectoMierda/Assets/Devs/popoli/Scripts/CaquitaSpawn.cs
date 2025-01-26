@@ -45,9 +45,9 @@ public class CaquitaSpawn : MonoBehaviour
         player = GameManager.Instance.GetPlayer();
         timer = 0;
         onRange = false;
-
-        spawnPosition = new Vector3(transform.position.x, transform.position.y + spawnYOffset, transform.position.z);
-
+        
+        Transform tr = transform;
+        spawnPosition = tr.position + tr.up * spawnYOffset;
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class CaquitaSpawn : MonoBehaviour
         {
             actualDistance = (transform.position - player.transform.position).magnitude;
 
-            if (actualDistance < spawnDistance) onRange = false;
+            if (actualDistance > spawnDistance) onRange = false;
             else onRange = true;
             
             if (Time.time >= timer && onRange)
