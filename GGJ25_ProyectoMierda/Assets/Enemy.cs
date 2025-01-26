@@ -28,13 +28,13 @@ public class Enemy : MonoBehaviour
     public void Freeze()
     {
         Frozen = true;
-        GetComponent<CaquitaMovement>().enabled = false;
+        GetComponent<AIMovement>().enabled = false;
     }
 
     public void Unfreeze()
     {
         Frozen = false;
-        GetComponent<CaquitaMovement>().enabled = true;
+        GetComponent<AIMovement>().enabled = true;
     }
     
     // cuando la bala burbuja hittee al enemy 
@@ -52,10 +52,10 @@ public class Enemy : MonoBehaviour
         }
         if (_currentHealth <= 0)
         {
-            Freeze();
+            //Freeze();
 
             GetComponent<Animator>().SetTrigger("death");
-
+     
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
@@ -81,6 +81,9 @@ public class Enemy : MonoBehaviour
     
     private IEnumerator Death()
     {
+        Freeze();
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+
         transform.localScale *= 0.25f;
         
         yield return new WaitForSeconds(3);
@@ -90,7 +93,7 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.GetComponent<Bullet>() != null)
         {
             Hit(other.gameObject.GetComponent<Bullet>().Damage);
             Destroy(other.gameObject);

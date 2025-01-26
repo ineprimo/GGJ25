@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +45,18 @@ public class InputManager : MonoBehaviour
                 GameManager.Instance.GetAnimationManager().attackAnim(true);
                 animended = false;
                 isShooting = true;
-                StartCoroutine(ContinuousShoot());
+
+                bool a = false; 
+                if (Input.GetKeyDown(KeyCode.S)) 
+                {
+                    a = true;
+                    StartCoroutine(ContinuousShoot(a));
+                }
+                else
+                {
+                    StartCoroutine(ContinuousShoot(a));
+                }
+                
 
             }
             // Deja de disparar si suelta el bot�n del rat�n
@@ -73,7 +85,7 @@ public class InputManager : MonoBehaviour
         }
 
 
-        Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
+        //Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
 
         if (!isShooting)
         {
@@ -89,7 +101,7 @@ public class InputManager : MonoBehaviour
 
     }
 
-    private IEnumerator ContinuousShoot()
+    private IEnumerator ContinuousShoot(bool a)
     {
 
         yield return new WaitForSeconds(delayBeforeShot);
@@ -98,12 +110,16 @@ public class InputManager : MonoBehaviour
         while (!animended)
         {
 
-            Debug.Log("is shootin delay");
+            a = Input.GetKey(KeyCode.S);
             if (_shootComponent.gunLevel == 4)
             {
                 if (Time.time - lastShootTime >= timeBetweenShotsM)
                 {
-                    _shootComponent.shootWeapon();
+                    if(a)
+                        _shootComponent.shootWeapon(a);
+                    else
+                        _shootComponent.shootWeapon(false);
+
                     lastShootTime = Time.time;
                 }
             }
@@ -111,7 +127,11 @@ public class InputManager : MonoBehaviour
             {
                 if (Time.time - lastShootTime >= timeBetweenShots)
                 {
-                    _shootComponent.shootWeapon();
+                    if (a)
+                        _shootComponent.shootWeapon(a);
+                    else
+                        _shootComponent.shootWeapon(false);
+
                     lastShootTime = Time.time;
                 }
             }

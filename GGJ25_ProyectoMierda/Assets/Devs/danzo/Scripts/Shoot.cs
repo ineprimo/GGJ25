@@ -30,12 +30,12 @@ public class Shoot : MonoBehaviour
         gunLevel++;
     }
 
-    public void shootWeapon()
+    public void shootWeapon(bool a)
     {
         //Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
-            StartCoroutine(ShootWithDelay());
+            StartCoroutine(ShootWithDelay(a));
 
         }
         else
@@ -45,21 +45,39 @@ public class Shoot : MonoBehaviour
                 GameManager.Instance.GetAnimationManager().attackAnim(false);
                 StartCoroutine(ReloadWeapon());
                
+
             }
+
         }
 
 
 
     }
 
-    private IEnumerator ShootWithDelay()
+    private IEnumerator ShootWithDelay(bool a)
     {
         currentAmmo--;
         audioSource.PlayOneShot(soplidoSound);
 
+      
+        Vector3 cameraForward = Camera.main.transform.forward;
+        cameraForward.y = 0; 
+
+        cameraForward.Normalize();
+
         Vector3 playerVelocity = GameManager.Instance.GetPlayer().GetComponent<Rigidbody>().velocity;
 
-        if(gunLevel == 4)
+        Vector3 shootDirection;
+
+        if (a)
+        {
+            shootDirection = cameraForward * (bulletSpeed + 3);
+        }
+            
+        else
+             shootDirection = cameraForward * bulletSpeed + Vector3.Project(playerVelocity, cameraForward);
+
+        if (gunLevel == 4)
         {
             if (bounces == 0)
             {
@@ -67,7 +85,7 @@ public class Shoot : MonoBehaviour
 
                 // Instancia la bala
                 var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity =  playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().velocity = shootDirection;
             }  
             else
             {
@@ -76,7 +94,7 @@ public class Shoot : MonoBehaviour
 
                 // Instancia la bala
                 var bullet = Instantiate(bouncyBulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().velocity = shootDirection;
                 bullet.GetComponent<BounceBubble>().setBounces(bounces);
             }
 
@@ -94,7 +112,7 @@ public class Shoot : MonoBehaviour
 
                     // Instancia la bala
                     var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
+                    bullet.GetComponent<Rigidbody>().velocity = shootDirection;
                 }
                 else
                 {
@@ -103,7 +121,7 @@ public class Shoot : MonoBehaviour
 
                     // Instancia la bala
                     var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = playerVelocity + bulletSpawnPoint.forward * bulletSpeed;
+                    bullet.GetComponent<Rigidbody>().velocity = shootDirection;
                     bullet.GetComponent<BounceBubble>().setBounces(bounces);
                 }
 
@@ -123,24 +141,35 @@ public class Shoot : MonoBehaviour
 
     private IEnumerator ReloadWeapon()
     {
+        Debug.Log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         isReloading = true;
         GameManager.Instance.GetAnimationManager().rechargeAnim(true);
 
+        bool wasMousePressed = Input.GetMouseButton(0);
 
         yield return new WaitForSeconds(5f);
 
         GameManager.Instance.GetAnimationManager().rechargeAnim(false);
 
-        yield return new WaitForSeconds(0.2f);
-        GameManager.Instance.GetAnimationManager().attackAnim(true);
+       
 
 
         if (gunLevel == 4)
             currentAmmo = GameManager.Instance.getARAmmo();
         else
-            currentAmmo = GameManager.Instance.getGunAmmo(); 
-        
+            currentAmmo = GameManager.Instance.getGunAmmo();
+
+        if (wasMousePressed && Input.GetMouseButton(0))
+        {
+           
+            yield return new WaitForSeconds(0.2f); 
+            GameManager.Instance.GetAnimationManager().attackAnim(true);
+        }
+
         isReloading = false;
+    
+
+       
     }
 
     // Start is called before the first frame update

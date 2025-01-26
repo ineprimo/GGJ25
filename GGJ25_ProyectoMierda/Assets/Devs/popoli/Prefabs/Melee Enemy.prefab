@@ -171,8 +171,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.607126, y: 2.8906953, z: 0.27170897}
-  m_Center: {x: 0.481487, y: 0.2446529, z: 0.027796244}
+  m_Size: {x: 4.607126, y: 2.8488348, z: 0.84380203}
+  m_Center: {x: 0.481487, y: 0.26558316, z: 0.0068660295}
 --- !u!114 &5472781247636325228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3085869615580526969}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.37
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -204,7 +204,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 1.2
+  m_BaseOffset: 1.21
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8098039036543196725
@@ -221,8 +221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 0
   _health: 100
+  _currentHealth: 0
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}
-  threshold: 0.5
+  threshold: 1
   _eyes: {fileID: 6563268949135535870}
   _eye1: {fileID: 21300000, guid: 4abad43570f377544896326e6c091e56, type: 3}
   _eye2: {fileID: 21300000, guid: 0e2462aa7abc0ab4090f8e73ed6e0a3b, type: 3}
@@ -465,7 +466,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &4261322567153759502
 PrefabInstance:
   m_ObjectHideFlags: 0

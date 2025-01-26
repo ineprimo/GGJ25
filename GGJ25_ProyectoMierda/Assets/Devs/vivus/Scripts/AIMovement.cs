@@ -30,11 +30,11 @@ public class AIMovement : MonoBehaviour
 
     public void SetSpeed(float sp)
     {
-        Debug.Log("setspeed");
+        //Debug.Log("setspeed");
         if (GetComponent<NavMeshAgent>() != null)
         {
             GetComponent<NavMeshAgent>().speed = sp;
-            Debug.Log("Hay NavMesh y Speed");
+            //Debug.Log("Hay NavMesh y Speed");
         }
         else
         {
