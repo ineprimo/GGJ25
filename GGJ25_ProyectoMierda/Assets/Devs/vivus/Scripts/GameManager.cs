@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     // devuelve true cuando nEnemies sea >= maxEnemies
     public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
+    public int getNEnemies() { return nEnemies; }
 
     public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
 
@@ -210,8 +211,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log(nEnemies);
     }
 
-    public void deRegisterEnemy()
+    public void deRegisterEnemy(GameObject e)
     {
+        SceneEnemies.Remove(e);
         nEnemies--;
     }
 
