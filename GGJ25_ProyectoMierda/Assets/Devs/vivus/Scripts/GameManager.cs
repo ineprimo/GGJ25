@@ -123,7 +123,10 @@ public class GameManager : MonoBehaviour
             }
            
         }
-      //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
+
+        _hud.UpdateUI();
+
+        //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
     }
     // VIDA
     public void UpgradeLife()
@@ -171,7 +174,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        //_hud.UpdateUI();
+        _hud.UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -184,6 +187,9 @@ public class GameManager : MonoBehaviour
             // + da�o
 
             Debug.Log("1 bounce");
+
+            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
+
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
@@ -209,7 +215,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        //_hud.UpdateUI();
+        _hud.UpdateUI();
 
     }
 

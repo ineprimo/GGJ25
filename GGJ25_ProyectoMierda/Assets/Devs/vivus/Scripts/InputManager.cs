@@ -63,7 +63,15 @@ public class InputManager : MonoBehaviour
             {
                 GameManager.Instance.UpgradeSpeed();
             }
-       
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            GameManager.Instance.UpgradeLife();
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            GameManager.Instance.UpgradeDamage();
+        }
+
 
 
     }

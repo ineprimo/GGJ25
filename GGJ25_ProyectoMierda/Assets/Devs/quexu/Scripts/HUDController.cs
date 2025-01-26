@@ -42,6 +42,7 @@ public class HUDController : MonoBehaviour
 
     public void UpateSplash(int splashes)
     {
+        Debug.Log(splashes);
         switch (splashes)
         {
             case 1:
