@@ -83,11 +83,13 @@ public class LeaderboardController : MonoBehaviour
 
     public void PrintInLeaderboard()
     {
-        for (int i = 0; i < MAX_ENTRIES; i++)
+        for (int i = 0; i < leaderboard.Count; i++)
         {
+
+            Debug.Log("name " + i  + " " + leaderboard[i].playerName);
             // actualiza el text mesh pro
-            names.transform.GetChild(i).GetComponent<TextMeshPro>().text = leaderboard[i].playerName;
-            scores.transform.GetChild(i).GetComponent<TextMeshPro>().text = leaderboard[i].score.ToString();
+            //names.transform.GetChild(i).GetComponent<TextMeshPro>().text; //= leaderboard[i].playerName;
+            //scores.transform.GetChild(i).GetComponent<TextMeshPro>().text = leaderboard[i].score.ToString();
         }
     }
     public void AddNewEntry(string playerName, int score)
