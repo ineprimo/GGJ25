@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxLife = 50.0f;
     [SerializeField] private int coins = 0;
     //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
+
+    private Vector3 _dir;
     
     [SerializeField] private HUDController _hud;
     
@@ -39,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector3 dir)
     {
         dir.Normalize();
-        _rigidBody.velocity = dir * _speed;
+        _dir = dir;
+        //_rigidBody.velocity = dir * (_speed * Time.deltaTime);
     }
 
     public void ImproveSpeed(float incr)
@@ -126,4 +129,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+=======
+    private void FixedUpdate()
+    {
+        Vector3 velocity = _dir * _speed;
+        _rigidBody.velocity = velocity * Time.fixedDeltaTime;
+    }
 }
