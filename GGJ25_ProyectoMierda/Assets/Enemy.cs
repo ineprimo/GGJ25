@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public float _damage = 10.0f;
     [SerializeField] private float _health;
-    private float _currentHealth;
+    public float _currentHealth;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
     [SerializeField] private SpriteRenderer _eyes;
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
         {
             _eyes.sprite = _eye2;
         }
-        else if (_currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             GetComponent<Animator>().SetTrigger("death");
             foreach (Transform child in transform)
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.GetComponent<Bullet>() != null)
         {
             Hit(other.gameObject.GetComponent<Bullet>().Damage);
             Destroy(other.gameObject);
