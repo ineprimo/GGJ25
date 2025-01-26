@@ -44,5 +44,8 @@ public class IntroEpica : MonoBehaviour
         _player.GetComponent<InputManager>().enabled = true;
         playerRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
         // COSAS DEL JUEGO SI QUEREIS PONERLAS
+
+        // activa spawners:
+        SpawnersManager.Instance.activateSpawners();
     }
 }

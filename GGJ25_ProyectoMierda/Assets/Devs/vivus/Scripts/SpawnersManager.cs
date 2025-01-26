@@ -8,7 +8,11 @@ public class SpawnersManager : MonoBehaviour
     [SerializeField] private GameObject[] _spawns;
     [SerializeField] private int _currentLvl = 1;
     [SerializeField] private float _levelUpTime = 10.0f;
+
     float initLevelUpTime;
+
+    bool initSpawners;
+    bool activated;
 
     public int GetCurrentLvl() { return _currentLvl; }
 
@@ -54,22 +58,43 @@ public class SpawnersManager : MonoBehaviour
     void Start()
     {
         initLevelUpTime = _levelUpTime;
-        UpgradeAllSpawners(); // first level
+
+        initSpawners = false;
+        activated= false;
+
+        for (int i = 0; i < _spawns.Length; ++i)
+        {
+            _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = false;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        _levelUpTime -= Time.deltaTime;
-
-        if (_levelUpTime < 0)
+        if (!activated && initSpawners)
         {
-            if(_currentLvl != nLevels) _currentLvl++;
-            Debug.Log("Current Level: " + _currentLvl);
+            for (int i = 0; i < _spawns.Length; ++i)
+            {
+                _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = true;
+            }
+            activated = true;
+            Debug.Log("ACTIVATED SPAWNERS");
+        }
 
-            UpgradeAllSpawners();
+        if (activated)
+        {
+            _levelUpTime -= Time.deltaTime;
 
-            _levelUpTime = initLevelUpTime;
+            if (_levelUpTime < 0)
+            {
+                if (_currentLvl != nLevels) _currentLvl++;
+                //Debug.Log("Current Level: " + _currentLvl);
+
+                UpgradeAllSpawners();
+
+                _levelUpTime = initLevelUpTime;
+            }
         }
     }
 
@@ -82,6 +107,14 @@ public class SpawnersManager : MonoBehaviour
                         meleeHealth[_currentLvl-1], throwerHealth[_currentLvl - 1],
                         meleeDamage[_currentLvl - 1], throwerDamage[_currentLvl - 1],
                         meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1]);
+        }
+    }
+
+    public void activateSpawners()
+    {
+        if (!initSpawners)
+        {
+            initSpawners = true;
         }
     }
 }
