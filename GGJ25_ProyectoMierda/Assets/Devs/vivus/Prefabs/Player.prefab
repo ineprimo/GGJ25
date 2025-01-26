@@ -163,6 +163,8 @@ MonoBehaviour:
   timeBetweenShotsM: 0.2
   lastShootTime: 0
   delayBeforeShot: 0.5
+  isShooting: 0
+  animended: 1
 --- !u!114 &2395954038161118616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4095,7 +4097,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2b0a1a1f5e106b41917f3c84544b3ae, type: 2}
+  - {fileID: 2100000, guid: 8d5abaa547baf2246a848a3dd9ae6b09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5522,7 +5524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7926576299569444810
 Transform:
   m_ObjectHideFlags: 0
@@ -6031,7 +6033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8888763355313647425
 Transform:
   m_ObjectHideFlags: 0
