@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Devs/berto31290/Assets/Materials/Maquina.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/berto31290/Assets/Materials/Maquina.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/JogoJimbo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/JogoJimbo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Melee Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Thrower Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Prefabs/Thrower Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Devs/quexu/Scripts/HUDController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/quexu/Scripts/HUDController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/vivus/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
