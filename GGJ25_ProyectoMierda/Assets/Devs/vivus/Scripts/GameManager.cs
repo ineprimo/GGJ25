@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        _hud.UpdateUI();
+        //_hud.UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()

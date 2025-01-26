@@ -13,8 +13,11 @@ public class TraceComponent : MonoBehaviour
 
     [SerializeField] private GameObject _bubblePrefab;
 
-    bool _canSinged = false;
-    public void ActivateSigned() { _canSinged = true; }
+    [SerializeField] bool _canSinged = false;
+    public void ActivateSigned() {
+        _canSinged = true; 
+
+    }
     public void SetCurrentBubbleDamage(float dm) { _currentBubbleDamage = dm; }
     public void SetCurrentBubbleLifeTime(float tm) { _currentBubbleLifeTime = tm; }
 
@@ -27,10 +30,14 @@ public class TraceComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("can singed " + _canSinged);
         if(_canSinged && 
             _maxBubbleGenerationTime <= _currentBubbleGenerationTime &&
             _rigidBody.velocity != Vector3.zero)
         {
+            Debug.Log("javivu desgraciado");
+
             GameObject auxBubble = Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
             Vector3 auxOffset = new Vector3(
                 Random.Range(-0.5f, 0.5f),
