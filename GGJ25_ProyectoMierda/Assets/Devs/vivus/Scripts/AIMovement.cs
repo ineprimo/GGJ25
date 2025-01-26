@@ -22,23 +22,15 @@ public class AIMovement : MonoBehaviour
         //_agent.destination = _playerTransform.position;
         if (_agent.isOnNavMesh)
         {
-            //Debug.Log("Navmesh");
             _agent.destination = _playerTransform.position;
         }
-        //Debug.Log("Ir");
     }
 
     public void SetSpeed(float sp)
     {
-        //Debug.Log("setspeed");
         if (GetComponent<NavMeshAgent>() != null)
         {
             GetComponent<NavMeshAgent>().speed = sp;
-            //Debug.Log("Hay NavMesh y Speed");
-        }
-        else
-        {
-            Debug.LogWarning("NavMeshAgent no est� asignado o encontrado.");
         }
     }
 }

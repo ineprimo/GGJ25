@@ -14,7 +14,6 @@ public class IntroEpica : MonoBehaviour
 
     public void Intro()
     {
-        Debug.Log("Intro");
         StartCoroutine(IntroGame());
     }
 
@@ -27,7 +26,6 @@ public class IntroEpica : MonoBehaviour
         float elapsedTime = 0f;
 
         _door.GetComponent<DoorController>().ToggleDoor();
-        Debug.Log("PuertaAbierta");
 
         while (elapsedTime < journeyTime)
         {
@@ -40,7 +38,6 @@ public class IntroEpica : MonoBehaviour
 
         playerRigidbody.MovePosition(destinationPosition);
         _door.GetComponent<DoorController>().ToggleDoor();
-        Debug.Log("PuertaCerrada");
 
         yield return new WaitForSeconds(1);
 

@@ -83,9 +83,7 @@ public class InputManager : MonoBehaviour
         {
             GameManager.Instance.UpgradeDamage();
         }
-
-
-        //Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
+        
 
         if (!isShooting)
         {

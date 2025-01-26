@@ -32,7 +32,6 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon(bool a)
     {
-        //Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
             StartCoroutine(ShootWithDelay(a));
@@ -81,17 +80,12 @@ public class Shoot : MonoBehaviour
         {
             if (bounces == 0)
             {
-                //Debug.Log("just normal bubble...");
-
                 // Instancia la bala
                 var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = shootDirection;
             }  
             else
             {
-
-                //Debug.Log("MAKING BOUNCY BUBBLE");
-
                 // Instancia la bala
                 var bullet = Instantiate(bouncyBulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = shootDirection;
@@ -103,22 +97,15 @@ public class Shoot : MonoBehaviour
         {
             for (int i = 0; i < gunLevel; i++)
             {
-
-                //Debug.Log("bounces " + bounces);
                 // Instancia la bala
                 if (bounces == 0)
                 {
-                    //Debug.Log("just normal bubble...");
-
                     // Instancia la bala
                     var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = shootDirection;
                 }
                 else
                 {
-
-                   // Debug.Log("MAKING BOUNCY BUBBLE");
-
                     // Instancia la bala
                     var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = shootDirection;
@@ -134,14 +121,11 @@ public class Shoot : MonoBehaviour
 
     public void MakeBouncyBubbles(int nbounces)
     {
-        Debug.Log("MAKING BOUNCY BUBBLES");
         bounces = nbounces;
-        Debug.Log("bounces " + bounces);
     }
 
     private IEnumerator ReloadWeapon()
     {
-        Debug.Log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         isReloading = true;
         GameManager.Instance.GetAnimationManager().rechargeAnim(true);
 

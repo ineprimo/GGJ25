@@ -57,7 +57,6 @@ public class CaquitaSpawn : MonoBehaviour
     void Update()
     {
         startTime -= Time.deltaTime;
-        //Debug.Log(startTime);
 
         if (!GameManager.Instance.getMaxEnemies() && startTime <= 0) 
         {
