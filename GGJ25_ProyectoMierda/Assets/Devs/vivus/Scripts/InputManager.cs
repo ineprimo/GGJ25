@@ -55,7 +55,7 @@ public class InputManager : MonoBehaviour
                 GameManager.Instance.GetAnimationManager().attackAnim(false);
 
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.O))
             {
                 GameManager.Instance.UpgradeBullets();
             }
