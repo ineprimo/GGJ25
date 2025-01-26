@@ -36,7 +36,9 @@ public class Shoot : MonoBehaviour
         {
             if (!isReloading)
             {
+                GameManager.Instance.GetAnimationManager().attackAnim(false);
                 StartCoroutine(ReloadWeapon());
+               
             }
         }
 
@@ -122,6 +124,7 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         GameManager.Instance.GetAnimationManager().rechargeAnim(false);
+        GameManager.Instance.GetAnimationManager().attackAnim(true);
 
 
         if (gunLevel == 4)
