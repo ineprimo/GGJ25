@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
-  _speed: 500
+  _speed: 509
   _currentLife: 50
   _maxLife: 240
   coins: 0
@@ -210,9 +210,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxBubbleGenerationTime: 0.05
-  _currentBubbleDamage: 0
+  _currentBubbleDamage: 1
   _bubblePrefab: {fileID: 505690472321750569, guid: 1f6129523b3b738498b7c7508111a31d,
     type: 3}
+  _canSinged: 1
 --- !u!82 &9094218189320557721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 63241c28d87411245aeda40572c3448a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1.1659721
+  m_Pitch: 1.1254163
   Loop: 0
   Mute: 0
   Spatialize: 0
