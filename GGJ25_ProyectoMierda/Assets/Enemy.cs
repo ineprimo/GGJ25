@@ -28,13 +28,13 @@ public class Enemy : MonoBehaviour
     public void Freeze()
     {
         Frozen = true;
-        GetComponent<CaquitaMovement>().enabled = false;
+        GetComponent<AIMovement>().enabled = false;
     }
 
     public void Unfreeze()
     {
         Frozen = false;
-        GetComponent<CaquitaMovement>().enabled = true;
+        GetComponent<AIMovement>().enabled = true;
     }
     
     // cuando la bala burbuja hittee al enemy 
@@ -52,10 +52,10 @@ public class Enemy : MonoBehaviour
         }
         if (_currentHealth <= 0)
         {
-            Freeze();
+            //Freeze();
 
             GetComponent<Animator>().SetTrigger("death");
-
+            Freeze();
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
