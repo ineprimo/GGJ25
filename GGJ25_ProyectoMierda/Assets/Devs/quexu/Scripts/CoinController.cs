@@ -18,7 +18,9 @@ public class CoinController : MonoBehaviour
             AudioSource audioSource = other.gameObject.GetComponent<AudioSource>();
             if (audioSource != null && pickupSound != null)
             {
+                audioSource.pitch += 0.5f;
                 audioSource.PlayOneShot(pickupSound);
+                audioSource.pitch -= 0.5f;
             }
 
             // Destruir la moneda
