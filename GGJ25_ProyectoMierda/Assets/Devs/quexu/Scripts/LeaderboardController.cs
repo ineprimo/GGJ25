@@ -69,7 +69,7 @@ public class LeaderboardController : MonoBehaviour
     private void SaveLeaderboard()
     {
         Debug.Log("Llamamos a saveleader");
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         for (int i = 0; i < leaderboard.Count; i++)
         {
@@ -88,8 +88,13 @@ public class LeaderboardController : MonoBehaviour
 
             Debug.Log("name " + i  + " " + leaderboard[i].playerName);
             // actualiza el text mesh pro
-            //names.transform.GetChild(i).GetComponent<TextMeshPro>().text; //= leaderboard[i].playerName;
-            //scores.transform.GetChild(i).GetComponent<TextMeshPro>().text = leaderboard[i].score.ToString();
+            Debug.Log(names.transform.GetChild(i).GetComponent<TextMeshProUGUI>().text); //=
+            Debug.Log(leaderboard[i].playerName);
+
+            names.transform.GetChild(i).GetComponent<TextMeshProUGUI>().SetText(leaderboard[i].playerName);
+            names.transform.GetChild(i).gameObject.SetActive(true);
+            scores.transform.GetChild(i).GetComponent<TextMeshProUGUI>().SetText(leaderboard[i].score.ToString());
+            scores.transform.GetChild(i).gameObject.SetActive(true);
         }
     }
     public void AddNewEntry(string playerName, int score)
