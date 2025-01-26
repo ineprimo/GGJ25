@@ -17,7 +17,7 @@ public class CacaThrower : MonoBehaviour
         {
             GameObject cacaBullet = Instantiate(_caca, transform);
             Debug.Log("caca");
-            cacaBullet.GetComponent<CacaComponent>().Damage = transform.parent.gameObject.GetComponent<Enemy>()._damage;
+            cacaBullet.GetComponent<CacaComponent>().Damage = GetComponent<Enemy>()._damage;
             _time = _maxTime;
         }
         else _time -= Time.deltaTime;
