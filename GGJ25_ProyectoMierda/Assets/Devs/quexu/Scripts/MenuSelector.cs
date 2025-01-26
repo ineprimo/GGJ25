@@ -24,7 +24,6 @@ public class MenuSelector : MonoBehaviour
 
     private void Jugar()
     {
-        //Debug.Log("Jugar");
         StartCoroutine(FadeOutTexts(() =>
         {
             gameObject.GetComponentInParent<UIManager>().DesactivarMenu();
@@ -63,12 +62,11 @@ public class MenuSelector : MonoBehaviour
     }
     private void Opciones()
     {
-        Debug.Log("Abriendo el men� de opciones...");
+
     }
 
     private void Salir()
     {
-        Debug.Log("Saliendo del juego...");
         Application.Quit();
 
         #if UNITY_EDITOR

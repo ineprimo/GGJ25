@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour
 
         if (rb.velocity.magnitude > 0)
         {
-          //  Debug.Log("sfnsfn33333");
             rb.velocity -= rb.velocity.normalized * deceleration * Time.deltaTime;
 
         }

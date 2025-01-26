@@ -29,12 +29,11 @@ public class Shoot : MonoBehaviour
         gunLevel++;
     }
 
-    public void shootWeapon()
+    public void shootWeapon(bool a)
     {
-        //Debug.Log("Municion:" + currentAmmo); 
         if (currentAmmo > 0)
         {
-            StartCoroutine(ShootWithDelay());
+            StartCoroutine(ShootWithDelay(a));
 
         }
         else
@@ -53,7 +52,7 @@ public class Shoot : MonoBehaviour
 
     }
 
-    private IEnumerator ShootWithDelay()
+    private IEnumerator ShootWithDelay(bool a)
     {
         currentAmmo--;
         audioSource.PlayOneShot(soplidoSound);
@@ -66,7 +65,15 @@ public class Shoot : MonoBehaviour
 
         Vector3 playerVelocity = GameManager.Instance.GetPlayer().GetComponent<Rigidbody>().velocity;
 
-        Vector3 shootDirection = cameraForward * bulletSpeed + Vector3.Project(playerVelocity, cameraForward);
+        Vector3 shootDirection;
+
+        if (a)
+        {
+            shootDirection = cameraForward * (bulletSpeed + 3);
+        }
+            
+        else
+             shootDirection = cameraForward * bulletSpeed + Vector3.Project(playerVelocity, cameraForward);
 
         if (gunLevel == 4)
         {
@@ -93,14 +100,11 @@ public class Shoot : MonoBehaviour
 
     public void MakeBouncyBubbles(int nbounces)
     {
-        Debug.Log("MAKING BOUNCY BUBBLES");
         bounces = nbounces;
-        Debug.Log("bounces " + bounces);
     }
 
     private IEnumerator ReloadWeapon()
     {
-        Debug.Log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         isReloading = true;
         GameManager.Instance.GetAnimationManager().rechargeAnim(true);
 
