@@ -147,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject otherObject = other.gameObject;
         
-        Debug.Log(otherObject.name);
+        //Debug.Log(otherObject.name);
         
         if (otherObject.layer == 7)
         {

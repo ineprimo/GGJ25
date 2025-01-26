@@ -15,8 +15,8 @@ public class CaquitaSpawn : MonoBehaviour
     [SerializeField] GameObject throwerEnemy;
 
     private GameObject player;
-    [SerializeField] float spawnTime = 3.0f; //seconds
-    [SerializeField] float spawnDistance = 2.0f; // distancia para spawnear
+    [SerializeField] public float spawnTime = 3.0f; //tiempo entre spawns
+    [SerializeField] float spawnDistance = 2.0f; // distancia a la que spawnear
     [SerializeField] float cacaThrowerDistance = 7.0f; // distancia para spawnear un caca thrower
 
     [SerializeField] float startTime = 5.0f; // tiempo para que empiece a spawnear
@@ -24,7 +24,7 @@ public class CaquitaSpawn : MonoBehaviour
     Vector3 spawnPosition;
     [SerializeField] float spawnYOffset = 10.0f;
 
-    float timer;
+    float newSpawnTime;
     float actualDistance;
     bool onRange;
 
@@ -47,9 +47,9 @@ public class CaquitaSpawn : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         player = GameManager.Instance.GetPlayer();
-        timer = 0;
         onRange = false;
-        
+        newSpawnTime = 30;
+
         spawnPosition = _spawnPoint.position + _tr.up * spawnYOffset;
     }
 
@@ -61,20 +61,26 @@ public class CaquitaSpawn : MonoBehaviour
 
         if (!GameManager.Instance.getMaxEnemies() && startTime <= 0) 
         {
+            // distancia del player al vater
             actualDistance = (transform.position - player.transform.position).magnitude;
 
             if (actualDistance > spawnDistance) onRange = false;
-            else onRange = true;
-            
-            if (Time.time >= timer && onRange)
+            else
             {
-                // si esta a cierta distancia cabe la posibilidad de ser thrower
+                onRange = true;
+                spawnTime -= Time.deltaTime;
+            }
+            
+            if (spawnTime <= 0 && onRange)
+            {
+                // si esta a cierta distancia cabe la posibilidad de ser thrower o melee
                 if (actualDistance > cacaThrowerDistance)
                 {
                     // random
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
+                        //thrower
                         spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
@@ -93,6 +99,7 @@ public class CaquitaSpawn : MonoBehaviour
                 }
                 else
                 {
+                    //melees
                     int j = Random.Range(0, 2);
                     if (j == 0)
                     {
@@ -115,7 +122,7 @@ public class CaquitaSpawn : MonoBehaviour
                     audioSource.PlayOneShot(sonidosSpawn[i], 0.5f);
                 }
 
-                timer = Time.time + spawnTime;
+                spawnTime = newSpawnTime;
             }
         }
     }
@@ -131,8 +138,7 @@ public class CaquitaSpawn : MonoBehaviour
         newThrowerDamage = throwerDmg;
         newMCoins = meleeCoins;
         newTCoins = throwerCoins;
-        spawnTime = spTime;
-
+        newSpawnTime = spTime;
     }
 
     private void setEnemy(GameObject o)
@@ -150,4 +156,5 @@ public class CaquitaSpawn : MonoBehaviour
             o.GetComponent<Enemy>()._damage = newMeleeDamage;
         }
     }
+
 }

@@ -68,7 +68,6 @@ public class SpawnersManager : MonoBehaviour
         {
             _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = false;
         }
-
     }
 
     // Update is called once per frame
@@ -81,7 +80,7 @@ public class SpawnersManager : MonoBehaviour
                 _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = true;
             }
             activated = true;
-            Debug.Log("ACTIVATED SPAWNERS");
+            //Debug.Log("ACTIVATED SPAWNERS");
         }
 
         if (activated)
@@ -104,13 +103,18 @@ public class SpawnersManager : MonoBehaviour
     {
         for(int i = 0; i < _spawns.Length; ++i)
         {
-            _spawns[i].gameObject.GetComponent<CaquitaSpawn>()
-                .Upgrade(meleeSpeeds[_currentLvl-1], throwerSpeeds[_currentLvl-1],
-                        meleeHealth[_currentLvl-1], throwerHealth[_currentLvl - 1],
+            _spawns[i].gameObject.GetComponent<CaquitaSpawn>().Upgrade
+                (
+                        meleeSpeeds[_currentLvl - 1], throwerSpeeds[_currentLvl - 1],
+                        meleeHealth[_currentLvl - 1], throwerHealth[_currentLvl - 1],
                         meleeDamage[_currentLvl - 1], throwerDamage[_currentLvl - 1],
                         meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1],
-                        spawnTime[_currentLvl - 1]);
+                        spawnTime[_currentLvl - 1]
+                );
+
         }
+        Debug.Log(spawnTime[_currentLvl - 1]);
+
     }
 
     public void activateSpawners()
