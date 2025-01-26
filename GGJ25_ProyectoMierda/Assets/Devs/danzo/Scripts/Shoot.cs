@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Shoot : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class Shoot : MonoBehaviour
     public int gunLevel = 1;
 
     [SerializeField] private float timeBetweenShots = 0.3f;
+
+    [SerializeField] AudioClip soplidoSound;
+    private AudioSource audioSource;
 
     private int bounces = 0;
     public int currentAmmo = 10;
@@ -43,6 +47,7 @@ public class Shoot : MonoBehaviour
     private IEnumerator ShootWithDelay()
     {
         currentAmmo--;
+        audioSource.PlayOneShot(soplidoSound);
 
         Vector3 playerVelocity = GameManager.Instance.GetPlayer().GetComponent<Rigidbody>().velocity;
 
@@ -130,7 +135,8 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bounces = 0;   
+        bounces = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
