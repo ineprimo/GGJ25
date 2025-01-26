@@ -699,6 +699,11 @@ PrefabInstance:
       propertyPath: _hud
       value: 
       objectReference: {fileID: 1271182840}
+    - target: {fileID: 5662745970304198773, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: m_Enabled
@@ -2775,6 +2780,11 @@ PrefabInstance:
       propertyPath: UIManager
       value: 
       objectReference: {fileID: 1783567518}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: maxEnemies
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5716168229085240554, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}
       propertyPath: m_Name
