@@ -38,20 +38,40 @@ public class Enemy : MonoBehaviour
     {
         _health -= damage;
 
-        //Debug.Log(_health);
-
         if(_health <= 0)
         {
-            float f = UnityEngine.Random.Range(0f, 1f);
-            if(f < threshold)
-               Instantiate(coin, transform.position, transform.rotation);
-            Destroy(gameObject);
-            if(gameObject.GetComponent<CacaThrower>() != null)
-                GameManager.Instance.increaseScore(SCORE_DISTANCE);
-            else
-                GameManager.Instance.increaseScore(SCORE_MELEE);
-
+            GetComponent<Animator>().SetTrigger("death");
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+            
+            StartCoroutine(Death());
         }
+    }
+
+    public void Bomba()
+    {
+        float f = UnityEngine.Random.Range(0f, 1f);
+        if(f < threshold)
+            Instantiate(coin, transform.position, transform.rotation);
+
+        GameManager.Instance.deRegisterEnemy(gameObject);
+        Destroy(gameObject);
+
+        if(gameObject.GetComponent<CacaThrower>() != null)
+            GameManager.Instance.increaseScore(SCORE_DISTANCE);
+        else
+            GameManager.Instance.increaseScore(SCORE_MELEE);
+    }
+    
+    private IEnumerator Death()
+    {
+        transform.localScale *= 0.25f;
+        
+        yield return new WaitForSeconds(3);
+        
+        GetComponent<Animator>().SetTrigger("confetti");
     }
     
     private void OnCollisionEnter(Collision other)

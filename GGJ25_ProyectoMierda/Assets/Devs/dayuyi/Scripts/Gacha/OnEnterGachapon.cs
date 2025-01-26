@@ -24,6 +24,7 @@ public class OnEnterGachapon : MonoBehaviour
         {
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
+                GameManager.Instance.RemoveCoins(_gachaPrice);
                 // esto va cuando se quiera hacer un pull en el gachapon
                 Upgrade up = _gacha.pull();
 
@@ -35,8 +36,11 @@ public class OnEnterGachapon : MonoBehaviour
                     Debug.Log(up.getName());
 
                 updateUpgrades(up.getName());
-                
-                transform.parent.position = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount + 1)).position;
+
+                Transform parent = transform.parent;
+                Transform newTr = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount));
+                parent.position = newTr.position;
+                parent.rotation = Quaternion.Euler(0, newTr.eulerAngles.y, 0);
             }
 
             if (gachaOnCooldown)

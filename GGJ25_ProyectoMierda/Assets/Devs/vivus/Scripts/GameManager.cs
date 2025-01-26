@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     // UI
     [SerializeField] private GameObject UIManager;
+    [SerializeField] private HUDController _hud;
     private int score=0;
     // PLAYER
     [SerializeField] private GameObject _player;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     // devuelve true cuando nEnemies sea >= maxEnemies
     public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
+    public int getNEnemies() { return nEnemies; }
 
     public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
 
@@ -114,7 +116,7 @@ public class GameManager : MonoBehaviour
             }
            
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
+      //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
     }
     // VIDA
     public void UpgradeLife()
@@ -135,7 +137,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
@@ -162,7 +164,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -200,7 +202,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
 
     }
 
@@ -212,8 +214,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log(nEnemies);
     }
 
-    public void deRegisterEnemy()
+    public void deRegisterEnemy(GameObject e)
     {
+        SceneEnemies.Remove(e);
         nEnemies--;
     }
 
@@ -237,7 +240,13 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().addCoins(nCoins);
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
+    }
+    
+    public void RemoveCoins(int nCoins)
+    {
+        _player.GetComponent<PlayerMovement>().subCoins(nCoins);
+        _hud.UpdateUI();
     }
 
     public void increaseScore(int nScore)
@@ -252,6 +261,7 @@ public class GameManager : MonoBehaviour
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
         Time.timeScale = 0;
     }
+
     public int GetCoins()
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();

@@ -15,7 +15,6 @@ public class AIMovement : MonoBehaviour
     {
         _playerTransform = GameManager.Instance.GetPlayer().transform;
         _agent = GetComponent<NavMeshAgent>();
-        if (_agent != null) Debug.Log("hay agent");
     }
 
     // Update is called once per frame
