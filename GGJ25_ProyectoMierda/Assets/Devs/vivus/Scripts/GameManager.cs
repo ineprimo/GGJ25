@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
             }
            
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
+      //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
     }
     // VIDA
     public void UpgradeLife()
