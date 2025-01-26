@@ -133,6 +133,7 @@ public class Shoot : MonoBehaviour
 
     private IEnumerator ReloadWeapon()
     {
+        Debug.Log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         isReloading = true;
         GameManager.Instance.GetAnimationManager().rechargeAnim(true);
 

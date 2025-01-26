@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
             //Freeze();
 
             GetComponent<Animator>().SetTrigger("death");
-            Freeze();
+     
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
@@ -81,6 +81,9 @@ public class Enemy : MonoBehaviour
     
     private IEnumerator Death()
     {
+        Freeze();
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+
         transform.localScale *= 0.25f;
         
         yield return new WaitForSeconds(3);

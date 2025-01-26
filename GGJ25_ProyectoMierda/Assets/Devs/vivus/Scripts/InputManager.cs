@@ -73,7 +73,7 @@ public class InputManager : MonoBehaviour
         }
 
 
-        Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
+        //Debug.Log(" NORMALIZED TIME" + GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime);
 
         if (!isShooting)
         {
@@ -98,7 +98,7 @@ public class InputManager : MonoBehaviour
         while (!animended)
         {
 
-            Debug.Log("is shootin delay");
+            //Debug.Log("is shootin delay");
             if (_shootComponent.gunLevel == 4)
             {
                 if (Time.time - lastShootTime >= timeBetweenShotsM)
