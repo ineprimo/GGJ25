@@ -51,7 +51,12 @@ public class LeaderboardController : MonoBehaviour
         {
             if(isSuccessful)
             {
+                Debug.Log("Guardé los datos");
                 LoadEntries();
+            }
+            else
+            {
+                Debug.Log("Algo va mal");
             }
         });
     }

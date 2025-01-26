@@ -265,6 +265,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         UIManager.GetComponent<UIManager>().DesactivarHUD();
+        Cursor.lockState = CursorLockMode.None;
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
         Time.timeScale = 0;
     }
@@ -279,7 +280,8 @@ public class GameManager : MonoBehaviour
     {
         leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
-        //Invoke("EndGame", 3.0f);
+        score = 10;
+        Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame
