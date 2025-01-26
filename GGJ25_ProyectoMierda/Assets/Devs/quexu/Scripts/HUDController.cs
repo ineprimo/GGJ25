@@ -29,7 +29,6 @@ public class HUDController : MonoBehaviour
     [SerializeField] private List<GameObject> _thirdSplash;
     [SerializeField] private List<GameObject> _fourthSplash;
     
-    private int _splashes = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -41,10 +40,9 @@ public class HUDController : MonoBehaviour
         imagenDamage.enabled = false;
     }
 
-    public void UpateSplash()
+    public void UpateSplash(int splashes)
     {
-        _splashes++;
-        switch (_splashes)
+        switch (splashes)
         {
             case 1:
                 foreach (GameObject splash in _firstSplash)

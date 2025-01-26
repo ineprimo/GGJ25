@@ -6,6 +6,10 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
+
+    // ANIMATION
+    [SerializeField] AnimationManager _animationManager;
+
     public enum Upgrades
     {
         BULLETS,
@@ -33,9 +37,13 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    //LEADERBOARD
+    private LeaderboardController leaderboard;
 
     // UI
-    [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject UIManager;
+    [SerializeField] private HUDController _hud;
+    private int score=0;
     // PLAYER
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
@@ -49,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     // devuelve true cuando nEnemies sea >= maxEnemies
     public bool getMaxEnemies() { return nEnemies >= maxEnemies; }
+    public int getNEnemies() { return nEnemies; }
 
     public List<GameObject> SceneEnemies { get; private set; } = new List<GameObject>();
 
@@ -81,20 +90,32 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
-    
+
+
+
+    public AnimationManager GetAnimationManager() { return _animationManager; }
+
+
 
     // CANTIDAD DE BALAS
     public void UpgradeBullets()
     {
 
-        if (_bulletsUpgradeLvl < 3)
+        if (_bulletsUpgradeLvl <= 3)
         {
             _bulletsUpgradeLvl++;
             _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
 
-            if(_gun.GetComponent<Shoot>().gunLevel == 4)
+            if(_gun.GetComponent<Shoot>().gunLevel == 3)
             {
                 _gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
+
+
+                // actualiza el player
+                _player.GetComponent<PlayerMovement>().changeWeapon(1);
+
+                // cambia a la pistola
+                _animationManager.ChangeCurrentAnimator(1);
             }
             else
             {
@@ -102,9 +123,7 @@ public class GameManager : MonoBehaviour
             }
            
         }
-        UI.GetComponent<HUDController>().UpdateUI();
-
-    
+      //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
     }
     // VIDA
     public void UpgradeLife()
@@ -125,7 +144,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
-        UI.GetComponent<HUDController>().UpdateUI();
+        _hud.UpdateUI();
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
@@ -135,7 +154,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Speed Lvl 1");
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
-            _player.GetComponent<TraceComponent>().ActivateSigned();    // Se empieza a crear el rastro de burbujas
+            _player.GetComponent<TraceComponent>().enabled = true;   // Se empieza a crear el rastro de burbujas
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl1);   // Setear daño de las burbujas
         }
         else if (_speedUpgradeLvl == 2)
@@ -152,7 +171,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        UI.GetComponent<HUDController>().UpdateUI();
+        //_hud.UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -190,8 +209,8 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        UI.GetComponent<HUDController>().UpdateUI();
-        
+        //_hud.UpdateUI();
+
     }
 
     // GESTION DE ENEMIGOS
@@ -202,8 +221,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log(nEnemies);
     }
 
-    public void deRegisterEnemy()
+    public void deRegisterEnemy(GameObject e)
     {
+        SceneEnemies.Remove(e);
         nEnemies--;
     }
 
@@ -227,9 +247,28 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().addCoins(nCoins);
-        UI.GetComponent<HUDController>().UpdateUI();
+        _hud.UpdateUI();
+    }
+    
+    public void RemoveCoins(int nCoins)
+    {
+        _player.GetComponent<PlayerMovement>().subCoins(nCoins);
+        _hud.UpdateUI();
     }
 
+    public void increaseScore(int nScore)
+    {
+        score += nScore;
+        Debug.Log(score);
+    }
+
+    public void EndGame()
+    {
+        UIManager.GetComponent<UIManager>().DesactivarHUD();
+        Cursor.lockState = CursorLockMode.None;
+        UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
+        Time.timeScale = 0;
+    }
 
     public int GetCoins()
     {
@@ -239,7 +278,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
+        score = 10;
+        //Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame

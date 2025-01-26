@@ -9,7 +9,10 @@ public class GenerateRandomSoundClip : MonoBehaviour
     [SerializeField] private float _maxReplayTime = 5f;
 
     private float _currentTime = 0f;
-
+    private void Start()
+    {
+        _maxReplayTime += Random.RandomRange(-2.0f, 2.0f);
+    }
     private void Update()
     {
         _currentTime += Time.deltaTime;

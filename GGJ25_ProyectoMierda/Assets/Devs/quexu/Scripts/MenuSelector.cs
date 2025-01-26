@@ -23,11 +23,12 @@ public class MenuSelector : MonoBehaviour
 
     private void Jugar()
     {
-        Debug.Log("Desvaneciendo textos antes de cargar el juego...");
+        Debug.Log("Jugar");
         StartCoroutine(FadeOutTexts(() =>
         {
-            Debug.Log("Cargando la escena del juego...");
-            Destroy(gameObject);
+            gameObject.GetComponentInParent<UIManager>().DesactivarMenu();
+            gameObject.GetComponentInParent<UIManager>().ActivarHUD();
+            gameObject.GetComponentInParent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         }));
     }
 

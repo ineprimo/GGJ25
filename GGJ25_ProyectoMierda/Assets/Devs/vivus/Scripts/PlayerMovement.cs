@@ -2,13 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public AudioClip deathSound;
+    private AudioSource audioSource;
+
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private float _currentLife = 50.0f;
     [SerializeField] private float _maxLife = 50.0f;
     [SerializeField] private int coins = 0;
+    //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
+
+    private Vector3 _dir;
     
     [SerializeField] private HUDController _hud;
     
@@ -16,15 +23,37 @@ public class PlayerMovement : MonoBehaviour
     
     Rigidbody _rigidBody;
 
+
+
+    // ANIMATIONS
+    [SerializeField] GameObject _currentWeapon;
+
+    [SerializeField] GameObject[] _weapons;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
+
+
+        // cambia el current
+        _currentWeapon = _weapons[0];
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // rigidBody.velocity = new Vector3(0, _fuerzaPaBajarAlPlayer * Time.deltaTime, 0);
+
+        
+    }
+
     public void Move(Vector3 dir)
     {
         dir.Normalize();
-        _rigidBody.velocity = dir * _speed;
+        _dir = dir;
+        //_rigidBody.velocity = dir * (_speed * Time.deltaTime);
     }
 
     public void ImproveSpeed(float incr)
@@ -32,21 +61,42 @@ public class PlayerMovement : MonoBehaviour
         _speed += incr;
     }
 
+    /// <summary>
+    /// cambia al arma i que le pases 
+    /// </summary>
+    /// <param name="i"></param>
+    public void changeWeapon(int i)
+    {
+
+        Debug.Log("1 " + _currentWeapon);
+        // desactiva el antiguo
+        _currentWeapon.SetActive(false);
+            
+            //GetComponent<ActivateSelf>().ChangeActive(false);
+
+
+    }
     private void Hit(float damage)
     {
         _currentLife -= damage;
 
-        if (_maxLife * 0.75f <= _currentLife && _currentLife > _maxLife * 0.5f)
+        if (_maxLife * 0.75f >= _currentLife)
         {
-            _hud.UpateSplash();
+            _hud.UpateSplash(1);
         }
-        else if (_maxLife * 0.5f <= _currentLife && _currentLife > _maxLife * 0.25)
+        else if (_maxLife * 0.5f >= _currentLife)
         {
-            _hud.UpateSplash();
+            _hud.UpateSplash(2);
         }
-        //else if
-        
-        if (_currentLife <= 0)
+        else if (_maxLife * 0.25f >= _currentLife)
+        {
+            _hud.UpateSplash(3);
+        }
+        else if (_maxLife * 0.1f >= _currentLife)
+        {
+            _hud.UpateSplash(4);
+        }
+        else if (_currentLife <= 0)
         {
             PlayerDies();
         }
@@ -68,7 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDies()
     {
-        // JUGADOR MUERE
+        audioSource.PlayOneShot(deathSound);
+        GameManager.Instance.EndGame();
     }
 
     public void addCoins(int nCoins)
@@ -92,8 +143,6 @@ public class PlayerMovement : MonoBehaviour
         return coins;
     }
 
-
-
     private void OnCollisionEnter(Collision other)
     {
         GameObject otherObject = other.gameObject;
@@ -103,5 +152,11 @@ public class PlayerMovement : MonoBehaviour
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
             Destroy(otherObject);
         }
+    }
+    
+    private void FixedUpdate()
+    {
+        Vector3 velocity = _dir * _speed;
+        _rigidBody.velocity = velocity * Time.fixedDeltaTime;
     }
 }
