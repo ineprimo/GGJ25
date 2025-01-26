@@ -47,6 +47,7 @@ public class OnEnterGachapon : MonoBehaviour
                 StartCoroutine(SpinGachaponWheel());
                 audioSource.PlayOneShot(gachaponSound);
                 playableDirector.SetActive(true);
+                playableDirector.GetComponent<PlayableDirector>().Play();
 
                 // Realizar el pull en el gachapón
                 Upgrade up = _gacha.pull();
@@ -142,11 +143,11 @@ public class OnEnterGachapon : MonoBehaviour
                 GameManager.Instance.UpgradeLife();
                 
                 if (GameManager.Instance.GetHealthLvl() == 1)
-                    resultText.text = "Mejora de vida\nCarceljabonosa";
+                    resultText.text = "Mejora de vida\nCarcel jabonosa";
                 else if (GameManager.Instance.GetHealthLvl() == 2)
-                    resultText.text = "Mejora de vida\nCarceljabonosa +";
+                    resultText.text = "Mejora de vida\nCarcel jabonosa +";
                 else if (GameManager.Instance.GetHealthLvl() == 3)
-                    resultText.text = "Mejora de vida\nCarceljabonosa ++";
+                    resultText.text = "Mejora de vida\nCarcel jabonosa ++";
                 break;
             case "SPEED":
                 GameManager.Instance.UpgradeSpeed();

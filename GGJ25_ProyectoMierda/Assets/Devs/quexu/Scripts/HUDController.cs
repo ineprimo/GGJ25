@@ -40,32 +40,32 @@ public class HUDController : MonoBehaviour
         imagenDamage.enabled = false;
     }
 
-    public void UpateSplash(int splashes)
+    public void UpateSplash(int splashes, bool b)
     {
         switch (splashes)
         {
             case 1:
                 foreach (GameObject splash in _firstSplash)
                 {
-                    splash.SetActive(true);
+                    splash.SetActive(b);
                 }
                 break;
             case 2:
                 foreach (GameObject splash in _secondSplash)
                 {
-                    splash.SetActive(true);
+                    splash.SetActive(b);
                 }
                 break;
             case 3:
                 foreach (GameObject splash in _thirdSplash)
                 {
-                    splash.SetActive(true);
+                    splash.SetActive(b);
                 }
                 break;
             case 4:
                 foreach (GameObject splash in _fourthSplash)
                 {
-                    splash.SetActive(true);
+                    splash.SetActive(b);
                 }
                 break;
         }
