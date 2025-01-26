@@ -180,10 +180,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   _speed: 584
   _currentLife: 1000
-  _maxLife: 240
-  _currentLife: 100
-  _maxLife: 100
->>>>>>> Stashed changes
+  _maxLife: 1000
   coins: 0
   _hud: {fileID: 0}
   _currentWeapon: {fileID: 8075213074770621947}
@@ -299,7 +296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147847334644448105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44faeb459e07fc740aae07db31785d0e, type: 3}
   m_Name: 

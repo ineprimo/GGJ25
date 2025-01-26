@@ -194,7 +194,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3085869615580526969}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.37
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _health: 100
+  _currentHealth: 0
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}
   threshold: 0.5
   _eyes: {fileID: 6563268949135535870}
