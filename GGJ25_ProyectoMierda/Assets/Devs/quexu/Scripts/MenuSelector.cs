@@ -24,7 +24,7 @@ public class MenuSelector : MonoBehaviour
 
     private void Jugar()
     {
-        Debug.Log("Jugar");
+        //Debug.Log("Jugar");
         StartCoroutine(FadeOutTexts(() =>
         {
             gameObject.GetComponentInParent<UIManager>().DesactivarMenu();
