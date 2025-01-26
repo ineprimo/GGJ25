@@ -101,14 +101,21 @@ public class GameManager : MonoBehaviour
     public void UpgradeBullets()
     {
 
-        if (_bulletsUpgradeLvl < 3)
+        if (_bulletsUpgradeLvl <= 3)
         {
             _bulletsUpgradeLvl++;
             _gun.GetComponent<Shoot>().gunLevel = _bulletsUpgradeLvl + 1;
 
-            if(_gun.GetComponent<Shoot>().gunLevel == 4)
+            if(_gun.GetComponent<Shoot>().gunLevel == 3)
             {
                 _gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
+
+
+                // actualiza el player
+                _player.GetComponent<PlayerMovement>().changeWeapon(1);
+
+                // cambia a la pistola
+                _animationManager.ChangeCurrentAnimator(1);
             }
             else
             {

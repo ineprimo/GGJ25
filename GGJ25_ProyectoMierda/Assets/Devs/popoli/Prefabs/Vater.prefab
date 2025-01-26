@@ -136,10 +136,10 @@ MonoBehaviour:
   throwerEnemy: {fileID: 3085869615580526969, guid: 554ea5a3dc9f1394bb0824e52aacf105,
     type: 3}
   spawnTime: 10
-  spawnDistance: 10
+  spawnDistance: 15
   cacaThrowerDistance: 7
   startTime: 10
-  spawnYOffset: 5
+  spawnYOffset: 2
 --- !u!82 &2300090617937763867
 AudioSource:
   m_ObjectHideFlags: 0

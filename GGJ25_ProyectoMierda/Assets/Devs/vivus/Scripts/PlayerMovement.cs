@@ -23,11 +23,22 @@ public class PlayerMovement : MonoBehaviour
     
     Rigidbody _rigidBody;
 
+
+
+    // ANIMATIONS
+    [SerializeField] GameObject _currentWeapon;
+
+    [SerializeField] GameObject[] _weapons;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
+
+
+        // cambia el current
+        _currentWeapon = _weapons[0];
     }
 
     // Update is called once per frame
@@ -50,6 +61,24 @@ public class PlayerMovement : MonoBehaviour
         _speed += incr;
     }
 
+    /// <summary>
+    /// cambia al arma i que le pases 
+    /// </summary>
+    /// <param name="i"></param>
+    public void changeWeapon(int i)
+    {
+
+        Debug.Log(_currentWeapon);
+        // desactiva el antiguo
+        _currentWeapon.SetActive(false);
+
+        // cambia el current
+        _currentWeapon = _weapons[i];
+
+        // activa el nuevo
+        _currentWeapon.SetActive(true);
+
+    }
     private void Hit(float damage)
     {
         _currentLife -= damage;
