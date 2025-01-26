@@ -49,17 +49,40 @@ public class LeaderboardController : MonoBehaviour
         // Ordenar la lista de mayor a menor por puntuación
         leaderboard.Sort((x, y) => y.score.CompareTo(x.score));
     }
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void SaveLeaderboard()
     {
-
-        string stringjson = PlayerPrefs.GetString("Leaderboard");
-
-        string json = JsonUtility.FromJson<Jugador>(stringjson);
-
+        for (int i = 0; i < leaderboard.Count; i++)
+        {
+            PlayerPrefs.SetString("PlayerName_" + i, leaderboard[i].playerName);
+            PlayerPrefs.SetInt("PlayerScore_" + i, leaderboard[i].score);
+        }
+        PlayerPrefs.Save();
     }
+
+    // Añadir una nueva entrada al leaderboard
+    public void AddNewEntry(string playerName, int score)
+    {
+        leaderboard.Add(new PlayerScore(playerName, score));
+
+        // Ordenar la lista de mayor a menor
+        leaderboard.Sort((x, y) => y.score.CompareTo(x.score));
+
+        // Asegurarse de que no haya más de MAX_ENTRIES entradas
+        if (leaderboard.Count > MAX_ENTRIES)
+        {
+            leaderboard.RemoveAt(leaderboard.Count - 1);
+        }
+
+        // Guardar el leaderboard actualizado
+        SaveLeaderboard();
+    }
+
+    // Obtener el leaderboard
+    public List<PlayerScore> GetLeaderboard()
+    {
+        return leaderboard;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -73,7 +96,7 @@ public class LeaderboardController : MonoBehaviour
     }
     public void setEntry(string username, int score)
     {
-        PlayerPrefs.
+
 
     }
 }
