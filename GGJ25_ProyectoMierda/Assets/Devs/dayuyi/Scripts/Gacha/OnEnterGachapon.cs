@@ -36,8 +36,11 @@ public class OnEnterGachapon : MonoBehaviour
                     Debug.Log(up.getName());
 
                 updateUpgrades(up.getName());
-                
-                transform.parent.position = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount + 1)).position;
+
+                Transform parent = transform.parent;
+                Transform newTr = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount));
+                parent.position = newTr.position;
+                parent.rotation = Quaternion.Euler(0, newTr.eulerAngles.y, 0);
             }
 
             if (gachaOnCooldown)
@@ -58,7 +61,6 @@ public class OnEnterGachapon : MonoBehaviour
     // BULLETS, LIFE, SPEED, DAMAGE
     private void updateUpgrades(string up)
     {
-        Debug.Log(up);
         switch (up)
         {
             case "BULLETS":
