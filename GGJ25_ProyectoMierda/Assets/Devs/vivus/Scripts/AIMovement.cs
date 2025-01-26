@@ -20,7 +20,8 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _agent.destination = _playerTransform.position;
+        if(_agent.isOnNavMesh)
+            _agent.destination = _playerTransform.position;
         //Debug.Log("Ir");
     }
 
@@ -32,7 +33,7 @@ public class AIMovement : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("NavMeshAgent no está asignado o encontrado.");
+            Debug.LogWarning("NavMeshAgent no estï¿½ asignado o encontrado.");
         }
     }
 }
