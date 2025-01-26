@@ -1,4 +1,5 @@
 using System.Collections; // Necesario para IEnumerator
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables; // Necesario para PlayableDirector
 using UnityEngine.UI; // Necesario para actualizar el texto UI
@@ -23,7 +24,7 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
 
     [Header("UI Elements")]
-    [SerializeField] private Text resultText; // Texto donde se mostrará el nombre de la recompensa
+    [SerializeField] private TextMeshProUGUI resultText; // Texto donde se mostrará el nombre de la recompensa
     [SerializeField] private GameObject playableDirector; // Playable Director que controla el Timeline
 
     private void Start()
