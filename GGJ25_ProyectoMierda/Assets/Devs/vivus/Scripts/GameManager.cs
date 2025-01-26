@@ -251,6 +251,7 @@ public class GameManager : MonoBehaviour
         UIManager.GetComponent<UIManager>().DesactivarHUD();
         UIManager.GetComponent<UIManager>().ActivarScoreboard();
     }
+
     public int GetCoins()
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();

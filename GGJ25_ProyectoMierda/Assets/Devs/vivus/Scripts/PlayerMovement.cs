@@ -2,9 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public AudioClip deathSound;
+    private AudioSource audioSource;
+
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private float _currentLife = 50.0f;
     [SerializeField] private float _maxLife = 50.0f;
@@ -19,13 +23,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
     }
-    //private void Update()
-    //{
-    //    _rigidBody.velocity = new Vector3(0, _fuerzaPaBajarAlPlayer * Time.deltaTime, 0);
-    //}
+
+    // Update is called once per frame
+    void Update()
+    {
+        // rigidBody.velocity = new Vector3(0, _fuerzaPaBajarAlPlayer * Time.deltaTime, 0);
+
+        
+    }
+
     public void Move(Vector3 dir)
     {
         dir.Normalize();
@@ -79,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDies()
     {
+        audioSource.PlayOneShot(deathSound);
         GameManager.Instance.EndGame();
     }
 
@@ -103,8 +114,6 @@ public class PlayerMovement : MonoBehaviour
         return coins;
     }
 
-
-
     private void OnCollisionEnter(Collision other)
     {
         GameObject otherObject = other.gameObject;
@@ -115,4 +124,6 @@ public class PlayerMovement : MonoBehaviour
             Destroy(otherObject);
         }
     }
+
+
 }
