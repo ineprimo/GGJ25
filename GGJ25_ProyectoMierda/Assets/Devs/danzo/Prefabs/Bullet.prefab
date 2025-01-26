@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe183644f7b4b745b63946cf5a664b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 30
   lifeTime: 1.5
   deceleration: 4.5
 --- !u!114 &-3678982873968366458
@@ -180,6 +180,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5993bca8717abb14e8534a712e2018ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
   _audioClip: {fileID: 8300000, guid: 63241c28d87411245aeda40572c3448a, type: 3}
   _pitchVariationRange: 0.2
