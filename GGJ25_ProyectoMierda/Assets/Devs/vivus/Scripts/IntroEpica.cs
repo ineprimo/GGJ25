@@ -21,7 +21,6 @@ public class IntroEpica : MonoBehaviour
         float journeyTime = 5f;
         float elapsedTime = 0f;
 
-        Debug.Log("Empieza Anim");
         _door.GetComponent<DoorController>().ToggleDoor();
 
         while (elapsedTime < journeyTime)

@@ -7,6 +7,7 @@ public class CaquitaSpawn : MonoBehaviour
 {
     public AudioClip[] sonidosSpawn;
     private AudioSource audioSource;
+    private Transform _tr;
 
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject meleeEnemy2;
@@ -40,14 +41,13 @@ public class CaquitaSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _tr = transform;
+        
         audioSource = GetComponent<AudioSource>();
 
         player = GameManager.Instance.GetPlayer();
         timer = 0;
         onRange = false;
-        
-        Transform tr = transform;
-        spawnPosition = tr.position + tr.up * spawnYOffset;
     }
 
     // Update is called once per frame
@@ -72,7 +72,8 @@ public class CaquitaSpawn : MonoBehaviour
                     int i = Random.Range(0, 2);
                     if (i == 0)
                     {
-                        // thrower
+                        spawnYOffset = throwerEnemy.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.5f;
+                        spawnPosition = _tr.position + _tr.up * spawnYOffset;
                         spawnedEnemy = Instantiate(throwerEnemy, spawnPosition, throwerEnemy.transform.rotation);
                     }
                     else
@@ -81,10 +82,14 @@ public class CaquitaSpawn : MonoBehaviour
                         i = Random.Range(0, 2);
                         if (i == 0)
                         {
+                            spawnYOffset = meleeEnemy.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.5f;
+                            spawnPosition = _tr.position + _tr.up * spawnYOffset;
                             spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                         }
                         else
                         {
+                            spawnYOffset = meleeEnemy2.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.5f;
+                            spawnPosition = _tr.position + _tr.up * spawnYOffset;
                             spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                         }
                     }
@@ -94,10 +99,14 @@ public class CaquitaSpawn : MonoBehaviour
                     int j = Random.Range(0, 2);
                     if (j == 0)
                     {
+                        spawnYOffset = meleeEnemy.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.5f;
+                        spawnPosition = _tr.position + _tr.up * spawnYOffset;
                         spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
                     }
                     else
                     {
+                        spawnYOffset = meleeEnemy2.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.5f;
+                        spawnPosition = _tr.position + _tr.up * spawnYOffset;
                         spawnedEnemy = Instantiate(meleeEnemy2, transform.position, meleeEnemy2.transform.rotation);
                     }
                 }
