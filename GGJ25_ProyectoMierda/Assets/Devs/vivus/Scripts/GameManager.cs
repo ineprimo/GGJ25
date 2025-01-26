@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
     //LEADERBOARD
     private LeaderboardController leaderboard;
 
+    //GACHA
+    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60 };
+    private int countUpdate = 0;
+    public int gachaPrice = 10;
+
     // UI
     [SerializeField] private GameObject UIManager;
     [SerializeField] private HUDController _hud;
@@ -97,7 +102,13 @@ public class GameManager : MonoBehaviour
 
     public AnimationManager GetAnimationManager() { return _animationManager; }
 
+    //Gacha
 
+    public void updateGachaPrice()
+    {
+        gachaPrice = updatePrices[countUpdate];
+        if (countUpdate < updatePrices.Length) countUpdate++;
+    }
 
     // CANTIDAD DE BALAS
     public void UpgradeBullets()

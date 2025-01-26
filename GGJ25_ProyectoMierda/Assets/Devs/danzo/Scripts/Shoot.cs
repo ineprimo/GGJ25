@@ -9,8 +9,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bulletPrefab2;
-    [SerializeField] private GameObject bouncyBulletPrefab;
-    [SerializeField] private GameObject bouncyBulletPrefab2;
+
 
     [SerializeField] private float bulletSpeed = 5;
     public int gunLevel = 1;
@@ -71,51 +70,19 @@ public class Shoot : MonoBehaviour
 
         if (gunLevel == 4)
         {
-            if (bounces == 0)
-            {
                 //Debug.Log("just normal bubble...");
 
                 // Instancia la bala
                 var bullet = Instantiate(bulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-            }  
-            else
-            {
-
-                //Debug.Log("MAKING BOUNCY BUBBLE");
-
-                // Instancia la bala
-                var bullet = Instantiate(bouncyBulletPrefab2, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-                bullet.GetComponent<BounceBubble>().setBounces(bounces);
-            }
 
         }
         else
         {
             for (int i = 0; i < gunLevel; i++)
             {
-
-                //Debug.Log("bounces " + bounces);
-                // Instancia la bala
-                if (bounces == 0)
-                {
-                    //Debug.Log("just normal bubble...");
-
-                    // Instancia la bala
                     var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                     bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-                }
-                else
-                {
-
-                   // Debug.Log("MAKING BOUNCY BUBBLE");
-
-                    // Instancia la bala
-                    var bullet = Instantiate(bouncyBulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-                    bullet.GetComponent<Rigidbody>().velocity = shootDirection;
-                    bullet.GetComponent<BounceBubble>().setBounces(bounces);
-                }
 
 
                 // Espera el tiempo entre disparos antes de instanciar la siguiente bala

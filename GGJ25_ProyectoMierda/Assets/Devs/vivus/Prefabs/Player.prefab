@@ -179,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
   _speed: 584
-  _currentLife: 1000
-  _maxLife: 1000
+  _currentLife: 500
+  _maxLife: 500
   coins: 0
   _healTime: 5
   _healPower: 1
@@ -6764,6 +6764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089790651242913581, guid: 91effcf7f16351e40ba7f580b4b99bed,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
