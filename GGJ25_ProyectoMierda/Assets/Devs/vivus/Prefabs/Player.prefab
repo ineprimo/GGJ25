@@ -151,12 +151,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147847334644448105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e9184f744f1e0145b6fd308404fe6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputActive: 0
+  _inputActive: 1
   _cameraMovement: {fileID: 4078147697702221744}
   _gunObject: {fileID: 8270507365711461757}
   timeBetweenShots: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 0}
   _speed: 584
-  _currentLife: 50
+  _currentLife: 1000
   _maxLife: 240
   coins: 0
   _hud: {fileID: 0}
@@ -2444,8 +2444,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -5532,7 +5532,7 @@ Transform:
   m_GameObject: {fileID: 7298940305572474224}
   serializedVersion: 2
   m_LocalRotation: {x: -0.047405396, y: -0, z: -0, w: 0.99887574}
-  m_LocalPosition: {x: -0.002, y: -1.444, z: -0.226}
+  m_LocalPosition: {x: -0.002, y: -1.444, z: -0.304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

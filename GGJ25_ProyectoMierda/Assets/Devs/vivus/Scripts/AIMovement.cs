@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
-    private Transform _playerTransform;
-    private NavMeshAgent _agent;
-
-
+    public Transform _playerTransform;
+    public NavMeshAgent _agent;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +19,22 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_agent.isOnNavMesh)
+        //_agent.destination = _playerTransform.position;
+        if (_agent.isOnNavMesh)
+        {
+            //Debug.Log("Navmesh");
             _agent.destination = _playerTransform.position;
+        }
         //Debug.Log("Ir");
     }
 
     public void SetSpeed(float sp)
     {
+        Debug.Log("setspeed");
         if (GetComponent<NavMeshAgent>() != null)
         {
             GetComponent<NavMeshAgent>().speed = sp;
+            Debug.Log("Hay NavMesh y Speed");
         }
         else
         {

@@ -52,12 +52,14 @@ public class Enemy : MonoBehaviour
         }
         if (_currentHealth <= 0)
         {
+            Freeze();
+
             GetComponent<Animator>().SetTrigger("death");
+
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
             }
-            
             StartCoroutine(Death());
         }
     }

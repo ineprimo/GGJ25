@@ -14,9 +14,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject Scoreboard2;
 
     [SerializeField] private TextMeshProUGUI score;
-    public TMP_InputField nombrePlayer;
-    public Button submit;
-    public LeaderboardController leaderboardController;
+    [SerializeField] private TMP_InputField nombrePlayer;
+    [SerializeField] private Button submit;
+    [SerializeField] private GameObject leaderboard;
     void Start()
     {
         submit.onClick.AddListener(() =>
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
     {
         if (nombrePlayer.text != "" && nombrePlayer.text.Length < 13)
         {
-            leaderboardController.setEntry(nombrePlayer.text, Int32.Parse(score.text));
+            leaderboard.GetComponent<LeaderboardController>().setEntry(nombrePlayer.text, Int32.Parse(score.text));
             DesactivarScoreboard();
             ActivarScoreboard2();
         }
