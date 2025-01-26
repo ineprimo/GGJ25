@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 velocity = _dir * _speed;
+        Vector3 velocity = new Vector3(_dir.x * _speed, _rigidBody.velocity.y, _dir.z * _speed);
         _rigidBody.velocity = velocity * Time.fixedDeltaTime;
     }
 }
