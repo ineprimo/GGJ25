@@ -285,7 +285,7 @@ public class GameManager : MonoBehaviour
         leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
         score = 10;
-        Invoke("EndGame", 3.0f);
+        //Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame

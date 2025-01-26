@@ -80,10 +80,10 @@ public class LeaderboardController : MonoBehaviour
         PlayerPrefs.SetInt("TotalAmount", leaderboard.Count);
         PlayerPrefs.Save();
     }
-
+    
     public void PrintInLeaderboard()
     {
-        for (int i = 0; i < MAX_ENTRIES; i++)
+        for (int i = 0; i < Mathf.Min(leaderboard.Count, MAX_ENTRIES); i++)
         {
             // actualiza el text mesh pro
             names.transform.GetChild(i).GetComponent<TextMeshPro>().text = leaderboard[i].playerName;
