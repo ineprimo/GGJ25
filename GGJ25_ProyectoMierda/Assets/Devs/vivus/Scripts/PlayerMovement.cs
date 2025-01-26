@@ -80,15 +80,15 @@ public class PlayerMovement : MonoBehaviour
     {
         _currentLife -= damage;
 
-        if (_maxLife * 0.75f >= _currentLife)
+        if (_maxLife * 0.75f >= _currentLife && _currentLife > _maxLife * 0.5f)
         {
             _hud.UpateSplash(1);
         }
-        else if (_maxLife * 0.5f >= _currentLife)
+        else if (_maxLife * 0.5f >= _currentLife && _currentLife > _maxLife * 0.25f)
         {
             _hud.UpateSplash(2);
         }
-        else if (_maxLife * 0.25f >= _currentLife)
+        else if (_maxLife * 0.25f >= _currentLife && _currentLife > _maxLife * 0.1f)
         {
             _hud.UpateSplash(3);
         }
@@ -147,10 +147,17 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject otherObject = other.gameObject;
         
+        Debug.Log(otherObject.name);
+        
         if (otherObject.layer == 7)
         {
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
             Destroy(otherObject);
+        }
+        else if (otherObject.layer == 9)
+        {
+            Debug.Log("MELEE");
+            Hit(otherObject.GetComponent<Enemy>()._damage);
         }
     }
     
