@@ -7,9 +7,13 @@
     <list default="true" id="e54af32e-8718-42bc-8dcd-b491e4c61fe9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ25_ProyectoMierda/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/A.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/jimbo/Scenes/A.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CacaThrower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Devs/popoli/Scripts/CacaThrower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Assets/Death1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Assets/Death1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Assets/Enemy2Walk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Assets/Enemy2Walk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Assets/Melee Enemy 2.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Assets/Melee Enemy 2.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Assets/Melee Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Assets/Melee Enemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Assets/Thrower Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Assets/Thrower Enemy.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

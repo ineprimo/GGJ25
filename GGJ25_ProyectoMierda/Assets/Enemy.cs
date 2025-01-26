@@ -50,12 +50,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private IEnumerator Death()
+    public void Bomba()
     {
-        transform.localScale *= 0.25f;
-        
-        yield return new WaitForSeconds(3);
-        
         float f = UnityEngine.Random.Range(0f, 1f);
         if(f < threshold)
             Instantiate(coin, transform.position, transform.rotation);
@@ -64,7 +60,15 @@ public class Enemy : MonoBehaviour
             GameManager.Instance.increaseScore(SCORE_DISTANCE);
         else
             GameManager.Instance.increaseScore(SCORE_MELEE);
+    }
+    
+    private IEnumerator Death()
+    {
+        transform.localScale *= 0.25f;
         
+        yield return new WaitForSeconds(3);
+        
+        GetComponent<Animator>().SetTrigger("confetti");
     }
     
     private void OnCollisionEnter(Collision other)
