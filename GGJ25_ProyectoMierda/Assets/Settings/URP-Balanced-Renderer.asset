@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1614fc811f8f184697d9bee70ab9fe5, type: 3}
   m_Name: DecalRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   m_Settings:
     technique: 0
     maxDrawDistance: 1000
@@ -135,3 +135,52 @@ MonoBehaviour:
       normalBlend: 0
   m_CopyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
   m_DBufferClear: {fileID: 4800000, guid: f056d8bd2a1c7e44e9729144b4c70395, type: 3}
+--- !u!114 &1686160721998865893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a163714fc2589b4c9e843f355ab0fae, type: 3}
+  m_Name: VhsFx
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  _event: 600
+  _pass: {fileID: 7192564443881182543}
+  _blitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+--- !u!114 &7192564443881182543
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8dc78f503ce4704bc3b01f693783c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _active: 1
+  _shader: {fileID: 4800000, guid: 074eb04a5009453ea004483946e7c745, type: 3}
+  _material: {fileID: 0}
+  _isActive: 0
+  _singleTape:
+    enabled: 0
+    value: 0
+  _negative: 0
+  _glitch:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+  _frameRate: 20
+  _tape: []
+  _noise: []
+  _shades: []
+  _clip: []
+  _playTime: 0
+  _yScanline: 0
+  _xScanline: 0

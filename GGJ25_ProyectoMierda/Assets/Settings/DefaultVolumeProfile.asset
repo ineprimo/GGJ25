@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.9219165, z: 0.9066374, w: -0.1387282}
   midtones:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -223,6 +223,40 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!114 &-6350941821391704406
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb2952b95454955ba507c3d96778a76, type: 3}
+  m_Name: VhsVol
+  m_EditorClassIdentifier: 
+  active: 1
+  _weight:
+    m_OverrideState: 1
+    m_Value: 0
+  _bleed:
+    m_OverrideState: 1
+    m_Value: 1
+  _rocking:
+    m_OverrideState: 1
+    m_Value: 0
+  _tape:
+    m_OverrideState: 1
+    m_Value: 1
+  _noise:
+    m_OverrideState: 1
+    m_Value: 0.5
+  _flickering:
+    m_OverrideState: 1
+    m_Value: 0
+  _glitch:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &-6247907007253899766
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -345,13 +379,13 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 9
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.2
   response:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 0
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
@@ -370,13 +404,13 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1
   xMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   yMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
@@ -466,7 +500,7 @@ MonoBehaviour:
   active: 1
   normalBias:
     m_OverrideState: 1
-    m_Value: 0.33
+    m_Value: 0
   viewBias:
     m_OverrideState: 1
     m_Value: 0
@@ -576,13 +610,13 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   quality:
     m_OverrideState: 1
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.131
   clamp:
     m_OverrideState: 1
     m_Value: 0.05
@@ -604,7 +638,7 @@ MonoBehaviour:
     m_Value: 0
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 17.55
   gaussianEnd:
     m_OverrideState: 1
     m_Value: 30
@@ -653,10 +687,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.228
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.156
   rounded:
     m_OverrideState: 1
     m_Value: 0
@@ -675,7 +709,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.194
 --- !u!114 &5845038911624489504
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -758,10 +792,10 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1.4
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 1
   clamp:
     m_OverrideState: 1
     m_Value: 65472
