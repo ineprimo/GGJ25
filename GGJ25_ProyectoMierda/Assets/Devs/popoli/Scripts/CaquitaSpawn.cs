@@ -57,7 +57,6 @@ public class CaquitaSpawn : MonoBehaviour
     void Update()
     {
         startTime -= Time.deltaTime;
-        //Debug.Log(startTime);
 
         if (!GameManager.Instance.getMaxEnemies() && startTime <= 0) 
         {
@@ -139,8 +138,6 @@ public class CaquitaSpawn : MonoBehaviour
         newMCoins = meleeCoins;
         newTCoins = throwerCoins;
         newSpawnTime = spTime;
-
-        Debug.Log("NEW SP TIME: " + spTime);
     }
 
     private void setEnemy(GameObject o)

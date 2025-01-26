@@ -19,14 +19,14 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private Transform _possiblePositions;
 
     [Header("Rotation and Sound")]
-    [SerializeField] private GameObject gachaponWheel; // GameObject que girará
-    [SerializeField] private float rotationDegrees = 360f; // Grados que girará en el eje Z
-    [SerializeField] private float rotationDuration = 1.0f; // Duración del giro
+    [SerializeField] private GameObject gachaponWheel; // GameObject que girarï¿½
+    [SerializeField] private float rotationDegrees = 360f; // Grados que girarï¿½ en el eje Z
+    [SerializeField] private float rotationDuration = 1.0f; // Duraciï¿½n del giro
     [SerializeField] private AudioClip gachaponSound; // Sonido a reproducir
     [SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
 
     [Header("UI Elements")]
-    [SerializeField] private TextMeshProUGUI resultText; // Texto donde se mostrará el nombre de la recompensa
+    [SerializeField] private TextMeshProUGUI resultText; // Texto donde se mostrarï¿½ el nombre de la recompensa
     [SerializeField] private GameObject playableDirector; // Playable Director que controla el Timeline
 
     private void Start()
@@ -53,21 +53,16 @@ public class OnEnterGachapon : MonoBehaviour
                 playableDirector.SetActive(true);
                 playableDirector.GetComponent<PlayableDirector>().Play();
 
-                // Realizar el pull en el gachapón
+                // Realizar el pull en el gachapï¿½n
                 Upgrade up = _gacha.pull();
                 gachaOnCooldown = true;
-
-                if (up == null)
-                    Debug.Log("No upgrade available");
-                else
-                    Debug.Log(up.getName());
 
                 updateUpgrades(up.getName());
 
                
 
 
-                // Retrasar el cambio de posición y rotación 5 segundos
+                // Retrasar el cambio de posiciï¿½n y rotaciï¿½n 5 segundos
                 StartCoroutine(DelayMachineMove(5f));
             }
 
@@ -91,7 +86,7 @@ public class OnEnterGachapon : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // Cambiar posición y rotación del padre
+        // Cambiar posiciï¿½n y rotaciï¿½n del padre
         Transform parent = transform.parent;
         Transform newTr = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount));
         parent.position = newTr.position;
@@ -120,7 +115,7 @@ public class OnEnterGachapon : MonoBehaviour
                 yield return null;
             }
 
-            // Asegurarse de llegar exactamente al ángulo final
+            // Asegurarse de llegar exactamente al ï¿½ngulo final
             gachaponWheel.transform.localEulerAngles = new Vector3(
                 gachaponWheel.transform.localEulerAngles.x,
                 gachaponWheel.transform.localEulerAngles.y,
@@ -167,11 +162,11 @@ public class OnEnterGachapon : MonoBehaviour
                 GameManager.Instance.UpgradeDamage();
 
                 if (GameManager.Instance.GetDamageLvl() == 1)
-                    resultText.text = "Daño mejorado";
+                    resultText.text = "Daï¿½o mejorado";
                 else if (GameManager.Instance.GetDamageLvl() == 2)
-                    resultText.text = "Daño mejorado +";
+                    resultText.text = "Daï¿½o mejorado +";
                 else if (GameManager.Instance.GetDamageLvl() == 3)
-                    resultText.text = "Daño mejorado ++";
+                    resultText.text = "Daï¿½o mejorado ++";
                 break;
         }
     }
