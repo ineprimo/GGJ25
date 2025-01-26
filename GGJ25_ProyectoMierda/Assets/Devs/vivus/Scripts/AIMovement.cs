@@ -6,10 +6,8 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
-    private Transform _playerTransform;
-    private NavMeshAgent _agent;
-
-
+    public Transform _playerTransform;
+    public NavMeshAgent _agent;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +19,7 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //_agent.destination = _playerTransform.position;
         if (_agent.isOnNavMesh)
         {
             Debug.Log("Navmesh");
@@ -35,6 +34,7 @@ public class AIMovement : MonoBehaviour
         if (GetComponent<NavMeshAgent>() != null)
         {
             GetComponent<NavMeshAgent>().speed = sp;
+            Debug.Log("Hay NavMesh y Speed");
         }
         else
         {
