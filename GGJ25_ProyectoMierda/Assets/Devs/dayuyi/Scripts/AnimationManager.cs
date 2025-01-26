@@ -29,10 +29,10 @@ public class AnimationManager : MonoBehaviour
 
     public void ChangeCurrentAnimator(int i)
     {
-        _currentAnimator.enabled = false;
+        _currentAnimator.gameObject.SetActive(false);
         index = i;
         _currentAnimator = _animator[index].GetComponent<Animator>();
-        _currentAnimator.enabled = true;
+        _currentAnimator.gameObject.SetActive(true);
 
     }
 

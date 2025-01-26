@@ -181,7 +181,7 @@ MonoBehaviour:
   _maxLife: 240
   coins: 0
   _hud: {fileID: 0}
-  _currentWeapon: {fileID: 7298940305572474224}
+  _currentWeapon: {fileID: 8075213074770621947}
   _weapons:
   - {fileID: 7298940305572474224}
   - {fileID: 8075213074770621947}
@@ -319,7 +319,6 @@ MonoBehaviour:
   _currentBubbleDamage: 3
   _bubblePrefab: {fileID: 505690472321750569, guid: 1f6129523b3b738498b7c7508111a31d,
     type: 3}
-  _canSinged: 1
 --- !u!82 &9094218189320557721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -334,7 +333,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 63241c28d87411245aeda40572c3448a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1.0620703
+  m_Pitch: 0.9405003
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5516,13 +5515,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7926576299569444810}
   - component: {fileID: 8399379769096898697}
+  - component: {fileID: 3069577315603642222}
   m_Layer: 0
   m_Name: pompero_attack_fps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7926576299569444810
 Transform:
   m_ObjectHideFlags: 0
@@ -5563,6 +5563,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3069577315603642222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298940305572474224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014ac00d2c416c146afa3278f4f00243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7331381983847818240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +6024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8888763355313647425}
   - component: {fileID: 8594054147323227188}
+  - component: {fileID: 1183201760035509421}
   m_Layer: 0
   m_Name: pipazo_attack_fps
   m_TagString: Untagged
@@ -6059,6 +6072,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1183201760035509421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075213074770621947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014ac00d2c416c146afa3278f4f00243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8135098631961574539
 GameObject:
   m_ObjectHideFlags: 0

@@ -68,15 +68,12 @@ public class PlayerMovement : MonoBehaviour
     public void changeWeapon(int i)
     {
 
-        Debug.Log(_currentWeapon);
+        Debug.Log("1 " + _currentWeapon);
         // desactiva el antiguo
         _currentWeapon.SetActive(false);
+            
+            //GetComponent<ActivateSelf>().ChangeActive(false);
 
-        // cambia el current
-        _currentWeapon = _weapons[i];
-
-        // activa el nuevo
-        _currentWeapon.SetActive(true);
 
     }
     private void Hit(float damage)
