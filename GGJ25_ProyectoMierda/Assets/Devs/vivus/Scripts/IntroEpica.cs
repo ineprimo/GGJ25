@@ -40,6 +40,7 @@ public class IntroEpica : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         _player.GetComponent<InputManager>().CanInput();
+        playerRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
         // COSAS DEL JUEGO SI QUEREIS PONERLAS
     }
 }

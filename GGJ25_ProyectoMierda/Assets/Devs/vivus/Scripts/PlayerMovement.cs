@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _currentLife = 50.0f;
     [SerializeField] private float _maxLife = 50.0f;
     [SerializeField] private int coins = 0;
+    //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
     
     [SerializeField] private HUDController _hud;
     
@@ -21,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
     }
+    //private void Update()
+    //{
+    //    _rigidBody.velocity = new Vector3(0, _fuerzaPaBajarAlPlayer * Time.deltaTime, 0);
+    //}
     public void Move(Vector3 dir)
     {
         dir.Normalize();
