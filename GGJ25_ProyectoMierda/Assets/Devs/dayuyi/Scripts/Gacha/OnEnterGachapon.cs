@@ -24,6 +24,7 @@ public class OnEnterGachapon : MonoBehaviour
         {
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
+                GameManager.Instance.RemoveCoins(_gachaPrice);
                 // esto va cuando se quiera hacer un pull en el gachapon
                 Upgrade up = _gacha.pull();
 
@@ -57,6 +58,7 @@ public class OnEnterGachapon : MonoBehaviour
     // BULLETS, LIFE, SPEED, DAMAGE
     private void updateUpgrades(string up)
     {
+        Debug.Log(up);
         switch (up)
         {
             case "BULLETS":

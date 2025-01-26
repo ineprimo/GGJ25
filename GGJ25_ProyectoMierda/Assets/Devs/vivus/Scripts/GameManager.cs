@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     // UI
     [SerializeField] private GameObject UIManager;
+    [SerializeField] private HUDController _hud;
     private int score=0;
     // PLAYER
     [SerializeField] private GameObject _player;
@@ -134,7 +135,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
     }
     // VELOCIDAD Y RASTRO
     public void UpgradeSpeed()
@@ -161,7 +162,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
     }
     // DA�O Y REBOTES
     public void UpgradeDamage()
@@ -199,7 +200,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
 
     }
 
@@ -237,7 +238,13 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().addCoins(nCoins);
-        UIManager.GetComponentInChildren<HUDController>().UpdateUI();
+        _hud.UpdateUI();
+    }
+    
+    public void RemoveCoins(int nCoins)
+    {
+        _player.GetComponent<PlayerMovement>().subCoins(nCoins);
+        _hud.UpdateUI();
     }
 
     public void increaseScore(int nScore)

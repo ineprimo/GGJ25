@@ -127,9 +127,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(otherObject);
         }
     }
-
-
-=======
+    
     private void FixedUpdate()
     {
         Vector3 velocity = _dir * _speed;

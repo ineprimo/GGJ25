@@ -465,7 +465,6 @@ MonoBehaviour:
   opciones: {fileID: 1472637652906982777}
   salir: {fileID: 5852174502470635353}
   fadeDuration: 0.5
-  HUD: {fileID: 0}
 --- !u!1 &2709544929599278210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,8 +1118,8 @@ RectTransform:
   m_LocalScale: {x: 0.015718983, y: 0.015718983, z: 0.015718983}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6301112732929466544}
   - {fileID: 8263030749486450806}
+  - {fileID: 6301112732929466544}
   - {fileID: 4016008762196411051}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

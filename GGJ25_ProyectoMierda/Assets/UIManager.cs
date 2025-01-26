@@ -38,6 +38,9 @@ public class UIManager : MonoBehaviour
     {
         Scoreboard.SetActive(false);
     }
+    
+    public GameObject Hud() {return HUD;}
+    
     // Update is called once per frame
     void Update()
     {
