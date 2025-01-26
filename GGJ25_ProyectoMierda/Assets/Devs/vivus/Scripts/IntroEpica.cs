@@ -10,6 +10,10 @@ public class IntroEpica : MonoBehaviour
     void Start()
     {
         _player = GameManager.Instance.GetPlayer();
+    }
+
+    public void Intro()
+    {
         StartCoroutine(IntroGame());
     }
 
@@ -35,7 +39,6 @@ public class IntroEpica : MonoBehaviour
         playerRigidbody.MovePosition(destinationPosition);
         _door.GetComponent<DoorController>().ToggleDoor();
 
-        Debug.Log("Casi Fin Anim");
         yield return new WaitForSeconds(1);
 
         _player.GetComponent<InputManager>().CanInput();
