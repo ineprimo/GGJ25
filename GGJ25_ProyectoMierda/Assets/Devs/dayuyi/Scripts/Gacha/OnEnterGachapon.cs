@@ -1,5 +1,7 @@
 using System.Collections; // Necesario para IEnumerator
 using UnityEngine;
+using UnityEngine.Playables; // Necesario para PlayableDirector
+using UnityEngine.UI; // Necesario para actualizar el texto UI
 
 public class OnEnterGachapon : MonoBehaviour
 {
@@ -20,6 +22,10 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private AudioClip gachaponSound; // Sonido a reproducir
     [SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
 
+    [Header("UI Elements")]
+    [SerializeField] private Text resultText; // Texto donde se mostrará el nombre de la recompensa
+    [SerializeField] private GameObject playableDirector; // Playable Director que controla el Timeline
+
     private void Start()
     {
         canPull = false;
@@ -36,9 +42,10 @@ public class OnEnterGachapon : MonoBehaviour
             {
                 GameManager.Instance.RemoveCoins(_gachaPrice);
 
-                // Ejecutar el giro y reproducir el sonido
+                // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
                 StartCoroutine(SpinGachaponWheel());
                 audioSource.PlayOneShot(gachaponSound);
+                playableDirector.SetActive(true);
 
                 // Realizar el pull en el gachapón
                 Upgrade up = _gacha.pull();
@@ -50,6 +57,9 @@ public class OnEnterGachapon : MonoBehaviour
                     Debug.Log(up.getName());
 
                 updateUpgrades(up.getName());
+
+               
+
 
                 // Retrasar el cambio de posición y rotación 5 segundos
                 StartCoroutine(DelayMachineMove(5f));
@@ -120,15 +130,42 @@ public class OnEnterGachapon : MonoBehaviour
         {
             case "BULLETS":
                 GameManager.Instance.UpgradeBullets();
+                if (GameManager.Instance.GetBulletsLvl() == 1)
+                    resultText.text = "Mejora de pompero";
+                else if (GameManager.Instance.GetBulletsLvl() == 2)
+                    resultText.text = "Mejora de pompero +";
+                else if (GameManager.Instance.GetBulletsLvl() == 3)
+                    resultText.text = "Mejora de pompero ++";
                 break;
             case "LIFE":
                 GameManager.Instance.UpgradeLife();
+                
+                if (GameManager.Instance.GetHealthLvl() == 1)
+                    resultText.text = "Mejora de vida\nCarceljabonosa";
+                else if (GameManager.Instance.GetHealthLvl() == 2)
+                    resultText.text = "Mejora de vida\nCarceljabonosa +";
+                else if (GameManager.Instance.GetHealthLvl() == 3)
+                    resultText.text = "Mejora de vida\nCarceljabonosa ++";
                 break;
             case "SPEED":
                 GameManager.Instance.UpgradeSpeed();
+
+                if (GameManager.Instance.GetSpeedLvl() == 1)
+                    resultText.text = "Mejora de velocidad\nCaminar espumoso";
+                else if (GameManager.Instance.GetSpeedLvl() == 2)
+                    resultText.text = "Mejora de velocidad\nCaminar espumoso +";
+                else if (GameManager.Instance.GetSpeedLvl() == 3)
+                    resultText.text = "Mejora de velocidad\nCaminar espumoso ++";
                 break;
             case "DAMAGE":
                 GameManager.Instance.UpgradeDamage();
+
+                if (GameManager.Instance.GetDamageLvl() == 1)
+                    resultText.text = "Daño mejorado";
+                else if (GameManager.Instance.GetDamageLvl() == 2)
+                    resultText.text = "Daño mejorado +";
+                else if (GameManager.Instance.GetDamageLvl() == 3)
+                    resultText.text = "Daño mejorado ++";
                 break;
         }
     }
