@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int coins = 0;
     //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
 
+    [SerializeField] private float _healTime = 5.0f;
+    private float _healTimer;
+    [SerializeField] private float _healPower = 1.0f;
+    
     private Vector3 _dir;
     
     [SerializeField] private HUDController _hud;
@@ -35,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
-
+        
+        _healTimer = _healTime;
 
         // cambia el current
         _currentWeapon = _weapons[0];
@@ -44,9 +49,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // rigidBody.velocity = new Vector3(0, _fuerzaPaBajarAlPlayer * Time.deltaTime, 0);
-
-        
+        if (_healTimer <= 0)
+        {
+            Heal(_healPower);
+        }
+        else _healTimer -= Time.deltaTime;
     }
 
     public void Move(Vector3 dir)
@@ -67,48 +74,60 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="i"></param>
     public void changeWeapon(int i)
     {
-
-        Debug.Log("1 " + _currentWeapon);
         // desactiva el antiguo
         _currentWeapon.SetActive(false);
-            
-            //GetComponent<ActivateSelf>().ChangeActive(false);
-
-
     }
     private void Hit(float damage)
     {
+        _healTimer = _healTime;
         _currentLife -= damage;
 
         if (_maxLife * 0.75f >= _currentLife && _currentLife > _maxLife * 0.5f)
         {
-            _hud.UpateSplash(1);
+            _hud.UpateSplash(1, true);
         }
         else if (_maxLife * 0.5f >= _currentLife && _currentLife > _maxLife * 0.25f)
         {
-            _hud.UpateSplash(2);
+            _hud.UpateSplash(2, true);
         }
         else if (_maxLife * 0.25f >= _currentLife && _currentLife > _maxLife * 0.1f)
         {
-            _hud.UpateSplash(3);
+            _hud.UpateSplash(3, true);
         }
         else if (_maxLife * 0.1f >= _currentLife)
         {
-            _hud.UpateSplash(4);
+            _hud.UpateSplash(4, true);
         }
-        else if (_currentLife <= 0)
+        if (_currentLife <= 0)
         {
             PlayerDies();
         }
     }
 
-    public void Heal(float incr)
+    private void Heal(float incr)
     {
         if(_currentLife + incr >= _maxLife)
         {
             _currentLife = _maxLife;
         }
-        _currentLife += incr;
+        else _currentLife += incr;
+        
+        if (_maxLife * 0.1f <= _currentLife && _currentLife < _maxLife * 0.25f)
+        {
+            _hud.UpateSplash(4, false);
+        }
+        else if (_maxLife * 0.25f <= _currentLife && _currentLife < _maxLife * 0.5f)
+        {
+            _hud.UpateSplash(3, false);
+        }
+        else if (_maxLife * 0.5f <= _currentLife && _currentLife < _maxLife * 0.75f)
+        {
+            _hud.UpateSplash(2, false);
+        }
+        else if (_maxLife * 0.75f <= _currentLife)
+        {
+            _hud.UpateSplash(1, false);
+        }
     }
 
     public void ImproveMaxLife(float incr)
@@ -124,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void addCoins(int nCoins)
     {
-        Debug.Log("A�ado " + nCoins + " moneda");
         coins += nCoins;
     }
 
@@ -156,11 +174,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (otherObject.layer == 9)
         {
-            Debug.Log("MELEE");
             Hit(otherObject.GetComponent<Enemy>()._damage);
         }
     }
-    
+
     private void FixedUpdate()
     {
         Vector3 velocity = _dir * _speed;

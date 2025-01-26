@@ -182,6 +182,8 @@ MonoBehaviour:
   _currentLife: 1000
   _maxLife: 1000
   coins: 0
+  _healTime: 5
+  _healPower: 1
   _hud: {fileID: 0}
   _currentWeapon: {fileID: 8075213074770621947}
   _weapons:
@@ -5524,7 +5526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7926576299569444810
 Transform:
   m_ObjectHideFlags: 0
@@ -6033,7 +6035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8888763355313647425
 Transform:
   m_ObjectHideFlags: 0
