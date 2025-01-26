@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public float _damage = 10.0f;
     [SerializeField] private float _health;
-    private float _currentHealth;
+    public float _currentHealth;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
     [SerializeField] private SpriteRenderer _eyes;
