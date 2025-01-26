@@ -111,6 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539fbaa73e00b543b0a475f12a90313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoscuquis:
+  - {fileID: 8300000, guid: b2438b3d18e4c044692f9b78f5dd9741, type: 3}
+  - {fileID: 8300000, guid: b2583a5b708481044a2679e54f587092, type: 3}
+  - {fileID: 8300000, guid: 0bada0c0cb3b1ba47b13472086579de2, type: 3}
   _damage: 10
   _health: 80
   _currentHealth: 0

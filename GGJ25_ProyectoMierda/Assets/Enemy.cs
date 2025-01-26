@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioClip[] sonidoscuquis;
+
+    private AudioSource audioSource;
     public float _damage = 10.0f;
     [SerializeField] private float _health;
     public float _currentHealth;
@@ -55,7 +58,13 @@ public class Enemy : MonoBehaviour
             //Freeze();
 
             GetComponent<Animator>().SetTrigger("death");
-     
+
+            if (sonidoscuquis.Length > 0)
+            {
+                int indice = UnityEngine.Random.Range(0, sonidoscuquis.Length);
+                audioSource.PlayOneShot(sonidoscuquis[indice]);
+            }
+
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
@@ -103,5 +112,6 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _currentHealth = _health;
+        audioSource = GetComponent<AudioSource>();
     }
 }
