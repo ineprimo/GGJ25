@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddd15ef007ed0c846bfb6d0da77deda6
+guid: 7eae5db1d8bb3d44dba1979d83e4473f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,14 +113,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 7eae5db1d8bb3d44dba1979d83e4473f, type: 3}
-      name: Moneda
+    secondaryTextures: []
     nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
