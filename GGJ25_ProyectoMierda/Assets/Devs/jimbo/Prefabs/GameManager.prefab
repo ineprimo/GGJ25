@@ -86,6 +86,11 @@ PrefabInstance:
       propertyPath: _animator.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1127778552602366456, guid: 58d1ed104be2de945bb3614840a0c3b8,
+        type: 3}
+      propertyPath: '_animator.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1827348439738509383, guid: 58d1ed104be2de945bb3614840a0c3b8,
         type: 3}
       propertyPath: m_LocalPosition.x
