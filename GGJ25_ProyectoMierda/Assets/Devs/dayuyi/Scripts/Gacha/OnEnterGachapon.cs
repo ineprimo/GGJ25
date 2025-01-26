@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OnEnterGachapon : MonoBehaviour
 {
+    [SerializeField] private GameObject _key;
     [SerializeField] private int _gachaPrice = 50;
     [SerializeField] private bool canPull;
     [SerializeField] private bool gachaOnCooldown;
@@ -82,6 +83,7 @@ public class OnEnterGachapon : MonoBehaviour
         // si es el player
         if (other.gameObject.GetComponentInParent<PlayerMovement>() != null)
         {
+            _key.SetActive(true);
             // le permite tirar en el gachapon
             canPull = true; 
         }
@@ -92,6 +94,7 @@ public class OnEnterGachapon : MonoBehaviour
         // si es el player
         if (other.gameObject.GetComponentInParent<PlayerMovement>() != null)
         {
+            _key.SetActive(false);
             // le permite tirar en el gachapon
             canPull = false;
         }
