@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 3.37, y: 0.34, z: 1.5057703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8027083057860167488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8689096196589588615
@@ -129,6 +130,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 31dac5b01d83979499dd498fa83b2216, type: 3}
   - {fileID: 8300000, guid: 637f83d69129ed941989d9866908cb17, type: 3}
   - {fileID: 8300000, guid: d644395a47e061b4a91aa4d545dca1e6, type: 3}
+  _spawnPoint: {fileID: 8027083057860167488}
   meleeEnemy: {fileID: 3085869615580526969, guid: 9433be7dde5edf54d8258948c91e6677,
     type: 3}
   meleeEnemy2: {fileID: 3085869615580526969, guid: 782bb160d7920b948bba87a29fcbb3a0,
@@ -237,3 +239,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2834445148429146935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8027083057860167488}
+  m_Layer: 0
+  m_Name: SP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8027083057860167488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834445148429146935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.492, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2556211052286006561}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
