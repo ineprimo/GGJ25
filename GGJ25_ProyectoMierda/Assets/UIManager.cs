@@ -61,9 +61,11 @@ public class UIManager : MonoBehaviour
     }
     public void saveScore()
     {
+            Debug.Log("fuera DEL IF");
         if (nombrePlayer.text != "" && nombrePlayer.text.Length < 13)
         {
-            leaderboard.GetComponent<LeaderboardController>().setEntry(nombrePlayer.text, Int32.Parse(score.text));
+            Debug.Log("DENTRO DEL IF");
+            leaderboard.GetComponent<LeaderboardController>().AddNewEntry(nombrePlayer.text, GameManager.Instance.GetScore());
             DesactivarScoreboard();
             ActivarScoreboard2();
         }

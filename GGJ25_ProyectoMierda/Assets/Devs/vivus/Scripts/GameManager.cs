@@ -275,7 +275,10 @@ public class GameManager : MonoBehaviour
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
         Time.timeScale = 0;
     }
-
+    public int GetScore()
+    {
+        return score;
+    }
     public int GetCoins()
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();
@@ -287,7 +290,7 @@ public class GameManager : MonoBehaviour
         leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
         score = 10;
-        //Invoke("EndGame", 3.0f);
+        Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame
