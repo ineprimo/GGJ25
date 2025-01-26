@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+    //LEADERBOARD
+    private LeaderboardController leaderboard;
 
     // UI
     [SerializeField] private GameObject UIManager;
@@ -247,7 +249,8 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         UIManager.GetComponent<UIManager>().DesactivarHUD();
-        UIManager.GetComponent<UIManager>().ActivarScoreboard();
+        UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
+        Time.timeScale = 0;
     }
     public int GetCoins()
     {
@@ -257,7 +260,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
+        //Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame

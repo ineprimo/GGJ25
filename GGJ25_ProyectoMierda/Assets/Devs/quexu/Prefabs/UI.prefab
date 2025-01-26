@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 4016008762196411051}
   - component: {fileID: 5743683457931602122}
   - component: {fileID: 2182199355629151288}
-  - component: {fileID: 8018242380763183980}
   m_Layer: 5
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -167,42 +166,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8018242380763183980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051765007463897626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9bbcc31431bb7d4c93f339c91e567b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsText: {fileID: 8002722810083090739}
-  imagenBullet: {fileID: 0}
-  bulletSprite2: {fileID: 21300000, guid: a164244727cbbc14ba066af49374a46d, type: 3}
-  bulletSprite3: {fileID: 21300000, guid: 5891dc09a487e7547a909a2407679148, type: 3}
-  imagenHealth: {fileID: 0}
-  healthSprite2: {fileID: 21300000, guid: be558fba52ad31c4e8ac04d3729488ac, type: 3}
-  healthSprite3: {fileID: 21300000, guid: 55bbaf1b829fb7348be3ee41beb5e7ae, type: 3}
-  imagenSpeed: {fileID: 0}
-  speedSprite2: {fileID: 21300000, guid: 0dcc3b0e934ed4d4c9e370a4ac452ad1, type: 3}
-  speedSprite3: {fileID: 21300000, guid: de0b7d55285d44844ab8fb65bc5dd83d, type: 3}
-  imagenDamage: {fileID: 0}
-  damageSprite2: {fileID: 21300000, guid: dd3e04d3761f54a4abc24e1aa3c24ffe, type: 3}
-  damageSprite3: {fileID: 21300000, guid: 2a744a5ece1eafc48a28f3da57231a76, type: 3}
-  _firstSplash:
-  - {fileID: 0}
-  - {fileID: 0}
-  _secondSplash:
-  - {fileID: 0}
-  - {fileID: 0}
-  _thirdSplash:
-  - {fileID: 0}
-  _fourthSplash:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1288321357390685586
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +428,6 @@ MonoBehaviour:
   opciones: {fileID: 1472637652906982777}
   salir: {fileID: 5852174502470635353}
   fadeDuration: 0.5
-  HUD: {fileID: 0}
 --- !u!1 &2709544929599278210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1169,7 @@ MonoBehaviour:
   Menu: {fileID: 2626411409753809599}
   HUD: {fileID: 6984298151431404456}
   Scoreboard: {fileID: 1051765007463897626}
+  score: {fileID: 0}
 --- !u!1 &4684800010727460109
 GameObject:
   m_ObjectHideFlags: 0
