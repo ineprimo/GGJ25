@@ -925,7 +925,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761964350}
+    - targetCorrespondingSourceObject: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761964351}
   m_SourcePrefab: {fileID: 100100000, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
 --- !u!4 &108971700 stripped
 Transform:
@@ -9959,6 +9967,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 108971699}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761964350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761964344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e95b9c7311db4640b9adaa613e8055f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1761964351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761964344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23db7ddd8b93dbe45acbe49bec301592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeEnemy: {fileID: 3085869615580526969, guid: 9433be7dde5edf54d8258948c91e6677,
+    type: 3}
 --- !u!1 &1783567518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4449114289332145251, guid: a46d2ceb2b07b3141b29ee8b615d38d6,

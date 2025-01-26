@@ -13,6 +13,7 @@ public class SpawnersManager : MonoBehaviour
 
     bool initSpawners;
     bool activated;
+    bool tutorialActivated;
 
     public int GetCurrentLvl() { return _currentLvl; }
 
@@ -62,12 +63,14 @@ public class SpawnersManager : MonoBehaviour
         initLevelUpTime = _levelUpTime;
 
         initSpawners = false;
-        activated= false;
+        activated = false;
+        tutorialActivated = false;
 
         for (int i = 0; i < _spawns.Length; ++i)
         {
             _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = false;
         }
+        _spawns[0].gameObject.GetComponent<TutorialSpawner>().enabled = false;
     }
 
     // Update is called once per frame
@@ -79,6 +82,7 @@ public class SpawnersManager : MonoBehaviour
             {
                 _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = true;
             }
+            _spawns[0].gameObject.GetComponent<TutorialSpawner>().enabled = true;
             activated = true;
             //Debug.Log("ACTIVATED SPAWNERS");
         }
