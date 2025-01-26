@@ -53,6 +53,8 @@ public class SpawnersManager : MonoBehaviour
     float[] meleeCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
     float[] throwerCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
 
+    float[] spawnTime = { 30f, 30f, 30f, 20f, 20f, 20f, 20f, 10f, 10f, 10f, 10f, 10f };
+
 
     // Start is called before the first frame update
     void Start()
@@ -106,7 +108,8 @@ public class SpawnersManager : MonoBehaviour
                 .Upgrade(meleeSpeeds[_currentLvl-1], throwerSpeeds[_currentLvl-1],
                         meleeHealth[_currentLvl-1], throwerHealth[_currentLvl - 1],
                         meleeDamage[_currentLvl - 1], throwerDamage[_currentLvl - 1],
-                        meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1]);
+                        meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1],
+                        spawnTime[_currentLvl - 1]);
         }
     }
 
