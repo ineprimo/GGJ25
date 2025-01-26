@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
 
             GetComponent<Animator>().SetTrigger("death");
             Freeze();
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);

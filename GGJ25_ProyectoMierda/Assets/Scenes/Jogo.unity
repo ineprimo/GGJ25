@@ -11321,6 +11321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921508998100822529, guid: 83c25faccc3ddd443b95e74b05788ded,
         type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921508998100822529, guid: 83c25faccc3ddd443b95e74b05788ded,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
