@@ -99,7 +99,6 @@ public class Bullet : MonoBehaviour
         currentTime += Time.deltaTime;
         if(currentTime >= lifeTime)
         {
-            GetComponent<PlaySoundWithVariation>().Reproduce();
             Destroy(gameObject);
         }
    
