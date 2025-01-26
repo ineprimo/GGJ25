@@ -80,7 +80,7 @@ public class LeaderboardController : MonoBehaviour
         PlayerPrefs.SetInt("TotalAmount", leaderboard.Count);
         PlayerPrefs.Save();
     }
-
+    
     public void PrintInLeaderboard()
     {
         for (int i = 0; i < leaderboard.Count; i++)

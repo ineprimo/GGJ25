@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EmissiveFlick : MonoBehaviour
 {
-    public Material emissiveMaterial; // Material con emisión
-    public Color emissiveColor = Color.white; // Color de emisión
-    public float maxEmissionIntensity = 2.0f; // Intensidad máxima de emisión
+    public Material emissiveMaterial; // Material con emisiï¿½n
+    public Color emissiveColor = Color.white; // Color de emisiï¿½n
+    public float maxEmissionIntensity = 2.0f; // Intensidad mï¿½xima de emisiï¿½n
     public float flickerInterval = 0.5f; // Tiempo fijo entre parpadeos
 
-    private bool isEmitting = true; // Controla si el material está emitiendo o no
+    private bool isEmitting = true; // Controla si el material estï¿½ emitiendo o no
     private float timer; // Temporizador para gestionar el parpadeo
 
     void Start()
@@ -23,13 +23,12 @@ public class EmissiveFlick : MonoBehaviour
             }
             else
             {
-                Debug.LogError("No se encontró un Renderer ni se asignó un material. Por favor, asigna un material al script.");
                 enabled = false;
                 return;
             }
         }
 
-        // Asegúrate de que el material tenga el keyword de Emission activado
+        // Asegï¿½rate de que el material tenga el keyword de Emission activado
         emissiveMaterial.EnableKeyword("_EMISSION");
     }
 
@@ -48,13 +47,13 @@ public class EmissiveFlick : MonoBehaviour
     {
         if (isEmitting)
         {
-            emissiveMaterial.SetColor("_EmissionColor", emissiveColor * 0); // Apagar emisión
+            emissiveMaterial.SetColor("_EmissionColor", emissiveColor * 0); // Apagar emisiï¿½n
         }
         else
         {
-            emissiveMaterial.SetColor("_EmissionColor", emissiveColor * maxEmissionIntensity); // Encender emisión
+            emissiveMaterial.SetColor("_EmissionColor", emissiveColor * maxEmissionIntensity); // Encender emisiï¿½n
         }
 
-        isEmitting = !isEmitting; // Alternar el estado de emisión
+        isEmitting = !isEmitting; // Alternar el estado de emisiï¿½n
     }
 }

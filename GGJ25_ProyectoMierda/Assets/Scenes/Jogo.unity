@@ -3843,7 +3843,7 @@ PrefabInstance:
     - target: {fileID: 2975355018598204332, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2975355018598204332, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}
@@ -9298,7 +9298,7 @@ PrefabInstance:
     - target: {fileID: 4067786185124672318, guid: 90f6580402d0aa349bf26972800f0740,
         type: 3}
       propertyPath: _gachaPrice
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4067786185124672318, guid: 90f6580402d0aa349bf26972800f0740,
         type: 3}

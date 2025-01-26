@@ -84,7 +84,6 @@ public class SpawnersManager : MonoBehaviour
             }
             _spawns[0].gameObject.GetComponent<TutorialSpawner>().enabled = true;
             activated = true;
-            //Debug.Log("ACTIVATED SPAWNERS");
         }
 
         if (activated)
@@ -94,7 +93,6 @@ public class SpawnersManager : MonoBehaviour
             if (_levelUpTime < 0)
             {
                 if (_currentLvl != nLevels) _currentLvl++;
-                //Debug.Log("Current Level: " + _currentLvl);
 
                 UpgradeAllSpawners();
 
@@ -117,7 +115,6 @@ public class SpawnersManager : MonoBehaviour
                 );
 
         }
-        Debug.Log(spawnTime[_currentLvl - 1]);
 
     }
 

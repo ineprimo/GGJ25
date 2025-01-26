@@ -40,13 +40,10 @@ public class TraceComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log("can singed " + _singed);
         if(_singed && 
             _maxBubbleGenerationTime <= _currentBubbleGenerationTime &&
             _rigidBody.velocity != Vector3.zero)
         {
-            Debug.Log("javivu desgraciado");
 
             GameObject auxBubble = Instantiate(_bubblePrefab, transform.position, Quaternion.identity);
             Vector3 auxOffset = new Vector3(
@@ -61,6 +58,5 @@ public class TraceComponent : MonoBehaviour
             _currentBubbleGenerationTime = 0.0f;
         }
         _currentBubbleGenerationTime += Time.deltaTime;
-        //Debug.Log(_currentBubbleGenerationTime);
     }
 }

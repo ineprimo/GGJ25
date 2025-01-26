@@ -157,21 +157,18 @@ public class GameManager : MonoBehaviour
         _speedUpgradeLvl++;
         if (_speedUpgradeLvl == 1)
         {
-            Debug.Log("Speed Lvl 1");
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().enabled = true;   // Se empieza a crear el rastro de burbujas
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl1);   // Setear daño de las burbujas
         }
         else if (_speedUpgradeLvl == 2)
         {
-            Debug.Log("Speed Lvl 2");
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl2);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl2);   // Setear daño de las burbujas
 
         }
         else if (_speedUpgradeLvl == 3)
         {
-            Debug.Log("Speed Lvl 3");
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
@@ -224,7 +221,6 @@ public class GameManager : MonoBehaviour
     {
         nEnemies++;
         SceneEnemies.Add(e);
-        //Debug.Log(nEnemies);
     }
 
     public void deRegisterEnemy(GameObject e)
@@ -265,7 +261,6 @@ public class GameManager : MonoBehaviour
     public void increaseScore(int nScore)
     {
         score += nScore;
-        Debug.Log(score);
     }
 
     public void EndGame()
@@ -290,7 +285,7 @@ public class GameManager : MonoBehaviour
         leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().setCoins(0);
         score = 10;
-        Invoke("EndGame", 3.0f);
+        //Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame
