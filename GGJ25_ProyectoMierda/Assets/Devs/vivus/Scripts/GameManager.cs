@@ -80,9 +80,9 @@ public class GameManager : MonoBehaviour
     
     [Header("Speed")]
     [SerializeField] private int _speedUpgradeLvl = 0;
-    [SerializeField] private float _speedIncreaseLvl1 = 3.0f;
-    [SerializeField] private float _speedIncreaseLvl2 = 6.0f;
-    [SerializeField] private float _speedIncreaseLvl3 = 10.0f;
+    [SerializeField] private float _speedIncreaseLvl1 = 30.0f;
+    [SerializeField] private float _speedIncreaseLvl2 = 30.0f;
+    [SerializeField] private float _speedIncreaseLvl3 = 30.0f;
 
     [SerializeField] private float _traceDamageLvl1 = 1.0f;
     [SerializeField] private float _traceDamageLvl2 = 3.0f;
@@ -90,7 +90,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
-
+    [SerializeField] private float _atkIncreaseLvl1 = 3.0f;
+    [SerializeField] private float _atkIncreaseLvl2= 6.0f;
+    [SerializeField] private float _atkIncreaseLvl3 = 10.0f;
 
 
     public AnimationManager GetAnimationManager() { return _animationManager; }
@@ -186,7 +188,6 @@ public class GameManager : MonoBehaviour
         {
             // + da�o
 
-            Debug.Log("1 bounce");
 
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
 
@@ -200,7 +201,6 @@ public class GameManager : MonoBehaviour
             // + da�o
             // la burbuja rebota 2 veces
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
-            pistola.MakeBouncyBubbles(2);
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 

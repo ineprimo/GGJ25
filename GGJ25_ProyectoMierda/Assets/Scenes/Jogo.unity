@@ -9284,6 +9284,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4067786185124672318, guid: 90f6580402d0aa349bf26972800f0740,
         type: 3}
+      propertyPath: canPull
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067786185124672318, guid: 90f6580402d0aa349bf26972800f0740,
+        type: 3}
+      propertyPath: _gachaPrice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067786185124672318, guid: 90f6580402d0aa349bf26972800f0740,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 227644014}

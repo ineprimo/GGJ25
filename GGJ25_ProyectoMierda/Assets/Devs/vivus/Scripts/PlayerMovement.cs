@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public AudioClip deathSound;
     private AudioSource audioSource;
 
-    [SerializeField] private float _speed = 2.0f;
-    [SerializeField] private float _currentLife = 50.0f;
-    [SerializeField] private float _maxLife = 50.0f;
+    [SerializeField] private float _speed = 584.0f;
+    [SerializeField] private float _currentLife = 1000.0f;
+    [SerializeField] private float _maxLife = 1000.0f;
     [SerializeField] private int coins = 0;
     //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
 

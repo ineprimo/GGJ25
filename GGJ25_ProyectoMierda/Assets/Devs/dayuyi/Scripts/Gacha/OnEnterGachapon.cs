@@ -7,7 +7,9 @@ using UnityEngine.UI; // Necesario para actualizar el texto UI
 public class OnEnterGachapon : MonoBehaviour
 {
     [SerializeField] private GameObject _key;
-    [SerializeField] private int _gachaPrice = 50;
+    [SerializeField] private int _gachaPrice = 10;
+    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60};
+    private int countUpdate = 0;
     [SerializeField] private bool canPull;
     [SerializeField] private bool gachaOnCooldown;
     [SerializeField] private GachaponBase _gacha;
@@ -42,6 +44,8 @@ public class OnEnterGachapon : MonoBehaviour
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
                 GameManager.Instance.RemoveCoins(_gachaPrice);
+                _gachaPrice = updatePrices[countUpdate];
+                if (countUpdate<updatePrices.Length)countUpdate++;
 
                 // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
                 StartCoroutine(SpinGachaponWheel());
