@@ -171,7 +171,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4.607126, y: 2.8258612, z: 0.20494151}
-  m_Center: {x: 0.48148704, y: 0.80480874, z: -0.0055875033}
+  m_Center: {x: 0.48148704, y: -0.77, z: -0.0055875033}
 --- !u!114 &5472781247636325228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539fbaa73e00b543b0a475f12a90313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 10
   _health: 50
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}
   threshold: 0.5
