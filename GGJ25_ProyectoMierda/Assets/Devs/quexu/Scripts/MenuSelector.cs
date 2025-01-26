@@ -13,7 +13,8 @@ public class MenuSelector : MonoBehaviour
     [SerializeField] private Button jugar;
     [SerializeField] private Button opciones;
     [SerializeField] private Button salir;
-    [SerializeField] private float fadeDuration = 0.5f; 
+    [SerializeField] private float fadeDuration = 0.5f;
+
     private void Start()
     {
         jugar.onClick.AddListener(Jugar);

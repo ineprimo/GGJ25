@@ -22,7 +22,7 @@ public class AIMovement : MonoBehaviour
         //_agent.destination = _playerTransform.position;
         if (_agent.isOnNavMesh)
         {
-            Debug.Log("Navmesh");
+            //Debug.Log("Navmesh");
             _agent.destination = _playerTransform.position;
         }
         //Debug.Log("Ir");

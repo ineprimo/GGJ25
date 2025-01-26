@@ -121,7 +121,7 @@ public class CaquitaSpawn : MonoBehaviour
     }
 
     public void Upgrade(float meleeSp, float throwerSp, float meleeHP, float throwerHP,
-        float meleeDmg, float throwerDmg, float meleeCoins, float throwerCoins)
+        float meleeDmg, float throwerDmg, float meleeCoins, float throwerCoins, float spTime)
     {
         newMeleeSpeed = meleeSp;
         newThrowerSpeed = throwerSp;
@@ -131,6 +131,7 @@ public class CaquitaSpawn : MonoBehaviour
         newThrowerDamage = throwerDmg;
         newMCoins = meleeCoins;
         newTCoins = throwerCoins;
+        spawnTime = spTime;
 
     }
 

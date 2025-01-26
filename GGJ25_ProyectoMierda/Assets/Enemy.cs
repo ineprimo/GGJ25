@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public float _damage = 10.0f;
     [SerializeField] private float _health;
-    private float _currentHealth;
+    public float _currentHealth;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
     [SerializeField] private SpriteRenderer _eyes;
@@ -28,13 +28,13 @@ public class Enemy : MonoBehaviour
     public void Freeze()
     {
         Frozen = true;
-        GetComponent<CaquitaMovement>().enabled = false;
+        GetComponent<AIMovement>().enabled = false;
     }
 
     public void Unfreeze()
     {
         Frozen = false;
-        GetComponent<CaquitaMovement>().enabled = true;
+        GetComponent<AIMovement>().enabled = true;
     }
     
     // cuando la bala burbuja hittee al enemy 
@@ -50,14 +50,16 @@ public class Enemy : MonoBehaviour
         {
             _eyes.sprite = _eye2;
         }
-        else if (_currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
+            //Freeze();
+
             GetComponent<Animator>().SetTrigger("death");
+            Freeze();
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
             }
-            
             StartCoroutine(Death());
         }
     }
@@ -88,7 +90,7 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.GetComponent<Bullet>() != null)
         {
             Hit(other.gameObject.GetComponent<Bullet>().Damage);
             Destroy(other.gameObject);

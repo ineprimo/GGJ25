@@ -171,8 +171,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.5252376, y: 4.9786744, z: 0.20494151}
-  m_Center: {x: 0.7822473, y: 0.0056447303, z: -0.005587499}
+  m_Size: {x: 5.5252376, y: 4.939266, z: 0.91429883}
+  m_Center: {x: 0.7822473, y: 0.0253496, z: -0.00558751}
 --- !u!114 &5472781247636325228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3085869615580526969}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.1
+  m_Radius: 0.37
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _health: 100
+  _currentHealth: 0
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}
   threshold: 0.5
   _eyes: {fileID: 6563268949135535870}
@@ -465,7 +466,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &1653136486769987996
 PrefabInstance:
   m_ObjectHideFlags: 0

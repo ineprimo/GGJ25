@@ -146,9 +146,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject otherObject = other.gameObject;
-        
+
         Debug.Log(otherObject.name);
-        
+
         if (otherObject.layer == 7)
         {
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
