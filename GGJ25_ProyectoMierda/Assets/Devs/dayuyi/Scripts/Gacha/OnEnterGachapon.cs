@@ -8,8 +8,6 @@ public class OnEnterGachapon : MonoBehaviour
 {
     [SerializeField] private GameObject _key;
     [SerializeField] private int _gachaPrice = 10;
-    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60};
-    private int countUpdate = 0;
     [SerializeField] private bool canPull;
     [SerializeField] private bool gachaOnCooldown;
     [SerializeField] private GachaponBase _gacha;
@@ -26,15 +24,20 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
 
     [Header("UI Elements")]
-    [SerializeField] private TextMeshProUGUI resultText; // Texto donde se mostrar� el nombre de la recompensa
+
+    [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private GameObject priceText; // Texto donde se mostrar� el nombre de la recompensa
+
     [SerializeField] private GameObject playableDirector; // Playable Director que controla el Timeline
 
     private void Start()
     {
         canPull = false;
         gachaOnCooldown = false;
-
+        _gachaPrice = GameManager.Instance.gachaPrice;
         _gacha.PrepareGacha();
+
+        priceText.GetComponent<TextMeshPro>().text = "" + _gachaPrice;
     }
 
     private void Update()
@@ -44,8 +47,7 @@ public class OnEnterGachapon : MonoBehaviour
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
                 GameManager.Instance.RemoveCoins(_gachaPrice);
-                _gachaPrice = updatePrices[countUpdate];
-                if (countUpdate<updatePrices.Length)countUpdate++;
+                
 
                 // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
                 StartCoroutine(SpinGachaponWheel());
@@ -58,8 +60,8 @@ public class OnEnterGachapon : MonoBehaviour
                 gachaOnCooldown = true;
 
                 updateUpgrades(up.getName());
+                GameManager.Instance.updateGachaPrice();
 
-               
 
 
                 // Retrasar el cambio de posici�n y rotaci�n 5 segundos
