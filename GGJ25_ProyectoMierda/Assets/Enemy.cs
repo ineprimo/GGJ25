@@ -8,8 +8,12 @@ public class Enemy : MonoBehaviour
 {
     public float _damage = 10.0f;
     [SerializeField] private float _health;
+    private float _currentHealth;
     [SerializeField] private GameObject coin;
     [SerializeField] private float threshold = 0.5f;
+    [SerializeField] private SpriteRenderer _eyes;
+    [SerializeField] private Sprite _eye1;
+    [SerializeField] private Sprite _eye2;
 
     private const int SCORE_MELEE = 29;
     private const int SCORE_DISTANCE = 39;
@@ -36,9 +40,17 @@ public class Enemy : MonoBehaviour
     // cuando la bala burbuja hittee al enemy 
     public void Hit(float damage)
     {
-        _health -= damage;
+        _currentHealth -= damage;
 
-        if(_health <= 0)
+        if (_health * 0.5 >= _currentHealth && _currentHealth > _health * 0.1f)
+        {
+            _eyes.sprite = _eye1;
+        }
+        else if (_health * 0.1 >= _currentHealth)
+        {
+            _eyes.sprite = _eye2;
+        }
+        else if (_currentHealth <= 0)
         {
             GetComponent<Animator>().SetTrigger("death");
             foreach (Transform child in transform)
@@ -81,5 +93,10 @@ public class Enemy : MonoBehaviour
             Hit(other.gameObject.GetComponent<Bullet>().Damage);
             Destroy(other.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        _currentHealth = _health;
     }
 }
