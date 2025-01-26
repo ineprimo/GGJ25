@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
     }
     public void saveScore()
     {
-        if (nombrePlayer.text != "" && nombrePlayer.text.Length < 17)
+        if (nombrePlayer.text != "" && nombrePlayer.text.Length < 13)
         {
             leaderboardController.setEntry(nombrePlayer.text, Int32.Parse(score.text));
             DesactivarScoreboard();

@@ -46,9 +46,7 @@ public class GachaponBase : ScriptableObject
         foreach (var i in _pool)
         {
             i.setWeight(i.getInitialWeight());
-            Debug.Log("wight: " + i.getWeight());
         }
-        Debug.Log("setting weight");
     }
     private void Initialize()
     {
