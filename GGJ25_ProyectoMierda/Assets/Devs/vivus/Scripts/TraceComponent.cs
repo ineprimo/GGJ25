@@ -13,7 +13,7 @@ public class TraceComponent : MonoBehaviour
 
     [SerializeField] private GameObject _bubblePrefab;
 
-    [SerializeField] bool _canSinged = false;
+    private bool _canSinged;
     public void ActivateSigned() {
         _canSinged = true; 
 
@@ -25,6 +25,7 @@ public class TraceComponent : MonoBehaviour
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        _canSinged = false; 
     }
 
     // Update is called once per frame
