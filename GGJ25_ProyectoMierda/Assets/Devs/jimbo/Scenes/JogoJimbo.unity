@@ -749,26 +749,6 @@ PrefabInstance:
       propertyPath: _hud
       value: 
       objectReference: {fileID: 1271182840}
-    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _maxLife
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _currentLife
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
-        type: 3}
-      propertyPath: _inputActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

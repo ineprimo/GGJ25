@@ -704,6 +704,21 @@ PrefabInstance:
       propertyPath: bulletSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7298940305572474224, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775675669471982006, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d5abaa547baf2246a848a3dd9ae6b09, type: 2}
+    - target: {fileID: 8075213074770621947, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9145266319994395844, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: m_Enabled
