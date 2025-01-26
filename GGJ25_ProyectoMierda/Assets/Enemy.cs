@@ -50,14 +50,16 @@ public class Enemy : MonoBehaviour
         {
             _eyes.sprite = _eye2;
         }
-        else if (_currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
+            Freeze();
+
             GetComponent<Animator>().SetTrigger("death");
+
             foreach (Transform child in transform)
             {
                 Destroy(child.gameObject);
             }
-            
             StartCoroutine(Death());
         }
     }
