@@ -181,6 +181,9 @@ MonoBehaviour:
   _speed: 584
   _currentLife: 1000
   _maxLife: 240
+  _currentLife: 100
+  _maxLife: 100
+>>>>>>> Stashed changes
   coins: 0
   _hud: {fileID: 0}
   _currentWeapon: {fileID: 8075213074770621947}
@@ -289,6 +292,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2416969904299803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
