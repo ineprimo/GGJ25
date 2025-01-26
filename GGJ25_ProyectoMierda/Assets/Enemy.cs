@@ -55,7 +55,10 @@ public class Enemy : MonoBehaviour
         float f = UnityEngine.Random.Range(0f, 1f);
         if(f < threshold)
             Instantiate(coin, transform.position, transform.rotation);
+
+        GameManager.Instance.deRegisterEnemy(gameObject);
         Destroy(gameObject);
+
         if(gameObject.GetComponent<CacaThrower>() != null)
             GameManager.Instance.increaseScore(SCORE_DISTANCE);
         else
