@@ -5,6 +5,9 @@ using UnityEngine.Rendering;
 
 public class CaquitaSpawn : MonoBehaviour
 {
+    public AudioClip[] sonidosSpawn;
+    private AudioSource audioSource;
+
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject meleeEnemy2;
     [SerializeField] GameObject throwerEnemy;
@@ -37,6 +40,8 @@ public class CaquitaSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         player = GameManager.Instance.GetPlayer();
         timer = 0;
         onRange = false;
@@ -101,6 +106,13 @@ public class CaquitaSpawn : MonoBehaviour
                 setEnemy(spawnedEnemy);
 
                 GameManager.Instance.registerEnemy(spawnedEnemy);
+
+                if (sonidosSpawn.Length > 0) // Verificar que haya sonidos asignados
+                {
+                    int i = Random.Range(0, sonidosSpawn.Length); // Elegir un sonido aleatorio
+                    audioSource.PlayOneShot(sonidosSpawn[i], 0.5f);
+                }
+
                 timer = Time.time + spawnTime;
             }
         }
