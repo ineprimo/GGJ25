@@ -139,8 +139,6 @@ public class CaquitaSpawn : MonoBehaviour
         newMCoins = meleeCoins;
         newTCoins = throwerCoins;
         newSpawnTime = spTime;
-
-        Debug.Log("NEW SP TIME: " + spTime);
     }
 
     private void setEnemy(GameObject o)
