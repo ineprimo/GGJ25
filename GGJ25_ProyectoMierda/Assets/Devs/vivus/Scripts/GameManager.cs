@@ -85,9 +85,9 @@ public class GameManager : MonoBehaviour
     
     [Header("Speed")]
     [SerializeField] private int _speedUpgradeLvl = 0;
-    [SerializeField] private float _speedIncreaseLvl1 = 30.0f;
-    [SerializeField] private float _speedIncreaseLvl2 = 30.0f;
-    [SerializeField] private float _speedIncreaseLvl3 = 30.0f;
+    [SerializeField] private float _speedIncreaseLvl1 = .25f;
+    [SerializeField] private float _speedIncreaseLvl2 = .75f;
+    [SerializeField] private float _speedIncreaseLvl3 = 1;
 
     [SerializeField] private float _traceDamageLvl1 = 1.0f;
     [SerializeField] private float _traceDamageLvl2 = 3.0f;
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
 
 
                 // actualiza el player
-                _player.GetComponent<PlayerMovement>().changeWeapon(1);
+                _player.GetComponent<PlayerMovement>().ChangeWeapon(1);
 
                 // cambia a la pistola
                 _animationManager.ChangeCurrentAnimator(1);
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
             // + da�o
 
 
-            _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl3);     // Aumentar velocidad de movimiento
+            //_player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl1);     // Aumentar velocidad de movimiento
 
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
@@ -259,13 +259,13 @@ public class GameManager : MonoBehaviour
 
     public void addCoins(int nCoins)
     {
-        _player.GetComponent<PlayerMovement>().addCoins(nCoins);
+        _player.GetComponent<PlayerMovement>().AddCoins(nCoins);
         _hud.UpdateUI();
     }
     
     public void RemoveCoins(int nCoins)
     {
-        _player.GetComponent<PlayerMovement>().subCoins(nCoins);
+        _player.GetComponent<PlayerMovement>().SubCoins(nCoins);
         _hud.UpdateUI();
     }
 
@@ -294,7 +294,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         leaderboard = FindFirstObjectByType<LeaderboardController>();
-        _player.GetComponent<PlayerMovement>().setCoins(0);
+        _player.GetComponent<PlayerMovement>().SetCoins(0);
         score = 10;
         //Invoke("EndGame", 3.0f);
     }

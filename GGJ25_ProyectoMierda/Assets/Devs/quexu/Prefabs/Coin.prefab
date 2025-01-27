@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6244434142027981219}
   - component: {fileID: 3051509436890672401}
   - component: {fileID: 6727178868375643320}
-  - component: {fileID: 408789217966283873}
   - component: {fileID: 4383279526651036679}
   - component: {fileID: 7417862619640578731}
+  - component: {fileID: 6112069192497902514}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5900002, y: 0.64, z: 0}
-  m_LocalScale: {x: 0.45199, y: 0.45199007, z: 0.45199007}
+  m_LocalScale: {x: 0.6877028, y: 0.6877029, z: 0.6877029}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8270356570377813644}
@@ -89,27 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &408789217966283873
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5637878196577216664}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &4383279526651036679
 Animator:
   serializedVersion: 7
@@ -144,9 +123,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3f97c60a1d19e42a7466596c2128fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 75
   value: 5
   pickupSound: {fileID: 8300000, guid: 0f82d8f833c2bba40bac736a50c89b1f, type: 3}
+  moveSpeed: 10
+--- !u!135 &6112069192497902514
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637878196577216664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1219346814980234569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ AudioSource:
   Priority: 256
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 46.3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -305,7 +306,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

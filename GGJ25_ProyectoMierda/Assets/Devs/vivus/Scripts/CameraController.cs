@@ -12,13 +12,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _lerpSpeed = 5f; // Velocidad de la interpolaci�n
     [SerializeField] private float _maxPlayerVel = 10.0f;
     private Camera _cameraComponent;
-    private Rigidbody _rigidBody;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _cameraComponent = GetComponent<Camera>();
-        _rigidBody = _player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class CameraController : MonoBehaviour
 
     void InterpolateFOV()
     {
-        float auxPlayerSpeed = _rigidBody.velocity.magnitude;
+        float auxPlayerSpeed = _player.GetComponent<CharacterController>().velocity.magnitude;
         float auxPlayerNormalizedSpeed = math.clamp(auxPlayerSpeed / _maxPlayerVel, 0f, 1f);
 
         float targetFOV = math.lerp(_minFov, _maxFov, auxPlayerNormalizedSpeed);

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,77 +5,151 @@ using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f; 
+    public float sprintMultiplier = 1.5f; 
+    public float gravity = -9.8f; 
+
+    [Header("Camera Settings")]
+    public float mouseSensitivity = 2f; 
+    public float maxVerticalAngle = 85f; 
+
+    private Vector3 velocity; 
+    private Transform cameraTransform;
+    private float verticalRotation = 0f; 
+    private bool intro = false;
+
     [SerializeField] public AudioClip deathSound;
     private AudioSource audioSource;
 
-    [SerializeField] private float _speed = 584.0f;
     [SerializeField] private float _currentLife = 1000.0f;
     [SerializeField] private float _maxLife = 1000.0f;
     [SerializeField] private int coins = 0;
-    //[SerializeField] private float _fuerzaPaBajarAlPlayer = 10.0f;
 
     [SerializeField] private float _healTime = 5.0f;
     private float _healTimer;
     [SerializeField] private float _healPower = 1.0f;
-    
-    private Vector3 _dir;
-    
+
     [SerializeField] private HUDController _hud;
-    
-    public float Health { get { return _currentLife;} }
-    
-    Rigidbody _rigidBody;
 
-
+    public float Health { get { return _currentLife; } }
 
     // ANIMATIONS
     [SerializeField] GameObject _currentWeapon;
-
     [SerializeField] GameObject[] _weapons;
+
+    private CharacterController characterController; 
 
     private void Start()
     {
+        cameraTransform = Camera.main.transform;
         audioSource = GetComponent<AudioSource>();
-        _rigidBody = GetComponent<Rigidbody>();
         coins = 0;
-        
         _healTimer = _healTime;
 
-        // cambia el current
+        // Cambia el arma actual
         _currentWeapon = _weapons[0];
+
+        // Asegurarse de que el CharacterController está presente
+        characterController = GetComponent<CharacterController>();
+        if (characterController == null)
+        {
+            characterController = gameObject.AddComponent<CharacterController>();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (intro)
+        {
+            HandleMovement();
+            HandleMouseLook();
+        }
+
         if (_healTimer <= 0)
         {
             Heal(_healPower);
         }
-        else _healTimer -= Time.deltaTime;
+        else
+        {
+            _healTimer -= Time.deltaTime;
+        }
     }
 
-    public void Move(Vector3 dir)
+    public void HandleMovement()
     {
-        dir.Normalize();
-        _dir = dir;
-        //_rigidBody.velocity = dir * (_speed * Time.deltaTime);
+        
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        
+        Vector3 direction = (transform.right * horizontal + transform.forward * vertical).normalized;
+
+
+        if (direction.magnitude < 0.1f)
+        {
+            velocity = Vector3.zero;
+        }
+        else
+        {
+            // Aplicamos velocidad base
+            float speed = moveSpeed;
+            
+           
+            velocity = direction * speed;
+        }
+
+    
+        if (characterController.isGrounded)
+        {
+            velocity.y = -1f; // Un valor pequeño para mantenerlo pegado al suelo
+
+        }
+        else
+        {
+            // Si no está en el suelo, aplicamos la gravedad
+            velocity.y += gravity * Time.deltaTime;
+        }
+
+        characterController.Move(velocity * Time.deltaTime);
+    }
+
+    public void HandleMouseLook()
+    {
+          // Capturamos el input del ratón
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        // Rotamos horizontalmente el personaje
+        transform.Rotate(Vector3.up * mouseX * mouseSensitivity);
+
+        // Rotamos verticalmente la cámara
+        verticalRotation -= mouseY * mouseSensitivity;
+        verticalRotation = Mathf.Clamp(verticalRotation, -maxVerticalAngle, maxVerticalAngle);
+
+        cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+    }
+
+    public void IntroDone()
+    {
+        intro = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ImproveSpeed(float incr)
     {
-        _speed += incr;
+
+        moveSpeed += incr;
+  
     }
 
-    /// <summary>
-    /// cambia al arma i que le pases 
-    /// </summary>
-    /// <param name="i"></param>
-    public void changeWeapon(int i)
+    public void ChangeWeapon(int i)
     {
-        // desactiva el antiguo
+        // Desactiva el arma actual
         _currentWeapon.SetActive(false);
     }
+
     private void Hit(float damage)
     {
         _healTimer = _healTime;
@@ -98,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _hud.UpateSplash(4, true);
         }
+
         if (_currentLife <= 0)
         {
             PlayerDies();
@@ -106,12 +180,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Heal(float incr)
     {
-        if(_currentLife + incr >= _maxLife)
+        if (_currentLife + incr >= _maxLife)
         {
             _currentLife = _maxLife;
         }
-        else _currentLife += incr;
-        
+        else
+        {
+            _currentLife += incr;
+        }
+
         if (_maxLife * 0.1f <= _currentLife && _currentLife < _maxLife * 0.25f)
         {
             _hud.UpateSplash(4, false);
@@ -141,17 +218,17 @@ public class PlayerMovement : MonoBehaviour
         GameManager.Instance.EndGame();
     }
 
-    public void addCoins(int nCoins)
+    public void AddCoins(int nCoins)
     {
         coins += nCoins;
     }
 
-    public void setCoins(int nCoins)
+    public void SetCoins(int nCoins)
     {
         coins = nCoins;
     }
 
-    public void subCoins(int nCoins)
+    public void SubCoins(int nCoins)
     {
         coins -= nCoins;
     }
@@ -164,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject otherObject = other.gameObject;
-        
+
         if (otherObject.layer == 7)
         {
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
@@ -174,11 +251,5 @@ public class PlayerMovement : MonoBehaviour
         {
             Hit(otherObject.GetComponent<Enemy>()._damage);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 velocity = new Vector3(_dir.x * _speed, _rigidBody.velocity.y, _dir.z * _speed);
-        _rigidBody.velocity = velocity * Time.fixedDeltaTime;
     }
 }

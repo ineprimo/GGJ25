@@ -51,7 +51,8 @@ public class Enemy : MonoBehaviour
         }
         else if (_health * 0.1 >= _currentHealth)
         {
-            _eyes.sprite = _eye2;
+            if(_eyes.sprite != null)
+                _eyes.sprite = _eye2;
         }
         if (_currentHealth <= 0)
         {
