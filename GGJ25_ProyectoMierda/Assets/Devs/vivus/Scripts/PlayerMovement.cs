@@ -74,6 +74,15 @@ public class PlayerMovement : MonoBehaviour
         {
             _healTimer -= Time.deltaTime;
         }
+
+        if (Input.GetKey(KeyCode.X) && mouseSensitivity <= 20f)
+        {
+            mouseSensitivity += 0.1f;
+        }
+        if (Input.GetKey(KeyCode.Z) && mouseSensitivity>= 0.0001f)
+        {
+            mouseSensitivity -= 0.1f;
+        }
     }
 
     public void HandleMovement()

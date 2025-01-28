@@ -64,23 +64,11 @@ public class OnEnterGachapon : MonoBehaviour
 
 
 
-                // Retrasar el cambio de posici�n y rotaci�n 5 segundos
-                StartCoroutine(DelayMachineMove(5f));
+                // Retrasar el cambio de posici�n y rotaci�n3 segundos
+                StartCoroutine(DelayMachineMove(2.5f));
             }
 
-            if (gachaOnCooldown)
-            {
-                // Manejo del cooldown
-                if (_gacha.getCD() <= currentGachaTime)
-                {
-                    gachaOnCooldown = false;
-                    currentGachaTime = 0;
-                }
-                else
-                {
-                    currentGachaTime += Time.deltaTime;
-                }
-            }
+            
         }
     }
 
@@ -93,6 +81,7 @@ public class OnEnterGachapon : MonoBehaviour
         Transform newTr = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount));
         parent.position = newTr.position;
         parent.rotation = Quaternion.Euler(0, newTr.eulerAngles.y, 0);
+        gachaOnCooldown = false;
     }
 
     private IEnumerator SpinGachaponWheel()
