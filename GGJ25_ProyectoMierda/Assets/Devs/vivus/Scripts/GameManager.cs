@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     private LeaderboardController leaderboard;
 
     //GACHA
-    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60 };
+    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60, 65, 70, 80, 90, 100 };
     private int countUpdate = 0;
     public int gachaPrice = 10;
 
@@ -106,8 +106,12 @@ public class GameManager : MonoBehaviour
 
     public void updateGachaPrice()
     {
-        gachaPrice = updatePrices[countUpdate];
-        if (countUpdate < updatePrices.Length) countUpdate++;
+        if (countUpdate < updatePrices.Length)
+        {
+            
+            gachaPrice = updatePrices[countUpdate];
+            countUpdate++;
+        }
     }
 
     // CANTIDAD DE BALAS

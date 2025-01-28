@@ -34,20 +34,15 @@ public class InputManager : MonoBehaviour
         _playerMovement.HandleMouseLook(); // Rotamos la cámara
 
         // DISPARO //
-        if (Input.GetMouseButtonDown(0) && Time.time - lastShootTime >= timeBetweenShots)
+        if (Input.GetMouseButton(0) && Time.time - lastShootTime >= timeBetweenShots)
         {
-            GameManager.Instance.GetAnimationManager().attackAnim(true);
-            animended = false;
-            isShooting = true;
+            if (!isShooting)
+            {
+                GameManager.Instance.GetAnimationManager().attackAnim(true);
+                animended = false;
+                isShooting = true;
 
-            bool a = false;
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                a = true;
-                StartCoroutine(ContinuousShoot(a));
-            }
-            else
-            {
+                bool a = Input.GetKey(KeyCode.S); // Detectar tecla S
                 StartCoroutine(ContinuousShoot(a));
             }
         }
@@ -76,9 +71,10 @@ public class InputManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeShot);
 
-        while (!animended)
+        while (isShooting)
         {
-            a = Input.GetKey(KeyCode.S);
+            a = Input.GetKey(KeyCode.S); // Actualiza el valor de 'a' mientras dispara
+
             if (_shootComponent.gunLevel == 4)
             {
                 if (Time.time - lastShootTime >= timeBetweenShotsM)
@@ -99,4 +95,5 @@ public class InputManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenShotsM);
         }
     }
+
 }

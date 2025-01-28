@@ -34,9 +34,9 @@ public class MenuSelector : MonoBehaviour
 
     private System.Collections.IEnumerator FadeOutTexts(System.Action onFadeComplete)
     {
-        TMP_Text jugarText = jugar.GetComponentInChildren<TMP_Text>();
-        TMP_Text opcionesText = opciones.GetComponentInChildren<TMP_Text>();
-        TMP_Text salirText = salir.GetComponentInChildren<TMP_Text>();
+        Image jugarText = jugar.GetComponent<Image>();
+        Image opcionesText = opciones.GetComponent<Image>();
+        Image salirText = salir.GetComponent<Image>();
 
         float elapsedTime = 0f;
 

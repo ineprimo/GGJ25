@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private SpriteRenderer _eyes;
     [SerializeField] private Sprite _eye1;
     [SerializeField] private Sprite _eye2;
+    [SerializeField] private ParticleSystem splash;
 
     private const int SCORE_MELEE = 29;
     private const int SCORE_DISTANCE = 39;
@@ -43,10 +44,13 @@ public class Enemy : MonoBehaviour
     public void Hit(float damage)
     {
         _currentHealth -= damage;
+        if (splash)
+            splash.Play();
 
         if (_health * 0.5 >= _currentHealth && _currentHealth > _health * 0.1f)
         {
             _eyes.sprite = _eye1;
+
         }
         else if (_health * 0.1 >= _currentHealth)
         {

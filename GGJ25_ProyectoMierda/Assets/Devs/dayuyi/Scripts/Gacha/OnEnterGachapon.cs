@@ -7,7 +7,7 @@ using UnityEngine.UI; // Necesario para actualizar el texto UI
 public class OnEnterGachapon : MonoBehaviour
 {
     [SerializeField] private GameObject _key;
-    [SerializeField] private int _gachaPrice = 10;
+    public float _gachaPrice => GameManager.Instance.gachaPrice;
     [SerializeField] private bool canPull;
     [SerializeField] private bool gachaOnCooldown;
     [SerializeField] private GachaponBase _gacha;
@@ -34,9 +34,8 @@ public class OnEnterGachapon : MonoBehaviour
     {
         canPull = false;
         gachaOnCooldown = false;
-        _gachaPrice = GameManager.Instance.gachaPrice;
+        
         _gacha.PrepareGacha();
-
         priceText.GetComponent<TextMeshPro>().text = "" + _gachaPrice;
     }
 
@@ -46,7 +45,8 @@ public class OnEnterGachapon : MonoBehaviour
         {
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
-                GameManager.Instance.RemoveCoins(_gachaPrice);
+                int pricePayed = (int)_gachaPrice;
+                GameManager.Instance.RemoveCoins(pricePayed);
                 
 
                 // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
@@ -82,6 +82,7 @@ public class OnEnterGachapon : MonoBehaviour
         parent.position = newTr.position;
         parent.rotation = Quaternion.Euler(0, newTr.eulerAngles.y, 0);
         gachaOnCooldown = false;
+        priceText.GetComponent<TextMeshPro>().text =""+ _gachaPrice;
     }
 
     private IEnumerator SpinGachaponWheel()
