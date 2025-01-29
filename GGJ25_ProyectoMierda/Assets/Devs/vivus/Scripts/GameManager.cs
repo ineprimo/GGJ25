@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIManager;
     [SerializeField] private HUDController _hud;
     private int score=0;
+
     // PLAYER
     [SerializeField] private GameObject _player;
     public GameObject GetPlayer() {  return _player; }
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gun;
 
     // ENEMIES
-    [SerializeField] private int maxEnemies = 100;
+    [SerializeField] private int maxEnemies = 200;
     private int nEnemies;
 
     // devuelve true cuando nEnemies sea >= maxEnemies
@@ -95,9 +96,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
-    [SerializeField] private float _atkIncreaseLvl1 = 3.0f;
-    [SerializeField] private float _atkIncreaseLvl2= 6.0f;
-    [SerializeField] private float _atkIncreaseLvl3 = 10.0f;
+    [SerializeField] private float _atkIncreaseLvl1 = 15.0f;
+    [SerializeField] private float _atkIncreaseLvl2= 25.0f;
+    [SerializeField] private float _atkIncreaseLvl3 = 40.0f;
+    [SerializeField] public float _actualExtraDmg = 0;
 
 
     public AnimationManager GetAnimationManager() { return _animationManager; }
@@ -205,6 +207,7 @@ public class GameManager : MonoBehaviour
 
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
+            _actualExtraDmg = _atkIncreaseLvl1;
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
             pistola.MakeBouncyBubbles(1);
         }
@@ -212,6 +215,7 @@ public class GameManager : MonoBehaviour
         {
             // + da�o
             // la burbuja rebota 2 veces
+            _actualExtraDmg = _atkIncreaseLvl2;
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
@@ -221,6 +225,7 @@ public class GameManager : MonoBehaviour
         {
             // + da�o
             // la burbuja puede volver a rebotar
+            _actualExtraDmg = _atkIncreaseLvl3;
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
             pistola.MakeBouncyBubbles(3);
 
@@ -282,6 +287,9 @@ public class GameManager : MonoBehaviour
     {
         UIManager.GetComponent<UIManager>().DesactivarHUD();
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _player.GetComponent<PlayerMovement>().enabled = false;
+        _player.GetComponent<InputManager>().enabled = false;
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
         Time.timeScale = 0;
     }

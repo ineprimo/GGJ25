@@ -61,10 +61,10 @@ public class InputManager : MonoBehaviour
         }
 
         // Mejoras (opcional)
-        if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.UpgradeBullets();
-        if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.UpgradeSpeed();
-        if (Input.GetKeyDown(KeyCode.M)) GameManager.Instance.UpgradeLife();
-        if (Input.GetKeyDown(KeyCode.N)) GameManager.Instance.UpgradeDamage();
+        //if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.UpgradeBullets();
+        //if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.UpgradeSpeed();
+        //if (Input.GetKeyDown(KeyCode.M)) GameManager.Instance.UpgradeLife();
+        //if (Input.GetKeyDown(KeyCode.N)) GameManager.Instance.UpgradeDamage();
     }
 
     private IEnumerator ContinuousShoot(bool a)

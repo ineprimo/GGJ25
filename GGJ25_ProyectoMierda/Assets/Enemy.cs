@@ -111,6 +111,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
 
         transform.localScale *= 0.25f;
+        GetComponent<BoxCollider>().enabled = false;
         
         yield return new WaitForSeconds(3);
         
@@ -121,7 +122,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Bullet>() != null)
         {
-            Hit(other.gameObject.GetComponent<Bullet>().Damage);
+            Hit(other.gameObject.GetComponent<Bullet>().Damage + GameManager.Instance._actualExtraDmg);
             Destroy(other.gameObject);
         }
     }

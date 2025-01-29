@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3072331282781595224}
   - component: {fileID: -7277937868449072823}
   - component: {fileID: 7420604161103702389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thrower Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2438b3d18e4c044692f9b78f5dd9741, type: 3}
   - {fileID: 8300000, guid: b2583a5b708481044a2679e54f587092, type: 3}
   - {fileID: 8300000, guid: 0bada0c0cb3b1ba47b13472086579de2, type: 3}
-  _damage: 10
+  _damage: 0.5
   _health: 80
   _currentHealth: 0
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _caca: {fileID: 1903147794483264215, guid: 43f42b4dd5853924293dec7efc67333f, type: 3}
-  _maxTime: 2
+  _maxTime: 1
 --- !u!212 &9006608672665691719
 SpriteRenderer:
   m_ObjectHideFlags: 0

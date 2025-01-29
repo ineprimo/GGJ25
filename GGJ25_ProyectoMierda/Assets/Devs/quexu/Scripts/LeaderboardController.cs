@@ -127,16 +127,23 @@ public class LeaderboardController : MonoBehaviour
 
     public void RestartGame()
     {
+
+        // Reproducir la animación de reinicio (si es necesario)
         GetComponent<PlayableDirector>().Play();
-        StartCoroutine(ReloadSceneAfterDelay(20f)); // Espera 20 segundos antes de recargar
+
+        // Esperar 20 segundos antes de recargar la escena
+        StartCoroutine(ReloadSceneAfterDelay(20f));
     }
 
     private IEnumerator ReloadSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        Destroy(SpawnersManager.Instance.gameObject);
+        Destroy(GameManager.Instance.gameObject);
+        // Recargar la escena actual
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
    
     // Update is callsed once per frame
     void Update()

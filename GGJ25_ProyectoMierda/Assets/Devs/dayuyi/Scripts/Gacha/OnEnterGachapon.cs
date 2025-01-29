@@ -154,11 +154,11 @@ public class OnEnterGachapon : MonoBehaviour
                 GameManager.Instance.UpgradeDamage();
 
                 if (GameManager.Instance.GetDamageLvl() == 1)
-                    resultText.text = "Da�o mejorado";
+                    resultText.text = "Ataque mejorado";
                 else if (GameManager.Instance.GetDamageLvl() == 2)
-                    resultText.text = "Da�o mejorado +";
+                    resultText.text = "Ataque mejorado +";
                 else if (GameManager.Instance.GetDamageLvl() == 3)
-                    resultText.text = "Da�o mejorado ++";
+                    resultText.text = "Ataque mejorado ++";
                 break;
         }
     }

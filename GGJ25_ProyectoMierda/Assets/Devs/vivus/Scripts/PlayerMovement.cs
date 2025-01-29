@@ -247,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
         return coins;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         GameObject otherObject = other.gameObject;
 
@@ -258,7 +258,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (otherObject.layer == 9)
         {
-            Hit(otherObject.GetComponent<Enemy>()._damage);
+            if (otherObject.GetComponent<Enemy>()._currentHealth > 0) Hit(otherObject.GetComponent<Enemy>()._damage);
         }
     }
 }

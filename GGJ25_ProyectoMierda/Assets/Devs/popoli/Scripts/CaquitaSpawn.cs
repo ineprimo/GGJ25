@@ -146,13 +146,13 @@ public class CaquitaSpawn : MonoBehaviour
         {
             o.GetComponent<AIMovement>().SetSpeed(newThrowerSpeed);
             o.GetComponent<Enemy>().SetHealth(newThrowerHealth);
-            o.GetComponent<Enemy>()._damage = newThrowerDamage;
+            o.GetComponent<Enemy>()._damage = newThrowerDamage/100;
         }
         else
         {
             o.GetComponent<AIMovement>().SetSpeed(newMeleeSpeed);
             o.GetComponent<Enemy>().SetHealth(newMeleeHealth);
-            o.GetComponent<Enemy>()._damage = newMeleeDamage;
+            o.GetComponent<Enemy>()._damage = newMeleeDamage/100;
         }
     }
 
