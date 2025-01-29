@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class PlayerScore
@@ -36,7 +38,7 @@ public class LeaderboardController : MonoBehaviour
         
         totalAmount = PlayerPrefs.GetInt("TotalAmount", 0);
 
-        Debug.Log("ESTOY AQUIIIIIIIIIIIIIIIIIIIIIIIIIII" + leaderboard.Count);
+        Debug.Log("ESTOY AQUI" + leaderboard.Count);
 
       
         Debug.Log(totalAmount);
@@ -125,9 +127,17 @@ public class LeaderboardController : MonoBehaviour
 
     public void RestartGame()
     {
-
-
+        GetComponent<PlayableDirector>().Play();
+        StartCoroutine(ReloadSceneAfterDelay(20f)); // Espera 20 segundos antes de recargar
     }
+
+    private IEnumerator ReloadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+   
     // Update is callsed once per frame
     void Update()
     {

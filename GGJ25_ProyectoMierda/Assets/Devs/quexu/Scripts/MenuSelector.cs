@@ -65,7 +65,7 @@ public class MenuSelector : MonoBehaviour
 
     }
 
-    private void Salir()
+    public void Salir()
     {
         Application.Quit();
 
