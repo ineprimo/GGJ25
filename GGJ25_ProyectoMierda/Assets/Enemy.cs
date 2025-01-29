@@ -80,18 +80,31 @@ public class Enemy : MonoBehaviour
     public void Bomba()
     {
         float f = UnityEngine.Random.Range(0f, 1f);
-        if(f < threshold)
-            Instantiate(coin, transform.position, transform.rotation);
+        if (f < threshold)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                // Generar un desplazamiento aleatorio cerca de la posición del enemigo
+                Vector3 randomOffset = new Vector3(
+                    UnityEngine.Random.Range(-1f, 1f), // Desplazamiento en X
+                    0f,                               // Mantener la misma altura (Y)
+                    UnityEngine.Random.Range(-1f, 1f) // Desplazamiento en Z
+                );
+
+                // Instanciar la moneda en la posición del enemigo + desplazamiento aleatorio
+                Instantiate(coin, transform.position + randomOffset, transform.rotation);
+            }
+        }
 
         GameManager.Instance.deRegisterEnemy(gameObject);
         Destroy(gameObject);
 
-        if(gameObject.GetComponent<CacaThrower>() != null)
+        if (gameObject.GetComponent<CacaThrower>() != null)
             GameManager.Instance.increaseScore(SCORE_DISTANCE);
         else
             GameManager.Instance.increaseScore(SCORE_MELEE);
     }
-    
+
     private IEnumerator Death()
     {
         Freeze();
