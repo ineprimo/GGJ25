@@ -48,8 +48,8 @@ public class SpawnersManager : MonoBehaviour
     float[] meleeHealth = { 100f, 100f, 100f, 100f, 120f, 120f, 140f, 140f, 160f, 160f, 180f, 180f };
     float[] throwerHealth = { 80f, 80f, 80f, 80f, 100f, 100f, 100f, 120f, 120f, 120f, 140f, 140f};
 
-    float[] meleeDamage = { 50f, 50f, 80f, 80f, 100f, 100f, 120f, 120f, 140f, 140f, 160f, 160f};
-    float[] throwerDamage = { 30f, 30f, 40f, 40f, 50f, 50f, 60f, 60f, 80f, 80f, 100f, 100f};
+    float[] meleeDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f};
+    float[] throwerDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f };
 
     float[] meleeCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
     float[] throwerCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };

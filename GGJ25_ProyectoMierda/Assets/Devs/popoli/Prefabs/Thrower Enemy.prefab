@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2438b3d18e4c044692f9b78f5dd9741, type: 3}
   - {fileID: 8300000, guid: b2583a5b708481044a2679e54f587092, type: 3}
   - {fileID: 8300000, guid: 0bada0c0cb3b1ba47b13472086579de2, type: 3}
-  _damage: 0.5
+  _damage: 2
   _health: 80
   _currentHealth: 0
   coin: {fileID: 5637878196577216664, guid: 460afacd98b8ff34da87fbafa1762613, type: 3}

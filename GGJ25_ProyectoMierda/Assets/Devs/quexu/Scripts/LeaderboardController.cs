@@ -128,22 +128,13 @@ public class LeaderboardController : MonoBehaviour
     public void RestartGame()
     {
 
-        GameObject[] allObjects = FindObjectsOfType<GameObject>();
-
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.layer != 5 && obj.GetComponent<Camera>() == null) // No eliminar UI ni cámaras
-            {
-                Destroy(obj);
-            }
-        }
-
         Time.timeScale = 1;
-        /*// Reproducir la animación de reinicio (si es necesario)
+        GameManager.Instance.enabled = false;
+        // Reproducir la animación de reinicio (si es necesario)
         GetComponent<PlayableDirector>().Play();
 
         // Esperar 20 segundos antes de recargar la escena
-        StartCoroutine(ReloadSceneAfterDelay(20f));*/
+        StartCoroutine(ReloadSceneAfterDelay(20f));
     }
 
     private IEnumerator ReloadSceneAfterDelay(float delay)

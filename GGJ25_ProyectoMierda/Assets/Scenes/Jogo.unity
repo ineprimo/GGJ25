@@ -2931,6 +2931,11 @@ PrefabInstance:
       objectReference: {fileID: 1271182840}
     - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
+      propertyPath: gravity
+      value: -450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: c2c40c3e79f979e4eb443b7403c254aa, type: 3}
@@ -4453,6 +4458,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103119613848899564, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 23.407
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103119613848899564, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 23.407
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103119613848899564, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 23.407
       objectReference: {fileID: 0}
     - target: {fileID: 9203520340618235113, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}

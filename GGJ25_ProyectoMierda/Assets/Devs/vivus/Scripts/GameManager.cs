@@ -79,20 +79,20 @@ public class GameManager : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] private int _healthUpgradeLvl = 0;  
-    [SerializeField] private float _healthIncreaseLvl1 = 15.0f;
-    [SerializeField] private float _healthIncreaseLvl2 = 30.0f;
-    [SerializeField] private float _healthIncreaseLvl3 = 50.0f;
+    [SerializeField] private float _healthIncreaseLvl1 = 100.0f;
+    [SerializeField] private float _healthIncreaseLvl2 = 100.0f;
+    [SerializeField] private float _healthIncreaseLvl3 = 200.0f;
     [SerializeField] private float _shieldCooldownReduction = 15.0f;
     
     [Header("Speed")]
     [SerializeField] private int _speedUpgradeLvl = 0;
-    [SerializeField] private float _speedIncreaseLvl1 = .25f;
-    [SerializeField] private float _speedIncreaseLvl2 = .75f;
-    [SerializeField] private float _speedIncreaseLvl3 = 1;
+    [SerializeField] private float _speedIncreaseLvl1 = 0.1f;
+    [SerializeField] private float _speedIncreaseLvl2 = 0.1f;
+    [SerializeField] private float _speedIncreaseLvl3 = 0.2f;
 
     [SerializeField] private float _traceDamageLvl1 = 1.0f;
-    [SerializeField] private float _traceDamageLvl2 = 3.0f;
-    [SerializeField] private float _traceBubbleLifeTimeLvl3 = 5.0f;
+    [SerializeField] private float _traceDamageLvl2 = 1.5f;
+    [SerializeField] private float _traceBubbleLifeTimeLvl3 = 2.5f;
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
@@ -291,7 +291,6 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerMovement>().enabled = false;
         _player.GetComponent<InputManager>().enabled = false;
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
-        Time.timeScale = 0;
     }
     public int GetScore()
     {

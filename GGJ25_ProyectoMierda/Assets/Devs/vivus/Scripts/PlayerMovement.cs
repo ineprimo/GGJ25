@@ -16,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity; 
     private Transform cameraTransform;
-    private float verticalRotation = 0f; 
+    private float verticalRotation = 0f;
     private bool intro = false;
+    private bool isDead = false;
 
     [SerializeField] public AudioClip deathSound;
     private AudioSource audioSource;
@@ -189,30 +190,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Heal(float incr)
     {
-        if (_currentLife + incr >= _maxLife)
+        if(!isDead)
         {
-            _currentLife = _maxLife;
-        }
-        else
-        {
-            _currentLife += incr;
-        }
+            if (_currentLife + incr >= _maxLife)
+            {
+                _currentLife = _maxLife;
+            }
+            else
+            {
+                _currentLife += incr;
+            }
 
-        if (_maxLife * 0.1f <= _currentLife && _currentLife < _maxLife * 0.25f)
-        {
-            _hud.UpateSplash(4, false);
-        }
-        else if (_maxLife * 0.25f <= _currentLife && _currentLife < _maxLife * 0.5f)
-        {
-            _hud.UpateSplash(3, false);
-        }
-        else if (_maxLife * 0.5f <= _currentLife && _currentLife < _maxLife * 0.75f)
-        {
-            _hud.UpateSplash(2, false);
-        }
-        else if (_maxLife * 0.75f <= _currentLife)
-        {
-            _hud.UpateSplash(1, false);
+            if (_maxLife * 0.1f <= _currentLife && _currentLife < _maxLife * 0.25f)
+            {
+                _hud.UpateSplash(4, false);
+            }
+            else if (_maxLife * 0.25f <= _currentLife && _currentLife < _maxLife * 0.5f)
+            {
+                _hud.UpateSplash(3, false);
+            }
+            else if (_maxLife * 0.5f <= _currentLife && _currentLife < _maxLife * 0.75f)
+            {
+                _hud.UpateSplash(2, false);
+            }
+            else if (_maxLife * 0.75f <= _currentLife)
+            {
+                _hud.UpateSplash(1, false);
+            }
         }
     }
 
@@ -223,8 +227,12 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDies()
     {
-        audioSource.PlayOneShot(deathSound);
-        GameManager.Instance.EndGame();
+        if (!isDead)
+        {
+            isDead = true;
+            audioSource.PlayOneShot(deathSound);
+            GameManager.Instance.EndGame();
+        }
     }
 
     public void AddCoins(int nCoins)
@@ -258,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (otherObject.layer == 9)
         {
-            if (otherObject.GetComponent<Enemy>()._currentHealth > 0) Hit(otherObject.GetComponent<Enemy>()._damage);
+            if (otherObject.GetComponent<Enemy>()._currentHealth > 0 && !isDead) Hit(otherObject.GetComponent<Enemy>()._damage);
         }
     }
 }

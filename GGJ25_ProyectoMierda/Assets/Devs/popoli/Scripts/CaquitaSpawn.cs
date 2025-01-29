@@ -34,8 +34,8 @@ public class CaquitaSpawn : MonoBehaviour
     float newMeleeSpeed = 2.0f;
     float newMeleeHealth = 100.0f;
     float newThrowerHealth = 80.0f;
-    float newMeleeDamage = 50.0f;
-    float newThrowerDamage = 30.0f;
+    float newMeleeDamage = 200.0f;
+    float newThrowerDamage = 200.0f;
     float newMCoins = 5.0f;
     float newTCoins = 5.0f;
 
