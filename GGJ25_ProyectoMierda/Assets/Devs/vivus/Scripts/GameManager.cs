@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gun;
 
     // ENEMIES
-    [SerializeField] private int maxEnemies = 200;
+    [SerializeField] private int maxEnemies = 500;
     private int nEnemies;
 
     // devuelve true cuando nEnemies sea >= maxEnemies
@@ -96,10 +96,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private int _damageUpgradeLvl = 0;
-    [SerializeField] private float _atkIncreaseLvl1 = 15.0f;
-    [SerializeField] private float _atkIncreaseLvl2= 25.0f;
-    [SerializeField] private float _atkIncreaseLvl3 = 40.0f;
+    [SerializeField] private float _atkIncreaseLvl1 = 7.5f;
+    [SerializeField] private float _atkIncreaseLvl2= 15.0f;
+    [SerializeField] private float _atkIncreaseLvl3 = 20.0f;
     [SerializeField] public float _actualExtraDmg = 0;
+
+    public int updatesRemained = 12;
 
 
     public AnimationManager GetAnimationManager() { return _animationManager; }
@@ -140,9 +142,9 @@ public class GameManager : MonoBehaviour
             {
                 _gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
             }
-           
         }
 
+        updatesRemained--;
         _hud.UpdateUI();
 
         //  UIManager.GetComponentInChildren<HUDController>().UpdateUI();          
@@ -166,6 +168,7 @@ public class GameManager : MonoBehaviour
                 _player.GetComponent<BubbleShield>().UpdateAbility(_shieldCooldownReduction);
                 break;
         }
+        updatesRemained--;
         _hud.UpdateUI();
     }
     // VELOCIDAD Y RASTRO
@@ -190,6 +193,7 @@ public class GameManager : MonoBehaviour
             _player.GetComponent<TraceComponent>().SetCurrentBubbleLifeTime(_traceBubbleLifeTimeLvl3);   // Setear daño de las burbujas
 
         }
+        updatesRemained--;
         _hud.UpdateUI();
     }
     // DA�O Y REBOTES
@@ -232,8 +236,13 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
         }
+        updatesRemained--;
         _hud.UpdateUI();
 
+    }
+    public bool canUpdate()
+    {
+        return updatesRemained > 0;
     }
 
     // GESTION DE ENEMIGOS

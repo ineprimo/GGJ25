@@ -41,7 +41,7 @@ public class OnEnterGachapon : MonoBehaviour
 
     private void Update()
     {
-        if (canPull)
+        if (canPull && GameManager.Instance.canUpdate())
         {
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {

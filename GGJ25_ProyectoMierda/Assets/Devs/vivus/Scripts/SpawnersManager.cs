@@ -42,11 +42,11 @@ public class SpawnersManager : MonoBehaviour
     int nLevels = 12;
 
     // velocidades en progresion
-    float[] meleeSpeeds = { 2f, 2f, 2f, 2f, 2f, 3f, 3f, 3f, 3f, 4f, 4f, 4f };
-    float[] throwerSpeeds = { 2f, 2f, 2f, 2f, 2f, 3f, 3f, 3f, 3f, 3f,3f,3f };
+    float[] meleeSpeeds = { 2f, 2f, 3f, 3f, 3f, 4f, 4f, 4f, 4f, 5f, 5f, 6f };
+    float[] throwerSpeeds = { 2f, 2f, 3f, 3f, 3f, 4f, 4f, 4f, 4f, 5f, 5f, 6f };
 
-    float[] meleeHealth = { 100f, 100f, 100f, 100f, 120f, 120f, 140f, 140f, 160f, 160f, 180f, 180f };
-    float[] throwerHealth = { 80f, 80f, 80f, 80f, 100f, 100f, 100f, 120f, 120f, 120f, 140f, 140f};
+    float[] meleeHealth = { 100f, 100f, 100f, 120f, 120f, 150f, 150f, 170, 170, 200f, 200f, 300f };
+    float[] throwerHealth = { 100f, 100f, 100f, 120f, 120f, 150f, 150f, 170, 170, 200f, 200f, 300f };
 
     float[] meleeDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f};
     float[] throwerDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f };

@@ -15,14 +15,14 @@ MonoBehaviour:
   gachaCD: 5
   _pool:
   - name: BULLETS
-    weight: 20
-    initialWeight: 20
+    weight: 15
+    initialWeight: 15
   - name: LIFE
     weight: 15
-    initialWeight: 20
+    initialWeight: 15
   - name: SPEED
-    weight: 20
-    initialWeight: 20
+    weight: 15
+    initialWeight: 15
   - name: DAMAGE
     weight: 15
-    initialWeight: 20
+    initialWeight: 15
