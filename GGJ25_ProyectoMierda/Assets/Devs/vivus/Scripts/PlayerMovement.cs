@@ -255,7 +255,7 @@ public class PlayerMovement : MonoBehaviour
         return coins;
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnTriggerStay(Collider other)
     {
         GameObject otherObject = other.gameObject;
 
@@ -266,7 +266,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (otherObject.layer == 9)
         {
-            if (otherObject.GetComponent<Enemy>()._currentHealth > 0 && !isDead) Hit(otherObject.GetComponent<Enemy>()._damage);
+            if (otherObject.GetComponent<Enemy>()._currentHealth > 0 && !isDead)
+            {
+                Hit(otherObject.GetComponent<Enemy>()._damage);
+            }
         }
     }
 }

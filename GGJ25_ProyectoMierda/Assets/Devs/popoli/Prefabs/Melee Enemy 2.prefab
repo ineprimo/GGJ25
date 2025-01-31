@@ -4960,6 +4960,7 @@ GameObject:
   - component: {fileID: -5699744922282399015}
   - component: {fileID: -744942427135163086}
   - component: {fileID: 5704932254496367382}
+  - component: {fileID: 2459671402819935762}
   m_Layer: 9
   m_Name: Melee Enemy 2
   m_TagString: Untagged
@@ -5000,7 +5001,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5301,10 +5302,31 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
+--- !u!65 &2459671402819935762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085869615580526969}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.06, y: 4.39, z: 2.55}
+  m_Center: {x: 0.34000006, y: 0.025349515, z: 0.003305333}
 --- !u!1 &4001299757268506918
 GameObject:
   m_ObjectHideFlags: 0

@@ -20607,7 +20607,7 @@ PrefabInstance:
     - target: {fileID: 6358439864431339679, guid: 83c25faccc3ddd443b95e74b05788ded,
         type: 3}
       propertyPath: m_UseGeometry
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6389728149158320328, guid: 83c25faccc3ddd443b95e74b05788ded,
         type: 3}

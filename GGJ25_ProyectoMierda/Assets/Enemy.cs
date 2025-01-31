@@ -63,6 +63,10 @@ public class Enemy : MonoBehaviour
 
             GetComponent<Animator>().SetTrigger("death");
 
+            if (GetComponent<CacaThrower>())
+            {
+                GetComponent<CacaThrower>().enabled = false;
+            }
             if (sonidoscuquis.Length > 0)
             {
                 int indice = UnityEngine.Random.Range(0, sonidoscuquis.Length);
