@@ -13,7 +13,4 @@ public class ScoreManager : MonoBehaviour
         SubmitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
         Debug.Log("score = " + inputScore.text);
     }
-
-    
-
 }

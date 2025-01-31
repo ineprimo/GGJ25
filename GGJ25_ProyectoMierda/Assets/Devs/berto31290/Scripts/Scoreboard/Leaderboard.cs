@@ -16,16 +16,15 @@ public class Leaderboard : MonoBehaviour
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) => {
             int loopLength = Mathf.Min(msg.Length, names.Count);
 
-            // Rellenar los textos visibles
             for (int i = 0; i < loopLength; ++i)
             {
-                names[i].text = msg[i].Username;
+                // Eliminar el sufijo generado del nombre antes de mostrarlo
+                names[i].text = RemoveUniqueSuffix(msg[i].Username);
                 scores[i].text = msg[i].Score.ToString();
                 names[i].gameObject.SetActive(true);
                 scores[i].gameObject.SetActive(true);
             }
 
-            // Ocultar los textos restantes que no tienen datos
             for (int i = loopLength; i < names.Count; ++i)
             {
                 names[i].gameObject.SetActive(false);
@@ -37,8 +36,23 @@ public class Leaderboard : MonoBehaviour
     public void SetLeaderboardEntry(string username, int score)
     {
         Debug.Log("" + username + " " + score);
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, score, ((msg) => {
+
+        // Agregar sufijo único para evitar nombres duplicados
+        string uniqueUsername = username + "_" + System.Guid.NewGuid().ToString("N").Substring(4, 6);
+
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, uniqueUsername, score, ((msg) => {
             GetLeaderboard();
         }));
+    }
+
+    private string RemoveUniqueSuffix(string username)
+    {
+        // Si el nombre tiene un sufijo con "_" seguido de 6 caracteres hexadecimales, lo eliminamos
+        int index = username.LastIndexOf('_');
+        if (index != -1 && username.Length >= index + 7)
+        {
+            return username.Substring(0, index);
+        }
+        return username;
     }
 }

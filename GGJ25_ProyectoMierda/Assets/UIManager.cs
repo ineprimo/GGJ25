@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] private GameObject cinematicaFinal;
 
+    public bool continueButton = false;
+
     public void ActivarMenu()
     {
         Menu.SetActive(true);
@@ -21,6 +23,11 @@ public class UIManager : MonoBehaviour
     public void DesactivarMenu()
     {
         Menu.SetActive(false);
+    }
+
+    public void Continue()
+    {
+        continueButton = true;
     }
 
     public void ActivarHUD()
@@ -62,6 +69,13 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void Update()
+    {
+        if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape)) && continueButton == true)
+        {
+            StartCoroutine(ReloadSceneAfterDelay(0f));
+        }
+    }
     // Update is called once per frame
 
 }

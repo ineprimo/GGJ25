@@ -115,13 +115,19 @@ public class Enemy : MonoBehaviour
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
 
         transform.localScale *= 0.25f;
-        GetComponent<BoxCollider>().enabled = false;
-        
+
+        // Desactiva todos los colliders del GameObject
+        Collider[] colliders = GetComponents<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+
         yield return new WaitForSeconds(3);
-        
+
         GetComponent<Animator>().SetTrigger("confetti");
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<Bullet>() != null)

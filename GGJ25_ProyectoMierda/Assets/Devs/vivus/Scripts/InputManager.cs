@@ -59,12 +59,13 @@ public class InputManager : MonoBehaviour
             GameManager.Instance.GetAnimationManager().attackAnim(false);
             animended = true;
         }
-
+#if UNITY_EDITOR
         // Mejoras (opcional)
-        //if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.UpgradeBullets();
-        //if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.UpgradeSpeed();
-        //if (Input.GetKeyDown(KeyCode.M)) GameManager.Instance.UpgradeLife();
-        //if (Input.GetKeyDown(KeyCode.N)) GameManager.Instance.UpgradeDamage();
+        if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.UpgradeBullets();
+        if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.UpgradeSpeed();
+        if (Input.GetKeyDown(KeyCode.M)) GameManager.Instance.UpgradeLife();
+        if (Input.GetKeyDown(KeyCode.N)) GameManager.Instance.UpgradeDamage();
+#endif
     }
 
     private IEnumerator ContinuousShoot(bool a)
