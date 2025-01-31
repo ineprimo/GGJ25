@@ -11,8 +11,8 @@ public class SpawnersManager : MonoBehaviour
 
     float initLevelUpTime;
 
-    bool initSpawners;
-    bool activated;
+    [SerializeField] bool initSpawners;
+    [SerializeField] bool activated;
     bool tutorialActivated;
 
     public int GetCurrentLvl() { return _currentLvl; }
@@ -24,18 +24,6 @@ public class SpawnersManager : MonoBehaviour
         get { return _instance; }
     }
 
-    private void Awake()
-    {
-        if (_instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
 
     // info guarra
@@ -56,6 +44,17 @@ public class SpawnersManager : MonoBehaviour
 
     float[] spawnTime = { 30f, 30f, 30f, 20f, 20f, 20f, 20f, 10f, 10f, 10f, 10f, 10f };
 
+    void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject); // Si ya existe una instancia, destruye esta
+            return;
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(gameObject); // Hace que no se destruya al cambiar de escena
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +122,14 @@ public class SpawnersManager : MonoBehaviour
         if (!initSpawners)
         {
             initSpawners = true;
+        }
+    }
+
+    public void StopSpawnning()
+    {
+        for (int i = 0; i < _spawns.Length; ++i)
+        {
+            _spawns[i].gameObject.GetComponent<CaquitaSpawn>().enabled = false;
         }
     }
 }

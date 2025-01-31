@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Eyes
+    uniqueID: 1613811435
+    locked: 0
+  - name: Body
+    uniqueID: 1969473151
+    locked: 0

@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,19 +10,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject Menu;
     [SerializeField] private GameObject HUD;
     [SerializeField] private GameObject Scoreboard;
-    [SerializeField] private GameObject Scoreboard2;
 
     [SerializeField] private TextMeshProUGUI score;
-    [SerializeField] private TMP_InputField nombrePlayer;
-    [SerializeField] private Button submit;
-    [SerializeField] private GameObject leaderboard;
-    void Start()
-    {
-        submit.onClick.AddListener(() =>
-        {
-            saveScore();
-        });
-    }
+    [SerializeField] private GameObject cinematicaFinal;
+
     public void ActivarMenu()
     {
         Menu.SetActive(true);
@@ -51,27 +41,27 @@ public class UIManager : MonoBehaviour
     {
         Scoreboard.SetActive(false);
     }
-    public void ActivarScoreboard2()
+
+    public void RestartGame()
     {
-        Scoreboard2.SetActive(true);
+        GameManager.Instance.enabled = false;
+
+        cinematicaFinal.GetComponent<PlayableDirector>().Play();
+
+        // Esperar 20 segundos antes de recargar la escena
+        StartCoroutine(ReloadSceneAfterDelay(18f));
     }
-    public void DesactivarScoreboard2()
+
+    private IEnumerator ReloadSceneAfterDelay(float delay)
     {
-        Scoreboard2.SetActive(false);
-    }
-    public void saveScore()
-    {
-        if (nombrePlayer.text != "" && nombrePlayer.text.Length < 13)
-        {
-            leaderboard.GetComponent<LeaderboardController>().AddNewEntry(nombrePlayer.text, GameManager.Instance.GetScore());
-            DesactivarScoreboard();
-            ActivarScoreboard2();
-        }
+        yield return new WaitForSeconds(delay);
+
+        Destroy(SpawnersManager.Instance.gameObject);
+        Destroy(GameManager.Instance.gameObject);
+        // Recargar la escena actual
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

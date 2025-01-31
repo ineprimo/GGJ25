@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
         get { return _instance; }
     }
-
     private void Awake()
     {
         if (_instance != null)
@@ -37,8 +36,11 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    //LEADERBOARD
-    private LeaderboardController leaderboard;
+
+    //SOUND
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip newTrack;
+    private float originalVolume;
 
     //GACHA
     private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60, 65, 70, 80, 90, 100 };
@@ -279,6 +281,7 @@ public class GameManager : MonoBehaviour
     {
         _player.GetComponent<PlayerMovement>().AddCoins(nCoins);
         _hud.UpdateUI();
+        score += 1;
     }
     
     public void RemoveCoins(int nCoins)
@@ -299,8 +302,66 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         _player.GetComponent<PlayerMovement>().enabled = false;
         _player.GetComponent<InputManager>().enabled = false;
+        _player.transform.GetChild(0).GetChild(0).GetComponent<Shoot>().enabled = false;
+
+        _player.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        _player.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
+
+        // Iniciar la transición de música
+
+        SpawnersManager.Instance.StopSpawnning();
+        StartCoroutine(ChangeMusicSmoothly(newTrack, 1.5f)); // 1 segundo para la transición
+        DestroyAllEnemies();
     }
+
+    private void DestroyAllEnemies()
+    {
+        int enemyLayer = LayerMask.NameToLayer("Melee"); // Obtener el número de la layer "Enemy"
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.layer == enemyLayer)
+            {
+                if(obj.GetComponent<Enemy>())
+                    obj.GetComponent<Enemy>().Bomba();
+            }
+        }
+    }
+
+    private IEnumerator ChangeMusicSmoothly(AudioClip newClip, float duration)
+    {
+        if (musicSource == null) yield break;
+
+        originalVolume = musicSource.volume;
+
+        // Bajar el volumen gradualmente
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            musicSource.volume = Mathf.Lerp(originalVolume, 0, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        musicSource.volume = 0;
+
+        // Cambiar la canción
+        musicSource.clip = newClip;
+        musicSource.Play();
+
+        // Subir el volumen gradualmente
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            musicSource.volume = Mathf.Lerp(0, originalVolume, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        musicSource.volume = originalVolume;
+    }
+
     public int GetScore()
     {
         return score;
@@ -313,10 +374,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        leaderboard = FindFirstObjectByType<LeaderboardController>();
         _player.GetComponent<PlayerMovement>().SetCoins(0);
         score = 10;
-        //Invoke("EndGame", 3.0f);
     }
 
     // Update is called once per frame

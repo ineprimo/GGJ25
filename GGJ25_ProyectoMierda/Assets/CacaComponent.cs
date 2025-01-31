@@ -1,68 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CacaComponent : MonoBehaviour
 {
-    [SerializeField] float speed = 5.0f;
-    [SerializeField] float verticalBoost = 2.0f;
+    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float verticalBoost = 2.0f;
+    [SerializeField] private float limitTime = 1.5f; // Tiempo de vida del proyectil
+    private Vector3 direction;
 
-    Vector3 direction;
-    GameObject player;
-
-    // cuando toque el suelo la caca se deshace
-    bool deshacer;
-    [SerializeField] float deshacerTime = 3.0f;
-
-    [SerializeField] float limitTime;
-    
     public float Damage { get; set; }
 
-    // cuando la caca toca el suelo se destruye
+    void Start()
+    {
+        Transform player = GameManager.Instance.GetPlayer().transform;
+
+        // Calcular dirección hacia el jugador
+        direction = (player.position - transform.position).normalized;
+        direction.y += verticalBoost; // Agregar un poco de altura al tiro
+
+        // Destruir el proyectil después de un tiempo
+        Invoke("DestroySelf", limitTime);
+    }
+
+    void Update()
+    {
+        transform.position += direction * speed * Time.deltaTime;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            deshacer = true;
+            DestroySelf();
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void DestroySelf()
     {
-        player = GameManager.Instance.GetPlayer();
-
-        direction = player.transform.position - transform.position;
-        direction.y += verticalBoost;
-
-        deshacer = false;
-        limitTime = 1.5f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        limitTime -= Time.deltaTime;
-        if(limitTime < 0)
-        {
-            deshacer = true;
-        }
-
-        if (deshacer)
-        {
-            gameObject.transform.position = transform.position;
-
-            deshacerTime -= Time.deltaTime;
-            if (deshacerTime < 0)
-            {
-                Destroy(gameObject);
-            }
-
-            transform.position = transform.position; // que se mantenga quieta en el suelo
-        }
-        else
-        {
-            transform.position += direction.normalized * (speed * Time.deltaTime);
-        }
+        Destroy(gameObject);
     }
 }
