@@ -180,7 +180,11 @@ namespace Dan.Main
                 LogError("Username cannot be longer than 127 characters!");
                 return;
             }
-            
+
+            // Generar un nuevo GUID antes de subir la entrada
+            string newGuid = Guid.NewGuid().ToString();
+            SetUserGuid(newGuid); // Asignar el nuevo GUID generado
+
             if (string.IsNullOrEmpty(UserGuid))
             {
                 LogError("User GUID is null or empty! Please authorize the user before uploading an entry.");
@@ -194,13 +198,13 @@ namespace Dan.Main
                 else
                     Log("Successfully uploaded entry data to leaderboard!");
             };
-            
+
             _behaviour.SendPostRequest(GetServerURL(Routes.Upload), Requests.Form(
                 Requests.Field(FORM_PUBLIC_KEY, publicKey),
                 Requests.Field(FORM_USERNAME, username),
                 Requests.Field(FORM_SCORE, score.ToString()),
                 Requests.Field(FORM_EXTRA, extra),
-                Requests.Field(FORM_USER_GUID, UserGuid)), callback, errorCallback);
+                Requests.Field(FORM_USER_GUID, newGuid)), callback, errorCallback);
         }
 
         [Obsolete("This function is deprecated and will be removed in the future.")]

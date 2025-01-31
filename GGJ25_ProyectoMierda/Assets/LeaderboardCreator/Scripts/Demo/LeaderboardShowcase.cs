@@ -26,7 +26,7 @@ namespace Dan.Demo
         [SerializeField] private RectTransform _personalEntryPanel;
         [SerializeField] private TextMeshProUGUI _personalEntryText;
 
-        private int _playerScore;
+        [SerializeField] private int _playerScore;
         
         private Coroutine _personalEntryMoveCoroutine;
 

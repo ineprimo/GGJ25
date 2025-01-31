@@ -303,6 +303,7 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerMovement>().enabled = false;
         _player.GetComponent<InputManager>().enabled = false;
         _player.transform.GetChild(0).GetChild(0).GetComponent<Shoot>().enabled = false;
+        _player.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().enabled = false;
 
         _player.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
         _player.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
