@@ -105,18 +105,24 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.deRegisterEnemy(gameObject);
         Destroy(gameObject);
 
-        if (gameObject.GetComponent<CacaThrower>() != null)
-            GameManager.Instance.increaseScore(SCORE_DISTANCE);
-        else
-            GameManager.Instance.increaseScore(SCORE_MELEE);
     }
 
     private IEnumerator Death()
     {
         Freeze();
+
+        if (gameObject.GetComponent<CacaThrower>() != null)
+            GameManager.Instance.increaseScore(SCORE_DISTANCE);
+        else
+            GameManager.Instance.increaseScore(SCORE_MELEE);
+
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
 
         transform.localScale *= 0.25f;
+
+        Renderer renderer = GetComponent<Renderer>();
+        Material mat = renderer.material;
+        mat.color = Color.Lerp(mat.color, Color.white, 1f);
 
         // Desactiva todos los colliders del GameObject
         Collider[] colliders = GetComponents<Collider>();
@@ -125,7 +131,7 @@ public class Enemy : MonoBehaviour
             collider.enabled = false;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
         GetComponent<Animator>().SetTrigger("confetti");
     }

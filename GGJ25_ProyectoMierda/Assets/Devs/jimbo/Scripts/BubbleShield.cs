@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class BubbleShield : MonoBehaviour
 {
-    [SerializeField] private GameObject _bubble;
+    [SerializeField] private ParticleSystem _freezeEffect;
+    [SerializeField] private AudioClip _freezeSound;
     [SerializeField] private float _distanceArea = 5.0f;
     [SerializeField] private float _freezeTime = 3.0f;
     [SerializeField] private float _cooldown = 30.0f;
@@ -15,28 +16,28 @@ public class BubbleShield : MonoBehaviour
     {
         return _cd;
     }
+
     private void Start()
     {
-        _cd = 0; // Asegurar que el cooldown inicie en 0 para poder usar la habilidad al comienzo
-        
+        _cd = 0;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!enabled) return;
-        if (_cd > 0) return; // No activar si la habilidad está en cooldown
+        if (_cd > 0) return;
 
         _enemy = other.gameObject;
 
         if (!_enemy.TryGetComponent(out CaquitaMovement _)) return;
         Freeze();
-        _cd = _cooldown; // Iniciar cooldown después de usar la habilidad
+        _cd = _cooldown;
     }
 
     private void Freeze()
     {
         foreach (GameObject g in GameManager.Instance.SceneEnemies.Where(
-                     g => (g.transform.position - gameObject.transform.position).magnitude < _distanceArea
+                     g => (g.transform.position - transform.position).magnitude < _distanceArea
                  ))
         {
             Enemy enemyScript = g.GetComponent<Enemy>();
@@ -44,13 +45,21 @@ public class BubbleShield : MonoBehaviour
 
             enemyScript.Freeze();
 
-            // Instancia la burbuja visual
-            Instantiate(_bubble, g.transform).transform.localScale = new Vector3(3, 3, 3);
+            
+             _freezeEffect.Play();
+            _freezeEffect.gameObject.GetComponent<AudioSource>().PlayOneShot(_freezeSound);
+            
+            Collider[] colliders = g.GetComponents<BoxCollider>();
+            foreach (var collider in colliders)
+            {
+                if (collider.isTrigger)
+                {
+                    collider.enabled = false;
+                    break;
+                }
+            }
 
-            // Detener Animator del enemigo y de sus dos primeros hijos
             StopAnimators(g);
-
-            // Cambiar el color del material del enemigo a azul
             ChangeMaterialColor(g, Color.blue, 1f);
 
             _active = true;
@@ -62,7 +71,6 @@ public class BubbleShield : MonoBehaviour
         Animator mainAnimator = enemy.GetComponent<Animator>();
         if (mainAnimator != null) mainAnimator.enabled = false;
 
-        // Detener los animators de los dos primeros hijos
         for (int i = 0; i < Mathf.Min(2, enemy.transform.childCount); i++)
         {
             Animator childAnimator = enemy.transform.GetChild(i).GetComponent<Animator>();
@@ -75,7 +83,6 @@ public class BubbleShield : MonoBehaviour
         Animator mainAnimator = enemy.GetComponent<Animator>();
         if (mainAnimator != null) mainAnimator.enabled = true;
 
-        // Reanudar los animators de los dos primeros hijos
         for (int i = 0; i < Mathf.Min(2, enemy.transform.childCount); i++)
         {
             Animator childAnimator = enemy.transform.GetChild(i).GetComponent<Animator>();
@@ -103,12 +110,18 @@ public class BubbleShield : MonoBehaviour
             if (enemyScript == null) continue;
 
             enemyScript.Unfreeze();
-
-            // Reanudar animators
             ResumeAnimators(g);
-
-            // Restaurar color original
             ChangeMaterialColor(g, Color.white, 1f);
+
+            Collider[] colliders = g.GetComponents<BoxCollider>();
+            foreach (var collider in colliders)
+            {
+                if (collider.isTrigger)
+                {
+                    collider.enabled = true;
+                    break;
+                }
+            }
 
             _active = false;
         }
@@ -123,7 +136,7 @@ public class BubbleShield : MonoBehaviour
     {
         GameManager.Instance.AbilityHud();
 
-        if (_cd > 0) _cd -= Time.deltaTime; // Reducir cooldown
+        if (_cd > 0) _cd -= Time.deltaTime;
         if (_active) _freezeTime -= Time.deltaTime;
 
         if (_freezeTime <= 0.0f)

@@ -37,6 +37,7 @@ public class CaquitaSpawn : MonoBehaviour
     float newMCoins = 5.0f;
     float newTCoins = 5.0f;
 
+
     void Start()
     {
         _tr = transform;
