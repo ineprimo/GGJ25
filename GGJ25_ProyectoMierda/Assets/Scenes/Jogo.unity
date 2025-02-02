@@ -10121,6 +10121,11 @@ PrefabInstance:
       propertyPath: _speedIncreaseLvl3
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: _shieldCooldownReduction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5716168229085240554, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}
       propertyPath: m_Name

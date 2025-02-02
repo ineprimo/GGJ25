@@ -545,7 +545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputScore: {fileID: 8468635903787874240}
   inputName: {fileID: 1875607243239303462}
-  warningMessage: {fileID: 4000229923464160556}
   SubmitScoreEvent:
     m_PersistentCalls:
       m_Calls:
@@ -586,12 +585,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437725549621822994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7751848505326159566}
+  m_Father: {fileID: 2989231062599756944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -871,7 +870,6 @@ RectTransform:
   - {fileID: 2345108386283076908}
   - {fileID: 2989231062599756944}
   - {fileID: 312421791645033533}
-  - {fileID: 6947812472426476324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4486,6 +4484,7 @@ RectTransform:
   m_Children:
   - {fileID: 5783359375074475359}
   - {fileID: 4396108402819177817}
+  - {fileID: 6947812472426476324}
   - {fileID: 8364434953475167027}
   - {fileID: 5116072847315103667}
   m_Father: {fileID: 7751848505326159566}
