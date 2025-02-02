@@ -8,6 +8,7 @@ public class HUDController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] TextMeshProUGUI pointsText;
+    [SerializeField] TextMeshProUGUI roundText;
 
     [SerializeField] TextMeshProUGUI abilityText;
     [SerializeField] Image abilityImage;
@@ -133,6 +134,7 @@ public class HUDController : MonoBehaviour
             
             coinsText.text = GameManager.Instance.GetCoins().ToString();
             pointsText.text = GameManager.Instance.GetScore().ToString() + "p";
+            roundText.text = GameManager.Instance.GetRound().ToString();
 
         }
     }

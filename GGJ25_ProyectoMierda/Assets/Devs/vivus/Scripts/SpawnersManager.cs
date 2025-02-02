@@ -25,24 +25,23 @@ public class SpawnersManager : MonoBehaviour
     }
 
 
-
-    // info guarra
-    int nLevels = 12;
-
     // velocidades en progresion
-    float[] meleeSpeeds = { 2f, 2f, 3f, 3f, 3f, 4f, 4f, 4f, 4f, 5f, 5f, 6f };
-    float[] throwerSpeeds = { 2f, 2f, 3f, 3f, 3f, 4f, 4f, 4f, 4f, 5f, 5f, 6f };
 
-    float[] meleeHealth = { 100f, 100f, 100f, 120f, 120f, 150f, 150f, 170, 170, 200f, 200f, 300f };
-    float[] throwerHealth = { 100f, 100f, 100f, 120f, 120f, 150f, 150f, 170, 170, 200f, 200f, 300f };
+    float minSpawnTime = 5f;
 
-    float[] meleeDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f};
-    float[] throwerDamage = { 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f, 200f };
+    float incrementalSpeed = 0.1f;
+    float incrementalHealth = 10f;
+    float incrementalDamage = 10f;
+    int incrementalnumEnemies = 10;
+    float incrementalSpawnTime = 0.25f;
 
-    float[] meleeCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
-    float[] throwerCoins = { 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f, 5f };
+    float totalIncrementalSpeed = 3f;
+    float totalIncrementalHealth = 100f;
+    float totalIncrementalDamage = 100f;
+    float totalIncrementalCoins = 5f;
+    int totalIncrementalnumEnemies = 5;
+    float totalIncrementalSpawnTime = 10f;
 
-    float[] spawnTime = { 30f, 30f, 30f, 20f, 20f, 20f, 20f, 10f, 10f, 10f, 10f, 10f };
 
     void Awake()
     {
@@ -64,6 +63,9 @@ public class SpawnersManager : MonoBehaviour
         initSpawners = false;
         activated = false;
         tutorialActivated = false;
+        GameManager.Instance.ChangeActualRound(_currentLvl);
+        GameManager.Instance.SetMaxEnemies(totalIncrementalnumEnemies);
+        UpgradeAllSpawners();
 
         for (int i = 0; i < _spawns.Length; ++i)
         {
@@ -91,7 +93,13 @@ public class SpawnersManager : MonoBehaviour
 
             if (_levelUpTime < 0)
             {
-                if (_currentLvl != nLevels) _currentLvl++;
+                _currentLvl++;
+                GameManager.Instance.ChangeActualRound(_currentLvl);
+                totalIncrementalSpeed += incrementalSpeed;
+                totalIncrementalHealth += incrementalHealth;
+                totalIncrementalDamage += incrementalDamage;
+                totalIncrementalnumEnemies += (incrementalnumEnemies/100*10+1);
+                totalIncrementalSpawnTime -= incrementalSpawnTime;
 
                 UpgradeAllSpawners();
 
@@ -102,19 +110,20 @@ public class SpawnersManager : MonoBehaviour
 
     public void UpgradeAllSpawners()
     {
-        for(int i = 0; i < _spawns.Length; ++i)
+        GameManager.Instance.SetMaxEnemies(totalIncrementalnumEnemies);
+        for (int i = 0; i < _spawns.Length; ++i)
         {
             _spawns[i].gameObject.GetComponent<CaquitaSpawn>().Upgrade
                 (
-                        meleeSpeeds[_currentLvl - 1], throwerSpeeds[_currentLvl - 1],
-                        meleeHealth[_currentLvl - 1], throwerHealth[_currentLvl - 1],
-                        meleeDamage[_currentLvl - 1], throwerDamage[_currentLvl - 1],
-                        meleeCoins[_currentLvl - 1], throwerCoins[_currentLvl - 1],
-                        spawnTime[_currentLvl - 1]
+                        totalIncrementalSpeed, totalIncrementalSpeed,
+                        totalIncrementalHealth, totalIncrementalHealth,
+                        totalIncrementalDamage, totalIncrementalDamage,
+                        totalIncrementalCoins, totalIncrementalCoins,
+                        Mathf.Max(totalIncrementalSpawnTime,minSpawnTime)
                 );
 
         }
-
+        
     }
 
     public void activateSpawners()

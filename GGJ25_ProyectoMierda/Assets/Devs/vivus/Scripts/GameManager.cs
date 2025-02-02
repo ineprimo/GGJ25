@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIManager;
     [SerializeField] private HUDController _hud;
     [SerializeField] private int score=0;
+    [SerializeField] private int actualRound = 1;
 
     // PLAYER
     [SerializeField] private GameObject _player;
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gun;
 
     // ENEMIES
-    [SerializeField] private int maxEnemies = 500;
+    [SerializeField] private int maxEnemies = 10;
     private int nEnemies;
 
     // devuelve true cuando nEnemies sea >= maxEnemies
@@ -187,7 +188,6 @@ public class GameManager : MonoBehaviour
         {
             _player.GetComponent<PlayerMovement>().ImproveSpeed(_speedIncreaseLvl2);     // Aumentar velocidad de movimiento
             _player.GetComponent<TraceComponent>().SetCurrentBubbleDamage(_traceDamageLvl2);   // Setear daño de las burbujas
-
         }
         else if (_speedUpgradeLvl == 3)
         {
@@ -344,6 +344,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void ChangeActualRound(int round)
+    {
+        actualRound = round;
+        _hud.UpdateUI();
+    }
+
+    public void SetMaxEnemies(int enemies)
+    {
+        maxEnemies = enemies;
+    }
+
+    public int GetRound() { return actualRound; }
 
     private IEnumerator ChangeMusicSmoothly(AudioClip newClip, float duration)
     {
@@ -387,7 +399,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _player.GetComponent<PlayerMovement>().SetCoins(0);
-        score = 10;
     }
 
     // Update is called once per frame
