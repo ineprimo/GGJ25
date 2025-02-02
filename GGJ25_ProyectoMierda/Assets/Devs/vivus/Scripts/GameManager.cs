@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -43,8 +44,7 @@ public class GameManager : MonoBehaviour
     private float originalVolume;
 
     //GACHA
-    private int[] updatePrices = { 20, 30, 40, 45, 50, 55, 60, 65, 70, 80, 90, 100 };
-    private int countUpdate = 0;
+    private int incrementalPrice = 10;
     public int gachaPrice = 10;
 
     // UI
@@ -113,11 +113,7 @@ public class GameManager : MonoBehaviour
 
     public void updateGachaPrice()
     {
-        if (countUpdate < updatePrices.Length)
-        {
-            gachaPrice = updatePrices[countUpdate];
-            countUpdate++;
-        }
+            gachaPrice += incrementalPrice;
     }
 
     // CANTIDAD DE BALAS
@@ -405,5 +401,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    internal void LateGame(float dmg, float health)
+    {
+        _actualExtraDmg += dmg;
+        _player.GetComponent<PlayerMovement>().ImproveMaxLife(health);
     }
 }

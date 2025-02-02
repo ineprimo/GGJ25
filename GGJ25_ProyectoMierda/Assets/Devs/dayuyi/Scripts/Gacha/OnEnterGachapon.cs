@@ -41,7 +41,7 @@ public class OnEnterGachapon : MonoBehaviour
 
     private void Update()
     {
-        if (canPull && GameManager.Instance.canUpdate())
+        if (canPull)
         {
             if (GameManager.Instance.GetCoins() >= _gachaPrice && Input.GetKey(KeyCode.E) && !gachaOnCooldown)
             {
@@ -55,21 +55,33 @@ public class OnEnterGachapon : MonoBehaviour
                 playableDirector.SetActive(true);
                 playableDirector.GetComponent<PlayableDirector>().Play();
 
-                // Realizar el pull en el gachap�n
-                Upgrade up = _gacha.pull();
-                gachaOnCooldown = true;
+                if (GameManager.Instance.canUpdate())
+                {
+                    // Realizar el pull en el gachap�n
+                    Upgrade up = _gacha.pull();
+                    gachaOnCooldown = true;
 
-                updateUpgrades(up.getName());
-                GameManager.Instance.updateGachaPrice();
+                    updateUpgrades(up.getName());
+                    GameManager.Instance.updateGachaPrice();
 
 
 
-                // Retrasar el cambio de posici�n y rotaci�n3 segundos
-                StartCoroutine(DelayMachineMove(2.5f));
+                    // Retrasar el cambio de posici�n y rotaci�n3 segundos
+                    StartCoroutine(DelayMachineMove(2.5f));
+                }
+                else
+                {
+                    gachaOnCooldown = true;
+
+                    updateUpgrades("LATEGAME");
+                    GameManager.Instance.updateGachaPrice();
+
+                    // Retrasar el cambio de posici�n y rotaci�n3 segundos
+                    StartCoroutine(DelayMachineMove(2.5f));
+                }
             }
-
-            
         }
+        
     }
 
     private IEnumerator DelayMachineMove(float delay)
@@ -159,6 +171,10 @@ public class OnEnterGachapon : MonoBehaviour
                     resultText.text = "Ataque mejorado +";
                 else if (GameManager.Instance.GetDamageLvl() == 3)
                     resultText.text = "Ataque mejorado ++";
+                break;
+            case "LATEGAME":
+                GameManager.Instance.LateGame(10f, 100f);
+                resultText.text = "Ataque y salud mejorados";
                 break;
         }
     }
