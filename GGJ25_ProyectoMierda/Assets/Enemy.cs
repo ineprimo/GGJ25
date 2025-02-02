@@ -32,12 +32,14 @@ public class Enemy : MonoBehaviour
     {
         Frozen = true;
         GetComponent<AIMovement>().enabled = false;
+        if (GetComponent<CacaThrower>() != null) GetComponent<CacaThrower>().enabled = false;
     }
 
     public void Unfreeze()
     {
         Frozen = false;
         GetComponent<AIMovement>().enabled = true;
+        if (GetComponent<CacaThrower>() != null) GetComponent<CacaThrower>().enabled = true;
     }
     
     // cuando la bala burbuja hittee al enemy 

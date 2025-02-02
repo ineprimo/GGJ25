@@ -11,6 +11,8 @@ public class Leaderboard : MonoBehaviour
 
     private string publicLeaderboardKey = "2d9b8566133582240b46c86a93a0a7775f9671185d5f5d8d47b8c2773d6f0372";
 
+    private string lastSubmittedName = ""; // Almacena el último nombre enviado
+
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) => {
@@ -18,11 +20,23 @@ public class Leaderboard : MonoBehaviour
 
             for (int i = 0; i < loopLength; ++i)
             {
-                // Eliminar el sufijo generado del nombre antes de mostrarlo
-                names[i].text = RemoveUniqueSuffix(msg[i].Username);
+                string displayedName = RemoveUniqueSuffix(msg[i].Username); // Nombre sin sufijo
+                names[i].text = displayedName;
                 scores[i].text = msg[i].Score.ToString();
                 names[i].gameObject.SetActive(true);
                 scores[i].gameObject.SetActive(true);
+
+                // Si el nombre coincide con el último nombre agregado, se resalta en amarillo
+                if (displayedName == lastSubmittedName)
+                {
+                    names[i].color = Color.yellow;
+                    scores[i].color = Color.yellow;
+                }
+                else
+                {
+                    names[i].color = Color.white;
+                    scores[i].color = Color.white;
+                }
             }
 
             for (int i = loopLength; i < names.Count; ++i)
@@ -36,6 +50,8 @@ public class Leaderboard : MonoBehaviour
     public void SetLeaderboardEntry(string username, int score)
     {
         Debug.Log("" + username + " " + score);
+
+        lastSubmittedName = username; // Guarda el último nombre ingresado
 
         // Agregar sufijo único para evitar nombres duplicados
         string uniqueUsername = username + "_" + System.Guid.NewGuid().ToString("N").Substring(4, 6);

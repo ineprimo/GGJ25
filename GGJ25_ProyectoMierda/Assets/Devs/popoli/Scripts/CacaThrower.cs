@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CacaThrower : MonoBehaviour
 {
-    [SerializeField] private GameObject _caca;
+    [SerializeField] private GameObject _cacaPrefab;
     [SerializeField] private float _maxTime = 2.0f;
     private float _time = 0.0f;
     private Transform _playerTr;
@@ -11,12 +11,8 @@ public class CacaThrower : MonoBehaviour
     {
         if (_time <= 0.0f)
         {
-            // Instanciar proyectil en la misma posición que el enemigo, pero sin ser hijo de él
-            GameObject cacaBullet = Instantiate(_caca, transform.position, Quaternion.identity);
-
-            // Pasar el daño al proyectil
-            cacaBullet.GetComponent<CacaComponent>().Damage = GetComponent<Enemy>()._damage;
-
+            GameObject cacaBullet = Instantiate(_cacaPrefab, transform.position, Quaternion.identity);
+            cacaBullet.GetComponent<CacaComponent>().Damage = GetComponent<Enemy>()._damage*5;
             _time = _maxTime;
         }
         else
@@ -32,7 +28,7 @@ public class CacaThrower : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(_playerTr.position, transform.position) <= 5.0f)
+        if (Vector3.Distance(_playerTr.position, transform.position) <= 10.0f)
         {
             TryThrowShit();
         }

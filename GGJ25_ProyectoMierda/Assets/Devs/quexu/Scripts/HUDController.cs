@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class HUDController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI coinsText;
+    [SerializeField] TextMeshProUGUI pointsText;
+
+    [SerializeField] TextMeshProUGUI abilityText;
+    [SerializeField] Image abilityImage;
 
     [SerializeField] Image imagenBullet;
     [SerializeField] Sprite bulletSprite2;
@@ -28,8 +32,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] private List<GameObject> _secondSplash;
     [SerializeField] private List<GameObject> _thirdSplash;
     [SerializeField] private List<GameObject> _fourthSplash;
-    
-    
+
+    [SerializeField] private float transitionSpeed = 5.0f; // Velocidad de la animación
+    private Color targetColor;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,8 @@ public class HUDController : MonoBehaviour
         imagenHealth.enabled = false;
         imagenSpeed.enabled = false;
         imagenDamage.enabled = false;
+        targetColor = Color.white;
+        UpdateAbilityHud();
     }
 
     public void UpateSplash(int splashes, bool b)
@@ -70,6 +79,36 @@ public class HUDController : MonoBehaviour
                 break;
         }
     }
+    public void AbilityHudActivate()
+    {
+        abilityImage.gameObject.SetActive(true);
+    }
+    
+    public void UpdateAbilityHud()
+    {
+        float cd = GameManager.Instance.GetPlayer().GetComponent<BubbleShield>().GetCd();
+        abilityText.text = cd > 0 ? cd.ToString("F0") : "";
+
+        if (cd > 0)
+        {
+            targetColor = Color.gray; // Color cuando está en cooldown
+            targetColor.a = 0.5f;
+            abilityText.gameObject.SetActive(true);
+        }
+        else
+        {
+            targetColor = Color.white; // Color normal cuando está listo
+            targetColor.a = 1.0f;
+            abilityText.gameObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        // Interpola suavemente entre el color actual y el objetivo
+        abilityImage.color = Color.Lerp(abilityImage.color, targetColor, transitionSpeed * Time.deltaTime);
+    }
+
 
     public void UpdateUI()
     {
@@ -93,8 +132,8 @@ public class HUDController : MonoBehaviour
             else if (GameManager.Instance.GetDamageLvl() == 3) imagenDamage.sprite = damageSprite3;
             
             coinsText.text = GameManager.Instance.GetCoins().ToString();
-            
-            
+            pointsText.text = GameManager.Instance.GetScore().ToString() + "p";
+
         }
     }
 

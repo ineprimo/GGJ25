@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     // UI
     [SerializeField] private GameObject UIManager;
     [SerializeField] private HUDController _hud;
-    private int score=0;
+    [SerializeField] private int score=0;
 
     // PLAYER
     [SerializeField] private GameObject _player;
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _healthIncreaseLvl1 = 100.0f;
     [SerializeField] private float _healthIncreaseLvl2 = 100.0f;
     [SerializeField] private float _healthIncreaseLvl3 = 200.0f;
-    [SerializeField] private float _shieldCooldownReduction = 15.0f;
+    [SerializeField] private float _shieldCooldownReduction = 2f;
     
     [Header("Speed")]
     [SerializeField] private int _speedUpgradeLvl = 0;
@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour
     {
         if (countUpdate < updatePrices.Length)
         {
-            
             gachaPrice = updatePrices[countUpdate];
             countUpdate++;
         }
@@ -160,6 +159,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncreaseLvl1);
                 _player.GetComponent<BubbleShield>().enabled = true;
+                _hud.AbilityHudActivate();
                 break;
             case 2:
                 _player.GetComponent<PlayerMovement>().ImproveMaxLife(_healthIncreaseLvl2);
@@ -242,6 +242,12 @@ public class GameManager : MonoBehaviour
         _hud.UpdateUI();
 
     }
+
+    public void AbilityHud()
+    {
+        _hud.UpdateAbilityHud();
+    }
+
     public bool canUpdate()
     {
         return updatesRemained > 0;
@@ -280,8 +286,8 @@ public class GameManager : MonoBehaviour
     public void addCoins(int nCoins)
     {
         _player.GetComponent<PlayerMovement>().AddCoins(nCoins);
+        increaseScore(1);
         _hud.UpdateUI();
-        score += 1;
     }
     
     public void RemoveCoins(int nCoins)
@@ -293,6 +299,12 @@ public class GameManager : MonoBehaviour
     public void increaseScore(int nScore)
     {
         score += nScore;
+        _hud.UpdateUI();
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 
     public void EndGame()
@@ -304,6 +316,7 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<InputManager>().enabled = false;
         _player.transform.GetChild(0).GetChild(0).GetComponent<Shoot>().enabled = false;
         _player.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().enabled = false;
+        _player.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
 
         _player.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
         _player.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
@@ -363,14 +376,12 @@ public class GameManager : MonoBehaviour
         musicSource.volume = originalVolume;
     }
 
-    public int GetScore()
-    {
-        return score;
-    }
+
     public int GetCoins()
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();
     }
+
 
     // Start is called before the first frame update
     void Start()

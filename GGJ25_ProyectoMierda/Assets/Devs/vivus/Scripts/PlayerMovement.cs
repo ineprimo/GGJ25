@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.8f; 
 
     [Header("Camera Settings")]
-    public float mouseSensitivity = 2f; 
+    public float mouseSensitivity = 1f; 
     public float maxVerticalAngle = 85f; 
 
     private Vector3 velocity; 
@@ -84,6 +84,13 @@ public class PlayerMovement : MonoBehaviour
         {
             mouseSensitivity -= 0.1f;
         }
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            _currentLife = 9999999999999999999;
+            _maxLife = 9999999999999999999;
+        }
+#endif
     }
 
     public void HandleMovement()
@@ -160,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
         _currentWeapon.SetActive(false);
     }
 
-    private void Hit(float damage)
+    public void Hit(float damage)
     {
         _healTimer = _healTime;
         _currentLife -= damage;
@@ -259,12 +266,13 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject otherObject = other.gameObject;
 
-        if (otherObject.layer == 7)
+        /*if (otherObject.layer == 7)
         {
+            Debug.Log("CACAZO");
             Hit(otherObject.GetComponent<CacaComponent>().Damage);
             Destroy(otherObject);
-        }
-        else if (otherObject.layer == 9)
+        }*/
+       if (otherObject.layer == 9)
         {
             if (otherObject.GetComponent<Enemy>()._currentHealth > 0 && !isDead)
             {

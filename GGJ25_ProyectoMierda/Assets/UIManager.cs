@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -71,6 +73,7 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
+        EventSystem.current.UpdateModules();
         if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape)) && continueButton == true)
         {
             StartCoroutine(ReloadSceneAfterDelay(0f));

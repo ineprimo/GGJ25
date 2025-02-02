@@ -41,9 +41,9 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1814760325112561141}
   - {fileID: 1921575701305457143}
   - {fileID: 259579785220867088}
+  - {fileID: 1814760325112561141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1806639989120614677
@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b50eaa5e245aa4f9e6f5322c2f32e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caca: {fileID: 1903147794483264215, guid: 43f42b4dd5853924293dec7efc67333f, type: 3}
-  _maxTime: 1
+  _cacaPrefab: {fileID: 1903147794483264215, guid: 43f42b4dd5853924293dec7efc67333f,
+    type: 3}
+  _maxTime: 2
 --- !u!212 &9006608672665691719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
