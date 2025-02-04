@@ -40,7 +40,7 @@ public class SpawnersManager : MonoBehaviour
     float totalIncrementalDamage = 100f;
     float totalIncrementalCoins = 5f;
     int totalIncrementalnumEnemies = 5;
-    float totalIncrementalSpawnTime = 10f;
+    float totalIncrementalSpawnTime = 8f;
 
 
     void Awake()
@@ -98,7 +98,7 @@ public class SpawnersManager : MonoBehaviour
                 totalIncrementalSpeed += incrementalSpeed;
                 totalIncrementalHealth += incrementalHealth;
                 totalIncrementalDamage += incrementalDamage;
-                totalIncrementalnumEnemies += (incrementalnumEnemies/100*10+1);
+                totalIncrementalnumEnemies += (incrementalnumEnemies * 20 / 100 + 1);
                 totalIncrementalSpawnTime -= incrementalSpawnTime;
 
                 UpgradeAllSpawners();
