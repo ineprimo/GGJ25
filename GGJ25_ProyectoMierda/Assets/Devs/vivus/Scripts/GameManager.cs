@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
             if(_gun.GetComponent<Shoot>().gunLevel == 4)
             {
                 //_gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
-                UpgradeFireRate();
+                UpgradeFireRate(1.2f);
 
                 // actualiza el player
                 _player.GetComponent<PlayerMovement>().ChangeWeapon(1);
@@ -138,8 +138,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                UpgradeFireRate();
-                UpgradeFireRate();
+                UpgradeFireRate(1.5f);
                 //_gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
             }
         }
@@ -393,9 +392,9 @@ public class GameManager : MonoBehaviour
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();
     }
-    public void UpgradeFireRate()
+    public void UpgradeFireRate(float rate)
     {
-        _gun.GetComponent<Shoot>().IncreaseFireRate(0.2f);
+        _gun.GetComponent<Shoot>().IncreaseFireRate(rate);
     }
 
     // Start is called before the first frame update

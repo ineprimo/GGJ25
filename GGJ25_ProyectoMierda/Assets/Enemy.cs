@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour
     {
         _health = h;
     }
+    public float GetHealth()
+    {
+        return _health;
+    }
+
 
     public bool Frozen { get; private set; } = false;
 
