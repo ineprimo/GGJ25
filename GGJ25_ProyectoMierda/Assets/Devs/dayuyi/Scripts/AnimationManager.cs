@@ -36,21 +36,22 @@ public class AnimationManager : MonoBehaviour
 
     }
 
-    public void attackAnim(bool a)
+    public void attackAnim()
     {
-        _currentAnimator.SetBool("attack", a);
-
-
+        _currentAnimator.SetTrigger("attack");
     }
 
-    public void idleAnim(bool a)
+    public void idleAnim()
     {
-        _currentAnimator.SetBool("idle", a);
+        _currentAnimator.SetTrigger("idle");
     }
 
-    public void rechargeAnim(bool a)
+    public void rechargeAnim()
     {
-        _currentAnimator.SetBool("recharge", a);
-
+        _currentAnimator.SetTrigger("reload");
+    }
+    public void ResetAnim(string anim)
+    {
+        _currentAnimator.ResetTrigger(anim);
     }
 }

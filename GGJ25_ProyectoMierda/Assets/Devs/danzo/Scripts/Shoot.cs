@@ -10,32 +10,28 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float bulletSpeed = 5f;
     public int gunLevel = 1;
 
-    [SerializeField] private float timeBetweenShots = 0.3f;
+    [SerializeField] private float delayBeforeShot = 0.1f; // Pequeño retraso antes del primer disparo
+    [SerializeField] public float timeBetweenShots = 0.3f;
+
+    [SerializeField] private Light[] effectLights; // Array de luces para cambiar de color
+    [SerializeField] private Color[] lightColors; // Colores para cambiar durante el disparo
+    private int currentColorIndex = 0;
 
     [SerializeField] AudioClip soplidoSound;
     [SerializeField] AudioClip ayayay;
+    public bool isShooting = false;
 
     private AudioSource audioSource;
-    private int bounces = 0;
     private bool canShoot = true;
-    public int currentAmmo = 10;
-    public bool isReloading = false;
 
     public void shootWeapon(bool a)
     {
-        if (isReloading || !canShoot) return;
-
-        if (currentAmmo > 0)
+        if (!canShoot) return;
+        isShooting = true;
+        StartCoroutine(ShootWithDelay(a));
+        if (gunLevel == 4)
         {
-            StartCoroutine(ShootWithDelay(a));
-        }
-        else
-        {
-            if (!isReloading)
-            {
-                GameManager.Instance.GetAnimationManager().attackAnim(false);
-                StartCoroutine(ReloadWeapon());
-            }
+            StartCoroutine(ChangeLightEffect());
         }
     }
 
@@ -43,16 +39,12 @@ public class Shoot : MonoBehaviour
     {
         canShoot = false;
         PlayShootSound();
+
         Vector3 shootDirection = GetShootDirection(a);
+        GameObject bubble = InstantiateBubble();
+        StartCoroutine(MoveBubble(bubble.transform, shootDirection));
 
-        for (int i = 0; i < gunLevel; i++)
-        {
-            GameObject bubble = InstantiateBubble();
-            StartCoroutine(MoveBubble(bubble.transform, shootDirection));
-            yield return new WaitForSeconds(timeBetweenShots);
-        }
-
-        currentAmmo--;
+        yield return new WaitForSeconds(timeBetweenShots);
         canShoot = true;
     }
 
@@ -95,22 +87,49 @@ public class Shoot : MonoBehaviour
 
     public void increaseGunLevel() => gunLevel++;
 
-    public void MakeBouncyBubbles(int nbounces) => bounces = nbounces;
-
-    private IEnumerator ReloadWeapon()
+    public void IncreaseFireRate(float amount)
     {
-        isReloading = true;
-        GameManager.Instance.GetAnimationManager().rechargeAnim(true);
-
-        yield return new WaitForSeconds(2.5f);
-
-        GameManager.Instance.GetAnimationManager().rechargeAnim(false);
-        currentAmmo = gunLevel == 4
-            ? GameManager.Instance.getARAmmo()
-            : GameManager.Instance.getGunAmmo();
-
-        isReloading = false;
+        timeBetweenShots = Mathf.Max(0.05f, timeBetweenShots - amount); // No baja de 0.05s
     }
 
-    void Start() => audioSource = GetComponent<AudioSource>();
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        SetLightsIntensity(0); // Apagar luces al inicio
+    }
+
+    private IEnumerator ChangeLightEffect()
+    {
+        while (isShooting && gunLevel == 4)
+        {
+            SetLightsIntensity(.005f); // Ajusta la intensidad a un valor visible
+            ChangeLightsColor();
+            yield return new WaitForSeconds(0.2f); // Cambia de color cada 0.2s
+        }
+        SetLightsIntensity(0); // Cuando deja de disparar, apaga las luces
+    }
+
+    private void ChangeLightsColor()
+    {
+        if (lightColors.Length == 0 || effectLights.Length == 0) return;
+
+        currentColorIndex = (currentColorIndex + 1) % lightColors.Length;
+        foreach (Light light in effectLights)
+        {
+            light.color = lightColors[currentColorIndex];
+        }
+    }
+
+    private void SetLightsIntensity(float intensity)
+    {
+        foreach (Light light in effectLights)
+        {
+            light.intensity = intensity;
+        }
+    }
+
+    public void StopShooting()
+    {
+        isShooting = false;
+    }
 }

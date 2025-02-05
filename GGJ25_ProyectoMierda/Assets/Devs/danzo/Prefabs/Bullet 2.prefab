@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1611326249392774916}
   - component: {fileID: -3678982873968366458}
   - component: {fileID: 2724782533915174760}
+  - component: {fileID: -4870356071234913820}
   m_Layer: 6
   m_Name: Bullet 2
   m_TagString: Untagged
@@ -105,7 +106,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -182,3 +183,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 4ea828cfc1db48942a3620edd3a8bd32, type: 3}
   _pitchVariationRange: 0.2
+--- !u!114 &-4870356071234913820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349041191489887930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a4cfc75b35edd4eb042009c9a541f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deformIntensity: 0.25
+  deformSpeed: 5

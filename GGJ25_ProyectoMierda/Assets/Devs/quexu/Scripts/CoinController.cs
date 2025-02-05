@@ -9,6 +9,8 @@ public class CoinController : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f; // Velocidad de movimiento hacia el jugador
     [SerializeField] private float spawnScaleDuration = 0.5f; // Duración de la animación de aparición
 
+    private bool isCollected = false; // Bandera para evitar que la moneda se recoja múltiples veces
+
     private void Start()
     {
         // Llamar a la corutina para la animación de aparición
@@ -17,9 +19,11 @@ public class CoinController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que entra es el jugador
-        if (other.gameObject.GetComponent<PlayerMovement>() != null)
+        // Verifica si el objeto que entra tiene el tag "Player" y si la moneda no ha sido recogida ya
+        if (!isCollected && other.CompareTag("Player"))
         {
+            isCollected = true; // Marcar la moneda como recogida
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             // Inicia la corrutina para mover la moneda hacia el jugador
             StartCoroutine(MoveCoinToPlayer(other.gameObject));
 
@@ -36,7 +40,7 @@ public class CoinController : MonoBehaviour
     }
 
     // IEnumerator para mover la moneda hacia el jugador antes de destruirla
-    private IEnumerator MoveCoinToPlayer(GameObject player)
+    public IEnumerator MoveCoinToPlayer(GameObject player)
     {
         Vector3 startPosition = transform.position; // Posición inicial de la moneda
         Vector3 targetPosition = player.transform.position; // Posición del jugador
@@ -56,7 +60,7 @@ public class CoinController : MonoBehaviour
 
         // Asegurarse de que la moneda termine en la posición del jugador
         transform.position = targetPosition;
-        ScaleDownAnimation();
+        StartCoroutine(ScaleDownAnimation()); // Comienza la animación de disminución
 
         // Destruir la moneda después de moverla
         Destroy(gameObject);
@@ -64,9 +68,8 @@ public class CoinController : MonoBehaviour
 
     private IEnumerator ScaleDownAnimation()
     {
-        Vector3 initialScale = new Vector3(0.6877028f, 0.6877028f, 0.6877028f);
-
-        Vector3 targetScale = Vector3.zero; // Escala inicial (0, 0, 0)
+        Vector3 initialScale = transform.localScale; // Escala actual de la moneda
+        Vector3 targetScale = Vector3.zero; // Escala final (0, 0, 0)
 
         float elapsedTime = 0f;
 
@@ -84,6 +87,7 @@ public class CoinController : MonoBehaviour
         // Asegurarse de que la escala final sea exactamente la deseada
         transform.localScale = targetScale;
     }
+
     // Corutina para escalar la moneda desde 0 hasta su tamaño normal
     private IEnumerator ScaleUpAnimation()
     {

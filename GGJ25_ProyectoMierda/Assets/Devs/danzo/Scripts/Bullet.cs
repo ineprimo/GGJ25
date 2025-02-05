@@ -19,11 +19,22 @@ public class Bullet : MonoBehaviour
        // Destroy(gameObject, lifeTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.GetComponent<Enemy>() != null)
+        // Verifica si el objeto con el que colisiona es un enemigo
+        if (other.gameObject.GetComponent<Enemy>() != null)
+        {
+            // Reproduce el sonido con variaciones
             GetComponent<PlaySoundWithVariation>().Reproduce();
-        Destroy(gameObject);
+            other.gameObject.GetComponent<Enemy>().Hit(Damage + GameManager.Instance._actualExtraDmg);
+            // Destruye la bala
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Ground"))
+        {
+            // Destruye la bala si colisiona con el suelo
+            Destroy(gameObject);
+        }
     }
 
 

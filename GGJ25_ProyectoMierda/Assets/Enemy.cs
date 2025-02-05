@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private ParticleSystem splash;
 
     private const int SCORE_MELEE = 29;
-    private const int SCORE_DISTANCE = 39;
+    private const int SCORE_DISTANCE = 19;
 
     public void SetHealth(float h)
     {
@@ -136,15 +136,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Animator>().SetTrigger("confetti");
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.GetComponent<Bullet>() != null)
-        {
-            Hit(other.gameObject.GetComponent<Bullet>().Damage + GameManager.Instance._actualExtraDmg);
-            Destroy(other.gameObject);
-        }
-    }
-
+   
     private void Start()
     {
         _currentHealth = _health;

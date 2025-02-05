@@ -10,23 +10,34 @@ public class Leaderboard : MonoBehaviour
     [SerializeField] private List<TextMeshProUGUI> scores;
 
     private string publicLeaderboardKey = "2d9b8566133582240b46c86a93a0a7775f9671185d5f5d8d47b8c2773d6f0372";
+    private const string GAME_VERSION = "1.0.7"; // Cambia esto según la versión del juego
 
     private string lastSubmittedName = ""; // Almacena el último nombre enviado
 
     public void GetLeaderboard()
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) => {
-            int loopLength = Mathf.Min(msg.Length, names.Count);
+            List<(string Username, int Score)> filteredEntries = new List<(string, int)>();
+
+            // Filtrar solo las entradas con la misma versión
+            foreach (var entry in msg)
+            {
+                if (entry.Extra == GAME_VERSION) // Verifica la versión
+                {
+                    filteredEntries.Add((entry.Username, entry.Score));
+                }
+            }
+
+            int loopLength = Mathf.Min(filteredEntries.Count, names.Count);
 
             for (int i = 0; i < loopLength; ++i)
             {
-                string displayedName = RemoveUniqueSuffix(msg[i].Username); // Nombre sin sufijo
+                string displayedName = RemoveUniqueSuffix(filteredEntries[i].Username);
                 names[i].text = displayedName;
-                scores[i].text = msg[i].Score.ToString();
+                scores[i].text = filteredEntries[i].Score.ToString();
                 names[i].gameObject.SetActive(true);
                 scores[i].gameObject.SetActive(true);
 
-                // Si el nombre coincide con el último nombre agregado, se resalta en amarillo
                 if (displayedName == lastSubmittedName)
                 {
                     names[i].color = Color.yellow;
@@ -56,7 +67,8 @@ public class Leaderboard : MonoBehaviour
         // Agregar sufijo único para evitar nombres duplicados
         string uniqueUsername = username + "_" + System.Guid.NewGuid().ToString("N").Substring(4, 6);
 
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, uniqueUsername, score, ((msg) => {
+        // Enviar versión del juego en el campo "extra"
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, uniqueUsername, score, GAME_VERSION, ((msg) => {
             GetLeaderboard();
         }));
     }

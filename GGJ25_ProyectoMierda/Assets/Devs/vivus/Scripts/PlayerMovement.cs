@@ -172,6 +172,12 @@ public class PlayerMovement : MonoBehaviour
         _healTimer = _healTime;
         _currentLife -= damage;
 
+        // Activar el shake de la cámara
+        if (CameraShake.Instance != null)
+        {
+            CameraShake.Instance.Shake();
+        }
+
         if (_maxLife * 0.75f >= _currentLife && _currentLife > _maxLife * 0.5f)
         {
             _hud.UpateSplash(1, true);
@@ -194,6 +200,7 @@ public class PlayerMovement : MonoBehaviour
             PlayerDies();
         }
     }
+
 
     private void Heal(float incr)
     {

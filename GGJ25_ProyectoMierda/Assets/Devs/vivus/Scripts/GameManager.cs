@@ -127,8 +127,8 @@ public class GameManager : MonoBehaviour
 
             if(_gun.GetComponent<Shoot>().gunLevel == 4)
             {
-                _gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
-
+                //_gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
+                UpgradeFireRate();
 
                 // actualiza el player
                 _player.GetComponent<PlayerMovement>().ChangeWeapon(1);
@@ -138,7 +138,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                _gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
+                UpgradeFireRate();
+                UpgradeFireRate();
+                //_gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
             }
         }
 
@@ -211,7 +213,7 @@ public class GameManager : MonoBehaviour
             // la pompa rebota 1 vez si hay un enemigo a X distancia
             _actualExtraDmg = _atkIncreaseLvl1;
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
-            pistola.MakeBouncyBubbles(1);
+            //pistola.MakeBouncyBubbles(1);
         }
         else if (_damageUpgradeLvl == 2)
         {
@@ -229,7 +231,7 @@ public class GameManager : MonoBehaviour
             // la burbuja puede volver a rebotar
             _actualExtraDmg = _atkIncreaseLvl3;
             Shoot pistola = _player.GetComponentInChildren<Shoot>();
-            pistola.MakeBouncyBubbles(3);
+            //pistola.MakeBouncyBubbles(3);
 
             // la pompa rebota 1 vez si hay un enemigo a X distancia
 
@@ -319,6 +321,8 @@ public class GameManager : MonoBehaviour
 
         UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
 
+        Destroy(_gun);
+
         // Iniciar la transición de música
 
         SpawnersManager.Instance.StopSpawnning();
@@ -389,7 +393,10 @@ public class GameManager : MonoBehaviour
     {
         return _player.GetComponent<PlayerMovement>().GetCoins();
     }
-
+    public void UpgradeFireRate()
+    {
+        _gun.GetComponent<Shoot>().IncreaseFireRate(0.2f);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -397,10 +404,14 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerMovement>().SetCoins(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CollectAllCoins(GameObject player)
     {
+        CoinController[] coins = FindObjectsByType<CoinController>(FindObjectsSortMode.None);
 
+        foreach (CoinController coin in coins)
+        {
+            StartCoroutine(coin.MoveCoinToPlayer(player));
+        }
     }
 
     internal void LateGame(float dmg, float health)

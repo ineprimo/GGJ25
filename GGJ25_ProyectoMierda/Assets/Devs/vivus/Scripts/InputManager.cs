@@ -25,42 +25,39 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (!_inputActive) return; // Si el input está desactivado, salimos del método
+        if (!_inputActive) return;
 
         // MOVIMIENTO //
-        _playerMovement.HandleMovement(); // Movemos al personaje
+        _playerMovement.HandleMovement();
 
         // ROTACIÓN DE LA CÁMARA //
-        _playerMovement.HandleMouseLook(); // Rotamos la cámara
+        _playerMovement.HandleMouseLook();
 
         // DISPARO //
-        if (Input.GetMouseButton(0) && Time.time - lastShootTime >= timeBetweenShots)
+        if (Input.GetButtonDown("Fire1"))
         {
             if (!isShooting)
             {
-                GameManager.Instance.GetAnimationManager().attackAnim(true);
-                animended = false;
+                GameManager.Instance.GetAnimationManager().ResetAnim("idle");
+                GameManager.Instance.GetAnimationManager().ResetAnim("reload");
+                GameManager.Instance.GetAnimationManager().attackAnim();
                 isShooting = true;
-
-                bool a = Input.GetKey(KeyCode.S); // Detectar tecla S
+                _shootComponent.isShooting = true;
+                bool a = Input.GetKey(KeyCode.S);
                 StartCoroutine(ContinuousShoot(a));
             }
         }
 
-        // Deja de disparar si suelta el botón del ratón
-        if (Input.GetMouseButtonUp(0))
+        // Cuando deja de disparar, ejecuta la animación de recarga
+        if (Input.GetButtonUp("Fire1"))
         {
             isShooting = false;
+            _shootComponent.isShooting = false;
+            GameManager.Instance.GetAnimationManager().ResetAnim("attack");
+            GameManager.Instance.GetAnimationManager().rechargeAnim();
         }
 
-        // Control de animaciones
-        if (!isShooting && GameManager.Instance.GetAnimationManager().GetAnimator().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
-        {
-            GameManager.Instance.GetAnimationManager().attackAnim(false);
-            animended = true;
-        }
 #if UNITY_EDITOR
-        // Mejoras (opcional)
         if (Input.GetKeyDown(KeyCode.O)) GameManager.Instance.UpgradeBullets();
         if (Input.GetKeyDown(KeyCode.P)) GameManager.Instance.UpgradeSpeed();
         if (Input.GetKeyDown(KeyCode.M)) GameManager.Instance.UpgradeLife();
@@ -74,27 +71,13 @@ public class InputManager : MonoBehaviour
 
         while (isShooting)
         {
-            a = Input.GetKey(KeyCode.S); // Actualiza el valor de 'a' mientras dispara
-
-            if (_shootComponent.gunLevel == 4)
-            {
-                if (Time.time - lastShootTime >= timeBetweenShotsM)
-                {
-                    _shootComponent.shootWeapon(a);
-                    lastShootTime = Time.time;
-                }
-            }
-            else
-            {
-                if (Time.time - lastShootTime >= timeBetweenShots)
-                {
-                    _shootComponent.shootWeapon(a);
-                    lastShootTime = Time.time;
-                }
-            }
-
-            yield return new WaitForSeconds(timeBetweenShotsM);
+            a = Input.GetKey(KeyCode.S);
+            _shootComponent.shootWeapon(a);
+            yield return new WaitForSeconds(_shootComponent.timeBetweenShots);
         }
     }
+
+    // Animación de recarga cuando deja de disparar
+   
 
 }

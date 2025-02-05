@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: 2805d73d0ad543d40ae10dbb22f5216a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: graffitti_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 2942
+        width: 1077
+        height: 839
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24aa4804b9eda4f4f8dc4a1b43ddd17a
+      internalID: 625606126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_3
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 2958
+        width: 556
+        height: 765
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c5e4c4155287b40b77868d4dbfb511
+      internalID: 209688813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_4
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 2801
+        width: 929
+        height: 945
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74c73ee16479bf46a125b7316380817
+      internalID: 490013506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_5
+      rect:
+        serializedVersion: 2
+        x: 3153
+        y: 2799
+        width: 539
+        height: 974
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b8c1340f13b954a940b439312ccaf1
+      internalID: -901979970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_7
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 2578
+        width: 1618
+        height: 1287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b8aef041bd3b347b5f98c7202f77ca
+      internalID: 72939384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_28
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 607
+        width: 1428
+        height: 1129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8094a4a28c6f28a4c8c5f6f2483e95c3
+      internalID: 254574136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_30
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 628
+        width: 1122
+        height: 1046
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139afa6391ead754d941d08f368f3fca
+      internalID: -242185066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_31
+      rect:
+        serializedVersion: 2
+        x: 3754
+        y: 529
+        width: 1680
+        height: 1154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983c4aa36dd7f894986e6d995c36dda2
+      internalID: -1901619405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_33
+      rect:
+        serializedVersion: 2
+        x: 2967
+        y: 701
+        width: 665
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084508c2b0918b345863910d80739ddd
+      internalID: -852029302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graffitti_41
+      rect:
+        serializedVersion: 2
+        x: 2824
+        y: 1120
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1bee8e1a66e2f4ea98c8e6a5ae29a9
+      internalID: 3479828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9b360d28b97e3cc4289b0d1b0e43efdb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      graffitti_0: 946963923
+      graffitti_1: 625606126
+      graffitti_10: -1009335376
+      graffitti_11: 1080614422
+      graffitti_12: 1401075097
+      graffitti_13: 1922657969
+      graffitti_14: 643987191
+      graffitti_15: 1907269390
+      graffitti_16: -2009760200
+      graffitti_17: -979384081
+      graffitti_18: 223508860
+      graffitti_19: 940282599
+      graffitti_2: 2000415217
+      graffitti_20: 689768928
+      graffitti_21: -963714277
+      graffitti_22: 1612800781
+      graffitti_23: -1308864030
+      graffitti_24: 1773702302
+      graffitti_25: -1206471559
+      graffitti_26: -1160012228
+      graffitti_27: 1477536312
+      graffitti_28: 254574136
+      graffitti_29: -1014006410
+      graffitti_3: 209688813
+      graffitti_30: -242185066
+      graffitti_31: -1901619405
+      graffitti_32: 1868435592
+      graffitti_33: -852029302
+      graffitti_34: -1176430821
+      graffitti_35: 732895261
+      graffitti_36: -1680951518
+      graffitti_37: -904701640
+      graffitti_38: -1737818986
+      graffitti_39: -1917681489
+      graffitti_4: 490013506
+      graffitti_40: 2141543071
+      graffitti_41: 3479828
+      graffitti_42: 1599026035
+      graffitti_43: 1002062121
+      graffitti_44: -544462212
+      graffitti_45: 54327874
+      graffitti_5: -901979970
+      graffitti_6: 1991906131
+      graffitti_7: 72939384
+      graffitti_8: 2134249943
+      graffitti_9: -1168958164
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
