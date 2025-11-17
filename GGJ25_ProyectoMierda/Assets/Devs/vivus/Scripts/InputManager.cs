@@ -1,8 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class InputManager : MonoBehaviour
 {
+    // FMOD
+    [SerializeField] private EventReference testCacaEvent;
+    // --- //
+
+
     public bool _inputActive = false; // Para activar o desactivar el input
     public void CanInput() { _inputActive = true; }
 
@@ -73,6 +80,7 @@ public class InputManager : MonoBehaviour
         {
             a = Input.GetKey(KeyCode.S);
             _shootComponent.shootWeapon(a);
+            RuntimeManager.PlayOneShot(testCacaEvent, transform.position);
             yield return new WaitForSeconds(_shootComponent.timeBetweenShots);
         }
     }
