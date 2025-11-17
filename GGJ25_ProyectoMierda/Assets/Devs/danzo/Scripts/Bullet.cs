@@ -41,9 +41,9 @@ public class Bullet : MonoBehaviour
     private void Update()
     {  
 
-        if (rb.velocity.magnitude > 0)
+        if (rb.linearVelocity.magnitude > 0)
         {
-            rb.velocity -= rb.velocity.normalized * deceleration * Time.deltaTime;
+            rb.linearVelocity -= rb.linearVelocity.normalized * deceleration * Time.deltaTime;
 
         }
         currentTime += Time.deltaTime;

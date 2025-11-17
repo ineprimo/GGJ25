@@ -16,15 +16,15 @@ public class CacaComponent : MonoBehaviour
 
         Transform player = GameManager.Instance.GetPlayer().transform;
 
-        // Calcular dirección hacia el jugador con un pequeño ajuste vertical
+        // Calcular direcciï¿½n hacia el jugador con un pequeï¿½o ajuste vertical
         Vector3 targetPosition = player.position;
         targetPosition.y += verticalBoost; // Elevar un poco la altura del tiro
         direction = (targetPosition - transform.position).normalized;
 
         // Aplicar velocidad inicial al proyectil
-        rb.velocity = direction * speed;
+        rb.linearVelocity = direction * speed;
 
-        // Destruir el proyectil después de un tiempo
+        // Destruir el proyectil despuï¿½s de un tiempo
         Destroy(gameObject, limitTime);
     }
 
@@ -32,8 +32,8 @@ public class CacaComponent : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Aplicar daño u otra lógica
-            Debug.Log("¡Golpeó al jugador! Daño: " + Damage);
+            // Aplicar daï¿½o u otra lï¿½gica
+            Debug.Log("ï¿½Golpeï¿½ al jugador! Daï¿½o: " + Damage);
             collision.gameObject.GetComponent<PlayerMovement>().Hit(Damage);
             Destroy(gameObject);
         }
