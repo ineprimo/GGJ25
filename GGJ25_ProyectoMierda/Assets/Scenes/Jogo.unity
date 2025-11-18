@@ -6199,9 +6199,49 @@ PrefabInstance:
       objectReference: {fileID: 237869905}
     - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1986604270}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 938896105}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: playNeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MenuSounds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443589084745287977, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3602967643692495477, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6613,7 +6653,23 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871276369}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2626411409753809599, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 938896105}
+    - targetCorrespondingSourceObject: {fileID: 4913900575138461971, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482286944}
+    - targetCorrespondingSourceObject: {fileID: 613475253710839504, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608774058}
+    - targetCorrespondingSourceObject: {fileID: 2595612000564506908, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1988236187}
   m_SourcePrefab: {fileID: 100100000, guid: a46d2ceb2b07b3141b29ee8b615d38d6, type: 3}
 --- !u!1001 &593494013
 PrefabInstance:
@@ -7028,6 +7084,57 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3613963813203070511}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &608774053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 613475253710839504, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 591484415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &608774058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608774053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &628719410
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,6 +9698,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 591484415}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &938896105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938896100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fac32dcad48b642a288d9a8277cf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuEvent:
+    Guid:
+      Data1: -773796663
+      Data2: 1218443313
+      Data3: -382086514
+      Data4: 1644836173
+    Path: event:/Menu
 --- !u!1 &948165236
 GameObject:
   m_ObjectHideFlags: 0
@@ -10547,7 +10673,7 @@ MonoBehaviour:
       Data3: 213611691
       Data4: 1419152184
     Path: event:/Music
-  intensity: 0
+  intensity: 4
 --- !u!136 &1105963212
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14025,6 +14151,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f5da5adc714f14480a8376c41ef170, type: 3}
+--- !u!1 &1482286939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4913900575138461971, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 591484415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482286944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482286939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1506942466
 GameObject:
   m_ObjectHideFlags: 0
@@ -20799,6 +20976,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1440987625}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &1988236182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2595612000564506908, guid: a46d2ceb2b07b3141b29ee8b615d38d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 591484415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1988236187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988236182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 938896105}
+          m_TargetAssemblyTypeName: MenuSounds, Assembly-CSharp
+          m_MethodName: playNeon
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1998034348
 GameObject:
   m_ObjectHideFlags: 0

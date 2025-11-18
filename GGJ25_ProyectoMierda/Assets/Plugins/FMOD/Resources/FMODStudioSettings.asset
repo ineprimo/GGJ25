@@ -416,6 +416,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Menu
   - Music
   - Player
   BanksToLoad: []

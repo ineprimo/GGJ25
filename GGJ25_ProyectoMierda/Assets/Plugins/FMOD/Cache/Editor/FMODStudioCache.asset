@@ -15,10 +15,56 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638990778600108971
+  lastModified: 638990847296581956
   FileSizes:
   - Name: Desktop
     Value: 95616
+  Exists: 1
+--- !u!114 &-6660064193925260228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Menu.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
+  Name: Menu
+  StudioPath: bank:/Menu
+  lastModified: 638990851104956922
+  FileSizes:
+  - Name: Desktop
+    Value: 476352
+  Exists: 1
+--- !u!114 &-6658415328436053528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/InMenu
+  m_EditorClassIdentifier: 
+  Name: InMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4163874832
+    data2: 2287717558
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - InMenu
+  - InGame
   Exists: 1
 --- !u!114 &-6165682518341853675
 MonoBehaviour:
@@ -35,7 +81,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638990778600665940
+  lastModified: 638990847273694238
   FileSizes:
   - Name: Desktop
     Value: 2185376
@@ -95,6 +141,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-3862917447079606919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Menu
+  Guid:
+    Data1: -773796663
+    Data2: 1218443313
+    Data3: -382086514
+    Data4: 1644836173
+  Banks:
+  - {fileID: -6660064193925260228}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3534322878211299268}
+  - {fileID: -6658415328436053528}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 47982
+--- !u!114 &-3534322878211299268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/NeonButtons
+  m_EditorClassIdentifier: 
+  Name: NeonButtons
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3960060731
+    data2: 3314101697
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Apagado
+  - Encendido
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,25 +213,27 @@ MonoBehaviour:
   - {fileID: 9154295580219026632}
   - {fileID: -8968745764264962248}
   - {fileID: -6165682518341853675}
+  - {fileID: -6660064193925260228}
   EditorEvents:
   - {fileID: -5393841308837135155}
   - {fileID: 6074271205854181766}
   - {fileID: -6019945630061909060}
+  - {fileID: -3862917447079606919}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9154295580219026632}
   StringsBanks:
   - {fileID: 8138384332483527027}
   cacheVersion: 131856
-  cacheTime: 638990778600665940
+  cacheTime: 638990851104956922
   SerializableEventsDict:
-  - key: event:/TestCaca
-    index: 0
   - key: event:/Shoot
-    index: 1
+    index: 0
   - key: event:/Reload
-    index: 2
+    index: 1
   - key: event:/Music
+    index: 2
+  - key: event:/Menu
     index: 3
 --- !u!114 &6074271205854181766
 MonoBehaviour:
@@ -174,10 +277,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638990772064483144
+  lastModified: 638990851104746878
   FileSizes:
   - Name: Desktop
-    Value: 998
+    Value: 1180
   Exists: 1
 --- !u!114 &8385141358289541971
 MonoBehaviour:
@@ -218,7 +321,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638990772064463141
+  lastModified: 638990851104736878
   FileSizes:
   - Name: Desktop
     Value: 1074
