@@ -6,7 +6,8 @@ using FMOD.Studio;
 public class InputManager : MonoBehaviour
 {
     // FMOD
-    [SerializeField] private EventReference testCacaEvent;
+    [SerializeField] private EventReference shootEvent;
+    [SerializeField] private EventReference reloadEvent;
     // --- //
 
 
@@ -62,6 +63,10 @@ public class InputManager : MonoBehaviour
             _shootComponent.isShooting = false;
             GameManager.Instance.GetAnimationManager().ResetAnim("attack");
             GameManager.Instance.GetAnimationManager().rechargeAnim();
+
+            // FMOD
+            RuntimeManager.PlayOneShot(reloadEvent, transform.position);
+            // --- //
         }
 
 #if UNITY_EDITOR
@@ -80,7 +85,11 @@ public class InputManager : MonoBehaviour
         {
             a = Input.GetKey(KeyCode.S);
             _shootComponent.shootWeapon(a);
-            RuntimeManager.PlayOneShot(testCacaEvent, transform.position);
+
+            // FMOD
+            RuntimeManager.PlayOneShot(shootEvent, transform.position);
+            // --- //
+
             yield return new WaitForSeconds(_shootComponent.timeBetweenShots);
         }
     }
