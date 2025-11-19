@@ -20,6 +20,57 @@ MonoBehaviour:
   - Name: Desktop
     Value: 95616
   Exists: 1
+--- !u!114 &-7516081226185644821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Coin Collect/FollowingCoins
+  m_EditorClassIdentifier: 
+  Name: FollowingCoins
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 245781249
+    data2: 4197482900
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7089129597014031463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Reload
+  Guid:
+    Data1: -458878311
+    Data2: 1309410115
+    Data3: -1878397054
+    Data4: 497899233
+  Banks:
+  - {fileID: 8780989178919957382}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2851
 --- !u!114 &-6660064193925260228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +165,85 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60923
+--- !u!114 &-5847575551232502163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2951347034
+    data2: 3616244967
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5664637408338883755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Menu
+  Guid:
+    Data1: -773796663
+    Data2: 1218443313
+    Data3: -382086514
+    Data4: 1644836173
+  Banks:
+  - {fileID: -339948505897476550}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5017769074064498670}
+  - {fileID: -5451821318885129922}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 47982
+--- !u!114 &-5451821318885129922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/NeonButtons
+  m_EditorClassIdentifier: 
+  Name: NeonButtons
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3960060731
+    data2: 3314101697
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Apagado
+  - Encendido
+  Exists: 1
 --- !u!114 &-5393841308837135155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +326,46 @@ MonoBehaviour:
   - Apagado
   - Encendido
   Exists: 1
+--- !u!114 &-699329669396771513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638991744881328955
+  FileSizes:
+  - Name: Desktop
+    Value: 2185376
+  Exists: 1
+--- !u!114 &-339948505897476550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Menu.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
+  Name: Menu
+  StudioPath: bank:/Menu
+  lastModified: 638991766185167472
+  FileSizes:
+  - Name: Desktop
+    Value: 471904
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,32 +379,205 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8138384332483527027}
-  - {fileID: 9154295580219026632}
-  - {fileID: -8968745764264962248}
-  - {fileID: -6165682518341853675}
-  - {fileID: -6660064193925260228}
+  - {fileID: 4851233776047249695}
+  - {fileID: 5117559900932087724}
+  - {fileID: -339948505897476550}
+  - {fileID: -699329669396771513}
+  - {fileID: 8780989178919957382}
+  - {fileID: 851080462019391350}
   EditorEvents:
-  - {fileID: -5393841308837135155}
-  - {fileID: 6074271205854181766}
-  - {fileID: -6019945630061909060}
-  - {fileID: -3862917447079606919}
+  - {fileID: -5664637408338883755}
+  - {fileID: 5903911766967582326}
+  - {fileID: 1081166577897515726}
+  - {fileID: -7089129597014031463}
+  - {fileID: 2180056148162660223}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9154295580219026632}
+  - {fileID: 5117559900932087724}
   StringsBanks:
-  - {fileID: 8138384332483527027}
+  - {fileID: 4851233776047249695}
   cacheVersion: 131856
-  cacheTime: 638990851104956922
+  cacheTime: 638991778467351183
   SerializableEventsDict:
-  - key: event:/Shoot
-    index: 0
-  - key: event:/Reload
-    index: 1
-  - key: event:/Music
-    index: 2
   - key: event:/Menu
+    index: 0
+  - key: event:/Music
+    index: 1
+  - key: event:/Shoot
+    index: 2
+  - key: event:/Reload
     index: 3
+  - key: event:/Coin Collect
+    index: 4
+--- !u!114 &851080462019391350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Coin.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Coin.bank
+  Name: Coin
+  StudioPath: bank:/Coin
+  lastModified: 638991778467351183
+  FileSizes:
+  - Name: Desktop
+    Value: 14080
+  Exists: 1
+--- !u!114 &1081166577897515726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Shoot
+  m_EditorClassIdentifier: 
+  Path: event:/Shoot
+  Guid:
+    Data1: -211519196
+    Data2: 1253490597
+    Data3: -1092500841
+    Data4: -1120773968
+  Banks:
+  - {fileID: 8780989178919957382}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &2180056148162660223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Coin Collect
+  m_EditorClassIdentifier: 
+  Path: event:/Coin Collect
+  Guid:
+    Data1: -384859749
+    Data2: 1126631166
+    Data3: -380721503
+    Data4: 1209953109
+  Banks:
+  - {fileID: 851080462019391350}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7516081226185644821}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1149
+--- !u!114 &4851233776047249695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638991778467210826
+  FileSizes:
+  - Name: Desktop
+    Value: 1302
+  Exists: 1
+--- !u!114 &5017769074064498670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/InMenu
+  m_EditorClassIdentifier: 
+  Name: InMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4163874832
+    data2: 2287717558
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - InMenu
+  - InGame
+  Exists: 1
+--- !u!114 &5117559900932087724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638991778467195793
+  FileSizes:
+  - Name: Desktop
+    Value: 1074
+  Exists: 1
+--- !u!114 &5903911766967582326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  Guid:
+    Data1: 1411770712
+    Data2: 1176431915
+    Data3: 213611691
+    Data4: 1419152184
+  Banks:
+  - {fileID: -699329669396771513}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5847575551232502163}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60923
 --- !u!114 &6074271205854181766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +648,26 @@ MonoBehaviour:
   Type: 1
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &8780989178919957382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
+  Name: Player
+  StudioPath: bank:/Player
+  lastModified: 638991766185975848
+  FileSizes:
+  - Name: Desktop
+    Value: 95616
   Exists: 1
 --- !u!114 &9154295580219026632
 MonoBehaviour:

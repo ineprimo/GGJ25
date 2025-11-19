@@ -21149,6 +21149,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1574351461}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &2001911361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001911363}
+  - component: {fileID: 2001911362}
+  m_Layer: 0
+  m_Name: CoinAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001911362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001911361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ab2d79b4b19cb4fb2d558bfb1b9752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCollectEvent:
+    Guid:
+      Data1: -384859749
+      Data2: 1126631166
+      Data3: -380721503
+      Data4: 1209953109
+    Path: event:/Coin Collect
+  parameterName: FollowingCoins
+  resetTime: 2
+  valueIncrement: 1
+  maxParameterValue: 24
+--- !u!4 &2001911363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001911361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.372792, y: 9.299828, z: 0.08135702}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2005940677
 GameObject:
   m_ObjectHideFlags: 0
@@ -22213,3 +22268,4 @@ SceneRoots:
   - {fileID: 2595804098494389062}
   - {fileID: 1440987625}
   - {fileID: 1105963215}
+  - {fileID: 2001911363}

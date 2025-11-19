@@ -66,6 +66,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,7 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 75
   value: 1
-  pickupSound: {fileID: 8300000, guid: 0f82d8f833c2bba40bac736a50c89b1f, type: 3}
   moveSpeed: 10
   spawnScaleDuration: 0.2
 --- !u!135 &6112069192497902514
@@ -310,7 +310,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 24decfc2613d6f7479164c364e51e977, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 24decfc2613d6f7479164c364e51e977, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.301
