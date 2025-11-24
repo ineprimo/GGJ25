@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip newTrack;
     private float originalVolume;
 
+    // FMOD
+    [SerializeField] private MusicTest musicTest1;
+    [SerializeField] private MusicTest musicTest2;
+
     //GACHA
     private int incrementalPrice = 10;
     public int gachaPrice = 10;
@@ -347,6 +351,9 @@ public class GameManager : MonoBehaviour
     {
         actualRound = round;
         _hud.UpdateUI();
+
+        musicTest1.SetIntensity(round);
+        musicTest2.SetIntensity(round);
     }
 
     public void SetMaxEnemies(int enemies)
@@ -401,6 +408,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _player.GetComponent<PlayerMovement>().SetCoins(0);
+        //musicTest1.SetIntensity(1);
+        //musicTest2.SetIntensity(1);
     }
 
     public void CollectAllCoins(GameObject player)

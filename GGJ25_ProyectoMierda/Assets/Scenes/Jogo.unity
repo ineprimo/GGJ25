@@ -9262,7 +9262,7 @@ MonoBehaviour:
       Data3: 213611691
       Data4: 1419152184
     Path: event:/Music
-  intensity: 0
+  intensity: 1
 --- !u!1 &846877057
 GameObject:
   m_ObjectHideFlags: 0
@@ -12188,7 +12188,7 @@ MonoBehaviour:
       Data3: 213611691
       Data4: 1419152184
     Path: event:/Music
-  intensity: 0
+  intensity: 1
 --- !u!1 &1250462206
 GameObject:
   m_ObjectHideFlags: 0
@@ -14727,9 +14727,24 @@ PrefabInstance:
       objectReference: {fileID: 1783567518}
     - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}
+      propertyPath: musicTest
+      value: 
+      objectReference: {fileID: 826463066}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
       propertyPath: gachaPrice
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: musicTest1
+      value: 
+      objectReference: {fileID: 826463066}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: musicTest2
+      value: 
+      objectReference: {fileID: 1249305257}
     - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}
       propertyPath: musicSource
