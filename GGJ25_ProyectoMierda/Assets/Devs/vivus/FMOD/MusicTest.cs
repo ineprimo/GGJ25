@@ -67,6 +67,21 @@ public class MusicTest : MonoBehaviour
             intensity = 4;
             SetIntensity(4f);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            intensity = 5;
+            SetIntensity(5f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            intensity = 6;
+            SetIntensity(6f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            intensity = 7;
+            SetIntensity(7f);
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             intensity = 0;
