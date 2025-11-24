@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+using FMODUnity;
+
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("FMOD Footsteps")]
+    [SerializeField] private EventReference footstepEvent;
+    [SerializeField] private float footstepInterval = 0.4f;
+    private float footstepTimer;
+
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f; 
     public float sprintMultiplier = 1.5f; 
@@ -57,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
         {
             characterController = gameObject.AddComponent<CharacterController>();
         }
+
+        // FMOD
+        footstepTimer = footstepInterval;
     }
 
     void Update()
@@ -112,8 +123,17 @@ public class PlayerMovement : MonoBehaviour
             // Aplicamos velocidad base
             float speed = moveSpeed;
             
-           
             velocity = direction * speed;
+
+            // FMOD
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f)
+            {
+                Vector3 auxPos = transform.position;
+                auxPos.y -= 0.5f;
+                RuntimeManager.PlayOneShot(footstepEvent, auxPos);
+                footstepTimer = footstepInterval;
+            }
         }
 
     

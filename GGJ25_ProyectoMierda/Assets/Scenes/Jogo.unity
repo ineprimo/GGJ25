@@ -3794,6 +3794,36 @@ PrefabInstance:
       propertyPath: _hud
       value: 
       objectReference: {fileID: 1271182840}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepInterval
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepEvent.Path
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepEvent.Guid.Data1
+      value: -1065121907
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepEvent.Guid.Data2
+      value: 1163749433
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepEvent.Guid.Data3
+      value: -1744164205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: footstepEvent.Guid.Data4
+      value: 2117640286
+      objectReference: {fileID: 0}
     - target: {fileID: 2646293711841832892, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
