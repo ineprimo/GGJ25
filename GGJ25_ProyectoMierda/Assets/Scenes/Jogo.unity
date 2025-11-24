@@ -383,10 +383,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &17420217
 MonoBehaviour:
@@ -1028,6 +1028,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -1129,14 +1154,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1761964350}
     - targetCorrespondingSourceObject: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       insertIndex: -1
@@ -1257,6 +1279,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -1363,7 +1410,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1602,10 +1650,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!1001 &187487412
 PrefabInstance:
@@ -1629,6 +1677,31 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
       objectReference: {fileID: 0}
     - target: {fileID: 2556211052286006561, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
@@ -1695,7 +1768,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1937,6 +2011,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -2038,7 +2137,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2328,10 +2428,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &263207450
 MonoBehaviour:
@@ -3108,6 +3208,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -3209,7 +3334,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4739,6 +4865,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -4840,7 +4991,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5193,10 +5345,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!1 &460316735 stripped
 GameObject:
@@ -5319,6 +5471,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -5420,7 +5597,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6028,6 +6206,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -6129,7 +6332,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6722,6 +6926,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -6823,7 +7052,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6994,6 +7224,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -7095,7 +7350,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7680,6 +7936,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -7786,7 +8067,8 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.19
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8385,6 +8667,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -8486,7 +8793,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8719,10 +9027,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &822312697
 MonoBehaviour:
@@ -8924,7 +9232,7 @@ MonoBehaviour:
       Data3: 213611691
       Data4: 1419152184
     Path: event:/Music
-  intensity: 4
+  intensity: 0
 --- !u!1 &846877057
 GameObject:
   m_ObjectHideFlags: 0
@@ -8963,10 +9271,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &846877059
 MonoBehaviour:
@@ -9459,10 +9767,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &897576529
 MonoBehaviour:
@@ -9590,6 +9898,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -9691,7 +10024,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9974,10 +10308,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &948165238
 MonoBehaviour:
@@ -10477,6 +10811,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -10578,7 +10937,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10856,10 +11216,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!1 &1097880619 stripped
 GameObject:
@@ -11798,7 +12158,7 @@ MonoBehaviour:
       Data3: 213611691
       Data4: 1419152184
     Path: event:/Music
-  intensity: 4
+  intensity: 0
 --- !u!1 &1250462206
 GameObject:
   m_ObjectHideFlags: 0
@@ -12322,6 +12682,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -12423,7 +12808,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13005,10 +13391,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &1326653642
 MonoBehaviour:
@@ -13142,6 +13528,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -13243,7 +13654,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13276,6 +13688,31 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
       objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
@@ -13378,7 +13815,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13706,6 +14144,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -13807,7 +14270,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15621,6 +16085,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -15722,7 +16211,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15755,6 +16245,31 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
       objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
@@ -15857,7 +16372,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15973,18 +16489,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 108971699}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1761964350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761964344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e95b9c7311db4640b9adaa613e8055f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1761964351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15999,6 +16503,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeEnemy: {fileID: 3085869615580526969, guid: 9433be7dde5edf54d8258948c91e6677,
     type: 3}
+  spawnSoundEvent:
+    Guid:
+      Data1: 1438678409
+      Data2: 1152390123
+      Data3: -611025475
+      Data4: 1820078998
+    Path: event:/SpawnEnemy
 --- !u!1 &1783085653
 GameObject:
   m_ObjectHideFlags: 0
@@ -16337,6 +16848,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -16438,7 +16974,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16600,16 +17137,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldLight: {fileID: 0}
-  minFlickerTime: 0.2
+  minFlickerTime: 0.25
   maxFlickerTime: 0.35
   lightIntensity: 15
   offIntensity: 0
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!1 &1814297814
 GameObject:
@@ -16649,10 +17186,10 @@ MonoBehaviour:
   offIntensity: 0.32
   lightOnSound:
     Guid:
-      Data1: -409467880
-      Data2: 1242789744
-      Data3: -1423576191
-      Data4: 1749213521
+      Data1: 1573689245
+      Data2: 1164685134
+      Data3: 139564186
+      Data4: -1664382710
     Path: event:/LightFliker
 --- !u!114 &1814297816
 MonoBehaviour:
@@ -16960,6 +17497,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -17061,7 +17623,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17100,6 +17663,31 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
       objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
@@ -17207,7 +17795,8 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.21
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17317,6 +17906,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -17418,7 +18032,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -20756,6 +21371,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -20862,7 +21502,8 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.26
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21887,6 +22528,31 @@ PrefabInstance:
       propertyPath: spawnDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Path
+      value: event:/SpawnEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data1
+      value: 1438678409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data2
+      value: 1152390123
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data3
+      value: -611025475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362234100732080703, guid: 9584a362396a9bb4c92d64e6f433745b,
+        type: 3}
+      propertyPath: spawnSoundEvent.Guid.Data4
+      value: 1820078998
+      objectReference: {fileID: 0}
     - target: {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b,
         type: 3}
       propertyPath: MaxDistance
@@ -21988,7 +22654,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.04
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2300090617937763867, guid: 9584a362396a9bb4c92d64e6f433745b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

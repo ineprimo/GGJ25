@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
+using FMODUnity;
 
 public class TutorialSpawner : MonoBehaviour
 {
     [SerializeField] GameObject meleeEnemy;
     GameObject spawnedEnemy;
 
+    [SerializeField] private EventReference spawnSoundEvent;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnedEnemy = Instantiate(meleeEnemy, transform.position, meleeEnemy.transform.rotation);
+
+        RuntimeManager.PlayOneShot(spawnSoundEvent, transform.position);
+
         StartCoroutine(ScaleUpAndFall(spawnedEnemy));
-        
     }
 
     private IEnumerator ScaleUpAndFall(GameObject enemy)

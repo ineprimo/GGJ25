@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class CaquitaSpawn : MonoBehaviour
 {
+    [SerializeField] private EventReference spawnSoundEvent;
+
     public AudioClip[] sonidosSpawn;
     private AudioSource audioSource;
     private Transform _tr;
@@ -86,11 +89,16 @@ public class CaquitaSpawn : MonoBehaviour
                 setEnemy(spawnedEnemy);
                 GameManager.Instance.registerEnemy(spawnedEnemy);
 
-                if (sonidosSpawn.Length > 0)
-                {
-                    int i = Random.Range(0, sonidosSpawn.Length);
-                    audioSource.PlayOneShot(sonidosSpawn[i], 0.5f);
-                }
+                //if (sonidosSpawn.Length > 0)
+                //{
+                //    int i = Random.Range(0, sonidosSpawn.Length);
+                //    audioSource.PlayOneShot(sonidosSpawn[i], 0.5f);
+                //}
+
+                //if (spawnSoundEvent.IsNull == false)
+                //{
+                    RuntimeManager.PlayOneShot(spawnSoundEvent, spawnPosition);
+                //}
 
                 StartCoroutine(ScaleUpAndFall(spawnedEnemy));
 

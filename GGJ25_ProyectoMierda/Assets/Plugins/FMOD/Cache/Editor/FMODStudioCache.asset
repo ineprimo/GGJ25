@@ -311,6 +311,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-5361796135468137153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SpawnEnemy
+  m_EditorClassIdentifier: 
+  Path: event:/SpawnEnemy
+  Guid:
+    Data1: 1438678409
+    Data2: 1152390123
+    Data3: -611025475
+    Data4: 1820078998
+  Banks:
+  - {fileID: 6620009110449932844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1074
 --- !u!114 &-4906151955084346642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +511,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Light.bank
   Name: Light
   StudioPath: bank:/Light
-  lastModified: 638995876674481798
+  lastModified: 638995965915631740
   FileSizes:
   - Name: Desktop
     Value: 451776
@@ -504,10 +531,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638995876674175009
+  lastModified: 638995988264241776
   FileSizes:
   - Name: Desktop
-    Value: 1380
+    Value: 1508
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -623,6 +650,7 @@ MonoBehaviour:
   - {fileID: -8834933214821397617}
   - {fileID: 4906762789691601782}
   - {fileID: -2779779645467533748}
+  - {fileID: 6620009110449932844}
   EditorEvents:
   - {fileID: -4906151955084346642}
   - {fileID: 1906968798783944630}
@@ -630,13 +658,15 @@ MonoBehaviour:
   - {fileID: 2295163929043236842}
   - {fileID: -4463673087480022214}
   - {fileID: 2743854050608336916}
+  - {fileID: -5361796135468137153}
+  - {fileID: 5432129169225300784}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 638995876674481798
+  cacheTime: 638995988264921925
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -650,6 +680,10 @@ MonoBehaviour:
     index: 4
   - key: event:/LightFliker
     index: 5
+  - key: event:/SpawnEnemy
+    index: 6
+  - key: event:/Footsteps
+    index: 7
 --- !u!114 &760995608040922010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,10 +855,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/LightFliker
   Guid:
-    Data1: -409467880
-    Data2: 1242789744
-    Data3: -1423576191
-    Data4: 1749213521
+    Data1: 1573689245
+    Data2: 1164685134
+    Data3: 139564186
+    Data4: -1664382710
   Banks:
   - {fileID: -2779779645467533748}
   IsStream: 1
@@ -833,7 +867,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 10000
+  Length: 18000
 --- !u!114 &3779334402512182113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +883,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638995876674165009
+  lastModified: 638995988264241776
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -889,10 +923,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638995820319356482
+  lastModified: 638995988264921925
   FileSizes:
   - Name: Desktop
-    Value: 95616
+    Value: 122720
   Exists: 1
 --- !u!114 &5017769074064498670
 MonoBehaviour:
@@ -940,6 +974,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1074
   Exists: 1
+--- !u!114 &5432129169225300784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps
+  Guid:
+    Data1: -1065121907
+    Data2: 1163749433
+    Data3: -1744164205
+    Data4: 2117640286
+  Banks:
+  - {fileID: 4906762789691601782}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &5903911766967582326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +1056,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2851
+--- !u!114 &6620009110449932844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Enemy.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
+  Name: Enemy
+  StudioPath: bank:/Enemy
+  lastModified: 638995965931530611
+  FileSizes:
+  - Name: Desktop
+    Value: 14080
+  Exists: 1
 --- !u!114 &8138384332483527027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,10 +1135,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
   Name: Menu
   StudioPath: bank:/Menu
-  lastModified: 638995820319023361
+  lastModified: 638995977038934706
   FileSizes:
   - Name: Desktop
-    Value: 471904
+    Value: 476512
   Exists: 1
 --- !u!114 &8780989178919957382
 MonoBehaviour:
