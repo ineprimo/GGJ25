@@ -381,6 +381,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &17420217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1600,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!1001 &187487412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2312,6 +2326,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &263207450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5170,6 +5191,13 @@ MonoBehaviour:
   maxFlickerTime: 0.26
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!1 &460316735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2682004201227587358, guid: 9584a362396a9bb4c92d64e6f433745b,
@@ -8689,6 +8717,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &822312697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8926,6 +8961,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &846877059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9415,6 +9457,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &897576529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9923,6 +9972,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &948165238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10798,6 +10854,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!1 &1097880619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5878573492287553713, guid: c56a9694e7d25e94ebb93910fb21810b,
@@ -12940,6 +13003,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &1326653642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16530,10 +16600,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldLight: {fileID: 0}
-  minFlickerTime: 0.14
-  maxFlickerTime: 0.14
-  lightIntensity: 14.06
+  minFlickerTime: 0.2
+  maxFlickerTime: 0.35
+  lightIntensity: 15
   offIntensity: 0
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!1 &1814297814
 GameObject:
   m_ObjectHideFlags: 0
@@ -16570,6 +16647,13 @@ MonoBehaviour:
   maxFlickerTime: 0.35
   lightIntensity: 1
   offIntensity: 0.32
+  lightOnSound:
+    Guid:
+      Data1: -409467880
+      Data2: 1242789744
+      Data3: -1423576191
+      Data4: 1749213521
+    Path: event:/LightFliker
 --- !u!114 &1814297816
 MonoBehaviour:
   m_ObjectHideFlags: 0

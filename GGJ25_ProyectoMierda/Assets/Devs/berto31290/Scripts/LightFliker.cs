@@ -1,16 +1,23 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class LightFliker : MonoBehaviour
 {
-    public Light oldLight; // Referencia a la luz (puedes asignarla desde el inspector)
-    public float minFlickerTime = 0.1f; // Tiempo mÌnimo entre parpadeos
-    public float maxFlickerTime = 0.5f; // Tiempo m·ximo entre parpadeos
-    public float lightIntensity = 1.0f; // Intensidad normal de la luz
-    public float offIntensity = 0.0f; // Intensidad cuando est· apagada
+    public Light oldLight; // Referencia a la luz
+    public float minFlickerTime = 0.1f; // Tiempo m√≠nimo entre parpadeos
+    public float maxFlickerTime = 0.5f; // Tiempo m√°ximo entre parpadeos
+    public float lightIntensity = 1.0f; // Intensidad normal
+    public float offIntensity = 0.0f; // Intensidad cuando est√° apagada
 
-    private float timeToNextFlicker; // Tiempo restante para el prÛximo parpadeo
+    [SerializeField] private EventReference lightOnSound;
+
+
+    // FMOD
+    private FMOD.Studio.EventInstance lightSoundInstance;
+    private float timeToNextFlicker; // Tiempo restante para el pr√≥ximo parpadeo
+    private bool isLightOn = false; // Estado actual de la luz
 
     void Start()
     {
@@ -19,15 +26,23 @@ public class LightFliker : MonoBehaviour
             oldLight = GetComponent<Light>();
         }
 
+        lightSoundInstance = RuntimeManager.CreateInstance(lightOnSound);
+        lightSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+
         SetNextFlickerTime();
+    }
+
+    void OnDestroy()
+    {
+        lightSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        lightSoundInstance.release();
     }
 
     void Update()
     {
-        // Reduce el tiempo hasta el prÛximo parpadeo
+        // Reduce el tiempo hasta el pr√≥ximo parpadeo
         timeToNextFlicker -= Time.deltaTime;
 
-        // Si es hora de parpadear, cambia la intensidad de la luz
         if (timeToNextFlicker <= 0)
         {
             FlickerLight();
@@ -40,17 +55,32 @@ public class LightFliker : MonoBehaviour
         // Alterna entre encender y apagar la luz de forma aleatoria
         if (Random.value > 0.5f)
         {
-            oldLight.intensity = lightIntensity; // Luz encendida
+            //Luz Encendida 
+            oldLight.intensity = lightIntensity;
+
+            if (!isLightOn)
+            {
+                // Inicia el sonido solo si se acaba de encender
+                lightSoundInstance.start();
+                isLightOn = true;
+            }
         }
         else
         {
-            oldLight.intensity = offIntensity; // Luz apagada
+            // Luz Apagada
+            oldLight.intensity = offIntensity;
+
+            if (isLightOn)
+            {
+                lightSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); //STOP_MODE.FADEOUT queda peor creo yo
+                isLightOn = false;
+            }
         }
     }
 
     void SetNextFlickerTime()
     {
-        // Determina un tiempo aleatorio para el prÛximo parpadeo
+        // Determina un tiempo aleatorio para el pr√≥ximo parpadeo
         timeToNextFlicker = Random.Range(minFlickerTime, maxFlickerTime);
     }
 }

@@ -417,6 +417,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Coin
+  - Light
   - Menu
   - Music
   - Player
