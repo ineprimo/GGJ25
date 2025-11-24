@@ -390,8 +390,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../SON/FMOD Proyecto Final/ProyectoFinal/ProyectoFinal.fspro
-  sourceBankPath: ../../SON/FMOD Proyecto Final/ProyectoFinal/Build
+  sourceProjectPath: ../../../SON/FMOD Proyecto Final/ProyectoFinal/ProyectoFinal.fspro
+  sourceBankPath: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
