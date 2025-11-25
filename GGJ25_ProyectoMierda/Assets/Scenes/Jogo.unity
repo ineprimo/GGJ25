@@ -3796,6 +3796,11 @@ PrefabInstance:
       objectReference: {fileID: 1271182840}
     - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
+      propertyPath: hurtEvent.Path
+      value: event:/Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
       propertyPath: footstepInterval
       value: 0.75
       objectReference: {fileID: 0}
@@ -3803,6 +3808,26 @@ PrefabInstance:
         type: 3}
       propertyPath: footstepEvent.Path
       value: event:/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: hurtEvent.Guid.Data1
+      value: -1104492112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: hurtEvent.Guid.Data2
+      value: 1184466994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: hurtEvent.Guid.Data3
+      value: -896385109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: hurtEvent.Guid.Data4
+      value: -1244348873
       objectReference: {fileID: 0}
     - target: {fileID: 2395954038161118616, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}
@@ -3823,6 +3848,31 @@ PrefabInstance:
         type: 3}
       propertyPath: footstepEvent.Guid.Data4
       value: 2117640286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416969904299803464, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: iceEvent.Path
+      value: event:/Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416969904299803464, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: iceEvent.Guid.Data1
+      value: -772734404
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416969904299803464, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: iceEvent.Guid.Data2
+      value: 1188892762
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416969904299803464, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: iceEvent.Guid.Data3
+      value: -1764557388
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416969904299803464, guid: 624092a4d3daf134da9613a79f10cea6,
+        type: 3}
+      propertyPath: iceEvent.Guid.Data4
+      value: 751609546
       objectReference: {fileID: 0}
     - target: {fileID: 2646293711841832892, guid: 624092a4d3daf134da9613a79f10cea6,
         type: 3}

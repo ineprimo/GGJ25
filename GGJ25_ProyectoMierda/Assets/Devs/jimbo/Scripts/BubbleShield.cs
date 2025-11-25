@@ -1,16 +1,19 @@
 using System.Linq;
 using UnityEngine;
+using FMODUnity;
 
 public class BubbleShield : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _freezeEffect;
-    [SerializeField] private AudioClip _freezeSound;
+    //[SerializeField] private AudioClip _freezeSound;
     [SerializeField] private float _distanceArea = 5.0f;
     [SerializeField] private float _freezeTime = 3.0f;
     [SerializeField] private float _cooldown = 30.0f;
     private float _cd;
     private bool _active;
     private GameObject _enemy;
+
+    [SerializeField] private EventReference iceEvent;
 
     public float GetCd()
     {
@@ -46,9 +49,12 @@ public class BubbleShield : MonoBehaviour
             enemyScript.Freeze();
 
             
-             _freezeEffect.Play();
-            _freezeEffect.gameObject.GetComponent<AudioSource>().PlayOneShot(_freezeSound);
+            _freezeEffect.Play();
+
+            //_freezeEffect.gameObject.GetComponent<AudioSource>().PlayOneShot(_freezeSound);
             
+            RuntimeManager.PlayOneShot(iceEvent, transform.position);
+
             Collider[] colliders = g.GetComponents<BoxCollider>();
             foreach (var collider in colliders)
             {

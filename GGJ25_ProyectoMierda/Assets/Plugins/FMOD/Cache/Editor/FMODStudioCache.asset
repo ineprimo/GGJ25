@@ -531,10 +531,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638996108607513674
+  lastModified: 638996918136591923
   FileSizes:
   - Name: Desktop
-    Value: 1508
+    Value: 1578
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -630,6 +630,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 59076
+--- !u!114 &-253695180827643146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ice
+  m_EditorClassIdentifier: 
+  Path: event:/Ice
+  Guid:
+    Data1: -772734404
+    Data2: 1188892762
+    Data3: -1764557388
+    Data4: 751609546
+  Banks:
+  - {fileID: 4906762789691601782}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,13 +687,15 @@ MonoBehaviour:
   - {fileID: 2743854050608336916}
   - {fileID: -5361796135468137153}
   - {fileID: 5432129169225300784}
+  - {fileID: 5053049400981266173}
+  - {fileID: -253695180827643146}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 638996108607513674
+  cacheTime: 638996918137262563
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -684,6 +713,10 @@ MonoBehaviour:
     index: 6
   - key: event:/Footsteps
     index: 7
+  - key: event:/Hurt
+    index: 8
+  - key: event:/Ice
+    index: 9
 --- !u!114 &760995608040922010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +916,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638996108607503677
+  lastModified: 638996918136581922
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -923,10 +956,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638996002030195484
+  lastModified: 638996918137262563
   FileSizes:
   - Name: Desktop
-    Value: 122720
+    Value: 211648
   Exists: 1
 --- !u!114 &5017769074064498670
 MonoBehaviour:
@@ -954,6 +987,33 @@ MonoBehaviour:
   - InMenu
   - InGame
   Exists: 1
+--- !u!114 &5053049400981266173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hurt
+  m_EditorClassIdentifier: 
+  Path: event:/Hurt
+  Guid:
+    Data1: -1104492112
+    Data2: 1184466994
+    Data3: -896385109
+    Data4: -1244348873
+  Banks:
+  - {fileID: 4906762789691601782}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &5117559900932087724
 MonoBehaviour:
   m_ObjectHideFlags: 0

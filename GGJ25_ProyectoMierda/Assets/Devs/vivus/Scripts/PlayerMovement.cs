@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float footstepInterval = 0.4f;
     private float footstepTimer;
 
+    [Header("FMOD Hurt")]
+    [SerializeField] private EventReference hurtEvent;
+    [SerializeField] private float hurtSoundCooldown = 0.5f;
+    private float hurtSoundTimer;
+    private bool canPlayHurtSound = true;
 
     [Header("Movement Settings")]
     public float moveSpeed = 5f; 
@@ -59,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         // Cambia el arma actual
         _currentWeapon = _weapons[0];
 
-        // Asegurarse de que el CharacterController está presente
+        // Asegurarse de que el CharacterController estÃ¡ presente
         characterController = GetComponent<CharacterController>();
         if (characterController == null)
         {
@@ -68,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         // FMOD
         footstepTimer = footstepInterval;
+        hurtSoundTimer = hurtSoundCooldown;
     }
 
     void Update()
@@ -87,6 +93,18 @@ public class PlayerMovement : MonoBehaviour
             _healTimer -= Time.deltaTime;
         }
 
+        // COOLDOWN PARA EL SONIDO DE DAÃ‘O
+        if (!canPlayHurtSound)
+        {
+            hurtSoundTimer -= Time.deltaTime;
+
+            if (hurtSoundTimer <= 0)
+            {
+                canPlayHurtSound = true;
+                hurtSoundTimer = hurtSoundCooldown;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.X) && mouseSensitivity <= 20f)
         {
             mouseSensitivity += 0.1f;
@@ -100,6 +118,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _currentLife = 9999999999999999999;
             _maxLife = 9999999999999999999;
+            for(int i  = 0; i < 1000; i++)
+            {
+                GameManager.Instance.addCoins(1000);
+            }
         }
 #endif
     }
@@ -139,12 +161,12 @@ public class PlayerMovement : MonoBehaviour
     
         if (characterController.isGrounded)
         {
-            velocity.y = -1f; // Un valor pequeño para mantenerlo pegado al suelo
+            velocity.y = -1f; // Un valor pequeÃ±o para mantenerlo pegado al suelo
 
         }
         else
         {
-            // Si no está en el suelo, aplicamos la gravedad
+            // Si no estÃ¡ en el suelo, aplicamos la gravedad
             velocity.y += gravity * Time.deltaTime;
         }
 
@@ -153,14 +175,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMouseLook()
     {
-          // Capturamos el input del ratón
+          // Capturamos el input del ratÃ³n
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
         // Rotamos horizontalmente el personaje
         transform.Rotate(Vector3.up * mouseX * mouseSensitivity);
 
-        // Rotamos verticalmente la cámara
+        // Rotamos verticalmente la cÃ¡mara
         verticalRotation -= mouseY * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -maxVerticalAngle, maxVerticalAngle);
 
@@ -192,7 +214,15 @@ public class PlayerMovement : MonoBehaviour
         _healTimer = _healTime;
         _currentLife -= damage;
 
-        // Activar el shake de la cámara
+        // LÃ“GICA DE SONORIZACIÃ“N CON COOLDOWN
+        if (canPlayHurtSound)
+        {
+            canPlayHurtSound = false;
+
+            RuntimeManager.PlayOneShot(hurtEvent, transform.position);
+        }
+
+        // Activar el shake de la cÃ¡mara
         if (CameraShake.Instance != null)
         {
             CameraShake.Instance.Shake();
