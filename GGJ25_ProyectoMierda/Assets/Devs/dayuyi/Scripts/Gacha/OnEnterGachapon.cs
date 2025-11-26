@@ -1,5 +1,7 @@
+using FMODUnity;
 using System.Collections; // Necesario para IEnumerator
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables; // Necesario para PlayableDirector
 using UnityEngine.UI; // Necesario para actualizar el texto UI
@@ -20,8 +22,11 @@ public class OnEnterGachapon : MonoBehaviour
     [SerializeField] private GameObject gachaponWheel; // GameObject que girar�
     [SerializeField] private float rotationDegrees = 360f; // Grados que girar� en el eje Z
     [SerializeField] private float rotationDuration = 1.0f; // Duraci�n del giro
-    [SerializeField] private AudioClip gachaponSound; // Sonido a reproducir
-    [SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
+
+    ///[SerializeField] private AudioClip gachaponSound; // Sonido a reproducir
+    //[SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
+    [Header("FMOD Event")]
+    [SerializeField] private EventReference machineEvent;
 
     [Header("UI Elements")]
 
@@ -51,7 +56,10 @@ public class OnEnterGachapon : MonoBehaviour
 
                 // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
                 StartCoroutine(SpinGachaponWheel());
-                audioSource.PlayOneShot(gachaponSound);
+                //audioSource.PlayOneShot(gachaponSound);
+
+                RuntimeManager.PlayOneShot(machineEvent, transform.position);
+
                 playableDirector.SetActive(true);
                 playableDirector.GetComponent<PlayableDirector>().Play();
 
@@ -63,8 +71,6 @@ public class OnEnterGachapon : MonoBehaviour
 
                     updateUpgrades(up.getName());
                     GameManager.Instance.updateGachaPrice();
-
-
 
                     // Retrasar el cambio de posici�n y rotaci�n3 segundos
                     StartCoroutine(DelayMachineMove(2.5f));

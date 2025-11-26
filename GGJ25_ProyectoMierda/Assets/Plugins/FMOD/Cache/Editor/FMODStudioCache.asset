@@ -531,10 +531,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638996918136591923
+  lastModified: 638997642851929094
   FileSizes:
   - Name: Desktop
-    Value: 1578
+    Value: 1670
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -678,6 +678,7 @@ MonoBehaviour:
   - {fileID: 4906762789691601782}
   - {fileID: -2779779645467533748}
   - {fileID: 6620009110449932844}
+  - {fileID: 9081958311814913539}
   EditorEvents:
   - {fileID: -4906151955084346642}
   - {fileID: 1906968798783944630}
@@ -689,13 +690,14 @@ MonoBehaviour:
   - {fileID: 5432129169225300784}
   - {fileID: 5053049400981266173}
   - {fileID: -253695180827643146}
+  - {fileID: 3698071037557942280}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 638996918137262563
+  cacheTime: 638997642852195868
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -717,6 +719,8 @@ MonoBehaviour:
     index: 8
   - key: event:/Ice
     index: 9
+  - key: event:/UpgradesMachine
+    index: 10
 --- !u!114 &760995608040922010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +905,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18000
+--- !u!114 &3698071037557942280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UpgradesMachine
+  m_EditorClassIdentifier: 
+  Path: event:/UpgradesMachine
+  Guid:
+    Data1: 1416950673
+    Data2: 1183305031
+    Data3: 1377100732
+    Data4: 362817880
+  Banks:
+  - {fileID: 9081958311814913539}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2808
 --- !u!114 &3779334402512182113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,7 +947,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638996918136581922
+  lastModified: 638997642851919086
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -1219,6 +1250,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 95616
+  Exists: 1
+--- !u!114 &9081958311814913539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UpgradesMachine.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/UpgradesMachine.bank
+  Name: UpgradesMachine
+  StudioPath: bank:/UpgradesMachine
+  lastModified: 638997642852195868
+  FileSizes:
+  - Name: Desktop
+    Value: 44672
   Exists: 1
 --- !u!114 &9154295580219026632
 MonoBehaviour:
