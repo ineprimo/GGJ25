@@ -2,12 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using Unity.VisualScripting;
 
 public class Enemy : MonoBehaviour
 {
-    public AudioClip[] sonidoscuquis;
+    //public AudioClip[] sonidoscuquis;
 
-    private AudioSource audioSource;
+    [SerializeField] private EventReference idleEvent;
+    private EventInstance idleInstance;
+
+    //private AudioSource audioSource;
+
     public float _damage = 10.0f;
     [SerializeField] private float _health;
     public float _currentHealth;
@@ -107,6 +114,9 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        idleInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        idleInstance.release();
+
         GameManager.Instance.deRegisterEnemy(gameObject);
         Destroy(gameObject);
 
@@ -145,6 +155,18 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _currentHealth = _health;
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
+
+        // FMOD
+        idleInstance = RuntimeManager.CreateInstance(idleEvent);
+
+        idleInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+
+        idleInstance.start();
+    }
+
+    private void Update()
+    {
+        idleInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 }

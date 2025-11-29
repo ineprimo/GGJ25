@@ -40,6 +40,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3648288
   Exists: 1
+--- !u!114 &-7984953288879717548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/IdleEnemy
+  m_EditorClassIdentifier: 
+  Path: event:/IdleEnemy
+  Guid:
+    Data1: -455109738
+    Data2: 1083174597
+    Data3: 303987868
+    Data4: 1255307418
+  Banks:
+  - {fileID: 6620009110449932844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &-7516081226185644821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,10 +558,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638997642851929094
+  lastModified: 639000584279635968
   FileSizes:
   - Name: Desktop
-    Value: 1670
+    Value: 1720
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -691,13 +718,14 @@ MonoBehaviour:
   - {fileID: 5053049400981266173}
   - {fileID: -253695180827643146}
   - {fileID: 3698071037557942280}
+  - {fileID: -7984953288879717548}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 638997642852195868
+  cacheTime: 639000584279635968
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -721,6 +749,8 @@ MonoBehaviour:
     index: 9
   - key: event:/UpgradesMachine
     index: 10
+  - key: event:/IdleEnemy
+    index: 11
 --- !u!114 &760995608040922010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +977,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638997642851919086
+  lastModified: 639000584279625968
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -1162,10 +1192,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
   Name: Enemy
   StudioPath: bank:/Enemy
-  lastModified: 638995994944038912
+  lastModified: 639000584279595969
   FileSizes:
   - Name: Desktop
-    Value: 14080
+    Value: 174880
   Exists: 1
 --- !u!114 &8138384332483527027
 MonoBehaviour:
