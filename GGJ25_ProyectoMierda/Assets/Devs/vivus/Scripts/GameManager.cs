@@ -327,7 +327,7 @@ public class GameManager : MonoBehaviour
         _player.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
         _player.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
 
-        UIManager.GetComponent<UIManager>().ActivarScoreboard(score);
+        UIManager.GetComponent<UIManager>().ActivarScoreboard(score, gameOverInstance);
 
         Destroy(_gun);
 

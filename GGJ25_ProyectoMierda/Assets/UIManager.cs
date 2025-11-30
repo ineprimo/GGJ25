@@ -4,10 +4,12 @@ using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using FMODUnity;
+using FMOD.Studio;
 
 public class UIManager : MonoBehaviour
 {
+    private EventInstance gameOverMusicInstance;
     // Start is called before the first frame update
     [SerializeField] private GameObject Menu;
     [SerializeField] private GameObject HUD;
@@ -41,10 +43,11 @@ public class UIManager : MonoBehaviour
         HUD.SetActive(false);
     }
 
-    public void ActivarScoreboard(int updateScore)
+    public void ActivarScoreboard(int updateScore, EventInstance gameOverInst)
     {
         Scoreboard.SetActive(true);
         score.text = updateScore.ToString();
+        gameOverMusicInstance = gameOverInst;
     }
     public void DesactivarScoreboard()
     {
@@ -69,6 +72,8 @@ public class UIManager : MonoBehaviour
         Destroy(GameManager.Instance.gameObject);
         // Recargar la escena actual
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverMusicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
 
     public void Update()
