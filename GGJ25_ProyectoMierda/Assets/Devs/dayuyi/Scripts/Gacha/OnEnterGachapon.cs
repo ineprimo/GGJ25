@@ -27,6 +27,7 @@ public class OnEnterGachapon : MonoBehaviour
     //[SerializeField] private AudioSource audioSource; // Fuente de audio para reproducir el sonido
     [Header("FMOD Event")]
     [SerializeField] private EventReference machineEvent;
+    private bool soundDone = false;
 
     [Header("UI Elements")]
 
@@ -52,13 +53,16 @@ public class OnEnterGachapon : MonoBehaviour
             {
                 int pricePayed = (int)_gachaPrice;
                 GameManager.Instance.RemoveCoins(pricePayed);
-                
+                if (!soundDone)
+                {
+                    RuntimeManager.PlayOneShot(machineEvent, transform.position);
+                    soundDone = true;
+                }
 
                 // Ejecutar el giro, reproducir el sonido y comenzar el Timeline
                 StartCoroutine(SpinGachaponWheel());
                 //audioSource.PlayOneShot(gachaponSound);
 
-                RuntimeManager.PlayOneShot(machineEvent, transform.position);
 
                 playableDirector.SetActive(true);
                 playableDirector.GetComponent<PlayableDirector>().Play();
@@ -94,12 +98,19 @@ public class OnEnterGachapon : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        if (playableDirector != null)
+        {
+            playableDirector.GetComponent<PlayableDirector>().Stop(); // Detener la reproducción
+            playableDirector.SetActive(false); // Desactivar el GameObject que contiene el Timeline
+        }
+
         // Cambiar posici�n y rotaci�n del padre
         Transform parent = transform.parent;
         Transform newTr = _possiblePositions.GetChild(Random.Range(0, _possiblePositions.childCount));
         parent.position = newTr.position;
         parent.rotation = Quaternion.Euler(0, newTr.eulerAngles.y, 0);
         gachaOnCooldown = false;
+        soundDone = false;
         priceText.GetComponent<TextMeshPro>().text =""+ _gachaPrice;
     }
 

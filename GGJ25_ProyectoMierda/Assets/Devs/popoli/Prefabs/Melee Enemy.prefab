@@ -52,6 +52,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4885,6 +4886,7 @@ ParticleSystemRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4957,7 +4959,6 @@ GameObject:
   - component: {fileID: 3442959895628834064}
   - component: {fileID: 7954774455263203262}
   - component: {fileID: 7514922701939840090}
-  - component: {fileID: 8025937599133173726}
   - component: {fileID: 7848895839692556543}
   - component: {fileID: 8013843983450454115}
   - component: {fileID: 9049028508162649804}
@@ -5053,14 +5054,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4539fbaa73e00b543b0a475f12a90313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoscuquis:
-  - {fileID: 8300000, guid: 251bb548f4d148f41b618a9dcd8e9aad, type: 3}
-  - {fileID: 8300000, guid: b08cc28c0217b4343a8495abeea65f43, type: 3}
-  - {fileID: 8300000, guid: 83fab22059da55c45ae2629ef74ac1ac, type: 3}
-  - {fileID: 8300000, guid: d384657c47aeb4743b6aac66f8f7b9ef, type: 3}
-  - {fileID: 8300000, guid: b2438b3d18e4c044692f9b78f5dd9741, type: 3}
-  - {fileID: 8300000, guid: b2583a5b708481044a2679e54f587092, type: 3}
-  - {fileID: 8300000, guid: 0bada0c0cb3b1ba47b13472086579de2, type: 3}
+  idleEvent:
+    Guid:
+      Data1: -455109738
+      Data2: 1083174597
+      Data3: 303987868
+      Data4: 1255307418
+    Path: event:/IdleEnemy
+  minionEvent:
+    Guid:
+      Data1: -1979529874
+      Data2: 1106465602
+      Data3: -843058046
+      Data4: 1228712573
+    Path: event:/MinionAppears
   _damage: 2
   _health: 100
   _currentHealth: 0
@@ -5103,6 +5110,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5160,104 +5168,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!82 &8025937599133173726
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3085869615580526969}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -4264061521288356675, guid: 6d79ddcd12c78ee4e84fd5eaf77273ac,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 2.2143338
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &7848895839692556543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5265,12 +5175,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3085869615580526969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42893a9dc02ab724b912ec93e6775922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 8025937599133173726}
+  _audioSource: {fileID: 0}
   _clips:
   - {fileID: 8300000, guid: 78a688cfc80a7704d9c7a733a6c58f7c, type: 3}
   - {fileID: 8300000, guid: d893b24efabd82844a74163f8800c7ca, type: 3}
@@ -5393,6 +5303,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

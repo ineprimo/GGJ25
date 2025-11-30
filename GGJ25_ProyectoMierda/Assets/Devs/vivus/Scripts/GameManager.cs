@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     }
 
     //SOUND
-    [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioClip newTrack;
+    //[SerializeField] private AudioSource musicSource;
+    //[SerializeField] private AudioClip newTrack;
     private float originalVolume;
 
     // FMOD
@@ -316,7 +316,7 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerMovement>().enabled = false;
         _player.GetComponent<InputManager>().enabled = false;
         _player.transform.GetChild(0).GetChild(0).GetComponent<Shoot>().enabled = false;
-        _player.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().enabled = false;
+        //_player.transform.GetChild(0).GetChild(0).GetComponent<AudioSource>().enabled = false;
         _player.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
 
         _player.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
@@ -329,7 +329,10 @@ public class GameManager : MonoBehaviour
         // Iniciar la transición de música
 
         SpawnersManager.Instance.StopSpawnning();
-        StartCoroutine(ChangeMusicSmoothly(newTrack, 1.5f)); // 1 segundo para la transición
+        //StartCoroutine(ChangeMusicSmoothly(newTrack, 1.5f)); // 1 segundo para la transición
+
+        // FMOD Hacer crossfade musica creditos
+
         DestroyAllEnemies();
     }
 
@@ -363,36 +366,36 @@ public class GameManager : MonoBehaviour
 
     public int GetRound() { return actualRound; }
 
-    private IEnumerator ChangeMusicSmoothly(AudioClip newClip, float duration)
-    {
-        if (musicSource == null) yield break;
+    //private IEnumerator ChangeMusicSmoothly(AudioClip newClip, float duration)
+    //{
+    //    if (musicSource == null) yield break;
 
-        originalVolume = musicSource.volume;
+    //    originalVolume = musicSource.volume;
 
-        // Bajar el volumen gradualmente
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            musicSource.volume = Mathf.Lerp(originalVolume, 0, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        musicSource.volume = 0;
+    //    // Bajar el volumen gradualmente
+    //    float elapsed = 0f;
+    //    while (elapsed < duration)
+    //    {
+    //        musicSource.volume = Mathf.Lerp(originalVolume, 0, elapsed / duration);
+    //        elapsed += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    musicSource.volume = 0;
 
-        // Cambiar la canción
-        musicSource.clip = newClip;
-        musicSource.Play();
+    //    // Cambiar la canción
+    //    musicSource.clip = newClip;
+    //    musicSource.Play();
 
-        // Subir el volumen gradualmente
-        elapsed = 0f;
-        while (elapsed < duration)
-        {
-            musicSource.volume = Mathf.Lerp(0, originalVolume, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        musicSource.volume = originalVolume;
-    }
+    //    // Subir el volumen gradualmente
+    //    elapsed = 0f;
+    //    while (elapsed < duration)
+    //    {
+    //        musicSource.volume = Mathf.Lerp(0, originalVolume, elapsed / duration);
+    //        elapsed += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    musicSource.volume = originalVolume;
+    //}
 
 
     public int GetCoins()

@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private float hurtSoundTimer;
     private bool canPlayHurtSound = true;
 
+    [Header("FMOD Death")]
+    [SerializeField] private EventReference deathEvent;
+
     [Header("Movement Settings")]
     public float moveSpeed = 5f; 
     public float sprintMultiplier = 1.5f; 
@@ -33,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
     private bool intro = false;
     private bool isDead = false;
 
-    [SerializeField] public AudioClip deathSound;
-    private AudioSource audioSource;
+    //[SerializeField] public AudioClip deathSound;
+    //private AudioSource audioSource;
 
     [SerializeField] private float _currentLife = 1000.0f;
     [SerializeField] private float _maxLife = 1000.0f;
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         cameraTransform = Camera.main.transform;
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         coins = 0;
         _healTimer = _healTime;
 
@@ -294,7 +297,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
-            audioSource.PlayOneShot(deathSound);
+            //audioSource.PlayOneShot(deathSound);
+            RuntimeManager.PlayOneShot(deathEvent);
             GameManager.Instance.EndGame();
         }
     }

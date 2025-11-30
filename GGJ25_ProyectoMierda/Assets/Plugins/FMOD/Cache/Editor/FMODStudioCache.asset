@@ -558,10 +558,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639000584279635968
+  lastModified: 639001059914519744
   FileSizes:
   - Name: Desktop
-    Value: 1720
+    Value: 1800
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -719,13 +719,15 @@ MonoBehaviour:
   - {fileID: -253695180827643146}
   - {fileID: 3698071037557942280}
   - {fileID: -7984953288879717548}
+  - {fileID: 7707893150151224269}
+  - {fileID: 529171601820354579}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639000584279635968
+  cacheTime: 639001059915863438
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -751,6 +753,37 @@ MonoBehaviour:
     index: 10
   - key: event:/IdleEnemy
     index: 11
+  - key: event:/MinionAppears
+    index: 12
+  - key: event:/Death
+    index: 13
+--- !u!114 &529171601820354579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Death
+  m_EditorClassIdentifier: 
+  Path: event:/Death
+  Guid:
+    Data1: -1503073803
+    Data2: 1187973750
+    Data3: -622257497
+    Data4: -1217483980
+  Banks:
+  - {fileID: 4906762789691601782}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3134
 --- !u!114 &760995608040922010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,7 +1010,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639000584279625968
+  lastModified: 639001059914499732
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -1017,10 +1050,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638996918137262563
+  lastModified: 639001059915863438
   FileSizes:
   - Name: Desktop
-    Value: 211648
+    Value: 245248
   Exists: 1
 --- !u!114 &5017769074064498670
 MonoBehaviour:
@@ -1192,11 +1225,38 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
   Name: Enemy
   StudioPath: bank:/Enemy
-  lastModified: 639000584279595969
+  lastModified: 639001030702871307
   FileSizes:
   - Name: Desktop
-    Value: 174880
+    Value: 265216
   Exists: 1
+--- !u!114 &7707893150151224269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MinionAppears
+  m_EditorClassIdentifier: 
+  Path: event:/MinionAppears
+  Guid:
+    Data1: -1979529874
+    Data2: 1106465602
+    Data3: -843058046
+    Data4: 1228712573
+  Banks:
+  - {fileID: 6620009110449932844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &8138384332483527027
 MonoBehaviour:
   m_ObjectHideFlags: 0

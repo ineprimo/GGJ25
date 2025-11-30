@@ -17,8 +17,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Color[] lightColors; // Colores para cambiar durante el disparo
     private int currentColorIndex = 0;
 
-    [SerializeField] AudioClip soplidoSound;
-    [SerializeField] AudioClip ayayay;
+    //[SerializeField] AudioClip soplidoSound;
+    //[SerializeField] AudioClip ayayay;
     public bool isShooting = false;
 
     private AudioSource audioSource;
@@ -62,18 +62,18 @@ public class Shoot : MonoBehaviour
 
     private void PlayShootSound()
     {
-        if (GameManager.Instance.GetBulletsLvl() >= 3)
-        {
-            if (!audioSource.isPlaying || audioSource.clip != ayayay)
-            {
-                audioSource.clip = ayayay;
-                audioSource.Play();
-            }
-        }
-        else
-        {
-            audioSource.PlayOneShot(soplidoSound);
-        }
+        //if (GameManager.Instance.GetBulletsLvl() >= 3)
+        //{
+        //    if (!audioSource.isPlaying || audioSource.clip != ayayay)
+        //    {
+        //        audioSource.clip = ayayay;
+        //        audioSource.Play();
+        //    }
+        //}
+        //else
+        //{
+        //    audioSource.PlayOneShot(soplidoSound);
+        //}
     }
 
     private IEnumerator MoveBubble(Transform bubbleTransform, Vector3 direction)

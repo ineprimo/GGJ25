@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EventReference idleEvent;
     private EventInstance idleInstance;
 
+    [SerializeField] private EventReference minionEvent;
+
     //private AudioSource audioSource;
 
     public float _damage = 10.0f;
@@ -81,11 +83,15 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<CacaThrower>().enabled = false;
             }
-            if (sonidoscuquis.Length > 0)
-            {
-                int indice = UnityEngine.Random.Range(0, sonidoscuquis.Length);
-                audioSource.PlayOneShot(sonidoscuquis[indice]);
-            }
+            //if (sonidoscuquis.Length > 0)
+            //{
+            //    int indice = UnityEngine.Random.Range(0, sonidoscuquis.Length);
+            //    audioSource.PlayOneShot(sonidoscuquis[indice]);
+            //}
+
+            // FMOD
+
+            RuntimeManager.PlayOneShot(minionEvent, transform.position);
 
             foreach (Transform child in transform)
             {
