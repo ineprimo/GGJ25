@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638996098597387043
+  lastModified: 639001072943121838
   FileSizes:
   - Name: Desktop
-    Value: 3648288
+    Value: 7101056
   Exists: 1
 --- !u!114 &-7984953288879717548
 MonoBehaviour:
@@ -558,10 +558,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639001059914519744
+  lastModified: 639001079516831211
   FileSizes:
   - Name: Desktop
-    Value: 1800
+    Value: 1896
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -589,6 +589,33 @@ MonoBehaviour:
   - Apagado
   - Encendido
   Exists: 1
+--- !u!114 &-1015161583027839866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GameOverMusic
+  m_EditorClassIdentifier: 
+  Path: event:/GameOverMusic
+  Guid:
+    Data1: 85748828
+    Data2: 1341241896
+    Data3: -1523202378
+    Data4: -601811915
+  Banks:
+  - {fileID: -8834933214821397617}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240048
 --- !u!114 &-699329669396771513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,13 +748,15 @@ MonoBehaviour:
   - {fileID: -7984953288879717548}
   - {fileID: 7707893150151224269}
   - {fileID: 529171601820354579}
+  - {fileID: -1015161583027839866}
+  - {fileID: 1942587865782189234}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639001059915863438
+  cacheTime: 639001079516831211
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -757,6 +786,10 @@ MonoBehaviour:
     index: 12
   - key: event:/Death
     index: 13
+  - key: event:/GameOverMusic
+    index: 14
+  - key: event:/MinionDisappears
+    index: 15
 --- !u!114 &529171601820354579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +919,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 47982
+--- !u!114 &1942587865782189234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MinionDisappears
+  m_EditorClassIdentifier: 
+  Path: event:/MinionDisappears
+  Guid:
+    Data1: 1412998171
+    Data2: 1233348918
+    Data3: 1918716817
+    Data4: 1317530937
+  Banks:
+  - {fileID: 6620009110449932844}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 648
 --- !u!114 &2180056148162660223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1070,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639001059914499732
+  lastModified: 639001079516821479
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -1225,10 +1285,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
   Name: Enemy
   StudioPath: bank:/Enemy
-  lastModified: 639001030702871307
+  lastModified: 639001079516771159
   FileSizes:
   - Name: Desktop
-    Value: 265216
+    Value: 274368
   Exists: 1
 --- !u!114 &7707893150151224269
 MonoBehaviour:

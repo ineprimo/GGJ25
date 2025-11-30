@@ -13148,6 +13148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}
+      propertyPath: deathEvent.Path
+      value: event:/GameOverMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
       propertyPath: _speedIncreaseLvl1
       value: 0.5
       objectReference: {fileID: 0}
@@ -13175,6 +13180,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _healthIncreaseLvl3
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: deathEvent.Guid.Data1
+      value: 85748828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: deathEvent.Guid.Data2
+      value: 1341241896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: deathEvent.Guid.Data3
+      value: -1523202378
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
+        type: 3}
+      propertyPath: deathEvent.Guid.Data4
+      value: -601811915
       objectReference: {fileID: 0}
     - target: {fileID: 5484458723524488131, guid: 92f5da5adc714f14480a8376c41ef170,
         type: 3}

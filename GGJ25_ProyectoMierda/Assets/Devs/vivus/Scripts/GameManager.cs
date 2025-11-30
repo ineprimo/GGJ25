@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,6 +48,9 @@ public class GameManager : MonoBehaviour
     // FMOD
     [SerializeField] private MusicTest musicTest1;
     [SerializeField] private MusicTest musicTest2;
+
+    [SerializeField] private EventReference deathEvent;
+    private EventInstance gameOverInstance;
 
     //GACHA
     private int incrementalPrice = 10;
@@ -329,8 +334,11 @@ public class GameManager : MonoBehaviour
         // Iniciar la transición de música
 
         SpawnersManager.Instance.StopSpawnning();
+        
+        gameOverInstance.start();
         //StartCoroutine(ChangeMusicSmoothly(newTrack, 1.5f)); // 1 segundo para la transición
-
+        musicTest1.musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicTest2.musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         // FMOD Hacer crossfade musica creditos
 
         DestroyAllEnemies();
@@ -413,6 +421,8 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<PlayerMovement>().SetCoins(0);
         //musicTest1.SetIntensity(1);
         //musicTest2.SetIntensity(1);
+
+        gameOverInstance = RuntimeManager.CreateInstance(deathEvent);
     }
 
     public void CollectAllCoins(GameObject player)

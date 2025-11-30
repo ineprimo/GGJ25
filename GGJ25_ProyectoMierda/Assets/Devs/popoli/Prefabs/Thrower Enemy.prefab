@@ -119,13 +119,20 @@ MonoBehaviour:
       Data3: 303987868
       Data4: 1255307418
     Path: event:/IdleEnemy
-  minionEvent:
+  minionSpawnEvent:
     Guid:
       Data1: -1979529874
       Data2: 1106465602
       Data3: -843058046
       Data4: 1228712573
     Path: event:/MinionAppears
+  minionDisappearsEvent:
+    Guid:
+      Data1: 1412998171
+      Data2: 1233348918
+      Data3: 1918716817
+      Data4: 1317530937
+    Path: event:/MinionDisappears
   _damage: 2
   _health: 80
   _currentHealth: 0

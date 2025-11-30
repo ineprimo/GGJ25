@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EventReference idleEvent;
     private EventInstance idleInstance;
 
-    [SerializeField] private EventReference minionEvent;
+    [SerializeField] private EventReference minionSpawnEvent;
+    [SerializeField] private EventReference minionDisappearsEvent;
 
     //private AudioSource audioSource;
 
@@ -91,7 +92,7 @@ public class Enemy : MonoBehaviour
 
             // FMOD
 
-            RuntimeManager.PlayOneShot(minionEvent, transform.position);
+            RuntimeManager.PlayOneShot(minionSpawnEvent, transform.position);
 
             foreach (Transform child in transform)
             {
@@ -153,7 +154,7 @@ public class Enemy : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
-
+        RuntimeManager.PlayOneShot(minionDisappearsEvent, transform.position);
         GetComponent<Animator>().SetTrigger("confetti");
     }
 

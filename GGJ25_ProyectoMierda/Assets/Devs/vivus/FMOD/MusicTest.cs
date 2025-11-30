@@ -9,7 +9,7 @@ public class MusicTest : MonoBehaviour
 
     private const string INTENSITY_PARAMETER_NAME = "Intensity";
 
-    private EventInstance musicInstance;
+    public EventInstance musicInstance;
     [Range(0f, 7f)]
     public int intensity = 1;
 

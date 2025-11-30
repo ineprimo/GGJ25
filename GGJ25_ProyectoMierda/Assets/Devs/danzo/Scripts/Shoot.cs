@@ -26,13 +26,25 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon(bool a)
     {
-        if (!canShoot) return;
-        isShooting = true;
-        StartCoroutine(ShootWithDelay(a));
-        if (gunLevel == 4)
-        {
-            StartCoroutine(ChangeLightEffect());
-        }
+        //if (!canShoot) return;
+        //isShooting = true;
+        //StartCoroutine(ShootWithDelay(a));
+        //if (gunLevel == 4)
+        //{
+        //    StartCoroutine(ChangeLightEffect());
+        //}
+        // 1. Si ya estamos disparando, salimos (evita múltiples Coroutines)
+        //if (currentShootCoroutine != null) return;
+
+        //isShooting = true;
+        //// 2. Iniciamos el Coroutine de disparo automático
+        //currentShootCoroutine = StartCoroutine(AutoShootCoroutine(a));
+
+        //if (gunLevel == 4)
+        //{
+        //    // El Coroutine de las luces está bien
+        //    StartCoroutine(ChangeLightEffect());
+        //}
     }
 
     private IEnumerator ShootWithDelay(bool a)
@@ -94,7 +106,7 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         SetLightsIntensity(0); // Apagar luces al inicio
     }
 
