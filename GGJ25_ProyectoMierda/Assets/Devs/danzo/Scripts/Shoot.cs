@@ -26,13 +26,13 @@ public class Shoot : MonoBehaviour
 
     public void shootWeapon(bool a)
     {
-        //if (!canShoot) return;
-        //isShooting = true;
-        //StartCoroutine(ShootWithDelay(a));
-        //if (gunLevel == 4)
-        //{
-        //    StartCoroutine(ChangeLightEffect());
-        //}
+        if (!canShoot) return;
+        isShooting = true;
+        StartCoroutine(ShootWithDelay(a));
+        if (gunLevel == 4)
+        {
+            StartCoroutine(ChangeLightEffect());
+        }
         // 1. Si ya estamos disparando, salimos (evita múltiples Coroutines)
         //if (currentShootCoroutine != null) return;
 
