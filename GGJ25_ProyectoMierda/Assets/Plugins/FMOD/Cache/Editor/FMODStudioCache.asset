@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639001428428383369
+  lastModified: 639001452452058945
   FileSizes:
   - Name: Desktop
-    Value: 7101344
+    Value: 7101056
   Exists: 1
 --- !u!114 &-7984953288879717548
 MonoBehaviour:
@@ -558,7 +558,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639001430482188518
+  lastModified: 639001452451567605
   FileSizes:
   - Name: Desktop
     Value: 1896
@@ -756,7 +756,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639001430482188518
+  cacheTime: 639001452452058945
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639001430482168515
+  lastModified: 639001452451557642
   FileSizes:
   - Name: Desktop
     Value: 1074
