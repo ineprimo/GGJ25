@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
             if(_gun.GetComponent<Shoot>().gunLevel == 4)
             {
                 //_gun.GetComponent<Shoot>().currentAmmo = _ARAmmo;
-                UpgradeFireRate(1.2f);
+                UpgradeFireRate(0.25f);
 
                 // actualiza el player
                 _player.GetComponent<PlayerMovement>().ChangeWeapon(1);
@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                UpgradeFireRate(1.5f);
+                UpgradeFireRate(0.3f);
                 //_gun.GetComponent<Shoot>().currentAmmo = _gunAmmo;
             }
         }

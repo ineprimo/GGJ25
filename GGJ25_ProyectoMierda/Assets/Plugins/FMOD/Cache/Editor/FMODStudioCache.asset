@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639001452452058945
+  lastModified: 639001905068632677
   FileSizes:
   - Name: Desktop
-    Value: 7101056
+    Value: 7853728
   Exists: 1
 --- !u!114 &-7984953288879717548
 MonoBehaviour:
@@ -408,7 +408,7 @@ MonoBehaviour:
   Name: Intensity
   StudioPath: 
   Min: 0
-  Max: 7
+  Max: 10
   Default: 0
   ID:
     data1: 2951347034
@@ -443,7 +443,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2851
+  Length: 2901
 --- !u!114 &-4073889232213379247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639001452451567605
+  lastModified: 639001905068128368
   FileSizes:
   - Name: Desktop
     Value: 1896
@@ -756,7 +756,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639001452452058945
+  cacheTime: 639001905068632677
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639001452451557642
+  lastModified: 639001905068118360
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639001059915863438
+  lastModified: 639001897517261098
   FileSizes:
   - Name: Desktop
     Value: 245248
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
   Name: Menu
   StudioPath: bank:/Menu
-  lastModified: 638995994876783937
+  lastModified: 639001904482913235
   FileSizes:
   - Name: Desktop
     Value: 476512
