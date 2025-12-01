@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EventReference deathEvent;
     private EventInstance gameOverInstance;
 
+    [SerializeField] private EventInstance reverbInstance;
+    [SerializeField] private EventReference reverbSnapshots;
+
     //GACHA
     private int incrementalPrice = 10;
     public int gachaPrice = 10;
@@ -422,7 +425,17 @@ public class GameManager : MonoBehaviour
         //musicTest1.SetIntensity(1);
         //musicTest2.SetIntensity(1);
 
+        SetReverb(true); // Quitar y hacer por codigo
         gameOverInstance = RuntimeManager.CreateInstance(deathEvent);
+        reverbInstance = RuntimeManager.CreateInstance(reverbSnapshots);
+    }
+
+    public void SetReverb(bool a)
+    {
+        if (a)
+            reverbInstance.start();
+        else
+            reverbInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void CollectAllCoins(GameObject player)

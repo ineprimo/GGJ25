@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639001905068632677
+  lastModified: 639002147189976335
   FileSizes:
   - Name: Desktop
-    Value: 7853728
+    Value: 7854240
   Exists: 1
 --- !u!114 &-7984953288879717548
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Coin.bank
   Name: Coin
   StudioPath: bank:/Coin
-  lastModified: 638995994963583131
+  lastModified: 639002098573717195
   FileSizes:
   - Name: Desktop
     Value: 14080
@@ -538,7 +538,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Light.bank
   Name: Light
   StudioPath: bank:/Light
-  lastModified: 638996108607473648
+  lastModified: 639002098574444054
   FileSizes:
   - Name: Desktop
     Value: 452000
@@ -558,10 +558,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639001905068128368
+  lastModified: 639002144016491731
   FileSizes:
   - Name: Desktop
-    Value: 1896
+    Value: 2038
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -636,6 +636,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2185376
   Exists: 1
+--- !u!114 &-447042995442535338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbFuelte
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbFuelte
+  Guid:
+    Data1: 1742994072
+    Data2: 1077043359
+    Data3: 1982072996
+    Data4: 929634566
+  Banks:
+  - {fileID: 3779334402512182113}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-339948505897476550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,13 +777,14 @@ MonoBehaviour:
   - {fileID: 529171601820354579}
   - {fileID: -1015161583027839866}
   - {fileID: 1942587865782189234}
+  - {fileID: -447042995442535338}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639001905068632677
+  cacheTime: 639002147189976335
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -790,6 +818,8 @@ MonoBehaviour:
     index: 14
   - key: event:/MinionDisappears
     index: 15
+  - key: snapshot:/ReverbFuelte
+    index: 16
 --- !u!114 &529171601820354579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,10 +1100,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639001905068118360
+  lastModified: 639002144016481738
   FileSizes:
   - Name: Desktop
-    Value: 1074
+    Value: 4550
   Exists: 1
 --- !u!114 &4851233776047249695
 MonoBehaviour:
@@ -1110,10 +1140,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639001897517261098
+  lastModified: 639002098574875784
   FileSizes:
   - Name: Desktop
-    Value: 245248
+    Value: 245376
   Exists: 1
 --- !u!114 &5017769074064498670
 MonoBehaviour:
@@ -1285,7 +1315,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
   Name: Enemy
   StudioPath: bank:/Enemy
-  lastModified: 639001430482128524
+  lastModified: 639002098574133919
   FileSizes:
   - Name: Desktop
     Value: 274368
@@ -1416,7 +1446,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/UpgradesMachine.bank
   Name: UpgradesMachine
   StudioPath: bank:/UpgradesMachine
-  lastModified: 638997642852195868
+  lastModified: 639002098575167351
   FileSizes:
   - Name: Desktop
     Value: 44672
