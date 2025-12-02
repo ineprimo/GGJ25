@@ -7,6 +7,7 @@ public class IntroEpica : MonoBehaviour
     [SerializeField] private Transform _destination; // Destino al que se mueve el jugador
     private GameObject _player; // Referencia al jugador
     [SerializeField] private GameObject _door; // Puerta que se abrirá/cerrará
+    //[SerializeField] private GameObject _oclussion;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class IntroEpica : MonoBehaviour
 
         _player.GetComponent<InputManager>().enabled = true; // Habilitar los controles del jugador
         _player.GetComponent<PlayerMovement>().IntroDone(); // Llamar a la función para finalizar la intro
+        //_oclussion.SetActive(true);
 
         // Activar los spawners o cualquier otra cosa necesaria
         SpawnersManager.Instance.activateSpawners();

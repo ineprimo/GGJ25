@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639002147189976335
+  lastModified: 639002806224914490
   FileSizes:
   - Name: Desktop
-    Value: 7854240
+    Value: 7854368
   Exists: 1
 --- !u!114 &-7984953288879717548
 MonoBehaviour:
@@ -89,6 +89,30 @@ MonoBehaviour:
     data2: 4197482900
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7394401384198443140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Oclusion
+  m_EditorClassIdentifier: 
+  Name: Oclusion
+  StudioPath: parameter:/Oclusion
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1325504889
+    data2: 3056682117
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-7106520372956879096
@@ -558,10 +582,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639002144016491731
+  lastModified: 639002806224388715
   FileSizes:
   - Name: Desktop
-    Value: 2038
+    Value: 2206
   Exists: 1
 --- !u!114 &-1798208049255905220
 MonoBehaviour:
@@ -778,13 +802,14 @@ MonoBehaviour:
   - {fileID: -1015161583027839866}
   - {fileID: 1942587865782189234}
   - {fileID: -447042995442535338}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -7394401384198443140}
   MasterBanks:
   - {fileID: 3779334402512182113}
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639002147189976335
+  cacheTime: 639002806224914490
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -1100,10 +1125,10 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639002144016481738
+  lastModified: 639002806224368710
   FileSizes:
   - Name: Desktop
-    Value: 4550
+    Value: 6026
   Exists: 1
 --- !u!114 &4851233776047249695
 MonoBehaviour:
@@ -1140,7 +1165,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639002098574875784
+  lastModified: 639002772549840941
   FileSizes:
   - Name: Desktop
     Value: 245376
@@ -1406,7 +1431,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
   Name: Menu
   StudioPath: bank:/Menu
-  lastModified: 639001904482913235
+  lastModified: 639002772547733799
   FileSizes:
   - Name: Desktop
     Value: 476512

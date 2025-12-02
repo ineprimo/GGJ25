@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // Importar TextMeshPro
+using FMODUnity;
+using FMOD.Studio;
 
 public class PauseManager : MonoBehaviour
 {
+    [Header("FMOD Settings")]
+    [SerializeField] private string masterBusPath = "bus:/"; // Asegúrate de que esta ruta sea correcta
+    private Bus masterBus;
+
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider sensitivitySlider;
@@ -19,6 +25,8 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
+        masterBus = RuntimeManager.GetBus(masterBusPath);
+
         // Cargar valores guardados (si existen)
         float savedVolume = PlayerPrefs.GetFloat("Volume", .5f);
         float savedSensitivity = PlayerPrefs.GetFloat("Sensitivity", 1f);
@@ -70,7 +78,9 @@ public class PauseManager : MonoBehaviour
 
     public void AdjustVolume(float volume)
     {
-        AudioListener.volume = volume; // Ajusta el volumen global
+        //AudioListener.volume = volume; // Ajusta el volumen global
+        masterBus.setVolume(volume);
+
         PlayerPrefs.SetFloat("Volume", volume); // Guarda la configuración
         volumeText.text = (volume * 100).ToString("F0") + "%"; // Muestra el valor del volumen en el TextMeshPro
     }
