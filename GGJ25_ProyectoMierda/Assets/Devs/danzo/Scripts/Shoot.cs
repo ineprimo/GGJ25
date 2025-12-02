@@ -1,5 +1,7 @@
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class Shoot : MonoBehaviour
 {
@@ -21,13 +23,14 @@ public class Shoot : MonoBehaviour
     //[SerializeField] AudioClip ayayay;
     public bool isShooting = false;
 
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     private bool canShoot = true;
 
-    public void shootWeapon(bool a)
+    public void shootWeapon(bool a, EventReference shootEvent)
     {
         if (!canShoot) return;
         isShooting = true;
+        RuntimeManager.PlayOneShot(shootEvent, transform.position);
         StartCoroutine(ShootWithDelay(a));
         if (gunLevel == 4)
         {

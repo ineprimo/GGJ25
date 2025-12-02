@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     // FMOD
     [SerializeField] private MusicTest musicTest1;
     [SerializeField] private MusicTest musicTest2;
+    [SerializeField] private MusicTest musicTest3;
 
     [SerializeField] private EventReference deathEvent;
     private EventInstance gameOverInstance;
@@ -342,6 +343,7 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(ChangeMusicSmoothly(newTrack, 1.5f)); // 1 segundo para la transición
         musicTest1.musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicTest2.musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicTest3.musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         // FMOD Hacer crossfade musica creditos
 
         DestroyAllEnemies();
@@ -368,6 +370,7 @@ public class GameManager : MonoBehaviour
 
         musicTest1.SetIntensity(round);
         musicTest2.SetIntensity(round);
+        musicTest3.SetIntensity(round);
     }
 
     public void SetMaxEnemies(int enemies)

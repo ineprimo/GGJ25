@@ -84,10 +84,10 @@ public class InputManager : MonoBehaviour
         while (isShooting)
         {
             a = Input.GetKey(KeyCode.S);
-            _shootComponent.shootWeapon(a);
+            _shootComponent.shootWeapon(a, shootEvent);
 
             // FMOD
-            RuntimeManager.PlayOneShot(shootEvent, transform.position);
+            //RuntimeManager.PlayOneShot(shootEvent, transform.position);
             // --- //
 
             yield return new WaitForSeconds(_shootComponent.timeBetweenShots);

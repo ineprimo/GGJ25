@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639002806224914490
+  lastModified: 639002846928966832
   FileSizes:
   - Name: Desktop
     Value: 7854368
@@ -130,7 +130,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Coin.bank
   Name: Coin
   StudioPath: bank:/Coin
-  lastModified: 639002098573717195
+  lastModified: 639002856887434422
   FileSizes:
   - Name: Desktop
     Value: 14080
@@ -562,7 +562,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Light.bank
   Name: Light
   StudioPath: bank:/Light
-  lastModified: 639002098574444054
+  lastModified: 639002851082123346
   FileSizes:
   - Name: Desktop
     Value: 452000
@@ -582,7 +582,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639002806224388715
+  lastModified: 639002825182538380
   FileSizes:
   - Name: Desktop
     Value: 2206
@@ -809,7 +809,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -1999388114672948980}
   cacheVersion: 131856
-  cacheTime: 639002806224914490
+  cacheTime: 639002904249023105
   SerializableEventsDict:
   - key: event:/Coin Collect
     index: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639002806224368710
+  lastModified: 639002825182528378
   FileSizes:
   - Name: Desktop
     Value: 6026
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 639002772549840941
+  lastModified: 639002904249023105
   FileSizes:
   - Name: Desktop
     Value: 245376
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Enemy.bank
   Name: Enemy
   StudioPath: bank:/Enemy
-  lastModified: 639002098574133919
+  lastModified: 639002856887724494
   FileSizes:
   - Name: Desktop
     Value: 274368
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/Menu.bank
   Name: Menu
   StudioPath: bank:/Menu
-  lastModified: 639002772547733799
+  lastModified: 639002847147473879
   FileSizes:
   - Name: Desktop
     Value: 476512
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   Path: ../../../SON/FMOD Proyecto Final/ProyectoFinal/Build/Desktop/UpgradesMachine.bank
   Name: UpgradesMachine
   StudioPath: bank:/UpgradesMachine
-  lastModified: 639002098575167351
+  lastModified: 639002851354332984
   FileSizes:
   - Name: Desktop
     Value: 44672
